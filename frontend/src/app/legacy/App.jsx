@@ -1,10 +1,9 @@
-import React from "react";
-import { AppShell } from "./AppShell.jsx";
-import { renderSuiteScreen, SuiteMasterDataProviders } from "./screens/suite.jsx";
+import React from "react"
+import { AppShell } from "./AppShell.jsx"
 
 function App() {
-  return <AppShell renderModuleScreen={renderSuiteScreen} MasterDataProviders={SuiteMasterDataProviders} />;
+  return <AppShell />
 }
 
-export { App };
-Object.assign(window, { App });
+export { App }
+Object.assign(window, { App })
