@@ -1,6 +1,6 @@
-using IntegratedProcurement.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Application;
 
-namespace IntegratedProcurement.ArchitectureTests;
+namespace SisTemplate.ArchitectureTests;
 
 public sealed class EmailTemplateCategoryMergeTests
 {

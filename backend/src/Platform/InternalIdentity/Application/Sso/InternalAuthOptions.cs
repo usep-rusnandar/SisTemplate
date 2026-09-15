@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.InternalIdentity.Application.Sso;
+namespace SisTemplate.Platform.InternalIdentity.Application.Sso;
 
 /// <summary>
 /// Local (non-SSO) internal authentication switches. Passwordless <c>dev-login</c> is never

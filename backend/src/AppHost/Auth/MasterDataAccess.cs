@@ -1,8 +1,8 @@
 using System.Security.Claims;
-using IntegratedProcurement.BuildingBlocks.Application;
-using IntegratedProcurement.BuildingBlocks.Application.Security;
+using SisTemplate.BuildingBlocks.Application;
+using SisTemplate.BuildingBlocks.Application.Security;
 
-namespace IntegratedProcurement.AppHost.Api.Auth;
+namespace SisTemplate.AppHost.Api.Auth;
 
 public static class MasterDataAccess
 {

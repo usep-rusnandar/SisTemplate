@@ -1,10 +1,10 @@
 using System.Net;
 using System.Net.Http.Json;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 public sealed class FoundationManifestEndpointTests : IClassFixture<IsolatedApiFixture>
 {

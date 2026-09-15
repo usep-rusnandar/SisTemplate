@@ -1,9 +1,9 @@
 using System.Text.Json;
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Application;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.Platform.Documents.Infrastructure;
+namespace SisTemplate.Platform.Documents.Infrastructure;
 
 /// <summary>
 /// Development stand-in for Azure Blob. Uploads, deletes, and SAS-shaped read/write URLs stay on

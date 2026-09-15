@@ -1,7 +1,7 @@
-using IntegratedProcurement.BuildingBlocks.Application;
-using IntegratedProcurement.Platform.Persistence.Seeding;
+using SisTemplate.BuildingBlocks.Application;
+using SisTemplate.Platform.Persistence.Seeding;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 /// <summary>
 /// Naming/consistency guard for the RBAC catalog. Fast (no server/DB): asserts the seeder's

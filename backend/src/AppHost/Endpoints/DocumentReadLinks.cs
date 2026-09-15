@@ -1,6 +1,6 @@
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Application;
 
-namespace IntegratedProcurement.AppHost.Api.Endpoints;
+namespace SisTemplate.AppHost.Api.Endpoints;
 
 /// <summary>
 /// Download URLs prefer a Blob SAS. When User Delegation SAS cannot be signed

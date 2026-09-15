@@ -1,19 +1,19 @@
-using IntegratedProcurement.Platform.InternalIdentity.Application.Access;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Auth;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Directory;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Profiles;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Sso;
-using IntegratedProcurement.Platform.InternalIdentity.Domain;
-using IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Access;
-using IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Auth;
-using IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Directory;
-using IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Profiles;
-using IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Sso;
+using SisTemplate.Platform.InternalIdentity.Application.Access;
+using SisTemplate.Platform.InternalIdentity.Application.Auth;
+using SisTemplate.Platform.InternalIdentity.Application.Directory;
+using SisTemplate.Platform.InternalIdentity.Application.Profiles;
+using SisTemplate.Platform.InternalIdentity.Application.Sso;
+using SisTemplate.Platform.InternalIdentity.Domain;
+using SisTemplate.Platform.InternalIdentity.Infrastructure.Access;
+using SisTemplate.Platform.InternalIdentity.Infrastructure.Auth;
+using SisTemplate.Platform.InternalIdentity.Infrastructure.Directory;
+using SisTemplate.Platform.InternalIdentity.Infrastructure.Profiles;
+using SisTemplate.Platform.InternalIdentity.Infrastructure.Sso;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IntegratedProcurement.Platform.InternalIdentity.Infrastructure;
+namespace SisTemplate.Platform.InternalIdentity.Infrastructure;
 
 public static class DependencyInjection
 {

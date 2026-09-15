@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Infrastructure\SisTemplate.BuildingBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="..\Application\SisTemplate.Platform.Notifications.Application.csproj" />
+    <ProjectReference Include="..\Domain\SisTemplate.Platform.Notifications.Domain.csproj" />
+    <ProjectReference Include="..\..\Persistence\SisTemplate.Platform.Persistence.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

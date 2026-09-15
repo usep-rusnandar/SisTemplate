@@ -1,10 +1,10 @@
-using IntegratedProcurement.BuildingBlocks.Application;
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.BuildingBlocks.Application;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 internal sealed class AdminConsoleAccessScopeService : IAdminConsoleAccessScope
 {

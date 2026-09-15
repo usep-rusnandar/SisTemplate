@@ -1,8 +1,8 @@
-using IntegratedProcurement.AppHost.Api.Auth;
-using IntegratedProcurement.AppHost.Api.Services;
-using IntegratedProcurement.Platform.Notifications.Application;
+using SisTemplate.AppHost.Api.Auth;
+using SisTemplate.AppHost.Api.Services;
+using SisTemplate.Platform.Notifications.Application;
 
-namespace IntegratedProcurement.AppHost.Api.Endpoints;
+namespace SisTemplate.AppHost.Api.Endpoints;
 
 public static class NotificationEndpoints
 {

@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Sso;
+namespace SisTemplate.Platform.InternalIdentity.Infrastructure.Sso;
 
 public interface ISsoJwtHelper
 {

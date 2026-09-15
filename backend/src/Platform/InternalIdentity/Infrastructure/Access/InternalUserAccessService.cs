@@ -1,10 +1,10 @@
-using IntegratedProcurement.Platform.InternalIdentity.Application.Access;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Sso;
-using IntegratedProcurement.Platform.InternalIdentity.Domain;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.InternalIdentity.Application.Access;
+using SisTemplate.Platform.InternalIdentity.Application.Sso;
+using SisTemplate.Platform.InternalIdentity.Domain;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Access;
+namespace SisTemplate.Platform.InternalIdentity.Infrastructure.Access;
 
 public sealed class InternalUserAccessService : IInternalUserAccessService, ISsoPersonnelMapper
 {

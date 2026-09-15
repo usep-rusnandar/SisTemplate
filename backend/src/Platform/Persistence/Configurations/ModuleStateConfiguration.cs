@@ -1,8 +1,8 @@
-using IntegratedProcurement.Platform.Persistence.ModuleState;
+using SisTemplate.Platform.Persistence.ModuleState;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace IntegratedProcurement.Platform.Persistence.Configurations;
+namespace SisTemplate.Platform.Persistence.Configurations;
 
 public sealed class ModuleStateConfiguration : IEntityTypeConfiguration<ModuleStateEntry>
 {

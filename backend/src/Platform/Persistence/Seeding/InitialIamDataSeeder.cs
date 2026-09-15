@@ -1,9 +1,9 @@
-using IntegratedProcurement.BuildingBlocks.Application;
-using IntegratedProcurement.Platform.InternalIdentity.Domain;
+using SisTemplate.BuildingBlocks.Application;
+using SisTemplate.Platform.InternalIdentity.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IntegratedProcurement.Platform.Persistence.Seeding;
+namespace SisTemplate.Platform.Persistence.Seeding;
 
 public static class InitialIamDataSeeder
 {

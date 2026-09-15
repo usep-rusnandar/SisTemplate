@@ -1,6 +1,6 @@
-using IntegratedProcurement.BuildingBlocks.Domain.Events;
+using SisTemplate.BuildingBlocks.Domain.Events;
 
-namespace IntegratedProcurement.BuildingBlocks.Domain.Entities;
+namespace SisTemplate.BuildingBlocks.Domain.Entities;
 
 /// <summary>Audit-stamped marker; ProcurementDbContext stamps Created*/Updated* for any entity implementing this.</summary>
 public interface IAuditable

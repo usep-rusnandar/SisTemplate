@@ -1,10 +1,10 @@
 using System.Globalization;
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Administration.Domain;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Domain;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 internal sealed class AdminConsoleMasterDataService : IAdminConsoleMasterDataService
 {

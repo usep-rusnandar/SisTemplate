@@ -1,7 +1,7 @@
-using IntegratedProcurement.Platform.Notifications.Application;
+using SisTemplate.Platform.Notifications.Application;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IntegratedProcurement.Platform.Notifications.Infrastructure;
+namespace SisTemplate.Platform.Notifications.Infrastructure;
 
 /// <summary>Composition for the Notifications platform service.</summary>
 public static class NotificationsModule

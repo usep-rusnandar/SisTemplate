@@ -1,7 +1,7 @@
 using System.Threading.Channels;
-using IntegratedProcurement.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Application;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 /// <summary>
 /// Process-wide coordination point for the region sync. Holds the current status snapshot (shared

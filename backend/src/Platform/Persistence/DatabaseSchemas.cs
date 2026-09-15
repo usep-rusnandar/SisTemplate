@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Persistence;
+namespace SisTemplate.Platform.Persistence;
 
 public static class DatabaseSchemas
 {

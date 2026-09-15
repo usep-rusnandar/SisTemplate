@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Documents.Application;
+namespace SisTemplate.Platform.Documents.Application;
 
 public interface IPlaceholderDocumentGenerator
 {

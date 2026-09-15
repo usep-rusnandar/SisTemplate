@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// Configuration for the Administrative Regions sync from <c>wilayah.id</c>. Bound from the "Wilayah"

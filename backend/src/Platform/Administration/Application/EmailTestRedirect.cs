@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// Resolves the Settings ▸ Email "To (test)" redirect. Each email category maps to

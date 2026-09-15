@@ -1,6 +1,6 @@
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.Persistence;
 
-namespace IntegratedProcurement.AppHost.Api.Services;
+namespace SisTemplate.AppHost.Api.Services;
 
 public interface IAppReadinessService
 {

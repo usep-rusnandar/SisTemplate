@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 // Read-model contracts returned by the Administration query/management services. The host's canned
 // fallback factory and endpoints also consume these (one-way: host → this Application layer).

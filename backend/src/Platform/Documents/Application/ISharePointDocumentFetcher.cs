@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Documents.Application;
+namespace SisTemplate.Platform.Documents.Application;
 
 /// <summary>
 /// App-only fetch of a document from SharePoint Online via the Microsoft Graph <c>/shares</c> endpoint.

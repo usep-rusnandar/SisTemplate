@@ -1,11 +1,11 @@
 using System.Text.Json;
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Administration.Domain;
-using IntegratedProcurement.Platform.Persistence;
-using IntegratedProcurement.Platform.Settings.Domain;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Domain;
+using SisTemplate.Platform.Persistence;
+using SisTemplate.Platform.Settings.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 public sealed class AdminConsoleConfigurationService : IAdminConsoleConfigurationService
 {

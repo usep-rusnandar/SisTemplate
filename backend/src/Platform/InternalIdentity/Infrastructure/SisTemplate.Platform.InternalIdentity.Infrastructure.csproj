@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Infrastructure\SisTemplate.BuildingBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="..\Application\SisTemplate.Platform.InternalIdentity.Application.csproj" />
+    <ProjectReference Include="..\Domain\SisTemplate.Platform.InternalIdentity.Domain.csproj" />
+    <ProjectReference Include="..\..\Administration\Application\SisTemplate.Platform.Administration.Application.csproj" />
+    <ProjectReference Include="..\..\Audit\Application\SisTemplate.Platform.Audit.Application.csproj" />
+    <ProjectReference Include="..\..\Persistence\SisTemplate.Platform.Persistence.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

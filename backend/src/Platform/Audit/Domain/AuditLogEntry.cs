@@ -1,6 +1,6 @@
-using IntegratedProcurement.BuildingBlocks.Domain.Entities;
+using SisTemplate.BuildingBlocks.Domain.Entities;
 
-namespace IntegratedProcurement.Platform.Audit.Domain;
+namespace SisTemplate.Platform.Audit.Domain;
 
 public sealed class AuditLogEntry : Entity
 {

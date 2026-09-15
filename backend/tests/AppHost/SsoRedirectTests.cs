@@ -1,9 +1,9 @@
-using IntegratedProcurement.Platform.InternalIdentity.Application.Sso;
-using IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Sso;
+using SisTemplate.Platform.InternalIdentity.Application.Sso;
+using SisTemplate.Platform.InternalIdentity.Infrastructure.Sso;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 /// <summary>
 /// Pure unit tests for per-host SISWarrior <c>redirectUrl</c> resolution. No database.

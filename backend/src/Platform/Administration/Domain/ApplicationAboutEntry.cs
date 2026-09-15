@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Administration.Domain;
+namespace SisTemplate.Platform.Administration.Domain;
 
 /// <summary>
 /// Single-document store for the About Application payload (bilingual JSON).

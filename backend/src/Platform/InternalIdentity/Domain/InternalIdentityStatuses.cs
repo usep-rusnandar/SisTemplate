@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.InternalIdentity.Domain;
+namespace SisTemplate.Platform.InternalIdentity.Domain;
 
 public static class InternalIdentityStatuses
 {

@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Identity" />
+    <PackageReference Include="Azure.Storage.Blobs" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" />
+    <PackageReference Include="Microsoft.OpenApi" />
+  </ItemGroup>
+
+  <Target Name="PublishInternalFrontend" AfterTargets="ComputeFilesToPublish" Condition="Exists('..\..\..\frontend\dist\internal')">
+    <ItemGroup>
+      <_InternalFrontendFiles Include="..\..\..\frontend\dist\internal\**" />
+      <ResolvedFileToPublish Include="@(_InternalFrontendFiles)">
+        <RelativePath>wwwroot\%(RecursiveDir)%(Filename)%(Extension)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BuildingBlocks\Application\SisTemplate.BuildingBlocks.Application.csproj" />
+    <ProjectReference Include="..\BuildingBlocks\Infrastructure\SisTemplate.BuildingBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="..\Platform\Administration\Application\SisTemplate.Platform.Administration.Application.csproj" />
+    <ProjectReference Include="..\Platform\Administration\Infrastructure\SisTemplate.Platform.Administration.Infrastructure.csproj" />
+    <ProjectReference Include="..\Platform\Audit\Application\SisTemplate.Platform.Audit.Application.csproj" />
+    <ProjectReference Include="..\Platform\Audit\Infrastructure\SisTemplate.Platform.Audit.Infrastructure.csproj" />
+    <ProjectReference Include="..\Platform\Documents\Application\SisTemplate.Platform.Documents.Application.csproj" />
+    <ProjectReference Include="..\Platform\Documents\Infrastructure\SisTemplate.Platform.Documents.Infrastructure.csproj" />
+    <ProjectReference Include="..\Platform\InternalIdentity\Application\SisTemplate.Platform.InternalIdentity.Application.csproj" />
+    <ProjectReference Include="..\Platform\InternalIdentity\Infrastructure\SisTemplate.Platform.InternalIdentity.Infrastructure.csproj" />
+    <ProjectReference Include="..\Platform\Notifications\Application\SisTemplate.Platform.Notifications.Application.csproj" />
+    <ProjectReference Include="..\Platform\Notifications\Infrastructure\SisTemplate.Platform.Notifications.Infrastructure.csproj" />
+    <ProjectReference Include="..\Platform\Settings\Application\SisTemplate.Platform.Settings.Application.csproj" />
+    <ProjectReference Include="..\Platform\Settings\Infrastructure\SisTemplate.Platform.Settings.Infrastructure.csproj" />
+    <ProjectReference Include="..\Platform\Persistence\SisTemplate.Platform.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="SisTemplate.AppHost.Api.IntegrationTests" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <UseAppHost>false</UseAppHost>
+  </PropertyGroup>
+
+</Project>

@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegratedProcurement.Platform.Persistence.FrontendState;
+namespace SisTemplate.Platform.Persistence.FrontendState;
 
 public sealed class FrontendStateStore
 {

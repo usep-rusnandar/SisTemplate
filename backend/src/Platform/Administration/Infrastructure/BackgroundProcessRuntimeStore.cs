@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
-using IntegratedProcurement.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Application;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 /// <summary>Process-wide last/next/error bag for hosted loops that do not already own a coordinator.</summary>
 public sealed class BackgroundProcessRuntimeStore : IBackgroundProcessRuntime

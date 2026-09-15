@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 internal static class SettingsValueReader
 {

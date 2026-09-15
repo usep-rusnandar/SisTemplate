@@ -1,6 +1,6 @@
-using IntegratedProcurement.BuildingBlocks.Domain.Events;
+using SisTemplate.BuildingBlocks.Domain.Events;
 
-namespace IntegratedProcurement.BuildingBlocks.Domain.Entities;
+namespace SisTemplate.BuildingBlocks.Domain.Entities;
 
 public abstract class Entity
 {

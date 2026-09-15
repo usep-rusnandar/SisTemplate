@@ -1,16 +1,16 @@
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
-using IntegratedProcurement.BuildingBlocks.Domain.Entities;
-using IntegratedProcurement.BuildingBlocks.Domain.Events;
-using IntegratedProcurement.Platform.Administration.Domain;
-using IntegratedProcurement.Platform.Audit.Domain;
-using IntegratedProcurement.Platform.InternalIdentity.Domain;
-using IntegratedProcurement.Platform.Notifications.Domain;
-using IntegratedProcurement.Platform.Persistence.FrontendState;
-using IntegratedProcurement.Platform.Persistence.ModuleState;
-using IntegratedProcurement.Platform.Settings.Domain;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
+using SisTemplate.BuildingBlocks.Domain.Entities;
+using SisTemplate.BuildingBlocks.Domain.Events;
+using SisTemplate.Platform.Administration.Domain;
+using SisTemplate.Platform.Audit.Domain;
+using SisTemplate.Platform.InternalIdentity.Domain;
+using SisTemplate.Platform.Notifications.Domain;
+using SisTemplate.Platform.Persistence.FrontendState;
+using SisTemplate.Platform.Persistence.ModuleState;
+using SisTemplate.Platform.Settings.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegratedProcurement.Platform.Persistence;
+namespace SisTemplate.Platform.Persistence;
 
 public sealed class ProcurementDbContext : DbContext
 {

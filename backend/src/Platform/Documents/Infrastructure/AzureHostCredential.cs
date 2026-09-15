@@ -3,9 +3,9 @@ using System.Text;
 using System.Text.Json;
 using Azure.Core;
 using Azure.Identity;
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Application;
 
-namespace IntegratedProcurement.Platform.Documents.Infrastructure;
+namespace SisTemplate.Platform.Documents.Infrastructure;
 
 /// <summary>
 /// App Service / IIS credential picker for Blob and SharePoint.
@@ -106,7 +106,7 @@ public static class AzureHostCredential
     {
         var detail = Flatten(ex);
         return "SharePoint authentication failed. This App Service slot needs either "
-            + "SharePoint__ClientSecret (App Registration IntegratedProcurement-SharePoint, same as Development) "
+            + "SharePoint__ClientSecret (App Registration SisTemplate-SharePoint, same as Development) "
             + "or a Managed Identity on the slot with Graph Sites.Read.All / Sites.Selected. "
             + detail;
     }

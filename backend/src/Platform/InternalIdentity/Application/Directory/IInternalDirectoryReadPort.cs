@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.InternalIdentity.Application.Directory;
+namespace SisTemplate.Platform.InternalIdentity.Application.Directory;
 
 /// <summary>
 /// Producer-published directory of internal users and roles. Other modules read IAM through this

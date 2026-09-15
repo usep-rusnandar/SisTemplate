@@ -1,6 +1,6 @@
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
 
-namespace IntegratedProcurement.BuildingBlocks.Infrastructure.Time;
+namespace SisTemplate.BuildingBlocks.Infrastructure.Time;
 
 public sealed class SystemClock : IClock
 {

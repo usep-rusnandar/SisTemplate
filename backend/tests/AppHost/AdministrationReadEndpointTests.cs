@@ -1,17 +1,17 @@
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
-using IntegratedProcurement.BuildingBlocks.Application;
-using IntegratedProcurement.Platform.InternalIdentity.Domain;
-using IntegratedProcurement.Platform.Persistence;
-using IntegratedProcurement.Platform.Persistence.Seeding;
+using SisTemplate.BuildingBlocks.Application;
+using SisTemplate.Platform.InternalIdentity.Domain;
+using SisTemplate.Platform.Persistence;
+using SisTemplate.Platform.Persistence.Seeding;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 public sealed class AdministrationReadEndpointTests
 {
@@ -545,7 +545,7 @@ public sealed class AdministrationReadEndpointTests
 
         public IsolatedAdministrationApi()
         {
-            var databaseName = $"IntegratedProcurement_AdminReadTests_{Guid.NewGuid():N}";
+            var databaseName = $"SisTemplate_AdminReadTests_{Guid.NewGuid():N}";
             _connectionString = $"Server=(localdb)\\MSSQLLocalDB;Database={databaseName};Trusted_Connection=True;TrustServerCertificate=True";
             _previousConnectionString = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
             Environment.SetEnvironmentVariable("ConnectionStrings__DefaultConnection", _connectionString);
@@ -607,7 +607,7 @@ public sealed class AdministrationReadEndpointTests
         private static void EnsureTestDatabase(ProcurementDbContext dbContext)
         {
             var connectionString = dbContext.Database.GetConnectionString() ?? string.Empty;
-            if (!connectionString.Contains("IntegratedProcurement_AdminReadTests_", StringComparison.OrdinalIgnoreCase))
+            if (!connectionString.Contains("SisTemplate_AdminReadTests_", StringComparison.OrdinalIgnoreCase))
             {
                 throw new InvalidOperationException("Administration read tests must not touch the shared development database.");
             }
@@ -615,7 +615,7 @@ public sealed class AdministrationReadEndpointTests
 
         private void EnsureTestConnectionString()
         {
-            if (!_connectionString.Contains("IntegratedProcurement_AdminReadTests_", StringComparison.OrdinalIgnoreCase))
+            if (!_connectionString.Contains("SisTemplate_AdminReadTests_", StringComparison.OrdinalIgnoreCase))
             {
                 throw new InvalidOperationException("Administration read tests must not touch the shared development database.");
             }

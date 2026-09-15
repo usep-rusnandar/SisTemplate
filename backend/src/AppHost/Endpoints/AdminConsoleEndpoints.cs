@@ -1,18 +1,18 @@
-using IntegratedProcurement.AppHost.Api.ReadModels;
-using IntegratedProcurement.AppHost.Api.Auth;
-using IntegratedProcurement.BuildingBlocks.Application;
-using IntegratedProcurement.AppHost.Api.Services;
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Audit.Application;
-using IntegratedProcurement.Platform.Documents.Application;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Auth;
-using IntegratedProcurement.Platform.Notifications.Application;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.AppHost.Api.ReadModels;
+using SisTemplate.AppHost.Api.Auth;
+using SisTemplate.BuildingBlocks.Application;
+using SisTemplate.AppHost.Api.Services;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Audit.Application;
+using SisTemplate.Platform.Documents.Application;
+using SisTemplate.Platform.InternalIdentity.Application.Auth;
+using SisTemplate.Platform.Notifications.Application;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using System.Text.Json;
 
-namespace IntegratedProcurement.AppHost.Api.Endpoints;
+namespace SisTemplate.AppHost.Api.Endpoints;
 
 public static class AdminConsoleEndpoints
 {

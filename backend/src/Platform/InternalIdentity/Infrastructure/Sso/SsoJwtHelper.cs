@@ -1,7 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
 
-namespace IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Sso;
+namespace SisTemplate.Platform.InternalIdentity.Infrastructure.Sso;
 
 public sealed class SsoJwtHelper : ISsoJwtHelper
 {

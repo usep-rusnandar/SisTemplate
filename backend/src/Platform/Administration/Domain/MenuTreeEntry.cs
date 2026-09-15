@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Administration.Domain;
+namespace SisTemplate.Platform.Administration.Domain;
 
 public sealed class MenuTreeEntry
 {

@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.InternalIdentity.Application.Profiles;
+namespace SisTemplate.Platform.InternalIdentity.Application.Profiles;
 
 public interface IInternalUserProfileReader
 {

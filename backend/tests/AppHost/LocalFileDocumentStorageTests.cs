@@ -1,10 +1,10 @@
-using IntegratedProcurement.Platform.Documents.Application;
-using IntegratedProcurement.Platform.Documents.Infrastructure;
+using SisTemplate.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Infrastructure;
 using Microsoft.Extensions.FileProviders;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 public sealed class LocalFileDocumentStorageTests
 {

@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.BuildingBlocks.Application;
+namespace SisTemplate.BuildingBlocks.Application;
 
 /// <summary>
 /// Western Indonesia Time (WIB, UTC+7, no DST). Timestamps are always STORED as UTC

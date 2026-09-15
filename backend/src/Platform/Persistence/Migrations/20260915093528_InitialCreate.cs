@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace IntegratedProcurement.Platform.Persistence.Migrations
+namespace SisTemplate.Platform.Persistence.Migrations
 {
     /// <inheritdoc />
     public partial class InitialCreate : Migration

@@ -1,10 +1,10 @@
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
-using IntegratedProcurement.BuildingBlocks.Infrastructure.Security;
-using IntegratedProcurement.BuildingBlocks.Infrastructure.Time;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
+using SisTemplate.BuildingBlocks.Infrastructure.Security;
+using SisTemplate.BuildingBlocks.Infrastructure.Time;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IntegratedProcurement.BuildingBlocks.Infrastructure;
+namespace SisTemplate.BuildingBlocks.Infrastructure;
 
 public static class DependencyInjection
 {

@@ -1,7 +1,7 @@
 using System.Globalization;
-using IntegratedProcurement.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Application;
 
-namespace IntegratedProcurement.AppHost.Api.ReadModels;
+namespace SisTemplate.AppHost.Api.ReadModels;
 
 internal static class AdminConsoleReadModels
 {

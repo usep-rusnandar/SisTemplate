@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Sso;
+namespace SisTemplate.Platform.InternalIdentity.Infrastructure.Sso;
 
 public sealed record DecodedSsoJwt(
     string RawToken,

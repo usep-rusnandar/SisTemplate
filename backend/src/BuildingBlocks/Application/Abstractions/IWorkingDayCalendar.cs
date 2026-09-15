@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.BuildingBlocks.Application.Abstractions;
+namespace SisTemplate.BuildingBlocks.Application.Abstractions;
 
 /// <summary>
 /// Working-day arithmetic for SLA math: Saturday/Sunday plus the company holiday calendar are

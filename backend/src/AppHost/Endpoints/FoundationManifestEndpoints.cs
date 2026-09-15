@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.AppHost.Api.Endpoints;
+namespace SisTemplate.AppHost.Api.Endpoints;
 
 public static class FoundationManifestEndpoints
 {

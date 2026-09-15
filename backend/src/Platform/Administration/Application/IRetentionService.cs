@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 public sealed record RetentionResult(int AuditDeleted, int NotificationsDeleted, int NotificationStatesDeleted, int EmailLogsDeleted);
 

@@ -5,14 +5,14 @@ using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Administration.Domain;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Domain;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 /// <summary>
 /// Pulls the Indonesian administrative-region hierarchy from the wilayah.id static API and refreshes the

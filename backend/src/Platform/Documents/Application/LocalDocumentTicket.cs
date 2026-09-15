@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace IntegratedProcurement.Platform.Documents.Application;
+namespace SisTemplate.Platform.Documents.Application;
 
 /// <summary>HMAC tickets for Development local-disk read/write URLs (stand-in for Azure SAS).</summary>
 public static class LocalDocumentTicket

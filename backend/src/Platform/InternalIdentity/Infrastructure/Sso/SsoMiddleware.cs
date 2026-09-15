@@ -1,7 +1,7 @@
 using System.Security.Claims;
-using IntegratedProcurement.BuildingBlocks.Application.Security;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Sso;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.BuildingBlocks.Application.Security;
+using SisTemplate.Platform.InternalIdentity.Application.Sso;
+using SisTemplate.Platform.Persistence;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.EntityFrameworkCore;
@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Sso;
+namespace SisTemplate.Platform.InternalIdentity.Infrastructure.Sso;
 
 public sealed class SsoMiddleware
 {

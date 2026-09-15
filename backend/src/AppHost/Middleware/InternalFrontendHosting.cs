@@ -1,6 +1,6 @@
 using Microsoft.Extensions.FileProviders;
 
-namespace IntegratedProcurement.AppHost.Api.Middleware;
+namespace SisTemplate.AppHost.Api.Middleware;
 
 /// <summary>
 /// Serves the built internal SPA (frontend dist/internal) from this process so the internal app

@@ -1,48 +1,48 @@
 using System.Reflection;
 using NetArchTest.Rules;
 
-namespace IntegratedProcurement.ArchitectureTests;
+namespace SisTemplate.ArchitectureTests;
 
 public sealed class DependencyRuleTests
 {
     private static readonly Assembly BuildingBlocksDomain =
-        typeof(IntegratedProcurement.BuildingBlocks.Domain.Entities.Entity).Assembly;
+        typeof(SisTemplate.BuildingBlocks.Domain.Entities.Entity).Assembly;
     private static readonly Assembly BuildingBlocksApplication =
-        typeof(IntegratedProcurement.BuildingBlocks.Application.Abstractions.ICurrentActor).Assembly;
+        typeof(SisTemplate.BuildingBlocks.Application.Abstractions.ICurrentActor).Assembly;
 
     private static readonly Assembly[] PlatformApplicationAssemblies =
     [
-        typeof(IntegratedProcurement.Platform.Notifications.Application.INotificationService).Assembly,
-        typeof(IntegratedProcurement.Platform.Audit.Application.IAuditTrail).Assembly,
-        typeof(IntegratedProcurement.Platform.Documents.Application.IDocumentStorage).Assembly,
-        typeof(IntegratedProcurement.Platform.Administration.Application.IAdminConsoleConfigurationService).Assembly,
-        typeof(IntegratedProcurement.Platform.InternalIdentity.Application.Access.IInternalUserAccessService).Assembly,
+        typeof(SisTemplate.Platform.Notifications.Application.INotificationService).Assembly,
+        typeof(SisTemplate.Platform.Audit.Application.IAuditTrail).Assembly,
+        typeof(SisTemplate.Platform.Documents.Application.IDocumentStorage).Assembly,
+        typeof(SisTemplate.Platform.Administration.Application.IAdminConsoleConfigurationService).Assembly,
+        typeof(SisTemplate.Platform.InternalIdentity.Application.Access.IInternalUserAccessService).Assembly,
     ];
 
     private static readonly Assembly[] PlatformDomainAssemblies =
     [
-        typeof(IntegratedProcurement.Platform.Notifications.Domain.NotificationEntry).Assembly,
-        typeof(IntegratedProcurement.Platform.Audit.Domain.AuditLogEntry).Assembly,
-        typeof(IntegratedProcurement.Platform.Settings.Domain.SettingEntry).Assembly,
-        typeof(IntegratedProcurement.Platform.Administration.Domain.MenuTreeEntry).Assembly,
-        typeof(IntegratedProcurement.Platform.InternalIdentity.Domain.InternalUser).Assembly,
+        typeof(SisTemplate.Platform.Notifications.Domain.NotificationEntry).Assembly,
+        typeof(SisTemplate.Platform.Audit.Domain.AuditLogEntry).Assembly,
+        typeof(SisTemplate.Platform.Settings.Domain.SettingEntry).Assembly,
+        typeof(SisTemplate.Platform.Administration.Domain.MenuTreeEntry).Assembly,
+        typeof(SisTemplate.Platform.InternalIdentity.Domain.InternalUser).Assembly,
     ];
 
     private static readonly string[] DomainForbidden =
     [
         "Microsoft.EntityFrameworkCore",
         "Microsoft.AspNetCore",
-        "IntegratedProcurement.AppHost",
-        "IntegratedProcurement.Platform.Persistence",
+        "SisTemplate.AppHost",
+        "SisTemplate.Platform.Persistence",
     ];
 
     private static readonly string[] ApplicationForbidden =
     [
         "Microsoft.EntityFrameworkCore",
         "Microsoft.AspNetCore",
-        "IntegratedProcurement.AppHost",
-        "IntegratedProcurement.Platform.Persistence",
-        "IntegratedProcurement.BuildingBlocks.Infrastructure",
+        "SisTemplate.AppHost",
+        "SisTemplate.Platform.Persistence",
+        "SisTemplate.BuildingBlocks.Infrastructure",
     ];
 
     [Fact]
@@ -51,8 +51,8 @@ public sealed class DependencyRuleTests
         AssertAll(PlatformDomainAssemblies,
         [
             .. DomainForbidden,
-            "IntegratedProcurement.BuildingBlocks.Application",
-            "IntegratedProcurement.BuildingBlocks.Infrastructure",
+            "SisTemplate.BuildingBlocks.Application",
+            "SisTemplate.BuildingBlocks.Infrastructure",
         ]);
     }
 
@@ -70,10 +70,10 @@ public sealed class DependencyRuleTests
             .NotHaveDependencyOnAny(
                 "Microsoft.EntityFrameworkCore",
                 "Microsoft.AspNetCore",
-                "IntegratedProcurement.AppHost",
-                "IntegratedProcurement.Platform.Persistence",
-                "IntegratedProcurement.BuildingBlocks.Application",
-                "IntegratedProcurement.BuildingBlocks.Infrastructure")
+                "SisTemplate.AppHost",
+                "SisTemplate.Platform.Persistence",
+                "SisTemplate.BuildingBlocks.Application",
+                "SisTemplate.BuildingBlocks.Infrastructure")
             .GetResult();
 
         Assert.True(result.IsSuccessful, Describe(BuildingBlocksDomain, result));
@@ -86,9 +86,9 @@ public sealed class DependencyRuleTests
             .Should()
             .NotHaveDependencyOnAny(
                 "Microsoft.EntityFrameworkCore",
-                "IntegratedProcurement.AppHost",
-                "IntegratedProcurement.Platform.Persistence",
-                "IntegratedProcurement.BuildingBlocks.Infrastructure")
+                "SisTemplate.AppHost",
+                "SisTemplate.Platform.Persistence",
+                "SisTemplate.BuildingBlocks.Infrastructure")
             .GetResult();
 
         Assert.True(result.IsSuccessful, Describe(BuildingBlocksApplication, result));
@@ -97,13 +97,13 @@ public sealed class DependencyRuleTests
     [Fact]
     public void Persistence_DoesNotImplementPlatformApplicationPorts()
     {
-        var persistence = typeof(IntegratedProcurement.Platform.Persistence.ProcurementDbContext).Assembly;
+        var persistence = typeof(SisTemplate.Platform.Persistence.ProcurementDbContext).Assembly;
         var result = Types.InAssembly(persistence)
             .Should()
             .NotHaveDependencyOnAny(
-                "IntegratedProcurement.Platform.InternalIdentity.Application",
-                "IntegratedProcurement.Platform.Documents.Application",
-                "IntegratedProcurement.Platform.Notifications.Application")
+                "SisTemplate.Platform.InternalIdentity.Application",
+                "SisTemplate.Platform.Documents.Application",
+                "SisTemplate.Platform.Notifications.Application")
             .GetResult();
 
         Assert.True(result.IsSuccessful, Describe(persistence, result));

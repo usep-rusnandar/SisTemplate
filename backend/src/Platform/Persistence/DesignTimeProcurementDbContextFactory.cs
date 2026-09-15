@@ -1,14 +1,15 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 
-namespace IntegratedProcurement.Platform.Persistence;
+namespace SisTemplate.Platform.Persistence;
 
 public sealed class DesignTimeProcurementDbContextFactory
     : IDesignTimeDbContextFactory<ProcurementDbContext>
 {
     public ProcurementDbContext CreateDbContext(string[] args)
     {
-        var connectionString = Environment.GetEnvironmentVariable("INTEGRATED_PROCUREMENT_CONNECTION")
+        var connectionString = Environment.GetEnvironmentVariable("SISTEMPLATE_CONNECTION")
+            ?? Environment.GetEnvironmentVariable("INTEGRATED_PROCUREMENT_CONNECTION")
             ?? "Server=(localdb)\\MSSQLLocalDB;Database=PROCUREMENT_LOCAL;Trusted_Connection=True;TrustServerCertificate=True";
 
         var options = new DbContextOptionsBuilder<ProcurementDbContext>()

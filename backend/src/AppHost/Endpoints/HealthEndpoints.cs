@@ -1,6 +1,6 @@
-using IntegratedProcurement.AppHost.Api.Services;
+using SisTemplate.AppHost.Api.Services;
 
-namespace IntegratedProcurement.AppHost.Api.Endpoints;
+namespace SisTemplate.AppHost.Api.Endpoints;
 
 public static class HealthEndpoints
 {

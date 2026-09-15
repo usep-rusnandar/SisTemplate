@@ -1,14 +1,14 @@
 using System.Net;
 using System.Net.Http.Json;
 using System.Text.Json;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.Persistence;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 public sealed class HealthEndpointTests
 {
@@ -78,14 +78,14 @@ public sealed class HealthEndpointTests
 
         public static IsolatedHealthApi CreateValid()
         {
-            var databaseName = $"IntegratedProcurement_HealthTests_{Guid.NewGuid():N}";
+            var databaseName = $"SisTemplate_HealthTests_{Guid.NewGuid():N}";
             var connectionString = $"Server=(localdb)\\MSSQLLocalDB;Database={databaseName};Trusted_Connection=True;TrustServerCertificate=True";
             return new IsolatedHealthApi(connectionString);
         }
 
         public static IsolatedHealthApi CreateInvalid()
         {
-            var databaseName = $"IntegratedProcurement_HealthTests_Invalid_{Guid.NewGuid():N}";
+            var databaseName = $"SisTemplate_HealthTests_Invalid_{Guid.NewGuid():N}";
             var connectionString = $"Server=127.0.0.1,65001;Database={databaseName};User Id=sa;Password=NotARealPassword123!;TrustServerCertificate=True;Connect Timeout=1";
             return new IsolatedHealthApi(connectionString);
         }

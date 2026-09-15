@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.AppHost.Api.Middleware;
+namespace SisTemplate.AppHost.Api.Middleware;
 
 public sealed class CorrelationIdMiddleware
 {

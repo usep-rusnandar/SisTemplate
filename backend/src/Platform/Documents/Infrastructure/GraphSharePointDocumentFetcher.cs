@@ -4,11 +4,11 @@ using System.Text;
 using System.Text.Json;
 using Azure.Core;
 using Azure.Identity;
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Application;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.Platform.Documents.Infrastructure;
+namespace SisTemplate.Platform.Documents.Infrastructure;
 
 /// <summary>
 /// Microsoft Graph implementation of <see cref="ISharePointDocumentFetcher"/>. Resolves a sharing link to a

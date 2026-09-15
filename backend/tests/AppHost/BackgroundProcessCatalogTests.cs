@@ -1,7 +1,7 @@
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Administration.Infrastructure;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Infrastructure;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 public sealed class BackgroundProcessScheduleTests
 {

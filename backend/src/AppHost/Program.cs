@@ -1,18 +1,18 @@
-using IntegratedProcurement.AppHost.Api.Auth;
-using IntegratedProcurement.AppHost.Api.Endpoints;
-using IntegratedProcurement.AppHost.Api.Middleware;
-using IntegratedProcurement.AppHost.Api.OpenApi;
-using IntegratedProcurement.BuildingBlocks.Application.Security;
-using IntegratedProcurement.BuildingBlocks.Infrastructure;
-using IntegratedProcurement.Platform.Administration.Infrastructure;
-using IntegratedProcurement.Platform.Audit.Infrastructure;
-using IntegratedProcurement.Platform.Documents.Application;
-using IntegratedProcurement.Platform.Documents.Infrastructure;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Sso;
-using IntegratedProcurement.Platform.InternalIdentity.Infrastructure;
-using IntegratedProcurement.Platform.Notifications.Infrastructure;
-using IntegratedProcurement.Platform.Persistence;
-using IntegratedProcurement.Platform.Persistence.Seeding;
+using SisTemplate.AppHost.Api.Auth;
+using SisTemplate.AppHost.Api.Endpoints;
+using SisTemplate.AppHost.Api.Middleware;
+using SisTemplate.AppHost.Api.OpenApi;
+using SisTemplate.BuildingBlocks.Application.Security;
+using SisTemplate.BuildingBlocks.Infrastructure;
+using SisTemplate.Platform.Administration.Infrastructure;
+using SisTemplate.Platform.Audit.Infrastructure;
+using SisTemplate.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Infrastructure;
+using SisTemplate.Platform.InternalIdentity.Application.Sso;
+using SisTemplate.Platform.InternalIdentity.Infrastructure;
+using SisTemplate.Platform.Notifications.Infrastructure;
+using SisTemplate.Platform.Persistence;
+using SisTemplate.Platform.Persistence.Seeding;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Features;
@@ -46,11 +46,11 @@ builder.Services.AddProblemDetails();
 builder.Services.AddBuildingBlocksInfrastructure();
 builder.Services.AddAuditModule();
 builder.Services.AddAdministrationModule();
-builder.Services.Configure<IntegratedProcurement.Platform.Administration.Application.WilayahSyncOptions>(
-    builder.Configuration.GetSection(IntegratedProcurement.Platform.Administration.Application.WilayahSyncOptions.SectionName));
-builder.Services.AddScoped<IntegratedProcurement.AppHost.Api.Services.IAdminConsoleAuditService, IntegratedProcurement.AppHost.Api.Services.AdminConsoleAuditService>();
-builder.Services.AddScoped<IntegratedProcurement.Platform.Persistence.FrontendState.FrontendStateStore>();
-builder.Services.AddScoped<IntegratedProcurement.AppHost.Api.Services.IAppReadinessService, IntegratedProcurement.AppHost.Api.Services.AppReadinessService>();
+builder.Services.Configure<SisTemplate.Platform.Administration.Application.WilayahSyncOptions>(
+    builder.Configuration.GetSection(SisTemplate.Platform.Administration.Application.WilayahSyncOptions.SectionName));
+builder.Services.AddScoped<SisTemplate.AppHost.Api.Services.IAdminConsoleAuditService, SisTemplate.AppHost.Api.Services.AdminConsoleAuditService>();
+builder.Services.AddScoped<SisTemplate.Platform.Persistence.FrontendState.FrontendStateStore>();
+builder.Services.AddScoped<SisTemplate.AppHost.Api.Services.IAppReadinessService, SisTemplate.AppHost.Api.Services.AppReadinessService>();
 builder.Services.AddNotificationsModule();
 builder.Services.AddDocumentsModule(builder.Configuration);
 builder.Services.Configure<SsoOptions>(builder.Configuration.GetSection(SsoOptions.SectionName));
@@ -66,7 +66,7 @@ var ssoSessionIdleTimeout =
     ?? TimeSpan.FromHours(8);
 builder.Services.AddSession(options =>
 {
-    options.Cookie.Name = ".IntegratedProcurement.Session";
+    options.Cookie.Name = ".SisTemplate.Session";
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;
     options.Cookie.SameSite = SameSiteMode.Lax;

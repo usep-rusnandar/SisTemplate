@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.BuildingBlocks.Application;
+namespace SisTemplate.BuildingBlocks.Application;
 
 public static class PermissionKeys
 {

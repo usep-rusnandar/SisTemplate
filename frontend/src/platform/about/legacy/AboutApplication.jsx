@@ -12,10 +12,10 @@ const ABOUT_API = "/api/v1/about";
 const ABOUT_FALLBACK = {
   version: "1.0.0",
   release: "01-SEP-2026",
-  name: { en: "Integrated Procurement", id: "Integrated Procurement" },
+  name: { en: "SisTemplate", id: "SisTemplate" },
   description: {
-    en: "Integrated Procurement is the internal operations platform for PT Saptaindra Sejati / Alamtri. This foundation keeps the reusable shell, permission-driven navigation, administration, notifications, and audit workspace for internal staff in a single Suite experience.",
-    id: "Integrated Procurement adalah platform operasi internal untuk PT Saptaindra Sejati / Alamtri. Fondasi ini mempertahankan shell yang dapat dipakai ulang, navigasi berbasis permission, administrasi, notifikasi, dan ruang kerja audit untuk staf internal dalam satu pengalaman Suite.",
+    en: "SisTemplate is the generic internal application foundation: a reusable shell with permission-driven navigation, administration, notifications, and audit workspace ready as the starting point for new internal apps.",
+    id: "SisTemplate adalah fondasi aplikasi internal generik: shell yang dapat dipakai ulang dengan navigasi berbasis permission, administrasi, notifikasi, dan ruang kerja audit sebagai titik awal untuk aplikasi internal baru.",
   },
   modules: [],
   features: [],

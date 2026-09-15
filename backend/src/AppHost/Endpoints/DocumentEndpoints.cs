@@ -1,13 +1,13 @@
 using System.Text;
-using IntegratedProcurement.AppHost.Api.Auth;
-using IntegratedProcurement.BuildingBlocks.Application;
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
-using IntegratedProcurement.Platform.Documents.Application;
-using IntegratedProcurement.Platform.Documents.Infrastructure;
+using SisTemplate.AppHost.Api.Auth;
+using SisTemplate.BuildingBlocks.Application;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
+using SisTemplate.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.AppHost.Api.Endpoints;
+namespace SisTemplate.AppHost.Api.Endpoints;
 
 /// <summary>
 /// Generic document endpoints. Development stores files on local disk; Staging/Production use Azure

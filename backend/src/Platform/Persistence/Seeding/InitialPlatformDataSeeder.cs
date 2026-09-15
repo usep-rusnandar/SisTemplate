@@ -2,15 +2,15 @@ using System.Reflection;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using IntegratedProcurement.Platform.Administration.Domain;
-using IntegratedProcurement.Platform.Settings.Domain;
+using SisTemplate.Platform.Administration.Domain;
+using SisTemplate.Platform.Settings.Domain;
 
-namespace IntegratedProcurement.Platform.Persistence.Seeding;
+namespace SisTemplate.Platform.Persistence.Seeding;
 
 internal static class EmbeddedSeedDataLoader
 {
     private static readonly Assembly Assembly = typeof(EmbeddedSeedDataLoader).Assembly;
-    private const string Prefix = "IntegratedProcurement.Platform.Persistence.Seeding.SeedData.";
+    private const string Prefix = "SisTemplate.Platform.Persistence.Seeding.SeedData.";
 
     public static string LoadRaw(string fileName)
     {

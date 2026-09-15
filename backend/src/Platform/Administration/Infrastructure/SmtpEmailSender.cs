@@ -4,12 +4,12 @@ using System.Net.Http;
 using System.Net.Mail;
 using System.Text;
 using System.Text.Json;
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Administration.Domain;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Domain;
+using SisTemplate.Platform.Persistence;
 using Microsoft.Extensions.Logging;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 public sealed class SmtpEmailSender : IEmailSender
 {

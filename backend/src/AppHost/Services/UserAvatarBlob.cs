@@ -1,7 +1,7 @@
-using IntegratedProcurement.AppHost.Api.Endpoints;
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.AppHost.Api.Endpoints;
+using SisTemplate.Platform.Documents.Application;
 
-namespace IntegratedProcurement.AppHost.Api.Services;
+namespace SisTemplate.AppHost.Api.Services;
 
 /// <summary>
 /// Shared blob layout for internal-user avatars (own-account /auth/avatar and admin Users).

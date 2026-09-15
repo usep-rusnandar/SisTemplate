@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Audit.Application;
+namespace SisTemplate.Platform.Audit.Application;
 
 /// <summary>
 /// Platform audit-trail service: appends audit entries and reads the recent log. The interface takes

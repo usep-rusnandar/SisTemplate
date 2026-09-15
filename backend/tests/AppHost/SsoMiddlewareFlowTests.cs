@@ -2,7 +2,7 @@ using System.Net;
 using System.Net.Http.Json;
 using System.Text;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 /// <summary>
 /// Exercises the SISWarrior <c>SsoMiddleware</c> flow end-to-end with <c>SSO:Enabled=true</c>:
@@ -53,7 +53,7 @@ public sealed class SsoMiddlewareFlowTests : IClassFixture<SsoEnabledApiFixture>
         var location = response.Headers.Location?.ToString();
         Assert.NotNull(location);
         Assert.StartsWith(SsoEnabledApiFixture.SsoUrl, location);
-        Assert.Contains("application=IntegratedProcurement", location);
+        Assert.Contains("application=SisTemplate", location);
         Assert.Contains(Uri.EscapeDataString(SsoEnabledApiFixture.ApplicationUrl), location);
     }
 

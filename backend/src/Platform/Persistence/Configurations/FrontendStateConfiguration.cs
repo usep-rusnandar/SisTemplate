@@ -1,8 +1,8 @@
-using IntegratedProcurement.Platform.Persistence.FrontendState;
+using SisTemplate.Platform.Persistence.FrontendState;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace IntegratedProcurement.Platform.Persistence.Configurations;
+namespace SisTemplate.Platform.Persistence.Configurations;
 
 public sealed class FrontendStateConfiguration : IEntityTypeConfiguration<FrontendStateEntry>
 {

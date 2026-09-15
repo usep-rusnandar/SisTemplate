@@ -13,7 +13,7 @@ import { PasswordField } from "../../account/legacy/AccountModals.jsx";
 const AUTH_PORTAL_COPY = {
   suite: {
     en: {
-      eyebrow: "Integrated Procurement Platform",
+      eyebrow: "SisTemplate Platform",
       headline: "One internal workspace for secure operations.",
       body: "Sign in to the reusable internal shell with permission-driven navigation, administration, notifications, and audit tools.",
       facts: [
@@ -26,7 +26,7 @@ const AUTH_PORTAL_COPY = {
       footer: "Staff-only access. Sign in with your local password, or continue with SSO when it is enabled.",
     },
     id: {
-      eyebrow: "Platform Pengadaan Terpadu",
+      eyebrow: "Platform SisTemplate",
       headline: "Satu ruang kerja internal untuk operasi yang aman.",
       body: "Masuk ke shell internal yang dapat dipakai ulang dengan navigasi berbasis permission, administrasi, notifikasi, dan audit.",
       facts: [

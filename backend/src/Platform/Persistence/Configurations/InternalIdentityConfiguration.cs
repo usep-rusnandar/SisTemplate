@@ -1,8 +1,8 @@
-using IntegratedProcurement.Platform.InternalIdentity.Domain;
+using SisTemplate.Platform.InternalIdentity.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace IntegratedProcurement.Platform.Persistence.Configurations;
+namespace SisTemplate.Platform.Persistence.Configurations;
 
 public sealed class InternalUserConfiguration : IEntityTypeConfiguration<InternalUser>
 {

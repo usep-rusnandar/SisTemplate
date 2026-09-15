@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Notifications.Application;
+namespace SisTemplate.Platform.Notifications.Application;
 
 public interface INotificationService
 {

@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Persistence.ModuleState;
+namespace SisTemplate.Platform.Persistence.ModuleState;
 
 public sealed class ModuleStateEntry
 {

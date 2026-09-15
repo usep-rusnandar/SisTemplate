@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// Reads and writes administration configuration: the internal menu tree and the Super Admin settings

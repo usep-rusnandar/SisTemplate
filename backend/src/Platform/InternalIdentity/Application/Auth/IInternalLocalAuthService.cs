@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.InternalIdentity.Application.Auth;
+namespace SisTemplate.Platform.InternalIdentity.Application.Auth;
 
 public interface IInternalLocalAuthService
 {

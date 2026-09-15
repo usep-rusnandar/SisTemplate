@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.BuildingBlocks.Domain.Entities;
+namespace SisTemplate.BuildingBlocks.Domain.Entities;
 
 public abstract class SoftDeleteEntity : AuditableEntity
 {
