@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+    <PackageReference Include="ClosedXML" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" />
+    <ProjectReference Include="..\..\..\BuildingBlocks\Infrastructure\IntegratedProcurement.BuildingBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="..\Application\IntegratedProcurement.Modules.VendorOnboarding.Application.csproj" />
+    <ProjectReference Include="..\Domain\IntegratedProcurement.Modules.VendorOnboarding.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Platform\Administration\Application\IntegratedProcurement.Platform.Administration.Application.csproj" />
+    <ProjectReference Include="..\..\..\Platform\InternalIdentity\Application\IntegratedProcurement.Platform.InternalIdentity.Application.csproj" />
+    <ProjectReference Include="..\..\..\Platform\Persistence\IntegratedProcurement.Platform.Persistence.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

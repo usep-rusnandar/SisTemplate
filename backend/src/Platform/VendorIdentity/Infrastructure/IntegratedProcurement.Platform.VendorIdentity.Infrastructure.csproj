@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Infrastructure\IntegratedProcurement.BuildingBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="..\Application\IntegratedProcurement.Platform.VendorIdentity.Application.csproj" />
+    <ProjectReference Include="..\..\Administration\Application\IntegratedProcurement.Platform.Administration.Application.csproj" />
+    <ProjectReference Include="..\..\Audit\Application\IntegratedProcurement.Platform.Audit.Application.csproj" />
+    <ProjectReference Include="..\..\Persistence\IntegratedProcurement.Platform.Persistence.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

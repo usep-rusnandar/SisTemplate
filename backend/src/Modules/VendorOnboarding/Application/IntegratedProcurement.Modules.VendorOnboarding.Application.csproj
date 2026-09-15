@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\BuildingBlocks\Application\IntegratedProcurement.BuildingBlocks.Application.csproj" />
+    <ProjectReference Include="..\Domain\IntegratedProcurement.Modules.VendorOnboarding.Domain.csproj" />
+    <ProjectReference Include="..\..\..\Platform\Documents\Application\IntegratedProcurement.Platform.Documents.Application.csproj" />
+    <ProjectReference Include="..\..\..\Platform\VendorIdentity\Application\IntegratedProcurement.Platform.VendorIdentity.Application.csproj" />
+    <ProjectReference Include="..\..\..\Platform\Notifications\Application\IntegratedProcurement.Platform.Notifications.Application.csproj" />
+    <ProjectReference Include="..\..\..\Platform\Audit\Application\IntegratedProcurement.Platform.Audit.Application.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
