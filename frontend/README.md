@@ -1,43 +1,33 @@
 # Integrated Procurement MockupVite
 
-React + Vite + TypeScript host for the accepted `Mockup/project` application.
+React + Vite + TypeScript host for the internal frontend foundation.
 
-The goal of this folder is feature and workflow parity with the legacy mockup while moving the source into the Phase 1 frontend structure:
+This workspace now keeps only the reusable internal shell and platform/admin surfaces:
 
 ```text
 src/
   app/
   platform/
   shared/
-  modules/
-    vendor-onboarding/
-    vendor-workspace/
-    proposal-tracker/
-    contract-initiation-platform/
-    contract-monitoring/
 ```
+
+Procurement-specific module portals and their legacy HTML entry points were removed so `index.html` is the single Vite entry. Branding strings remain unchanged for the separate rebrand pass.
 
 ## Commands
 
 ```bash
-npm install
+npm ci
 npm run dev
 npm run build
 npm run lint
 ```
 
-`npm run sync:mockup` copies the legacy mockup source, assets, and fonts from `../Mockup/project` into the modular `src/` and `public/` folders. It also regenerates the internal and vendor legacy module manifests.
+`npm run sync:mockup` still mirrors the accepted mockup assets into this folder when needed.
 
-`predev` and `prebuild` run the sync automatically.
+## Entry Point
 
-## Entry Points
+`index.html` boots the internal SPA shell.
 
-`index.html` boots the internal enterprise admin portal.
+## Notes
 
-`vendor.html` boots the external Vendor Workspace portal.
-
-## Parity Strategy
-
-The accepted mockup files are preserved as `legacy/*.jsx` under the new module boundaries. TypeScript bootstrap files in `src/app/bootstrap` load them in the same order as the original static HTML pages and expose React, ReactDOM, and lucide as browser globals.
-
-This keeps UI, wording, localStorage behavior, and workflow transitions as close as possible to the original while establishing the target Vite/TypeScript structure for incremental production migration.
+The remaining app keeps the legacy React runtime-Babel patterns where required, but the build now emits only the internal bundle.
