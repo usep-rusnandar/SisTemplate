@@ -249,10 +249,9 @@ public sealed class SsoMiddleware
             || path.StartsWithSegments("/openapi", StringComparison.OrdinalIgnoreCase)
             || path.StartsWithSegments("/swagger", StringComparison.OrdinalIgnoreCase)
             || path.StartsWithSegments("/scalar", StringComparison.OrdinalIgnoreCase)
-            || path.StartsWithSegments("/api/v1/vendor", StringComparison.OrdinalIgnoreCase)
             || path.StartsWithSegments("/favicon.ico", StringComparison.OrdinalIgnoreCase)
             // The extension bypass targets static frontend assets only; API routes may carry
-            // dotted segments (e.g. frontend-state keys such as "cip.workflow.sticky-case")
+            // dotted segments (e.g. frontend-state keys such as "app.workflow.sticky-case")
             // and still need the internal principal attached.
             || (!path.StartsWithSegments("/api", StringComparison.OrdinalIgnoreCase)
                 && Path.HasExtension(path.Value));

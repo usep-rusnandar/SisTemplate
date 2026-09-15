@@ -18,7 +18,6 @@ public static class AdministrationModule
         services.AddScoped<IAdminConsoleAccessScope, AdminConsoleAccessScopeService>();
         services.AddScoped<IAdminConsoleIdentityReadService, AdminConsoleIdentityReadService>();
         services.AddScoped<IAdminConsoleMasterDataService, AdminConsoleMasterDataService>();
-        services.AddScoped<IBrandMasterImportService, BrandMasterImportService>();
         services.AddScoped<IAdminConsoleUserManagementService, AdminConsoleUserManagementService>();
         // Holiday-aware working-day math, shared by every module that measures an SLA.
         services.AddScoped<IWorkingDayCalendarProvider, HolidayWorkingDayCalendarProvider>();

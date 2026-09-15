@@ -31,11 +31,11 @@ public sealed class SsoMiddlewareFlowTests : IClassFixture<SsoEnabledApiFixture>
         using var client = NoRedirectClient();
         using var users = await client.GetAsync("/api/v1/administration/users");
         using var sample = await client.PostAsJsonAsync(
-            "/api/v1/proposal-tracker/sample-data",
-            new { items = Array.Empty<object>() });
+            "/api/v1/super-admin/settings/test-email",
+            new { module = "users" });
         using var storage = await client.PutAsJsonAsync(
-            "/api/v1/proposal-tracker/storage/item?key=ag_tracker_probe",
-            new { value = "x" });
+            "/api/v1/super-admin/settings",
+            new { });
 
         Assert.Equal(HttpStatusCode.Unauthorized, users.StatusCode);
         Assert.Equal(HttpStatusCode.Unauthorized, sample.StatusCode);
@@ -47,7 +47,7 @@ public sealed class SsoMiddlewareFlowTests : IClassFixture<SsoEnabledApiFixture>
     public async Task AnonymousDocumentRequestRedirectsToSisWarrior()
     {
         using var client = NoRedirectClient();
-        using var response = await client.GetAsync("/proposal-tracker/proposals");
+        using var response = await client.GetAsync("/administration/users");
 
         Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
         var location = response.Headers.Location?.ToString();

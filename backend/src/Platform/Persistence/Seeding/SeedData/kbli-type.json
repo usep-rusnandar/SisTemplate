@@ -1,7 +1,0 @@
-[
-  { "KbliTypeId": "0OL", "KbliTypeDesc": "OSS Versi Lama" },
-  { "KbliTypeId": "1RH", "KbliTypeDesc": "Rendah" },
-  { "KbliTypeId": "2MR", "KbliTypeDesc": "Menengah Rendah" },
-  { "KbliTypeId": "3MT", "KbliTypeDesc": "Menengah Tinggi" },
-  { "KbliTypeId": "4TI", "KbliTypeDesc": "Tinggi" }
-]

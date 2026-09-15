@@ -1,4 +1,3 @@
-using IntegratedProcurement.Modules.ProposalTracker.Application;
 using IntegratedProcurement.Platform.Persistence;
 using IntegratedProcurement.Platform.Persistence.Seeding;
 using Microsoft.AspNetCore.Hosting;
@@ -18,32 +17,23 @@ public sealed class IsolatedApiFixture : IAsyncLifetime
 {
     private readonly string _connectionString;
     private readonly string? _previousConnectionString;
-    private readonly string? _previousEproposalConnection;
 
     public IsolatedApiFixture()
     {
         var databaseName = $"IntegratedProcurement_InternalApiTests_{Guid.NewGuid():N}";
         _connectionString = $"Server=(localdb)\\MSSQLLocalDB;Database={databaseName};Trusted_Connection=True;TrustServerCertificate=True";
         _previousConnectionString = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
-        _previousEproposalConnection = Environment.GetEnvironmentVariable("ConnectionStrings__EproposalConnection");
         Environment.SetEnvironmentVariable("ConnectionStrings__DefaultConnection", _connectionString);
-        Environment.SetEnvironmentVariable("ConnectionStrings__EproposalConnection", string.Empty);
 
         Factory = new WebApplicationFactory<Program>()
             .WithWebHostBuilder(builder =>
             {
                 builder.UseSetting("ConnectionStrings:DefaultConnection", _connectionString);
-                builder.UseSetting("ConnectionStrings:EproposalConnection", string.Empty);
-                builder.ConfigureServices(services =>
-                {
-                    services.AddSingleton(new EproposalIngestionOptions(null));
-                });
                 builder.ConfigureAppConfiguration((_, configuration) =>
                 {
                     configuration.AddInMemoryCollection(new Dictionary<string, string?>
                     {
                         ["ConnectionStrings:DefaultConnection"] = _connectionString,
-                        ["ConnectionStrings:EproposalConnection"] = string.Empty,
                         ["DataSeeding:SeedInitialIam"] = "false",
                         ["DataSeeding:SeedInitialPlatformData"] = "false",
                         ["SSO:Enabled"] = "false",
@@ -84,7 +74,6 @@ public sealed class IsolatedApiFixture : IAsyncLifetime
 
         await Factory.DisposeAsync();
         Environment.SetEnvironmentVariable("ConnectionStrings__DefaultConnection", _previousConnectionString);
-        Environment.SetEnvironmentVariable("ConnectionStrings__EproposalConnection", _previousEproposalConnection);
     }
 
     private static void EnsureTestDatabase(ProcurementDbContext dbContext)

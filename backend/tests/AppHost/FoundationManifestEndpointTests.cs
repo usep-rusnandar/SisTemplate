@@ -26,9 +26,9 @@ public sealed class FoundationManifestEndpointTests : IClassFixture<IsolatedApiF
 
         var payload = await response.Content.ReadFromJsonAsync<FoundationManifestResponse>();
         Assert.NotNull(payload);
-        Assert.Contains(payload.Modules, module => module.Key == "proposalTracker" && module.Route == "/proposal-tracker");
-        Assert.Contains(payload.Modules, module => module.Key == "contractInitiationPlatform");
-        Assert.Contains(payload.Modules, module => module.Key == "contractMonitoring");
+        Assert.Contains(payload.Modules, module => module.Key == "administration" && module.Route == "/administration");
+        Assert.Contains(payload.Modules, module => module.Key == "masterData" && module.Route == "/master-data");
+        Assert.Contains(payload.Modules, module => module.Key == "superAdmin" && module.Route == "/super-admin");
     }
 
     // Naming-convention guard: module keys are camelCase (identifier), routes are kebab-case (URL).
@@ -56,20 +56,15 @@ public sealed class FoundationManifestEndpointTests : IClassFixture<IsolatedApiF
         var db = scope.ServiceProvider.GetRequiredService<ProcurementDbContext>();
 
         Assert.True(await db.MasterDataRecords.CountAsync(r => r.SetKey == "province") >= 30);
-        Assert.True(await db.MasterDataRecords.CountAsync(r => r.SetKey == "brand") >= 300);
-        Assert.True(await db.MasterDataRecords.CountAsync(r => r.SetKey == "kbli") >= 400);
         Assert.True(await db.MasterDataRecords.CountAsync(r => r.SetKey == "country") >= 190);
-        // Structured reference data also moved to backend master-data sets.
         Assert.True(await db.MasterDataRecords.CountAsync(r => r.SetKey == "holiday") >= 19);
-        Assert.True(await db.MasterDataRecords.CountAsync(r => r.SetKey == "tracker-step") >= 8);
-        Assert.True(await db.MasterDataRecords.CountAsync(r => r.SetKey == "distributor-type") >= 4);
-        Assert.True(await db.MasterDataSets.CountAsync() >= 18);
+        Assert.True(await db.MasterDataSets.CountAsync() >= 6);
 
         // Config seed (settings/languages/language-text/email-templates) also moved to backend embedded JSON.
-        Assert.True(await db.Settings.CountAsync() >= 20);
+        Assert.True(await db.Settings.CountAsync() >= 5);
         Assert.True(await db.Languages.CountAsync() >= 2);
-        Assert.True(await db.LanguageTextEntries.CountAsync() >= 20);
-        Assert.True(await db.EmailTemplates.CountAsync() >= 15);
+        Assert.True(await db.LanguageTextEntries.CountAsync() >= 5);
+        Assert.True(await db.EmailTemplates.CountAsync() >= 1);
     }
 
     private sealed record FoundationManifestResponse(IReadOnlyCollection<FoundationModule> Modules);

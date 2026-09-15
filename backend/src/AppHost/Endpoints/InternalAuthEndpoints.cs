@@ -413,30 +413,9 @@ public static class InternalAuthEndpoints
 
     private static IResult? DenyIfPortalUnauthorized(HttpContext httpContext, IEnumerable<string>? permissions)
     {
-        if (!httpContext.Request.Headers.TryGetValue(PortalModuleAccess.HeaderName, out var raw))
-        {
-            return null;
-        }
-
-        var moduleKey = PortalModuleAccess.ResolveGatedModuleKey(raw.ToString());
-        if (moduleKey is null)
-        {
-            return null;
-        }
-
-        if (PortalModuleAccess.HasAccess(permissions, moduleKey))
-        {
-            return null;
-        }
-
-        return Results.Json(
-            new
-            {
-                code = "module_access_denied",
-                module = moduleKey,
-                title = PortalModuleAccess.DeniedTitle(moduleKey),
-            },
-            statusCode: StatusCodes.Status403Forbidden);
+        _ = httpContext;
+        _ = permissions;
+        return null;
     }
 
     private static void ClearInternalSession(HttpContext httpContext)

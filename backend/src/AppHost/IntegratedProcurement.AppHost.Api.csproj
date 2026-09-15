@@ -9,20 +9,9 @@
     </PackageReference>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
     <PackageReference Include="Microsoft.Extensions.Caching.SqlServer" />
-    <!-- Direct pin: lifts transitive Microsoft.OpenApi 2.0.0 (GHSA-v5pm-xwqc-g5wc) to the patched 2.0.1. -->
     <PackageReference Include="Microsoft.OpenApi" />
-    <PackageReference Include="QuestPDF" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Content Include="ContractTemplates\**\*.docx" CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
-
-  <!-- One-deployment packaging: `dotnet publish` carries the built internal SPA (when present)
-       into wwwroot, where InternalFrontendHosting serves it. Build it first:
-       cd ../../../frontend && npm run build:internal. The external vendor artifact is
-       intentionally excluded — it deploys separately. Implemented as a publish-only target
-       (not Content items) so the Web SDK's static-web-assets pipeline stays untouched. -->
   <Target Name="PublishInternalFrontend" AfterTargets="ComputeFilesToPublish" Condition="Exists('..\..\..\frontend\dist\internal')">
     <ItemGroup>
       <_InternalFrontendFiles Include="..\..\..\frontend\dist\internal\**" />
@@ -48,16 +37,6 @@
     <ProjectReference Include="..\Platform\Notifications\Infrastructure\IntegratedProcurement.Platform.Notifications.Infrastructure.csproj" />
     <ProjectReference Include="..\Platform\Settings\Application\IntegratedProcurement.Platform.Settings.Application.csproj" />
     <ProjectReference Include="..\Platform\Settings\Infrastructure\IntegratedProcurement.Platform.Settings.Infrastructure.csproj" />
-    <ProjectReference Include="..\Platform\VendorIdentity\Application\IntegratedProcurement.Platform.VendorIdentity.Application.csproj" />
-    <ProjectReference Include="..\Platform\VendorIdentity\Infrastructure\IntegratedProcurement.Platform.VendorIdentity.Infrastructure.csproj" />
-    <ProjectReference Include="..\Modules\ContractInitiationPlatform\Application\IntegratedProcurement.Modules.ContractInitiationPlatform.Application.csproj" />
-    <ProjectReference Include="..\Modules\ContractInitiationPlatform\Infrastructure\IntegratedProcurement.Modules.ContractInitiationPlatform.Infrastructure.csproj" />
-    <ProjectReference Include="..\Modules\ContractMonitoring\Application\IntegratedProcurement.Modules.ContractMonitoring.Application.csproj" />
-    <ProjectReference Include="..\Modules\ContractMonitoring\Infrastructure\IntegratedProcurement.Modules.ContractMonitoring.Infrastructure.csproj" />
-    <ProjectReference Include="..\Modules\ProposalTracker\Application\IntegratedProcurement.Modules.ProposalTracker.Application.csproj" />
-    <ProjectReference Include="..\Modules\ProposalTracker\Infrastructure\IntegratedProcurement.Modules.ProposalTracker.Infrastructure.csproj" />
-    <ProjectReference Include="..\Modules\VendorOnboarding\Application\IntegratedProcurement.Modules.VendorOnboarding.Application.csproj" />
-    <ProjectReference Include="..\Modules\VendorOnboarding\Infrastructure\IntegratedProcurement.Modules.VendorOnboarding.Infrastructure.csproj" />
     <ProjectReference Include="..\Platform\Persistence\IntegratedProcurement.Platform.Persistence.csproj" />
   </ItemGroup>
 
@@ -71,11 +50,6 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <!-- Dev-only: launch via `dotnet <dll>` instead of the native apphost .exe. On locked-down
-       Windows (Enterprise AppLocker/EDR) executing the unsigned bin\...\AppHost.Api.exe fails with
-       "Access is denied", breaking `dotnet run` / `npm run serve`; the signed dotnet.exe host is
-       allowed. Release builds / `dotnet publish` still produce the apphost (Azure App Service runs
-       the DLL regardless). -->
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <UseAppHost>false</UseAppHost>
   </PropertyGroup>

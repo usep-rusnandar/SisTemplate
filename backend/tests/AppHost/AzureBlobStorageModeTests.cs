@@ -20,9 +20,6 @@ public sealed class AzureBlobStorageModeTests
     [Fact]
     public void DefaultContainersCoverEveryModule()
     {
-        Assert.Equal("app-proposaltracker", AzureBlobStorageMode.DefaultContainers["proposalTracker"]);
-        Assert.Equal("app-contractmanagement", AzureBlobStorageMode.DefaultContainers["contractInitiationPlatform"]);
-        Assert.Equal("app-vendormanagement", AzureBlobStorageMode.DefaultContainers["vendorOnboarding"]);
         Assert.Equal("app-platform-users", AzureBlobStorageMode.DefaultContainers["platformUser"]);
     }
 }

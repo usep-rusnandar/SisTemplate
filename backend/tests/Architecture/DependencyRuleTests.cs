@@ -3,35 +3,12 @@ using NetArchTest.Rules;
 
 namespace IntegratedProcurement.ArchitectureTests;
 
-/// <summary>
-/// Enforces Clean Architecture dependency rules across the modular monolith. These guardrails lock in
-/// the inward dependency flow (Domain ← Application ← Infrastructure ← Host) and module isolation
-/// (modules talk only through published Application contracts, never another module's Infrastructure).
-/// See docs/REFACTORING_PLAN_CLEAN_ARCHITECTURE.md.
-/// </summary>
 public sealed class DependencyRuleTests
 {
-    // A representative type per layer assembly (NetArchTest inspects the whole assembly).
     private static readonly Assembly BuildingBlocksDomain =
         typeof(IntegratedProcurement.BuildingBlocks.Domain.Entities.Entity).Assembly;
     private static readonly Assembly BuildingBlocksApplication =
         typeof(IntegratedProcurement.BuildingBlocks.Application.Abstractions.ICurrentActor).Assembly;
-
-    private static readonly Assembly[] ModuleDomainAssemblies =
-    [
-        typeof(IntegratedProcurement.Modules.ProposalTracker.Domain.TrackerProposal).Assembly,
-        typeof(IntegratedProcurement.Modules.ContractMonitoring.Domain.Contract).Assembly,
-        typeof(IntegratedProcurement.Modules.ContractInitiationPlatform.Domain.CipCase).Assembly,
-        typeof(IntegratedProcurement.Modules.VendorOnboarding.Domain.Vendor).Assembly,
-    ];
-
-    private static readonly Assembly[] ModuleApplicationAssemblies =
-    [
-        typeof(IntegratedProcurement.Modules.ProposalTracker.Application.ProposalTrackerService).Assembly,
-        typeof(IntegratedProcurement.Modules.ContractMonitoring.Application.ContractReminderService).Assembly,
-        typeof(IntegratedProcurement.Modules.ContractInitiationPlatform.Application.CipCaseService).Assembly,
-        typeof(IntegratedProcurement.Modules.VendorOnboarding.Application.Invitations.CreateInvitationCommand).Assembly,
-    ];
 
     private static readonly Assembly[] PlatformApplicationAssemblies =
     [
@@ -40,7 +17,6 @@ public sealed class DependencyRuleTests
         typeof(IntegratedProcurement.Platform.Documents.Application.IDocumentStorage).Assembly,
         typeof(IntegratedProcurement.Platform.Administration.Application.IAdminConsoleConfigurationService).Assembly,
         typeof(IntegratedProcurement.Platform.InternalIdentity.Application.Access.IInternalUserAccessService).Assembly,
-        typeof(IntegratedProcurement.Platform.VendorIdentity.Application.IVendorAuthService).Assembly,
     ];
 
     private static readonly Assembly[] PlatformDomainAssemblies =
@@ -52,17 +28,6 @@ public sealed class DependencyRuleTests
         typeof(IntegratedProcurement.Platform.InternalIdentity.Domain.InternalUser).Assembly,
     ];
 
-    // Every module's Infrastructure namespace — no module's Domain/Application may depend on any of
-    // these (their own = dependency-rule violation; another's = module-isolation violation).
-    private static readonly string[] ModuleInfrastructureNamespaces =
-    [
-        "IntegratedProcurement.Modules.ProposalTracker.Infrastructure",
-        "IntegratedProcurement.Modules.ContractMonitoring.Infrastructure",
-        "IntegratedProcurement.Modules.ContractInitiationPlatform.Infrastructure",
-        "IntegratedProcurement.Modules.VendorOnboarding.Infrastructure",
-    ];
-
-    // Things any Domain layer must never depend on.
     private static readonly string[] DomainForbidden =
     [
         "Microsoft.EntityFrameworkCore",
@@ -71,7 +36,6 @@ public sealed class DependencyRuleTests
         "IntegratedProcurement.Platform.Persistence",
     ];
 
-    // Things any Application layer must never depend on (Infrastructure/persistence/web/host).
     private static readonly string[] ApplicationForbidden =
     [
         "Microsoft.EntityFrameworkCore",
@@ -80,20 +44,6 @@ public sealed class DependencyRuleTests
         "IntegratedProcurement.Platform.Persistence",
         "IntegratedProcurement.BuildingBlocks.Infrastructure",
     ];
-
-    [Fact]
-    public void ModuleDomain_DoesNotDependOnInfrastructureFrameworksOrWebHost()
-    {
-        AssertAll(ModuleDomainAssemblies, [.. DomainForbidden, .. ModuleInfrastructureNamespaces]);
-    }
-
-    [Fact]
-    public void ModuleApplication_DoesNotDependOnInfrastructurePersistenceOrWebHost()
-    {
-        // Cross-module reads are allowed only through another module's Application (published port),
-        // never its Infrastructure — that, plus the inward dependency rule, is what this asserts.
-        AssertAll(ModuleApplicationAssemblies, [.. ApplicationForbidden, .. ModuleInfrastructureNamespaces]);
-    }
 
     [Fact]
     public void PlatformDomain_HasNoOutwardDependencies()
@@ -145,18 +95,15 @@ public sealed class DependencyRuleTests
     }
 
     [Fact]
-    public void Persistence_DoesNotImplementModuleApplicationPorts()
+    public void Persistence_DoesNotImplementPlatformApplicationPorts()
     {
         var persistence = typeof(IntegratedProcurement.Platform.Persistence.ProcurementDbContext).Assembly;
         var result = Types.InAssembly(persistence)
             .Should()
             .NotHaveDependencyOnAny(
-                "IntegratedProcurement.Modules.VendorOnboarding.Application",
-                "IntegratedProcurement.Modules.ProposalTracker.Application",
-                "IntegratedProcurement.Modules.ContractInitiationPlatform.Application",
-                "IntegratedProcurement.Modules.ContractMonitoring.Application",
                 "IntegratedProcurement.Platform.InternalIdentity.Application",
-                "IntegratedProcurement.Platform.VendorIdentity.Application")
+                "IntegratedProcurement.Platform.Documents.Application",
+                "IntegratedProcurement.Platform.Notifications.Application")
             .GetResult();
 
         Assert.True(result.IsSuccessful, Describe(persistence, result));
@@ -173,47 +120,6 @@ public sealed class DependencyRuleTests
 
             Assert.True(result.IsSuccessful, Describe(assembly, result));
         }
-    }
-
-    [Fact]
-    public void ModuleInfrastructure_DoesNotDependOnForeignModuleInfrastructure()
-    {
-        AssertAll(
-        [
-            typeof(IntegratedProcurement.Modules.ProposalTracker.Infrastructure.ProposalTrackerModule).Assembly,
-        ],
-        [
-            "IntegratedProcurement.Modules.ContractMonitoring.Infrastructure",
-            "IntegratedProcurement.Modules.ContractInitiationPlatform.Infrastructure",
-            "IntegratedProcurement.Modules.VendorOnboarding.Infrastructure",
-        ]);
-        AssertAll(
-        [
-            typeof(IntegratedProcurement.Modules.ContractMonitoring.Infrastructure.ContractMonitoringModule).Assembly,
-        ],
-        [
-            "IntegratedProcurement.Modules.ProposalTracker.Infrastructure",
-            "IntegratedProcurement.Modules.ContractInitiationPlatform.Infrastructure",
-            "IntegratedProcurement.Modules.VendorOnboarding.Infrastructure",
-        ]);
-        AssertAll(
-        [
-            typeof(IntegratedProcurement.Modules.ContractInitiationPlatform.Infrastructure.CipModule).Assembly,
-        ],
-        [
-            "IntegratedProcurement.Modules.ProposalTracker.Infrastructure",
-            "IntegratedProcurement.Modules.ContractMonitoring.Infrastructure",
-            "IntegratedProcurement.Modules.VendorOnboarding.Infrastructure",
-        ]);
-        AssertAll(
-        [
-            typeof(IntegratedProcurement.Modules.VendorOnboarding.Infrastructure.VendorOnboardingModule).Assembly,
-        ],
-        [
-            "IntegratedProcurement.Modules.ProposalTracker.Infrastructure",
-            "IntegratedProcurement.Modules.ContractMonitoring.Infrastructure",
-            "IntegratedProcurement.Modules.ContractInitiationPlatform.Infrastructure",
-        ]);
     }
 
     private static string Describe(Assembly assembly, TestResult result) =>

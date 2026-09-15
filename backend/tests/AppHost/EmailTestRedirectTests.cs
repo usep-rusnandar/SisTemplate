@@ -9,27 +9,24 @@ public sealed class EmailTestRedirectTests
     public void EmptyModuleToTestSendsToRealRecipientEvenWhenGlobalToTestIsSet()
     {
         var settings = Dict(
-            ("toTest_vendorWorkspace", ""),
+            ("toTest_users", ""),
             ("toTest", "it.saptaindra@gmail.com"));
 
         Assert.Equal(
-            "pic@vendor.test",
-            EmailTestRedirect.EffectiveTo("pic@vendor.test", settings, "Vendor Workspace"));
-        Assert.False(EmailTestRedirect.IsRedirected(settings, "Vendor Workspace"));
+            "usep@sis.test",
+            EmailTestRedirect.EffectiveTo("usep@sis.test", settings, "Users"));
+        Assert.False(EmailTestRedirect.IsRedirected(settings, "Users"));
     }
 
     [Fact]
     public void FilledModuleToTestRedirectsOnlyThatModule()
     {
         var settings = Dict(
-            ("toTest_vendorWorkspace", "qa@sis.test"),
-            ("toTest_users", ""),
+            ("toTest_users", "qa@sis.test"),
             ("toTest", "it.saptaindra@gmail.com"));
 
-        Assert.Equal("qa@sis.test", EmailTestRedirect.EffectiveTo("pic@vendor.test", settings, "Vendor Workspace"));
-        Assert.Equal("usep@sis.test", EmailTestRedirect.EffectiveTo("usep@sis.test", settings, "Users"));
-        Assert.True(EmailTestRedirect.IsRedirected(settings, "Vendor Workspace"));
-        Assert.False(EmailTestRedirect.IsRedirected(settings, "Users"));
+        Assert.Equal("qa@sis.test", EmailTestRedirect.EffectiveTo("usep@sis.test", settings, "Users"));
+        Assert.True(EmailTestRedirect.IsRedirected(settings, "Users"));
     }
 
     [Fact]
