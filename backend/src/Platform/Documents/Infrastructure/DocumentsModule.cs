@@ -1,10 +1,10 @@
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Application;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.Platform.Documents.Infrastructure;
+namespace SisTemplate.Platform.Documents.Infrastructure;
 
 /// <summary>
 /// Composition for the Documents platform service: binds <see cref="AzureBlobOptions"/> from

@@ -1,10 +1,10 @@
 using System.Net;
 using System.Text;
 using System.Text.Json;
-using IntegratedProcurement.Platform.Documents.Application;
-using IntegratedProcurement.Platform.Documents.Infrastructure;
+using SisTemplate.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Infrastructure;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 public sealed class AzureHostCredentialTests
 {

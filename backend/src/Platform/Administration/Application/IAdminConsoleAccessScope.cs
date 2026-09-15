@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// Resolves the Administration boundary for the current actor. Super Admin is unrestricted;

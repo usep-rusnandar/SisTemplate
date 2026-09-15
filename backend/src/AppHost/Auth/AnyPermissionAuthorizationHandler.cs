@@ -1,8 +1,8 @@
 using System.Security.Claims;
-using IntegratedProcurement.BuildingBlocks.Application.Security;
+using SisTemplate.BuildingBlocks.Application.Security;
 using Microsoft.AspNetCore.Authorization;
 
-namespace IntegratedProcurement.AppHost.Api.Auth;
+namespace SisTemplate.AppHost.Api.Auth;
 
 /// <summary>
 /// Grants an <see cref="AnyPermissionRequirement"/> when the internal principal holds at least one

@@ -4,7 +4,7 @@ using System.Text.Json;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.Extensions.Configuration;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 public sealed class InternalLocalAuthTests : IClassFixture<IsolatedApiFixture>
 {

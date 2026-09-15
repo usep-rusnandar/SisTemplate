@@ -1,11 +1,11 @@
 using System.Globalization;
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
-using IntegratedProcurement.Platform.Notifications.Application;
-using IntegratedProcurement.Platform.Notifications.Domain;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
+using SisTemplate.Platform.Notifications.Application;
+using SisTemplate.Platform.Notifications.Domain;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegratedProcurement.Platform.Notifications.Infrastructure;
+namespace SisTemplate.Platform.Notifications.Infrastructure;
 
 internal sealed class NotificationService : INotificationService
 {

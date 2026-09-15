@@ -1,9 +1,9 @@
-using IntegratedProcurement.Platform.Audit.Application;
-using IntegratedProcurement.Platform.Audit.Domain;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.Audit.Application;
+using SisTemplate.Platform.Audit.Domain;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegratedProcurement.Platform.Audit.Infrastructure;
+namespace SisTemplate.Platform.Audit.Infrastructure;
 
 /// <summary>
 /// EF Core implementation of the platform audit trail over the shared <see cref="ProcurementDbContext"/>.

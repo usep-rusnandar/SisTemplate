@@ -1,21 +1,21 @@
 using System.Security.Claims;
-using IntegratedProcurement.BuildingBlocks.Application;
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
-using IntegratedProcurement.BuildingBlocks.Application.Security;
-using IntegratedProcurement.AppHost.Api.Auth;
-using IntegratedProcurement.AppHost.Api.Services;
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Documents.Application;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Access;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Auth;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Profiles;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Sso;
-using IntegratedProcurement.Platform.InternalIdentity.Domain;
-using IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Sso;
+using SisTemplate.BuildingBlocks.Application;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
+using SisTemplate.BuildingBlocks.Application.Security;
+using SisTemplate.AppHost.Api.Auth;
+using SisTemplate.AppHost.Api.Services;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Documents.Application;
+using SisTemplate.Platform.InternalIdentity.Application.Access;
+using SisTemplate.Platform.InternalIdentity.Application.Auth;
+using SisTemplate.Platform.InternalIdentity.Application.Profiles;
+using SisTemplate.Platform.InternalIdentity.Application.Sso;
+using SisTemplate.Platform.InternalIdentity.Domain;
+using SisTemplate.Platform.InternalIdentity.Infrastructure.Sso;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.AppHost.Api.Endpoints;
+namespace SisTemplate.AppHost.Api.Endpoints;
 
 public static class InternalAuthEndpoints
 {
@@ -413,30 +413,9 @@ public static class InternalAuthEndpoints
 
     private static IResult? DenyIfPortalUnauthorized(HttpContext httpContext, IEnumerable<string>? permissions)
     {
-        if (!httpContext.Request.Headers.TryGetValue(PortalModuleAccess.HeaderName, out var raw))
-        {
-            return null;
-        }
-
-        var moduleKey = PortalModuleAccess.ResolveGatedModuleKey(raw.ToString());
-        if (moduleKey is null)
-        {
-            return null;
-        }
-
-        if (PortalModuleAccess.HasAccess(permissions, moduleKey))
-        {
-            return null;
-        }
-
-        return Results.Json(
-            new
-            {
-                code = "module_access_denied",
-                module = moduleKey,
-                title = PortalModuleAccess.DeniedTitle(moduleKey),
-            },
-            statusCode: StatusCodes.Status403Forbidden);
+        _ = httpContext;
+        _ = permissions;
+        return null;
     }
 
     private static void ClearInternalSession(HttpContext httpContext)

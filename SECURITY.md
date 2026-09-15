@@ -8,7 +8,7 @@ tracked files.
 
 Where they go instead:
 - **Local dev:** `backend/src/AppHost/appsettings.Development.json` (gitignored) or environment
-  variables (`ConnectionStrings__DefaultConnection`, `INTEGRATED_PROCUREMENT_CONNECTION` for `dotnet ef`).
+  variables (`ConnectionStrings__DefaultConnection`, `SISTEMPLATE_CONNECTION` for `dotnet ef`).
 - **Azure / servers:** App Service application settings / environment variables (never in the repo).
 
 `appsettings.json` / `appsettings.Production.json` / `appsettings.Staging.json` are committed but must
@@ -37,11 +37,9 @@ Run the scanner manually any time: `bash scripts/secret-scan.sh` (whole tree) or
    keep it). Use a fresh-baseline squash or `git filter-repo`, then force-push.
 3. Verify: `git grep <fragment> $(git rev-list --all)` returns nothing.
 
-### History note (2026-07)
-The GitHub baseline was created by squashing prior local history into a single clean commit because a
-DB credential (`appsettings.json.bak` + a handover doc) had been committed. **The exposed Azure SQL
-password `procurementdbtes` should be rotated**, and `appsettings.Development.json` updated in each
-worktree afterward.
+### History note
+If this repository was bootstrapped from a copy of another codebase, verify that copy did not carry
+over any committed secrets in its history before treating this repo's `main` as a clean baseline.
 
 ## Reporting
 

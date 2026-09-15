@@ -22,22 +22,13 @@ type DomainStorageRoute = {
 
 const bridgeStateEndpoint = "/api/v1/frontend-state";
 
-// Domain-scoped storage lives behind INTERNAL module permissions (proposalTracker.view, …), so only the
-// internal console should hydrate/flush them. The external vendor bundle passes an empty set — a vendor
-// principal can never satisfy those permissions, so hydrating them there only produced permanent 401 noise.
-const internalDomainStorageRoutes: DomainStorageRoute[] = [
-  { prefix: "ag_tracker_", endpoint: "/api/v1/proposal-tracker/storage", viewPermission: "proposalTracker.view" },
-  { prefix: "ag_cip_", endpoint: "/api/v1/contract-initiation-platform/storage", viewPermission: ["contractInitiationPlatform.view", "proposalTracker.view"] },
-  { prefix: "ag_cm_", endpoint: "/api/v1/contract-monitoring/storage", viewPermission: "contractMonitoring.view" },
-];
+// The reusable foundation keeps only the shared frontend-state bridge.
+const internalDomainStorageRoutes: DomainStorageRoute[] = [];
 
 export type ApiBackedStorageOptions = {
-  /** Domain-scoped storage routes to hydrate/flush. Defaults to the internal module set. Pass [] for
-   *  bundles (e.g. the vendor portal) whose principal has no internal module permissions. */
+  /** Optional domain-scoped storage routes; the foundation defaults to bridge state only. */
   domainRoutes?: DomainStorageRoute[];
-  /** Whether to hydrate immediately on install. Defaults to true (the vendor bundle relies on it).
-   *  The internal console passes false: it hydrates via App.jsx only AFTER login, so nothing
-   *  auth-scoped fires against a logged-out session (avoids benign 401 console noise). */
+  /** Whether to hydrate immediately on install. The internal shell passes false and hydrates after login. */
   hydrateOnInstall?: boolean;
 };
 
@@ -139,8 +130,7 @@ export class ProcurementApiStorage {
 
       const payload = (await response.json()) as FrontendStateListResponse;
       for (const item of payload.items ?? []) {
-        // Domain keys already loaded from module storage win. A stale frontend-state copy
-        // of ag_cm_contracts_v1 (or tracker/CIP stores) must not clobber them.
+        // Domain keys already loaded from dedicated storage win over the bridge copy.
         if (this.hydratedDomainKeys.has(item.key)) continue;
         this.cache.set(item.key, item.value);
       }

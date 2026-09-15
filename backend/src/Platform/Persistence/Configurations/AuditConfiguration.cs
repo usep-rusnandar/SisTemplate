@@ -1,8 +1,8 @@
-using IntegratedProcurement.Platform.Audit.Domain;
+using SisTemplate.Platform.Audit.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace IntegratedProcurement.Platform.Persistence.Configurations;
+namespace SisTemplate.Platform.Persistence.Configurations;
 
 public sealed class AuditLogEntryConfiguration : IEntityTypeConfiguration<AuditLogEntry>
 {

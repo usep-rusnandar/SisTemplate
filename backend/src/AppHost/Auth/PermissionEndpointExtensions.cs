@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 
-namespace IntegratedProcurement.AppHost.Api.Auth;
+namespace SisTemplate.AppHost.Api.Auth;
 
 public static class PermissionEndpointExtensions
 {

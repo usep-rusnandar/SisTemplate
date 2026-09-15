@@ -1,6 +1,6 @@
 using System.Net;
 
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// Retry rules for wilayah.id HTTP fan-out. 404 is a complete empty child list (not retried).

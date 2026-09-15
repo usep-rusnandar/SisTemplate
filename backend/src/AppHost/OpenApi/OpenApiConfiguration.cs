@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.AppHost.Api.OpenApi;
+namespace SisTemplate.AppHost.Api.OpenApi;
 
 public static class OpenApiConfiguration
 {

@@ -107,7 +107,7 @@ function UserModal({ open, mode, user, onClose, onSave, permGroups, roleAssignme
   const adminScope = adminModuleScopeForRoles(session.effectiveRoles);
   const roleAllowedForScope = (roleName) => !adminScope || moduleKeysForRoleName(roleName).some((k) => adminScope.includes(k));
   const scopedRoleOptions = (session.roles || []).map((r) => ({ value: r.name, label: r.name })).filter((o) => (session.canSeeSuperAdminRole || o.value !== SUPER_ADMIN_ROLE) && roleAllowedForScope(o.value));
-  const showTrackerReportTo = !adminScope || adminScope.includes("proposalTracker");
+  const showTrackerReportTo = true;
   const canEditProfile = mode === "edit" ? session.can("users.update") : session.can("users.create");
   const canAssignRoles = session.can("users.permissions");
   React.useEffect(() => {
@@ -361,7 +361,7 @@ function Users({ onNavigate }) {
     return !adminScope || moduleKeysForUser(u).some((k) => adminScope.includes(k));
   };
   const scopedRoleOptions = (session.roles || []).map((r) => ({ value: r.name, label: r.name })).filter((o) => (session.canSeeSuperAdminRole || o.value !== SUPER_ADMIN_ROLE) && roleAllowedForScope(o.value));
-  const showTrackerReportTo = !adminScope || adminScope.includes("proposalTracker");
+  const showTrackerReportTo = true;
   const loadUsers = React.useCallback(async (showToast) => {
     setLoading(true);
     try {

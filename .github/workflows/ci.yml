@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [master, "feat/**"]
+    branches: [main, "feat/**"]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   secret-scan:
@@ -22,7 +22,7 @@ jobs:
         with:
           dotnet-version: "10.0.x"
       - name: Build (Release)
-        run: dotnet build backend/IntegratedProcurement.slnx -c Release --nologo
+        run: dotnet build backend/SisTemplate.slnx -c Release --nologo
       # Tests are skipped here — they need a SQL instance. Enable once a CI DB (or Testcontainers) is wired.
 
   frontend:
@@ -37,6 +37,6 @@ jobs:
       - name: Install
         run: npm ci
         working-directory: frontend
-      - name: Build (internal + external)
+      - name: Build (internal SPA)
         run: npm run build
         working-directory: frontend

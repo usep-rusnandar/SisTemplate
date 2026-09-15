@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Http;
 
-namespace IntegratedProcurement.BuildingBlocks.Infrastructure.Http;
+namespace SisTemplate.BuildingBlocks.Infrastructure.Http;
 
 /// <summary>
 /// Public origin of the current request, honouring the first X-Forwarded-* hop used by Azure App Service.

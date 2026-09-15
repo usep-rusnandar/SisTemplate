@@ -1,37 +1,29 @@
 using System.Globalization;
-using IntegratedProcurement.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Application;
 
-namespace IntegratedProcurement.AppHost.Api.ReadModels;
+namespace SisTemplate.AppHost.Api.ReadModels;
 
 internal static class AdminConsoleReadModels
 {
     private static readonly AdminModuleItem[] Modules =
     [
-        new("vendorOnboarding", "Vendor Onboarding", "Internal", "Active", "Procurement", 9),
-        new("proposalTracker", "Proposal Tracker", "Internal", "Active", "Procurement", 10),
-        new("contractInitiationPlatform", "Contract Initiation Platform", "Internal", "Retired", "Legal", 0),
-        new("contractMonitoring", "Contract Monitoring", "Internal", "Active", "Contract Admin", 8),
-        new("vendorWorkspace", "Vendor Workspace", "External", "Active", "Vendor", 4)
+        new("administration", "Administration", "Internal", "Active", "Platform", 5),
+        new("masterData", "Master Data", "Internal", "Active", "Platform", 3),
+        new("superAdmin", "Super Admin", "Internal", "Active", "Platform", 9)
     ];
 
     private static readonly AdminRoleItem[] Roles =
     [
         new("SPR-ADM", "Super Admin", "Full unrestricted access to every module and setting.", 1, 37, true, ["superAdmin", "administration", "masterData"]),
-        new("ADM-VDR", "Administrator Vendor Onboarding", "Administer Vendor Onboarding users, master data, and configuration.", 1, 9, false, ["administration", "masterData", "vendorOnboarding"]),
-        new("ADM-TRK", "Administrator Proposal Tracker", "Administer Proposal Tracker users, master data, Term Sheet, and SLA configuration.", 1, 11, false, ["administration", "masterData", "proposalTracker"]),
-        new("ADM-CM", "Administrator Contract Monitoring", "Administer Contract Monitoring users and monitoring settings.", 1, 8, false, ["administration", "masterData", "contractMonitoring"]),
-        new("USER-CM", "User Contract Monitoring", "Read-only Contract Monitoring access.", 1, 2, false, ["contractMonitoring"])
+        new("ADM-PLT", "Platform Administrator", "Administer users, roles, languages, email templates, settings, and master data.", 1, 21, false, ["administration", "masterData"]),
+        new("AUD-PLT", "Platform Auditor", "Read-only access to the dashboard, audit log, and settings.", 1, 4, false, ["superAdmin"])
     ];
 
     private static readonly AdminUserItem[] Users =
     [
         new(1, "00109610", "usep.rusnandar", "USEP RUSNANDAR", "usep.rusnandar@saptaindra.co.id", "Active", ["Super Admin"], "2 min ago"),
-        new(2, "01111041", "imaniar.rusydiawan", "IMANIAR RUSYDIAWAN", "imaniar.rusydiawan@saptaindra.co.id", "Active", ["Administrator Vendor Onboarding"], "1 hour ago"),
-        new(3, "12080430", "benjamin.rumbi", "BENJAMIN L. RUMBI", "benjamin.rumbi@alamtri.com", "Active", ["Division Head"], "30 min ago"),
-        new(4, "80005516", "andy.prasetio", "ANDY PRASETIO WIBOWO", "andy.prasetio@saptaindra.co.id", "Active", ["Department Head Proposal Tracker"], "Yesterday"),
-        new(5, "80008913", "aditya.priyambodo", "ADITYA PRIYAMBODO", "aditya.priyambodo@saptaindra.co.id", "Active", ["Section Head Proposal Tracker"], "Today, 06:30"),
-        new(6, "80010029", "ahmad.idham", "AHMAD ZAKKI IDHAM", "ahmad.idham@saptaindra.co.id", "Active", ["Officer Proposal Tracker"], "5 hours ago"),
-        new(7, "00117404", "yusuf.binsar", "YUSUF BINSAR", "yusuf.binsar@saptaindra.co.id", "Active", ["Read Only Vendor Onboarding"], "12 days ago")
+        new(2, "00116251", "wita.aprilia", "WITA APRILIA", "wita.aprilia@saptaindra.co.id", "Active", ["Platform Administrator"], "1 hour ago"),
+        new(3, "00117404", "yusuf.binsar", "YUSUF BINSAR", "yusuf.binsar@saptaindra.co.id", "Active", ["Platform Auditor"], "Yesterday")
     ];
 
     private static readonly PermissionGroup[] PermissionGroups =
@@ -73,7 +65,7 @@ internal static class AdminConsoleReadModels
     [
         new("superAdmin", "Super Admin", "crown", ["Modules", "Permissions", "Menus", "Languages", "Language Text", "Email Templates", "Email Sent", "Audit", "Settings", "Background processes"]),
         new("administration", "Administration", "shield", ["Users", "Roles", "Email Templates"]),
-        new("masterData", "Master Data", "database", ["Holiday", "Proposal Tracker Step", "Proposal Tracker Method", "CIP Authorization", "Vendor Relationship", "Vendor Document Requirement", "Brand", "KBLI", "Country", "ReadOnly Master"])
+        new("masterData", "Master Data", "database", ["Holiday", "Country", "Administrative Regions"])
     ];
 
     private static readonly LanguageItem[] Languages =
@@ -93,25 +85,22 @@ internal static class AdminConsoleReadModels
 
     private static readonly EmailTemplateItem[] EmailTemplates =
     [
-        new("ET-01", "Account created", "Users", "Active", "Your Integrated Procurement account is ready", 4),
-        new("ET-12", "Vendor registration invitation", "Vendor Onboarding", "Active", "You're invited to register as an Alamtri vendor", 5),
-        new("ET-13", "Vendor registration received", "Vendor Onboarding", "Active", "We received your vendor registration", 2),
-        new("ET-20", "Vendor password reset", "Vendor Workspace", "Active", "Reset Password – Alamtri Geo Vendor Workspace", 4),
-        new("ET-25", "Internal password reset", "Users", "Active", "Reset Password – Alamtri Geo Integrated Procurement", 4)
+        new("ET-01", "Account created", "Users", "Active", "Your SisTemplate account is ready", 3),
+        new("ET-25", "Internal password reset", "Users", "Active", "Reset Password – SisTemplate", 4)
     ];
 
     private static readonly EmailSentItem[] EmailSent =
     [
-        new("MSG-2026-0412", "Vendor registration invitation", "joko.susanto@sinarrejeki.co.id", "Delivered", "2026-06-22 09:14"),
-        new("MSG-2026-0411", "Contract expiry reminder", "sari.indah@saptaindra.co.id", "Delivered", "2026-06-22 08:00"),
-        new("MSG-2026-0407", "Account created", "rina.melati@saptaindra.co.id", "Opened", "2026-06-21 16:20")
+        new("MSG-2026-0412", "Account created", "wita.aprilia@saptaindra.co.id", "Delivered", "2026-06-22 09:14"),
+        new("MSG-2026-0411", "Internal password reset", "yusuf.binsar@saptaindra.co.id", "Delivered", "2026-06-22 08:00"),
+        new("MSG-2026-0407", "Account created", "usep.rusnandar@saptaindra.co.id", "Opened", "2026-06-21 16:20")
     ];
 
     private static readonly AuditItem[] Audit =
     [
         new(1, "Login", "Usep Rusnandar", "Auth", "SSO login accepted", "103.28.14.2", "2026-06-22 08:58:22"),
-        new(2, "Update", "Budi Santoso", "Users", "Updated role for rina.melati", "103.28.14.8", "2026-06-22 08:51:33"),
-        new(3, "Create", "Rizki Ramadhan", "Roles", "Created role Vendor Workspace", "103.28.14.21", "2026-06-21 16:42:10"),
+        new(2, "Update", "Usep Rusnandar", "Users", "Updated role for Wita Aprilia", "103.28.14.8", "2026-06-22 08:51:33"),
+        new(3, "Create", "Usep Rusnandar", "Roles", "Created role Platform Auditor", "103.28.14.21", "2026-06-21 16:42:10"),
         new(4, "Export", "Usep Rusnandar", "Audit", "Exported audit log to CSV", "103.28.14.2", "2026-06-21 14:08:55")
     ];
 
@@ -120,52 +109,22 @@ internal static class AdminConsoleReadModels
         new("security.lockout", "User lock out", "Enabled", "Protect accounts from brute-force login attempts."),
         new("session.timeout", "Session timeout", "8 hours", "Internal SSO session idle timeout."),
         new("sso.enabled", "SISWarrior SSO", "False in Development", "Boolean integration switch."),
-        new("email.sender", "Default email sender", "procurement@alamtri.geo", "Transactional email sender identity.")
+        new("email.sender", "Default email sender", "no-reply@sistemplate.local", "Transactional email sender identity.")
     ];
 
     private static readonly MasterDataSet[] MasterData =
     [
-        new("holiday", "Holiday", "MSTR_HOLIDAY_T", "Proposal Tracker", [
+        new("holiday", "Holiday", "MSTR_HOLIDAY_T", "Administration", [
             new("HOL-2026-001", "Idul Fitri", "Active", "2026-03-21"),
             new("HOL-2026-002", "Independence Day", "Active", "2026-08-17")
         ]),
-        new("tracker-step", "Proposal Tracker Step", "MSTR_TRACKER_STEP_T", "Proposal Tracker", [
-            new("TIA", "Invitation & Aanwijzing", "Active", "Tender invitation and pre-bid clarification"),
-            new("TERM", "Term Sheet", "Active", "CIP Term Sheet before parallel LOA/CTR"),
-            new("LOA", "Letter of Award", "Active", "Tracker officer LOA (parallel with CTR)")
-        ]),
-        new("tracker-method", "Proposal Tracker Method", "MSTR_TRACKER_METHOD_T", "Proposal Tracker", [
-            new("TND", "Tender", "Active", "Competitive tender — Term Sheet from Bid Evaluation"),
-            new("PML", "Pemilihan Langsung", "Active", "Limited selection — Term Sheet from Bid Evaluation"),
-            new("PNL", "Penunjukan Langsung", "Active", "Direct appointment — Term Sheet from Negotiation")
-        ]),
-        new("cip-authorization", "CIP Authorization", "MSTR_CIP_AUTHORIZATION_T", "CIP", [
-            new("CIP-A1", "Contract Analyst", "Active", "Can verify termsheet"),
-            new("CIP-L1", "Legal Reviewer", "Active", "Can approve final draft")
-        ]),
-        new("distributor-type", "Distributor Type", "MSTR_DISTRIBUTOR_TYPE_T", "VendorOnboarding", [
-            new("PRIN", "Brand Owner", "Active", "Brand owner or license holder"),
-            new("DIST", "Authorized Distributor", "Active", "Official appointed distributor")
-        ]),
-        new("vendor-document-requirement", "Vendor Document Requirement", "MSTR_VENDOR_DOC_REQUIREMENT_T", "VendorOnboarding", [
-            new("NPWP", "NPWP", "Mandatory", "Tax identity"),
-            new("NIB", "NIB OSS", "Mandatory", "Business license")
-        ]),
-        new("brand", "Brand", "MSTR_BRAND_T", "Vendor", [
-            new("CAT", "Caterpillar", "Active", "Heavy equipment"),
-            new("KMT", "Komatsu", "Active", "Heavy equipment")
-        ]),
-        new("kbli", "KBLI", "MSTR_KBLI_T", "Vendor", [
-            new("77392", "Heavy equipment rental", "Active", "Rental and leasing"),
-            new("43120", "Site preparation", "Active", "Civil works")
-        ]),
-        new("country", "Country", "MSTR_COUNTRY_T", "Vendor", [
+        new("country", "Country", "MSTR_COUNTRY_T", "Administration", [
             new("ID", "Indonesia", "Active", "+62"),
             new("SG", "Singapore", "Active", "+65")
         ]),
-        new("readonly-master", "ReadOnly Master", "REFERENCE_MASTER_T", "Platform", [
-            new("INVTD", "Invited", "ReadOnly", "Onboarding status"),
-            new("RSPND", "Responded", "ReadOnly", "Onboarding status")
+        new("administrativeRegions", "Administrative Regions", "MSTR_PROVINCE_T", "Administration", [
+            new("32", "Jawa Barat", "Active", "Province"),
+            new("31", "DKI Jakarta", "Active", "Province")
         ])
     ];
 
@@ -230,9 +189,8 @@ internal static class AdminConsoleReadModels
             "Master Data",
             [
                 new("Datasets", FormatCount(MasterData.Length), "Master tables mirrored from mockup"),
-                new("Vendor refs", FormatCount(MasterData.Count(item => item.Owner == "Vendor")), "Vendor master references"),
-                new("Proposal Tracker refs", FormatCount(MasterData.Count(item => item.Owner == "Proposal Tracker")), "Proposal Tracker master references"),
-                new("Read-only refs", FormatCount(MasterData.Count(item => item.Key == "readonly-master")), "System-controlled references")
+                new("Administration refs", FormatCount(MasterData.Count(item => item.Owner == "Administration")), "Administration master references"),
+                new("Total records", FormatCount(MasterData.Sum(item => item.Records.Count)), "Records across all master data sets")
             ],
             MenuGroups.Where(group => group.Key == "masterData").ToArray());
 

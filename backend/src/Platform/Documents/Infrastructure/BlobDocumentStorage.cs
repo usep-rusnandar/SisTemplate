@@ -1,10 +1,10 @@
 using Azure.Storage.Blobs;
 using Azure.Storage.Blobs.Models;
 using Azure.Storage.Sas;
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Application;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.Platform.Documents.Infrastructure;
+namespace SisTemplate.Platform.Documents.Infrastructure;
 
 /// <summary>
 /// Azure Blob document store. Dev authenticates with the account connection string; Azure slots use

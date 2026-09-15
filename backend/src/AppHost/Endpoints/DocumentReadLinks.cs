@@ -1,6 +1,6 @@
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Application;
 
-namespace IntegratedProcurement.AppHost.Api.Endpoints;
+namespace SisTemplate.AppHost.Api.Endpoints;
 
 /// <summary>
 /// Download URLs prefer a Blob SAS. When User Delegation SAS cannot be signed
@@ -11,15 +11,6 @@ public static class DocumentReadLinks
 {
     public static string StreamUrl(string container, string blobKey) =>
         "/api/v1/documents/stream?container="
-        + Uri.EscapeDataString(container)
-        + "&key=" + Uri.EscapeDataString(blobKey);
-
-    /// <summary>
-    /// Same-origin PUT used when User Delegation write SAS cannot be signed.
-    /// The vendor portal browser sends the file to AppHost; MI uploads with Data Contributor.
-    /// </summary>
-    public static string VendorProxyUploadUrl(string container, string blobKey) =>
-        "/api/v1/vendor-portal/documents/upload-bytes?container="
         + Uri.EscapeDataString(container)
         + "&key=" + Uri.EscapeDataString(blobKey);
 

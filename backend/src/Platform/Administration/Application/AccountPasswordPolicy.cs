@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// Password-complexity policy from Super Admin ▸ Settings ▸ Security.

@@ -1,10 +1,10 @@
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Application;
 using QRCoder;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
 
-namespace IntegratedProcurement.Platform.Documents.Infrastructure;
+namespace SisTemplate.Platform.Documents.Infrastructure;
 
 /// <summary>
 /// QuestPDF + QRCoder implementation of <see cref="ICertificateGenerator"/>. Produces a single-page

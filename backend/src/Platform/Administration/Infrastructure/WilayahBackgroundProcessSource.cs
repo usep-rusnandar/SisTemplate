@@ -1,8 +1,8 @@
-using IntegratedProcurement.BuildingBlocks.Application;
-using IntegratedProcurement.Platform.Administration.Application;
+using SisTemplate.BuildingBlocks.Application;
+using SisTemplate.Platform.Administration.Application;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 internal sealed class WilayahBackgroundProcessSource : IBackgroundProcessSource
 {

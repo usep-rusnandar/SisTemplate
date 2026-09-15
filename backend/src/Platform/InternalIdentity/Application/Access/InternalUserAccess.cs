@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.InternalIdentity.Application.Access;
+namespace SisTemplate.Platform.InternalIdentity.Application.Access;
 
 public sealed record InternalUserAccess(
     Guid UserId,

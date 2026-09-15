@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.BuildingBlocks.Application.Common;
+namespace SisTemplate.BuildingBlocks.Application.Common;
 
 public sealed record Result(bool Success, string? Code = null, string? Message = null)
 {

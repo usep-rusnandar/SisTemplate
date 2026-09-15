@@ -1,10 +1,10 @@
-using IntegratedProcurement.Platform.Administration.Domain;
-using IntegratedProcurement.Platform.Notifications.Domain;
-using IntegratedProcurement.Platform.Settings.Domain;
+using SisTemplate.Platform.Administration.Domain;
+using SisTemplate.Platform.Notifications.Domain;
+using SisTemplate.Platform.Settings.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace IntegratedProcurement.Platform.Persistence.Configurations;
+namespace SisTemplate.Platform.Persistence.Configurations;
 
 public sealed class MenuTreeEntryConfiguration : IEntityTypeConfiguration<MenuTreeEntry>
 {

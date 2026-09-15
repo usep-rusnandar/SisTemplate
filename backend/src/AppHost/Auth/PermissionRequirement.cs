@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 
-namespace IntegratedProcurement.AppHost.Api.Auth;
+namespace SisTemplate.AppHost.Api.Auth;
 
 /// <summary>
 /// Authorization requirement satisfied when the current internal actor carries a matching permission claim.

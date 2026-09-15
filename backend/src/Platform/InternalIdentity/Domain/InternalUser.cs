@@ -1,6 +1,6 @@
-using IntegratedProcurement.BuildingBlocks.Domain.Entities;
+using SisTemplate.BuildingBlocks.Domain.Entities;
 
-namespace IntegratedProcurement.Platform.InternalIdentity.Domain;
+namespace SisTemplate.Platform.InternalIdentity.Domain;
 
 public sealed class InternalUser : SoftDeleteEntity
 {

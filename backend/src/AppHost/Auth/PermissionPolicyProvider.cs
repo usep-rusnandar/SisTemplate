@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.AppHost.Api.Auth;
+namespace SisTemplate.AppHost.Api.Auth;
 
 /// <summary>
 /// Builds permission policies on demand for any policy name prefixed with

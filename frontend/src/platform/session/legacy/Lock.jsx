@@ -45,7 +45,7 @@ function LockWarning({ seconds, onStay, onLockNow }) {
         <div style={{ fontSize: 82, fontWeight: 800, color: C.orange, lineHeight: 0.95, marginTop: 18, fontVariantNumeric: "tabular-nums" }}>{seconds}</div>
         <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.08em", textTransform: "uppercase", color: C.textSubtle, marginTop: 6 }}>seconds remaining</div>
         <div style={{ fontSize: 14, color: C.textMuted, margin: "18px auto 0", lineHeight: 1.55, maxWidth: 410 }}>
-          No activity detected. This procurement session will lock automatically to protect vendor, proposal, and contract data.
+          No activity detected. This internal session will lock automatically to protect platform data.
         </div>
         <div style={{ display: "flex", gap: 10, marginTop: 28 }}>
           <Button variant="secondary" style={{ flex: 1 }} onClick={onLockNow}>Lock now</Button>
@@ -105,10 +105,10 @@ function LockScreen({ user, onUnlock, onSignOut, ssoEnabled, ssoHomeUrl }) {
           <div style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#8FE3E8" }}>{tt("Session secured", "Sesi aman")}</div>
           <div style={{ fontSize: 74, fontWeight: 800, letterSpacing: 0, lineHeight: 1, marginTop: 18, fontVariantNumeric: "tabular-nums" }}>{time}</div>
           <div style={{ fontSize: 14, fontWeight: 500, color: "rgba(255,255,255,0.78)", marginTop: 10 }}>{date}</div>
-          <h1 style={{ fontSize: 34, fontWeight: 800, letterSpacing: 0, lineHeight: 1.16, margin: "34px 0 0", color: "#fff" }}>{tt("Your procurement workspace is locked.", "Ruang kerja pengadaan Anda terkunci.")}</h1>
-          <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgba(255,255,255,0.78)", marginTop: 14 }}>{tt("Unlock to continue Vendor Onboarding, Proposal Tracker, CIP, and Contract Monitoring with the same audited session.", "Buka kunci untuk lanjut ke Vendor Onboarding, Proposal Tracker, CIP, dan Contract Monitoring dengan sesi yang sama.")}</p>
+          <h1 style={{ fontSize: 34, fontWeight: 800, letterSpacing: 0, lineHeight: 1.16, margin: "34px 0 0", color: "#fff" }}>{tt("Your internal workspace is locked.", "Ruang kerja internal Anda terkunci.")}</h1>
+          <p style={{ fontSize: 15, lineHeight: 1.6, color: "rgba(255,255,255,0.78)", marginTop: 14 }}>{tt("Unlock to continue the internal workspace with the same audited session.", "Buka kunci untuk melanjutkan ruang kerja internal dengan sesi audit yang sama.")}</p>
         </div>
-        <div style={{ position: "relative", zIndex: 1, fontSize: 12.5, color: "rgba(255,255,255,0.55)" }}>{tt("Staff-only procurement access · protected session", "Akses staf pengadaan · sesi terlindungi")}</div>
+        <div style={{ position: "relative", zIndex: 1, fontSize: 12.5, color: "rgba(255,255,255,0.55)" }}>{tt("Staff-only internal access · protected session", "Akses staf internal · sesi terlindungi")}</div>
       </div>
 
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "40px 32px" }}>

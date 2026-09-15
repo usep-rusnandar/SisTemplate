@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Settings.Domain;
+namespace SisTemplate.Platform.Settings.Domain;
 
 public sealed class SettingEntry
 {

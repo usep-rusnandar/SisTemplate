@@ -1,7 +1,7 @@
-using IntegratedProcurement.Platform.Audit.Application;
+using SisTemplate.Platform.Audit.Application;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IntegratedProcurement.Platform.Audit.Infrastructure;
+namespace SisTemplate.Platform.Audit.Infrastructure;
 
 /// <summary>Composition for the Audit platform service.</summary>
 public static class AuditModule

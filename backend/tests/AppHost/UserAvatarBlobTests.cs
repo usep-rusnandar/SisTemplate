@@ -1,10 +1,10 @@
-using IntegratedProcurement.AppHost.Api.Endpoints;
-using IntegratedProcurement.AppHost.Api.Services;
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.AppHost.Api.Endpoints;
+using SisTemplate.AppHost.Api.Services;
+using SisTemplate.Platform.Documents.Application;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 public sealed class UserAvatarBlobTests
 {

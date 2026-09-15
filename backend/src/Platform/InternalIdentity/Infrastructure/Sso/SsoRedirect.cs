@@ -1,8 +1,8 @@
-using IntegratedProcurement.Platform.InternalIdentity.Application.Sso;
+using SisTemplate.Platform.InternalIdentity.Application.Sso;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.WebUtilities;
 
-namespace IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Sso;
+namespace SisTemplate.Platform.InternalIdentity.Infrastructure.Sso;
 
 /// <summary>
 /// Single source of truth for the SISWarrior login redirect URL. Shared by <see cref="SsoMiddleware"/>

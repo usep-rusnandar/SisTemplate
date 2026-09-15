@@ -107,8 +107,8 @@ function Settings() {
                 <Field label="Password"><TextInput type="password" value={s.pwd} onChange={(e) => set("pwd", e.target.value)} placeholder="••••••••" disabled={!s.smtpAuth} /></Field>
               </Row2>
               <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: -8, marginBottom: 16 }}>Required when authentication is enabled.</div>
-              <div style={{ fontSize: 12, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: "0.05em", margin: "4px 0 10px" }}>Sender per module — From, mailbox name, and To (test) for each module</div>
-              <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 14 }}>When To (test) is filled for a module, outbound mail from that module is redirected there. Leave it blank to send to the real recipient — an empty field does not reuse a previous test address. Use Send test on each row to verify that module sender.</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: C.textMuted, textTransform: "uppercase", letterSpacing: "0.05em", margin: "4px 0 10px" }}>Sender per category — From, mailbox name, and To (test) for each category</div>
+              <div style={{ fontSize: 11.5, color: C.textMuted, marginBottom: 14 }}>When To (test) is filled for a category, outbound mail from that category is redirected there. Leave it blank to send to the real recipient — an empty field does not reuse a previous test address. Use Send test on each row to verify that sender.</div>
               {EMAIL_SENDER_MODULES.map((m) => (
                 <div key={m.key} style={{ marginBottom: 18, paddingBottom: 16, borderBottom: `1px solid ${C.borderSoft}` }}>
                   <div style={{ fontSize: 12.5, fontWeight: 700, color: C.text, marginBottom: 8 }}>{m.label}</div>
@@ -175,9 +175,9 @@ function Settings() {
                 <Field label="Countdown modal wait time (seconds)" helper="Warning shown this many seconds before lock."><TextInput value={s.countdown} onChange={(e) => set("countdown", e.target.value)} disabled={!s.sessionEnabled} /></Field>
               </Row2>
             </SettingCard>
-            <SettingCard eyebrow="Security settings" title="Login" scope="all" desc="Send a one-time email code after a successful vendor password. SSO sign-in skips this step.">
+            <SettingCard eyebrow="Security settings" title="Login" scope="all" desc="Send a one-time email code after a successful password sign-in. SSO sign-in skips this step.">
               <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-                <Checkbox checked={s.emailConfirm} onChange={(v) => set("emailConfirm", v)} label="Email confirmation required for vendor login" />
+                <Checkbox checked={s.emailConfirm} onChange={(v) => set("emailConfirm", v)} label="Email confirmation required for external login" />
                 <Checkbox checked={s.emailConfirmInternal} onChange={(v) => set("emailConfirmInternal", v)} label="Email confirmation required for internal local login" />
               </div>
               <div style={{ fontSize: 11.5, color: C.textMuted, marginTop: 12, lineHeight: 1.5 }}>The internal option is saved for a later release and is not used on staff local login yet.</div>

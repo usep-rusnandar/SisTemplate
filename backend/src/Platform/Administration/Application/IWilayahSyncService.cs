@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// Synchronises the Administrative Regions master data (province → regency/city → district → village)

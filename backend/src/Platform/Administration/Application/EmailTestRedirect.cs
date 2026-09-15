@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// Resolves the Settings ▸ Email "To (test)" redirect. Each email category maps to
@@ -13,11 +13,6 @@ public static class EmailTestRedirect
     public static string? ModuleSlugForCategory(string? category) => category?.Trim() switch
     {
         "Users" => "users",
-        "Vendor Onboarding" => "vendorOnboarding",
-        "Vendor Workspace" => "vendorWorkspace",
-        "Tracker" or "Proposal Tracker" => "proposalTracker",
-        "Contract Initiation Platform" => "contractInitiationPlatform",
-        "Contract Monitoring" => "contractMonitoring",
         _ => null,
     };
 

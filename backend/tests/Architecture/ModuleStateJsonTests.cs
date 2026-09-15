@@ -1,6 +1,6 @@
-using IntegratedProcurement.Platform.Persistence.ModuleState;
+using SisTemplate.Platform.Persistence.ModuleState;
 
-namespace IntegratedProcurement.ArchitectureTests;
+namespace SisTemplate.ArchitectureTests;
 
 public sealed class ModuleStateJsonTests
 {

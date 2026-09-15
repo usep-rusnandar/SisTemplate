@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// Weighted overall percent for a wilayah.id sync run. Village HTTP fan-out is the bulk of the work,

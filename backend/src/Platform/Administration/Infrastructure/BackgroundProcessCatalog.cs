@@ -1,17 +1,13 @@
-using IntegratedProcurement.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Application;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
-/// <summary>Aggregates every registered <see cref="IBackgroundProcessSource"/> into the Super Admin catalog.</summary>
 public sealed class BackgroundProcessCatalog : IBackgroundProcessCatalog
 {
     private static readonly string[] DisplayOrder =
     [
         BackgroundProcessKeys.WilayahSync,
         BackgroundProcessKeys.Retention,
-        BackgroundProcessKeys.EproposalIngestion,
-        BackgroundProcessKeys.ContractImportQueue,
-        BackgroundProcessKeys.ContractReminderScan,
     ];
 
     private readonly IBackgroundProcessSource[] _sources;

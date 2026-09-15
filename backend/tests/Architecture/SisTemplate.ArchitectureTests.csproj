@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <NoWarn>$(NoWarn);CA1707</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NetArchTest.Rules" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\BuildingBlocks\Domain\SisTemplate.BuildingBlocks.Domain.csproj" />
+    <ProjectReference Include="..\..\src\BuildingBlocks\Application\SisTemplate.BuildingBlocks.Application.csproj" />
+    <ProjectReference Include="..\..\src\BuildingBlocks\Infrastructure\SisTemplate.BuildingBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Notifications\Application\SisTemplate.Platform.Notifications.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Audit\Application\SisTemplate.Platform.Audit.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Documents\Application\SisTemplate.Platform.Documents.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Settings\Domain\SisTemplate.Platform.Settings.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Administration\Domain\SisTemplate.Platform.Administration.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Administration\Application\SisTemplate.Platform.Administration.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\InternalIdentity\Domain\SisTemplate.Platform.InternalIdentity.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Platform\InternalIdentity\Application\SisTemplate.Platform.InternalIdentity.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Persistence\SisTemplate.Platform.Persistence.csproj" />
+  </ItemGroup>
+
+</Project>

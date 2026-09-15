@@ -1,7 +1,7 @@
-using IntegratedProcurement.AppHost.Api.Auth;
-using IntegratedProcurement.BuildingBlocks.Application;
+using SisTemplate.AppHost.Api.Auth;
+using SisTemplate.BuildingBlocks.Application;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 public sealed class AuthorizationPoliciesTests
 {
@@ -9,18 +9,18 @@ public sealed class AuthorizationPoliciesTests
     public void AnyPermissionJoinsKeysWithPipe()
     {
         Assert.Equal(
-            "perm-any:contractInitiationPlatform.manage|proposalTracker.manage",
+            "perm-any:settings.update|audit.export",
             AuthorizationPolicies.AnyPermission(
-                PermissionKeys.ContractInitiationPlatformManage,
-                PermissionKeys.ProposalTrackerManage));
+                PermissionKeys.SettingsUpdate,
+                PermissionKeys.AuditExport));
     }
 
     [Fact]
     public void AnyPermissionSkipsBlankKeys()
     {
         Assert.Equal(
-            "perm-any:proposalTracker.manage",
-            AuthorizationPolicies.AnyPermission(" ", PermissionKeys.ProposalTrackerManage, ""));
+            "perm-any:audit.export",
+            AuthorizationPolicies.AnyPermission(" ", PermissionKeys.AuditExport, ""));
     }
 
     [Fact]
@@ -29,8 +29,8 @@ public sealed class AuthorizationPoliciesTests
         Assert.StartsWith(
             AuthorizationPolicies.AnyPermissionPrefix,
             AuthorizationPolicies.AnyPermission(
-                PermissionKeys.ContractInitiationPlatformManage,
-                PermissionKeys.ProposalTrackerManage));
+                PermissionKeys.SettingsUpdate,
+                PermissionKeys.AuditExport));
         Assert.False(AuthorizationPolicies.AnyPermissionPrefix.StartsWith(
             AuthorizationPolicies.PermissionPrefix,
             StringComparison.Ordinal));

@@ -1,6 +1,6 @@
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Application;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 public sealed class AzureBlobStorageModeTests
 {
@@ -20,9 +20,6 @@ public sealed class AzureBlobStorageModeTests
     [Fact]
     public void DefaultContainersCoverEveryModule()
     {
-        Assert.Equal("app-proposaltracker", AzureBlobStorageMode.DefaultContainers["proposalTracker"]);
-        Assert.Equal("app-contractmanagement", AzureBlobStorageMode.DefaultContainers["contractInitiationPlatform"]);
-        Assert.Equal("app-vendormanagement", AzureBlobStorageMode.DefaultContainers["vendorOnboarding"]);
         Assert.Equal("app-platform-users", AzureBlobStorageMode.DefaultContainers["platformUser"]);
     }
 }

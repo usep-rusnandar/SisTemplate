@@ -1,22 +1,16 @@
 {
-  "name": "mockupvite",
+  "name": "sistemplate-frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "sync:mockup": "node scripts/sync-mockup.mjs",
     "dev": "vite",
-    "build": "tsc -b && node scripts/clean-dist.mjs && npm run build:internal && npm run build:external && npm run build:portals",
-    "build:internal": "vite build --mode internal",
-    "build:external": "vite build --mode external && node scripts/finalize-external.mjs",
-    "build:portals": "npm run build:vendor-onboarding && npm run build:proposal-tracker && npm run build:contract-monitoring",
-    "build:vendor-onboarding": "vite build --mode vendor-onboarding && node scripts/finalize-portal.mjs vendor-onboarding",
-    "build:proposal-tracker": "vite build --mode proposal-tracker && node scripts/finalize-portal.mjs proposal-tracker",
-    "build:contract-monitoring": "vite build --mode contract-monitoring && node scripts/finalize-portal.mjs contract-monitoring",
+    "build": "tsc -b && node scripts/clean-dist.mjs && vite build",
     "lint": "eslint .",
     "check:esm": "node scripts/check-esm-undef.mjs",
     "preview": "vite preview",
-    "serve": "npm run build:internal && dotnet run --project ../backend/src/AppHost"
+    "serve": "npm run build && dotnet run --project ../backend/src/AppHost"
   },
   "dependencies": {
     "@babel/standalone": "^8.0.2",

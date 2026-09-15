@@ -1,9 +1,9 @@
 using System.Security.Claims;
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
-using IntegratedProcurement.BuildingBlocks.Application.Security;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
+using SisTemplate.BuildingBlocks.Application.Security;
 using Microsoft.AspNetCore.Http;
 
-namespace IntegratedProcurement.BuildingBlocks.Infrastructure.Security;
+namespace SisTemplate.BuildingBlocks.Infrastructure.Security;
 
 public sealed class HttpContextCurrentActor : ICurrentActor
 {

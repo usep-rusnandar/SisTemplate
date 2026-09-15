@@ -1,18 +1,18 @@
-using IntegratedProcurement.AppHost.Api.ReadModels;
-using IntegratedProcurement.AppHost.Api.Auth;
-using IntegratedProcurement.BuildingBlocks.Application;
-using IntegratedProcurement.AppHost.Api.Services;
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Audit.Application;
-using IntegratedProcurement.Platform.Documents.Application;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Auth;
-using IntegratedProcurement.Platform.Notifications.Application;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.AppHost.Api.ReadModels;
+using SisTemplate.AppHost.Api.Auth;
+using SisTemplate.BuildingBlocks.Application;
+using SisTemplate.AppHost.Api.Services;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Audit.Application;
+using SisTemplate.Platform.Documents.Application;
+using SisTemplate.Platform.InternalIdentity.Application.Auth;
+using SisTemplate.Platform.Notifications.Application;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 using System.Text.Json;
 
-namespace IntegratedProcurement.AppHost.Api.Endpoints;
+namespace SisTemplate.AppHost.Api.Endpoints;
 
 public static class AdminConsoleEndpoints
 {
@@ -81,8 +81,6 @@ public static class AdminConsoleEndpoints
         masterData.MapPut("/sets/{key}/records:replace", ReplaceMasterDataRecordsAsync);
         masterData.MapPut("/sets/{key}/records/{code}", PutMasterDataRecordAsync);
         masterData.MapDelete("/sets/{key}/records/{code}", DeleteMasterDataRecordAsync);
-        masterData.MapGet("/sets/brand/import/template", GetBrandImportTemplate);
-        masterData.MapPost("/sets/brand/import", ImportBrandRecordsAsync).DisableAntiforgery();
 
         // Administrative Regions external sync (wilayah.id): trigger a manual (ad-hoc) sync and read status.
         // Gated on the Administrative Regions screen (its province/city/district/village sets), so a role
@@ -339,12 +337,12 @@ public static class AdminConsoleEndpoints
             : (SettingText("baseUrl") ?? "—");
         var fromAddress = FirstNonEmptySetting(
             SettingText($"from_{moduleSlug}"),
-            SettingText("fromProc"),
+            SettingText("fromDefault"),
             SettingText("from")) ?? "—";
         var sentAt = JakartaTime.Now().ToString("dd MMM yyyy, HH:mm 'WIB'", System.Globalization.CultureInfo.InvariantCulture);
 
         var subject = string.IsNullOrWhiteSpace(request?.Subject)
-            ? $"Integrated Procurement — {category} email test"
+            ? $"SisTemplate — {category} email test"
             : $"[TEST] {request!.Subject}";
         var body = string.IsNullOrWhiteSpace(request?.Body)
             ? BuildTestEmailHtml(isSmtp ? "SMTP server" : "API gateway", endpoint, fromAddress, toTest!, sentAt)
@@ -371,11 +369,6 @@ public static class AdminConsoleEndpoints
 
     private static string? CategoryForModuleSlug(string? slug) => slug switch
     {
-        "vendorOnboarding" => "Vendor Onboarding",
-        "vendorWorkspace" => "Vendor Workspace",
-        "proposalTracker" => "Proposal Tracker",
-        "contractInitiationPlatform" => "Contract Initiation Platform",
-        "contractMonitoring" => "Contract Monitoring",
         "users" => "Users",
         _ => null,
     };
@@ -1216,88 +1209,6 @@ public static class AdminConsoleEndpoints
 
         await auditService.WriteAuditAsync(httpContext, "Delete", "Master Data", $"Deleted {normalizedKey}:{normalizedCode}", cancellationToken);
         return Results.NoContent();
-    }
-
-    private static IResult GetBrandImportTemplate(HttpContext httpContext, IBrandMasterImportService importService)
-    {
-        if (!MasterDataAccess.CanManage(httpContext.User, BrandMasterImport.SetKey))
-        {
-            return Results.Forbid();
-        }
-
-        return Results.File(
-            importService.CreateTemplate(),
-            "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-            "Brand-Import-Template.xlsx");
-    }
-
-    private static async Task<IResult> ImportBrandRecordsAsync(
-        HttpRequest request,
-        HttpContext httpContext,
-        IBrandMasterImportService importService,
-        IAdminConsoleAuditService auditService,
-        CancellationToken cancellationToken)
-    {
-        if (!MasterDataAccess.CanManage(httpContext.User, BrandMasterImport.SetKey))
-        {
-            return Results.Forbid();
-        }
-
-        if (!request.HasFormContentType)
-        {
-            return Results.BadRequest(new { code = "multipart_form_required" });
-        }
-
-        var form = await request.ReadFormAsync(cancellationToken);
-        var file = form.Files.GetFile("file");
-        if (file is null || file.Length == 0)
-        {
-            return Results.BadRequest(new { code = "file_required" });
-        }
-
-        if (file.Length > BrandMasterImport.MaxFileBytes)
-        {
-            return Results.BadRequest(new { code = "file_too_large", maxMb = BrandMasterImport.MaxFileBytes / (1024 * 1024) });
-        }
-
-        var commit = ParseCommitFlag(form["commit"].ToString(), request.Query["commit"].ToString());
-        try
-        {
-            await using var stream = file.OpenReadStream();
-            var result = await importService.ImportAsync(stream, Path.GetFileName(file.FileName), commit, cancellationToken);
-            if (result.Committed && result.Created > 0)
-            {
-                await auditService.WriteAuditAsync(
-                    httpContext,
-                    "Create",
-                    "Master Data",
-                    $"Imported {result.Created} brand(s); skipped {result.SkippedExisting} existing",
-                    cancellationToken);
-            }
-
-            return Results.Ok(result);
-        }
-        catch (Exception exception) when (exception is InvalidDataException or ArgumentException or FormatException)
-        {
-            return Results.BadRequest(new { code = "invalid_workbook", message = exception.Message });
-        }
-        catch (InvalidOperationException exception)
-        {
-            return Results.BadRequest(new { code = "brand_import_rejected", message = exception.Message });
-        }
-    }
-
-    private static bool ParseCommitFlag(string? formValue, string? queryValue)
-    {
-        var raw = string.IsNullOrWhiteSpace(formValue) ? queryValue : formValue;
-        if (string.IsNullOrWhiteSpace(raw))
-        {
-            return true;
-        }
-
-        return raw.Equals("true", StringComparison.OrdinalIgnoreCase)
-            || raw.Equals("1", StringComparison.OrdinalIgnoreCase)
-            || raw.Equals("yes", StringComparison.OrdinalIgnoreCase);
     }
 
     private static IResult GetRegionSyncStatus(IWilayahSyncCoordinator syncCoordinator) =>

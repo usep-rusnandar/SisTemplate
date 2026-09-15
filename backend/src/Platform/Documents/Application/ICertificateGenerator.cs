@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Documents.Application;
+namespace SisTemplate.Platform.Documents.Application;
 
 /// <summary>
 /// Renders a one-page A4 certificate PDF (title, issuer, labelled fields, and a QR code that encodes

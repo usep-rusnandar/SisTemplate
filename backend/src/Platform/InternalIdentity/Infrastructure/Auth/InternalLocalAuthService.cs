@@ -1,8 +1,8 @@
-using IntegratedProcurement.BuildingBlocks.Infrastructure.Http;
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.InternalIdentity.Application.Auth;
-using IntegratedProcurement.Platform.InternalIdentity.Domain;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.BuildingBlocks.Infrastructure.Http;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.InternalIdentity.Application.Auth;
+using SisTemplate.Platform.InternalIdentity.Domain;
+using SisTemplate.Platform.Persistence;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -11,11 +11,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 
-namespace IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Auth;
+namespace SisTemplate.Platform.InternalIdentity.Infrastructure.Auth;
 
 public sealed class InternalLocalAuthService : IInternalLocalAuthService
 {
-    private const string ResetTokenPurpose = "IntegratedProcurement.InternalPasswordReset.v1";
+    private const string ResetTokenPurpose = "SisTemplate.InternalPasswordReset.v1";
     private static readonly TimeSpan ResetTokenLifetime = TimeSpan.FromHours(24);
 
     private readonly ProcurementDbContext _dbContext;
@@ -251,7 +251,7 @@ public sealed class InternalLocalAuthService : IInternalLocalAuthService
                 ["name"] = user.CompleteName,
                 ["resetUrl"] = resetUrl,
                 ["expiryHours"] = "24",
-                ["contact"] = FrontendPortalUrls.SupportContact(_configuration["VendorRegistration:SupportEmail"]),
+                ["contact"] = FrontendPortalUrls.SupportContact(_configuration["Support:Email"]),
             },
             _communicationService,
             _emailSender,

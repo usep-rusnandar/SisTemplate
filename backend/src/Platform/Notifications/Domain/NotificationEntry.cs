@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Notifications.Domain;
+namespace SisTemplate.Platform.Notifications.Domain;
 
 /// <summary>
 /// A system-generated notification. Notifications are never seeded with dummy data; each row is

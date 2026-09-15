@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.BuildingBlocks.Application.Abstractions;
+namespace SisTemplate.BuildingBlocks.Application.Abstractions;
 
 public interface ICurrentActor
 {

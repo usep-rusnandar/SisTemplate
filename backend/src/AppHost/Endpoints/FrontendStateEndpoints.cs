@@ -1,8 +1,8 @@
-using IntegratedProcurement.AppHost.Api.Auth;
-using IntegratedProcurement.Platform.Persistence.FrontendState;
+using SisTemplate.AppHost.Api.Auth;
+using SisTemplate.Platform.Persistence.FrontendState;
 using Microsoft.AspNetCore.Mvc;
 
-namespace IntegratedProcurement.AppHost.Api.Endpoints;
+namespace SisTemplate.AppHost.Api.Endpoints;
 
 public static class FrontendStateEndpoints
 {

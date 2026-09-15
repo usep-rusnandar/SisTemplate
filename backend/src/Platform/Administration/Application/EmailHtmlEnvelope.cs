@@ -1,7 +1,7 @@
 using System.Net;
 using System.Text;
 
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// Branded HTML wrapper that matches the Email Templates preview (header, subject, body,

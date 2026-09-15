@@ -1,226 +1,208 @@
-# Deployment Internal (AppHost) dari GitHub Actions — Publish Profile
+# Deployment (AppHost) from GitHub Actions — Publish Profile
 
-> Deploy **backend + SPA internal** ke Azure App Service dari GitHub **tanpa** akses Microsoft Entra ID.
-> Workflow: [`.github/workflows/deploy-internal.yml`](../.github/workflows/deploy-internal.yml) — Actions: **Deploy Internal**.
+> Deploy the **single internal deployable** (`AppHost`: API + internal SPA) to Azure App Service
+> from GitHub **without** Microsoft Entra ID access.
+> Workflow: [`.github/workflows/deploy-internal.yml`](../.github/workflows/deploy-internal.yml) —
+> Actions: **Deploy Internal**.
 >
-> Auth: **Publish Profile** (bukan OIDC / App Registration).
+> Auth: **Publish Profile** (not OIDC / App Registration).
 >
 > Trigger:
-> - **otomatis:** push ke `master` (path `backend/**`, `frontend/**`, atau workflow ini) → **staging**
-> - **manual:** `workflow_dispatch` — pilih `staging` atau `production`
->
-> **Vendor portal:** [deployment-github-vendor.md](deployment-github-vendor.md) (App Service `vendor-workspace`, Publish Profile).  
-> Deploy lokal (Azure CLI): [deployment-cli.md](deployment-cli.md).
+> - **automatic:** push to `main` (paths `backend/**`, `frontend/**`, or this workflow) → **staging**
+> - **manual:** `workflow_dispatch` — choose `staging` or `production`
+
+There is only one deployable in this template — `AppHost` — because the external vendor/portal
+pattern has been removed. If your application later needs a second host, add a second workflow
+following the same shape.
 
 ---
 
-## 0. Peta singkat — Internal vs Vendor
+## 1. What the workflow does
 
-| | Internal (dokumen ini) | Vendor |
-|---|---|---|
-| Azure resource | App Service (`contractone`) + slot | App Service (`vendor-workspace`) + slot |
-| Workflow Actions | **Deploy Internal** | **Deploy Vendor** (`deploy-vendor.yml`) |
-| Auth ke Azure | **Publish Profile** (secret XML) | **Publish Profile** (`VENDORWEBAPP_PUBLISHPROFILE_*`) |
-| Butuh Entra ID? | **Tidak** | **Tidak** |
-| Build | `npm run build:internal` + `dotnet publish` | `npm run build:external` + `dotnet publish` VendorGateway |
-| Jangan pakai | App Service **Deployment Center → GitHub** (Oryx) | sama |
+1. Checkout the code (branch/tag/SHA).
+2. `npm ci` + `npm run build` (frontend).
+3. `dotnet publish` AppHost Release (the SPA is bundled into `wwwroot`).
+4. Zip the publish output.
+5. Deploy the zip with `azure/webapps-deploy` + **publish profile** (staging slot or production
+   site).
+6. Check `GET /api/health/live` (+ a snippet of `/api/v1/about`).
 
----
+The workflow does **not** touch connection strings, Blob/other secrets, or
+`ASPNETCORE_ENVIRONMENT` — those stay in App Service Configuration.
 
-## 1. Apa yang dilakukan workflow
+| Input `target` | Azure destination | Publish profile secret | GitHub Environment |
+|---|---|---|---|
+| `staging` | Slot `staging` | `AZUREWEBAPP_PUBLISHPROFILE_STAGING` | `staging` |
+| `production` | Production site | `AZUREWEBAPP_PUBLISHPROFILE_PRODUCTION` | `production` |
 
-1. Checkout kode (branch/tag/SHA).
-2. `npm ci` + `npm run build:internal`.
-3. `dotnet publish` AppHost Release (SPA masuk `wwwroot`).
-4. Zip artifact.
-5. Deploy zip dengan `azure/webapps-deploy` + **publish profile** (staging atau production).
-6. Cek `GET /api/health/live` (+ cuplikan `/api/v1/about`).
-
-**Tidak** diubah workflow: connection string, Blob/Maps/SharePoint, `ASPNETCORE_ENVIRONMENT` — tetap di App Service Configuration ([deployment-cli.md §7](deployment-cli.md)).
-
-| Input `target` | Tujuan Azure | Secret publish profile | GitHub Environment | URL tipikal |
-|---|---|---|---|---|
-| `staging` | Slot `staging` | `AZUREWEBAPP_PUBLISHPROFILE_STAGING` | `staging` | `https://contractone-staging.azurewebsites.net` |
-| `production` | Site production | `AZUREWEBAPP_PUBLISHPROFILE_PRODUCTION` | `production` | `https://contractone.azurewebsites.net` |
-
-> **Swap slot** (staging ↔ production tanpa redeploy) tetap lewat Portal/CLI — §5.  
-> Deploy `production` = upload zip langsung ke site production.
+> **Slot swap** (staging ↔ production without redeploying) is still done via Portal/CLI — §5.
+> Deploying `production` uploads the zip directly to the production site.
 
 ---
 
-## 2. Prasyarat (sekali saja)
+## 2. Prerequisites (one-time)
 
-### 2.1 Di Azure — App Service siap
+### 2.1 In Azure — App Service ready
 
-- App Service internal ada (contoh: `contractone`).
-- Slot **`staging`** sudah dibuat.
-- App settings per slot/site sudah diisi.
-- Anda punya izin di Portal untuk membuka App Service / slot dan **Download publish profile** (tidak perlu Entra admin).
+- The App Service exists.
+- A **`staging`** deployment slot is created.
+- App settings are filled in per slot/site.
+- You have Portal permission to open the App Service/slot and **download the publish profile**
+  (no Entra admin role required).
 
-### 2.2 Unduh Publish Profile
+### 2.2 Download the publish profile
 
-**Staging (wajib dari slot, bukan dari site production):**
+**Staging (must come from the slot, not the production site):**
 
-1. Portal Azure → App Service `contractone`.
-2. **Deployment** → **Deployment slots** → klik slot **`staging`**.
-3. Di Overview slot staging → **Get publish profile** / **Download publish profile**.
-4. File `.PublishSettings` (XML) tersimpan di laptop — **jangan** commit ke git.
+1. Portal → App Service → **Deployment** → **Deployment slots** → click slot **`staging`**.
+2. Slot Overview → **Get publish profile** / **Download publish profile**.
+3. The `.PublishSettings` file (XML) is saved locally — **never** commit it to git.
 
 **Production:**
 
-1. Portal → App Service `contractone` (site utama, bukan slot).
+1. Portal → App Service (the main site, not a slot).
 2. Overview → **Download publish profile**.
-3. Simpan terpisah dari file staging.
+3. Keep this file separate from the staging one.
 
-> Profile staging dan production **berbeda**. Tertukar = deploy ke lingkungan salah.
+> Staging and production profiles are **different**. Mixing them up deploys to the wrong
+> environment.
 
-### 2.3 Di GitHub — Environments (disarankan)
+### 2.3 In GitHub — Environments (recommended)
 
 Repo → **Settings** → **Environments**:
 
-| Nama | Disarankan |
+| Name | Recommended |
 |---|---|
 | `staging` | Optional reviewers |
 | `production` | **Required reviewers** |
 
-### 2.4 Di GitHub — Variables
+### 2.4 In GitHub — Variables
 
 **Settings** → **Secrets and variables** → **Actions** → **Variables**:
 
-| Name | Contoh | Keterangan |
+| Name | Example | Notes |
 |---|---|---|
-| `AZURE_WEBAPP_NAME` | `contractone` | Nama App Service |
-| `AZURE_SLOT_NAME` | `staging` | Slot untuk target `staging` (default `staging`) |
+| `AZURE_WEBAPP_NAME` | `your-app-name` | App Service name |
+| `AZURE_SLOT_NAME` | `staging` | Slot for the `staging` target (default `staging`) |
 
-`AZURE_RESOURCE_GROUP` **tidak wajib** untuk jalur publish profile (tidak dipakai `az` login).
+### 2.5 In GitHub — Secrets (publish profile XML)
 
-### 2.5 Di GitHub — Secrets (isi XML publish profile)
+**Settings** → **Secrets** → **New repository secret** (or Environment secret):
 
-**Settings** → **Secrets** → **New repository secret** (atau Environment secret):
-
-| Secret | Isi |
+| Secret | Contents |
 |---|---|
-| `AZUREWEBAPP_PUBLISHPROFILE_STAGING` | **Seluruh** isi file publish profile **slot staging** (copy-paste XML) |
-| `AZUREWEBAPP_PUBLISHPROFILE_PRODUCTION` | **Seluruh** isi file publish profile **production** |
+| `AZUREWEBAPP_PUBLISHPROFILE_STAGING` | **Entire** contents of the staging slot's publish profile (paste the XML) |
+| `AZUREWEBAPP_PUBLISHPROFILE_PRODUCTION` | **Entire** contents of the production publish profile |
 
-Cara isi: buka file `.PublishSettings` di Notepad → Ctrl+A → Ctrl+C → paste ke value secret.
+Open the `.PublishSettings` file in a text editor → select all → copy → paste into the secret
+value. **Never** commit that file; never paste it into chat/tickets unless necessary.
 
-**Jangan** commit file itu; **jangan** share di chat/ticket tanpa perlu.
+### 2.6 If publish credentials are reset
 
-### 2.6 Jika publish credentials di-reset
-
-Portal → App Service → **Reset publish profile** / ganti publishing password → unduh profile **baru** → update secret di GitHub. Deploy akan gagal sampai secret diganti.
+Portal → App Service → **Reset publish profile** (or change the publishing password) → download
+the **new** profile → update the GitHub secret. Deploys fail until the secret is updated.
 
 ---
 
-## 3. Cara menjalankan deploy
+## 3. Running a deploy
 
-### 3.0 Staging otomatis (push `master`)
+### 3.1 Automatic staging (push to `main`)
 
-1. Pastikan secret/variable §2 sudah terisi (`AZUREWEBAPP_PUBLISHPROFILE_STAGING`, `AZURE_WEBAPP_NAME`).
-2. Merge / push ke **`master`** dengan perubahan di `backend/` atau `frontend/` (atau file workflow).
-3. Repo → **Actions** → **Deploy Internal** jalan sendiri → target **staging**.
-4. Approve Environment `staging` jika diminta → tunggu hijau (~5–15 menit).
-5. Smoke test staging ([deployment-cli.md §11](deployment-cli.md)).
+1. Make sure the secrets/variables in §2 are filled in.
+2. Merge/push to **`main`** with changes under `backend/` or `frontend/` (or the workflow file).
+3. Repo → **Actions** → **Deploy Internal** runs automatically → target **staging**.
+4. Approve the `staging` Environment if prompted → wait for green (~5–15 min).
 
-Push yang hanya mengubah `docs/` (dll.) **tidak** memicu deploy (filter `paths`).
+Pushes that only touch `docs/` etc. do **not** trigger a deploy (path filter).
 
-### 3.1 Production / deploy manual
+### 3.2 Production / manual deploy
 
 1. Repo → **Actions** → **Deploy Internal** → **Run workflow**.
-2. **target:** `staging` atau `production`; **ref** / **skip_health_check** opsional.
-3. Approve Environment jika diminta → tunggu hijau.
-4. Setelah staging OK → Run dengan **target** = `production` (atau slot swap — §5).
+2. **target:** `staging` or `production`; **ref** / **skip_health_check** optional.
+3. Approve the Environment if prompted → wait for green.
+4. After staging is verified → run again with **target** = `production` (or use a slot swap — §5).
 
-### 3.2 Urutan rilis penuh (Suite + module portals)
+### 3.3 DB / patches
 
-When the user says deploy staging/production, ship **all four internal hosts**, not Suite alone.
-
-1. Push/`merge` ke `master` → **Deploy Internal** staging **and** **Deploy Module Portals** staging (otomatis on `frontend/**`)
-2. Uji Suite + vendor-onboarding + proposal-tracker + contract-monitoring staging
-3. **Deploy Internal** → `production` *(manual)*
-4. **Deploy Module Portals** → `production` for **vendor-onboarding**, **proposal-tracker**, and **contract-monitoring** *(manual, all three)*
-5. Vendor Workspace production only when asked (`deploy-vendor.yml`)
-
-Staging hosts: `https://contractone-staging.azurewebsites.net`, `https://vendor-onboarding-staging.azurewebsites.net`, `https://proposal-tracker-staging.azurewebsites.net`, `https://contract-monitoring-staging.azurewebsites.net`.
-
-Production hosts: `https://contractone.azurewebsites.net`, `https://vendor-onboarding.azurewebsites.net`, `https://proposal-tracker.azurewebsites.net`, `https://contract-monitoring.azurewebsites.net`.
-
-### 3.3 DB / patch
-
-Workflow tidak menjalankan SQL patch. Migrasi/seed: `DataSeeding__*` di App Service. Patch lama: [deployment-cli.md §10](deployment-cli.md).
+The workflow does not run SQL. Migrations/seed run automatically at app startup.
 
 ---
 
-## 4. Verifikasi cepat
+## 4. Quick verification
 
 ```powershell
-$H = "https://contractone-staging.azurewebsites.net"
+$H = "https://<your-app-name>-staging.azurewebsites.net"
 curl.exe -s "$H/api/health/live"
 curl.exe -s "$H/api/v1/about"
 ```
 
 ---
 
-## 5. Alternatif production: slot swap
+## 5. Alternative for production: slot swap
 
-Setelah staging slot hijau:
+Once the staging slot is green:
 
 ```powershell
 az webapp deployment slot swap `
-  -g <resource-group> -n contractone `
+  -g <resource-group> -n <your-app-name> `
   --slot staging --target-slot production
 ```
 
-Atau Portal → Deployment slots → Swap. Sticky settings: [deployment-cli.md §12](deployment-cli.md).
+Or Portal → Deployment slots → Swap.
 
 ---
 
-## 6. Jangan pakai Deployment Center GitHub di App Service
+## 6. Don't use the App Service "Deployment Center → GitHub" option
 
-**Deployment Center → GitHub** memakai Oryx di Azure — **tidak** menjalankan `build:internal` → `dotnet publish` dengan benar untuk monorepo ini. Pakai workflow **Deploy Internal** saja.
+That option uses Oryx on Azure and does **not** run `npm run build` → `dotnet publish` correctly
+for this monorepo. Use the **Deploy Internal** workflow instead.
 
 ---
 
 ## 7. Troubleshooting
 
-| Gejala | Penyebab | Perbaikan |
+| Symptom | Cause | Fix |
 |---|---|---|
-| `AZUREWEBAPP_PUBLISHPROFILE_… is not set` | Secret belum diisi / typo nama | §2.5 |
-| `AZURE_WEBAPP_NAME` not set | Variable belum diisi | §2.4 |
-| Deploy 401 / auth failed | Profile salah, kedaluwarsa, atau tertukar stg/prod | Unduh ulang dari **slot/site yang benar** → update secret |
-| Deploy sukses tapi salah lingkungan | Profile staging dipakai untuk production (atau sebaliknya) | §2.2 — unduh dari slot staging vs site production |
-| Health check gagal | App crash / connstr / dingin | Log App Service; `skip_health_check` sementara |
-| `/` blank | FE tidak masuk publish | Cek log Build frontend / Publish backend |
-| Job menunggu approval | Environment protection | Approve di halaman run |
+| `AZUREWEBAPP_PUBLISHPROFILE_… is not set` | Secret missing / name typo | §2.5 |
+| `AZURE_WEBAPP_NAME` not set | Variable missing | §2.4 |
+| Deploy 401 / auth failed | Profile wrong, expired, or staging/prod swapped | Re-download from the **correct slot/site** → update the secret |
+| Deploy succeeds but wrong environment | Staging profile used for production (or vice versa) | §2.2 — download from the staging slot vs. production site |
+| Health check fails | App crashed / bad connection string / cold start | Check App Service logs; temporarily set `skip_health_check` |
+| `/` is blank | Frontend build didn't make it into the publish output | Check the frontend build / backend publish log steps |
+| Job stuck waiting for approval | Environment protection rule | Approve on the run's page |
 
 ---
 
-## 8. Keamanan (ringkas)
+## 8. Security (summary)
 
-- Publish profile = credential publishing — hanya di GitHub Secrets.
-- Environment `production` + required reviewers = gate manusia.
-- Connection string / secret aplikasi tetap di App Service, bukan di profile (profile hanya untuk deploy file).
-- Jangan commit `.PublishSettings` ([SECURITY.md](../SECURITY.md)).
-- Jika bocor: Reset publish profile di Portal + ganti secret GitHub.
-
----
-
-## 9. Ringkas untuk orang awam
-
-1. Portal → slot **staging** → **Download publish profile** → tempel ke secret `AZUREWEBAPP_PUBLISHPROFILE_STAGING`.  
-2. Portal → App Service production → download profile → secret `AZUREWEBAPP_PUBLISHPROFILE_PRODUCTION`.  
-3. Variable `AZURE_WEBAPP_NAME` = `contractone`.  
-4. Push ke `master` → staging otomatis; production tetap **Run workflow** manual.  
-5. **Tidak perlu** Microsoft Entra ID.  
-6. Vendor portal: [deployment-github-vendor.md](deployment-github-vendor.md) (juga tanpa Entra).
+- The publish profile is a publishing credential — keep it only in GitHub Secrets.
+- `production` Environment + required reviewers = a human gate.
+- Application connection strings/secrets stay on the App Service, not in the publish profile
+  (the profile is only used to push files).
+- Never commit a `.PublishSettings` file ([SECURITY.md](../SECURITY.md)).
+- If leaked: reset the publish profile in the Portal and update the GitHub secret.
 
 ---
 
-## 10. Catatan: OIDC (jika nanti ada akses Entra)
+## 9. TL;DR
 
-Jalur OIDC (App Registration + federated credential) lebih “modern”, tetapi **membutuhkan** akses Microsoft Entra ID. Tim ini memakai **Publish Profile** karena Entra tidak tersedia. Jangan campur kedua jalur di satu workflow tanpa koordinasi.
+1. Portal → staging slot → **Download publish profile** → paste into secret
+   `AZUREWEBAPP_PUBLISHPROFILE_STAGING`.
+2. Portal → production App Service → download profile → secret
+   `AZUREWEBAPP_PUBLISHPROFILE_PRODUCTION`.
+3. Variable `AZURE_WEBAPP_NAME` = your App Service name.
+4. Push to `main` → staging deploys automatically; production stays a manual **Run workflow**.
+5. Microsoft Entra ID is **not required**.
 
 ---
 
-*Setup §2 sekali. Setelah itu: push `master` → staging; production → Actions → **Deploy Internal** → target `production`.*
+## 10. Note: OIDC (if Entra access becomes available later)
+
+The OIDC path (App Registration + federated credential) is more "modern" but **requires**
+Microsoft Entra ID access. This template uses **Publish Profile** because that access isn't always
+available. Don't mix both paths in one workflow without coordinating.
+
+---
+
+*Set up §2 once. After that: push to `main` → staging; production → Actions → **Deploy Internal** →
+target `production`.*

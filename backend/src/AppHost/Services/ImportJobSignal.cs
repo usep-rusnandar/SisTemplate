@@ -1,6 +1,6 @@
 using System.Threading.Channels;
 
-namespace IntegratedProcurement.AppHost.Api.Services;
+namespace SisTemplate.AppHost.Api.Services;
 
 /// <summary>
 /// In-process wake-up signal for the import-job runner. Lets the runner park (no DB polling) while idle

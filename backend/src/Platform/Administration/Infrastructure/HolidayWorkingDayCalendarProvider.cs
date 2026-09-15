@@ -1,10 +1,10 @@
 using System.Globalization;
 using System.Text.Json;
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 /// <summary>
 /// Builds the working-day calendar from the <c>holiday</c> master-data set (the same records the

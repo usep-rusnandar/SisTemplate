@@ -1,6 +1,6 @@
-using IntegratedProcurement.BuildingBlocks.Application;
+using SisTemplate.BuildingBlocks.Application;
 
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>Jakarta-facing schedule copy and next-run math for the Super Admin catalog. Never persist these.</summary>
 public static class BackgroundProcessSchedule

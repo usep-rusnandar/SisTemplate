@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// Resolves public portal origins used in outbound email links. Empty Azure App Settings

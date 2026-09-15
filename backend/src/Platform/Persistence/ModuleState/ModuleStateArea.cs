@@ -1,8 +1,6 @@
-namespace IntegratedProcurement.Platform.Persistence.ModuleState;
+namespace SisTemplate.Platform.Persistence.ModuleState;
 
-public enum ModuleStateArea
+public static class ModuleStateKeys
 {
-    ProposalTracker,
-    ContractInitiationPlatform,
-    ContractMonitoring
+    public const string Global = "global";
 }

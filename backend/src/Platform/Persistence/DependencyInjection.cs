@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IntegratedProcurement.Platform.Persistence;
+namespace SisTemplate.Platform.Persistence;
 
 public static class DependencyInjection
 {

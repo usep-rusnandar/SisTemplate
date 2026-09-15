@@ -1,13 +1,13 @@
 using System.Text;
-using IntegratedProcurement.AppHost.Api.Auth;
-using IntegratedProcurement.BuildingBlocks.Application;
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
-using IntegratedProcurement.Platform.Documents.Application;
-using IntegratedProcurement.Platform.Documents.Infrastructure;
+using SisTemplate.AppHost.Api.Auth;
+using SisTemplate.BuildingBlocks.Application;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
+using SisTemplate.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.AppHost.Api.Endpoints;
+namespace SisTemplate.AppHost.Api.Endpoints;
 
 /// <summary>
 /// Generic document endpoints. Development stores files on local disk; Staging/Production use Azure
@@ -219,28 +219,11 @@ public static class DocumentEndpoints
         return LocalDocumentTicket.IsValid(access.Secret, perm, container, key, exp, sig);
     }
 
-    private static string? ModuleManagePermission(string module) => (module ?? string.Empty).ToLowerInvariant() switch
-    {
-        ModuleKeys.Slugs.ProposalTracker => PermissionKeys.ProposalTrackerManage,
-        ModuleKeys.Slugs.ContractInitiationPlatform => PermissionKeys.ContractInitiationPlatformManage,
-        ModuleKeys.Slugs.ContractMonitoring => PermissionKeys.ContractMonitoringManage,
-        _ => null,
-    };
+    private static string? ModuleManagePermission(string module) =>
+        string.IsNullOrWhiteSpace(module) ? null : PermissionKeys.SettingsUpdate;
 
-    /// <summary>
-    /// Tracker officers run Term Sheet / Contract documents under the CIP module slug.
-    /// </summary>
-    private static bool ActorHasModuleManage(ICurrentActor currentActor, string requiredPermission)
-    {
-        var permissions = currentActor.Actor.Permissions;
-        if (permissions.Contains(requiredPermission, StringComparer.OrdinalIgnoreCase))
-        {
-            return true;
-        }
-
-        return string.Equals(requiredPermission, PermissionKeys.ContractInitiationPlatformManage, StringComparison.OrdinalIgnoreCase)
-            && permissions.Contains(PermissionKeys.ProposalTrackerManage, StringComparer.OrdinalIgnoreCase);
-    }
+    private static bool ActorHasModuleManage(ICurrentActor currentActor, string requiredPermission) =>
+        currentActor.Actor.Permissions.Contains(requiredPermission, StringComparer.OrdinalIgnoreCase);
 
     private static string SafeFileName(string fileName)
     {

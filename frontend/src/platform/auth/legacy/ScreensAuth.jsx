@@ -13,121 +13,36 @@ import { PasswordField } from "../../account/legacy/AccountModals.jsx";
 const AUTH_PORTAL_COPY = {
   suite: {
     en: {
-      eyebrow: "Integrated Procurement Platform",
-      headline: "One workspace for vendor, proposal, and contract execution.",
-      body: "Access Vendor Onboarding, Proposal Tracker (including Term Sheet / Contract), and Contract Monitoring from one internal portal.",
+      eyebrow: "SisTemplate Platform",
+      headline: "One internal workspace for secure operations.",
+      body: "Sign in to the reusable internal shell with permission-driven navigation, administration, notifications, and audit tools.",
       facts: [
-        ["4", "Procurement modules"],
-        ["Vendor Hub", "External vendor data"],
-        ["Tracker + CM", "Contract lifecycle"],
+        ["Internal", "Single SPA shell"],
+        ["RBAC", "Permission-driven access"],
+        ["Admin", "Shared platform tools"],
       ],
-      formTitle: "Internal procurement sign in",
-      formLead: "Continue across vendor data, proposals, Term Sheet, and contract monitoring.",
+      formTitle: "Internal platform sign in",
+      formLead: "Continue to the shared workspace and administration tools.",
       footer: "Staff-only access. Sign in with your local password, or continue with SSO when it is enabled.",
     },
     id: {
-      eyebrow: "Platform Pengadaan Terpadu",
-      headline: "Satu ruang kerja untuk vendor, proposal, dan eksekusi kontrak.",
-      body: "Akses Vendor Onboarding, Proposal Tracker (termasuk Term Sheet / Kontrak), dan Contract Monitoring dari satu portal internal.",
+      eyebrow: "Platform SisTemplate",
+      headline: "Satu ruang kerja internal untuk operasi yang aman.",
+      body: "Masuk ke shell internal yang dapat dipakai ulang dengan navigasi berbasis permission, administrasi, notifikasi, dan audit.",
       facts: [
-        ["4", "Modul pengadaan"],
-        ["Vendor Hub", "Data vendor eksternal"],
-        ["Tracker + CM", "Siklus kontrak"],
+        ["Internal", "Satu shell SPA"],
+        ["RBAC", "Akses berbasis permission"],
+        ["Admin", "Perangkat platform bersama"],
       ],
-      formTitle: "Masuk pengadaan internal",
-      formLead: "Lanjutkan ke data vendor, proposal, Term Sheet, dan contract monitoring.",
-      footer: "Akses staf. Masuk dengan kata sandi lokal, atau lanjutkan dengan SSO jika sudah aktif.",
-    },
-  },
-  "vendor-onboarding": {
-    en: {
-      eyebrow: "Vendor Onboarding",
-      headline: "Qualify a vendor before they enter the workspace.",
-      body: "Open a dossier, walk the status chain, and activate workspace access for the PIC who will work in Vendor Workspace.",
-      facts: [
-        ["Dossier", "Registration pack"],
-        ["Status chain", "SBMIT to APPRV"],
-        ["Workspace", "PIC activation"],
-      ],
-      formTitle: "Sign in to Vendor Onboarding",
-      formLead: "Continue vendor registration, approval, and workspace activation.",
-      footer: "Staff-only access. Sign in with your local password, or continue with SSO when it is enabled.",
-    },
-    id: {
-      eyebrow: "Vendor Onboarding",
-      headline: "Kualifikasi vendor sebelum masuk ke workspace.",
-      body: "Buka dossier, ikuti rantai status, dan aktifkan akses workspace untuk PIC yang akan bekerja di Vendor Workspace.",
-      facts: [
-        ["Dossier", "Paket registrasi"],
-        ["Rantai status", "SBMIT sampai APPRV"],
-        ["Workspace", "Aktivasi PIC"],
-      ],
-      formTitle: "Masuk ke Vendor Onboarding",
-      formLead: "Lanjutkan registrasi, persetujuan, dan aktivasi workspace vendor.",
-      footer: "Akses staf. Masuk dengan kata sandi lokal, atau lanjutkan dengan SSO jika sudah aktif.",
-    },
-  },
-  "proposal-tracker": {
-    en: {
-      eyebrow: "Proposal Tracker",
-      headline: "Follow a proposal from intake through LOA.",
-      body: "After Bid Evaluation (or Negotiation), Term Sheet is completed in Tracker. Then LOA and Contract open together on this board.",
-      facts: [
-        ["PROP", "Intake on this board"],
-        ["EVAL", "Award recorded here"],
-        ["LOA", "Issued here after TERM"],
-      ],
-      formTitle: "Sign in to Proposal Tracker",
-      formLead: "Continue the pipeline through Term Sheet, then LOA in parallel with Contract.",
-      footer: "Staff-only access. Sign in with your local password, or continue with SSO when it is enabled.",
-    },
-    id: {
-      eyebrow: "Proposal Tracker",
-      headline: "Ikuti proposal dari intake sampai LOA.",
-      body: "Setelah Bid Evaluation (atau Negotiation), Term Sheet diselesaikan di Tracker. Lalu LOA dan Contract dibuka bersama di papan ini.",
-      facts: [
-        ["PROP", "Intake di papan ini"],
-        ["EVAL", "Award dicatat di sini"],
-        ["LOA", "Setelah TERM, di sini"],
-      ],
-      formTitle: "Masuk ke Proposal Tracker",
-      formLead: "Lanjutkan pipeline lewat Term Sheet, lalu LOA paralel dengan Contract.",
-      footer: "Akses staf. Masuk dengan kata sandi lokal, atau lanjutkan dengan SSO jika sudah aktif.",
-    },
-  },
-  "contract-monitoring": {
-    en: {
-      eyebrow: "Contract Monitoring",
-      headline: "Watch delivery after the contract is live.",
-      body: "The contract database, obligations, and materials stay here once initiation is done.",
-      facts: [
-        ["Database", "Signed contracts"],
-        ["Obligations", "What is due"],
-        ["Material", "List of material"],
-      ],
-      formTitle: "Sign in to Contract Monitoring",
-      formLead: "Continue material tracking and contract oversight.",
-      footer: "Staff-only access. Sign in with your local password, or continue with SSO when it is enabled.",
-    },
-    id: {
-      eyebrow: "Contract Monitoring",
-      headline: "Pantau pelaksanaan setelah kontrak berjalan.",
-      body: "Database kontrak, kewajiban, dan material berada di sini setelah inisiasi selesai.",
-      facts: [
-        ["Database", "Kontrak tertandatangani"],
-        ["Kewajiban", "Yang jatuh tempo"],
-        ["Material", "Daftar material"],
-      ],
-      formTitle: "Masuk ke Contract Monitoring",
-      formLead: "Lanjutkan pelacakan material dan pengawasan kontrak.",
+      formTitle: "Masuk ke platform internal",
+      formLead: "Lanjutkan ke ruang kerja bersama dan perangkat administrasi.",
       footer: "Akses staf. Masuk dengan kata sandi lokal, atau lanjutkan dengan SSO jika sudah aktif.",
     },
   },
 };
 
 function authPortalCopy(lang) {
-  const portal = (typeof window !== "undefined" && window.__APP_PORTAL) || "suite";
-  const pack = AUTH_PORTAL_COPY[portal] || AUTH_PORTAL_COPY.suite;
+  const pack = AUTH_PORTAL_COPY.suite;
   return (lang === "id" ? pack.id : pack.en) || pack.en;
 }
 

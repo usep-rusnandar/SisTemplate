@@ -6,17 +6,39 @@ import { installApiBackedStorage } from "./apiBackedStorage";
 import { installHostGlobals, type AppPortal } from "./legacyRuntime";
 
 type InternalAuthApi = {
-  me: () => Promise<any>;
-  login: (identifier: string, password: string) => Promise<any>;
-  devLogin: (identifier: string) => Promise<any>;
+  me: () => Promise<unknown>;
+  login: (identifier: string, password: string) => Promise<unknown>;
+  devLogin: (identifier: string) => Promise<unknown>;
   logout: () => Promise<void>;
   startSso: () => void;
-  changePassword: (currentPassword: string, newPassword: string) => Promise<any>;
-  verifyPassword: (password: string) => Promise<any>;
-  passwordPolicy: () => Promise<any>;
-  requestPasswordReset: (identifier: string) => Promise<any>;
-  confirmPasswordReset: (identifier: string, resetToken: string, newPassword: string) => Promise<any>;
+  changePassword: (currentPassword: string, newPassword: string) => Promise<unknown>;
+  verifyPassword: (password: string) => Promise<unknown>;
+  passwordPolicy: () => Promise<unknown>;
+  requestPasswordReset: (identifier: string) => Promise<unknown>;
+  confirmPasswordReset: (identifier: string, resetToken: string, newPassword: string) => Promise<unknown>;
 };
+
+type AuthError = Error & {
+  status?: number;
+  code?: unknown;
+  errors?: unknown;
+};
+
+function errorMessage(payload: unknown, status: number) {
+  if (payload && typeof payload === "object") {
+    const body = payload as { title?: string; message?: string; code?: string };
+    return body.title || body.message || body.code || `Request failed (${status})`;
+  }
+  return `Request failed (${status})`;
+}
+
+function errorCode(payload: unknown) {
+  return payload && typeof payload === "object" ? (payload as { code?: unknown }).code : undefined;
+}
+
+function errorDetails(payload: unknown) {
+  return payload && typeof payload === "object" ? (payload as { errors?: unknown }).errors : undefined;
+}
 
 async function internalAuthJson(path: string, init?: RequestInit) {
   const response = await fetch(path, {
@@ -33,10 +55,10 @@ async function internalAuthJson(path: string, init?: RequestInit) {
 
   const payload = await response.json().catch(() => null);
   if (!response.ok) {
-    const error = new Error((payload && (payload.title || payload.message || payload.code)) || `Request failed (${response.status})`);
-    (error as any).status = response.status;
-    (error as any).code = payload && payload.code;
-    (error as any).errors = payload && payload.errors;
+    const error: AuthError = new Error(errorMessage(payload, response.status));
+    error.status = response.status;
+    error.code = errorCode(payload);
+    error.errors = errorDetails(payload);
     throw error;
   }
 

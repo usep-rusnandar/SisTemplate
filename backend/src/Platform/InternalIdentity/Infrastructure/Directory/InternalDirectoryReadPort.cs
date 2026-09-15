@@ -1,9 +1,9 @@
-using IntegratedProcurement.Platform.InternalIdentity.Application.Directory;
-using IntegratedProcurement.Platform.InternalIdentity.Domain;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.InternalIdentity.Application.Directory;
+using SisTemplate.Platform.InternalIdentity.Domain;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Directory;
+namespace SisTemplate.Platform.InternalIdentity.Infrastructure.Directory;
 
 public sealed class InternalDirectoryReadPort : IInternalDirectoryReadPort
 {

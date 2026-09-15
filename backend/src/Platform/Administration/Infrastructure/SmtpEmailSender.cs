@@ -4,12 +4,12 @@ using System.Net.Http;
 using System.Net.Mail;
 using System.Text;
 using System.Text.Json;
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Administration.Domain;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Domain;
+using SisTemplate.Platform.Persistence;
 using Microsoft.Extensions.Logging;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 public sealed class SmtpEmailSender : IEmailSender
 {
@@ -41,17 +41,15 @@ public sealed class SmtpEmailSender : IEmailSender
         var settings = (await _configurationService.GetSettingsAsync(cancellationToken)).Values;
 
         // Per-module sender: each module has its own From + mailbox name (from_<slug> / mailbox_<slug>).
-        // Falls back to the legacy vendor/procurement split, then a global from/mailbox, so nothing
-        // breaks when a module's keys are unset.
+        // Falls back to a global from/mailbox default, so nothing breaks when a module's keys are unset.
         var slug = EmailTestRedirect.ModuleSlugForCategory(category);
-        var isVendorCategory = category.StartsWith("Vendor", StringComparison.OrdinalIgnoreCase);
         var from = FirstNonEmpty(
             slug is null ? null : Text(settings, $"from_{slug}"),
-            isVendorCategory ? Text(settings, "fromVendor") : Text(settings, "fromProc"),
+            Text(settings, "fromDefault"),
             Text(settings, "from"));
         var mailboxName = FirstNonEmpty(
             slug is null ? null : Text(settings, $"mailbox_{slug}"),
-            isVendorCategory ? Text(settings, "mailboxVendor") : Text(settings, "mailboxProc"),
+            Text(settings, "mailboxDefault"),
             Text(settings, "mailbox"));
 
         // Per-module "To (test)" only. An empty field must send to the real recipient — never inherit

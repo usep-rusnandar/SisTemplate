@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.Platform.InternalIdentity.Application.Sso;
+namespace SisTemplate.Platform.InternalIdentity.Application.Sso;
 
 public static class SsoSessionKeys
 {

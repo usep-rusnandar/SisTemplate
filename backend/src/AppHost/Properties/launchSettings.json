@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "IntegratedProcurement.AppHost.Api": {
+    "SisTemplate.AppHost.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": false,

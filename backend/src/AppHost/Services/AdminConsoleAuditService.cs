@@ -1,9 +1,9 @@
-using IntegratedProcurement.AppHost.Api.ReadModels;
-using IntegratedProcurement.Platform.Audit.Application;
+using SisTemplate.AppHost.Api.ReadModels;
+using SisTemplate.Platform.Audit.Application;
 using Microsoft.AspNetCore.Http;
 using System.Globalization;
 
-namespace IntegratedProcurement.AppHost.Api.Services;
+namespace SisTemplate.AppHost.Api.Services;
 
 internal interface IAdminConsoleAuditService
 {

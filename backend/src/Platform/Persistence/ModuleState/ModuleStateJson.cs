@@ -1,6 +1,6 @@
 using System.Text.Json;
 
-namespace IntegratedProcurement.Platform.Persistence.ModuleState;
+namespace SisTemplate.Platform.Persistence.ModuleState;
 
 /// <summary>
 /// Module-state KV payload helpers. An empty JSON array is the stale-bridge /

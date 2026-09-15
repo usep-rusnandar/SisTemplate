@@ -1,7 +1,7 @@
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Administration.Infrastructure;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Infrastructure;
 
-namespace IntegratedProcurement.AppHost.Api.IntegrationTests;
+namespace SisTemplate.AppHost.Api.IntegrationTests;
 
 public sealed class BackgroundProcessScheduleTests
 {
@@ -45,7 +45,6 @@ public sealed class BackgroundProcessCatalogTests
     {
         var catalog = new BackgroundProcessCatalog(
             [
-                new StubSource(BackgroundProcessKeys.ContractReminderScan),
                 new StubSource(BackgroundProcessKeys.WilayahSync),
                 new StubSource("customExtra"),
                 new StubSource(BackgroundProcessKeys.Retention),
@@ -59,7 +58,6 @@ public sealed class BackgroundProcessCatalogTests
             {
                 BackgroundProcessKeys.WilayahSync,
                 BackgroundProcessKeys.Retention,
-                BackgroundProcessKeys.ContractReminderScan,
                 "customExtra",
             },
             listed.Items.Select(item => item.Key).ToArray());

@@ -1,6 +1,6 @@
 using System.Globalization;
 
-namespace IntegratedProcurement.Platform.Administration.Application;
+namespace SisTemplate.Platform.Administration.Application;
 
 /// <summary>
 /// wilayah.id publishes a file-level <c>meta.updated_at</c> (date, not per-row). Used as an

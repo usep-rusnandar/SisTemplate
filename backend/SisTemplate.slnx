@@ -1,0 +1,87 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/AppHost/">
+    <Project Path="src/AppHost/SisTemplate.AppHost.Api.csproj" />
+  </Folder>
+  <Folder Name="/src/BuildingBlocks/" />
+  <Folder Name="/src/BuildingBlocks/Application/">
+    <Project Path="src/BuildingBlocks/Application/SisTemplate.BuildingBlocks.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/BuildingBlocks/Domain/">
+    <Project Path="src/BuildingBlocks/Domain/SisTemplate.BuildingBlocks.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/BuildingBlocks/Infrastructure/">
+    <Project Path="src/BuildingBlocks/Infrastructure/SisTemplate.BuildingBlocks.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/" />
+  <Folder Name="/src/Platform/Administration/" />
+  <Folder Name="/src/Platform/Administration/Application/">
+    <Project Path="src/Platform/Administration/Application/SisTemplate.Platform.Administration.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Administration/Domain/">
+    <Project Path="src/Platform/Administration/Domain/SisTemplate.Platform.Administration.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Administration/Infrastructure/">
+    <Project Path="src/Platform/Administration/Infrastructure/SisTemplate.Platform.Administration.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Audit/" />
+  <Folder Name="/src/Platform/Audit/Application/">
+    <Project Path="src/Platform/Audit/Application/SisTemplate.Platform.Audit.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Audit/Domain/">
+    <Project Path="src/Platform/Audit/Domain/SisTemplate.Platform.Audit.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Audit/Infrastructure/">
+    <Project Path="src/Platform/Audit/Infrastructure/SisTemplate.Platform.Audit.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Documents/" />
+  <Folder Name="/src/Platform/Documents/Application/">
+    <Project Path="src/Platform/Documents/Application/SisTemplate.Platform.Documents.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Documents/Domain/">
+    <Project Path="src/Platform/Documents/Domain/SisTemplate.Platform.Documents.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Documents/Infrastructure/">
+    <Project Path="src/Platform/Documents/Infrastructure/SisTemplate.Platform.Documents.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/InternalIdentity/" />
+  <Folder Name="/src/Platform/InternalIdentity/Application/">
+    <Project Path="src/Platform/InternalIdentity/Application/SisTemplate.Platform.InternalIdentity.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/InternalIdentity/Domain/">
+    <Project Path="src/Platform/InternalIdentity/Domain/SisTemplate.Platform.InternalIdentity.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/InternalIdentity/Infrastructure/">
+    <Project Path="src/Platform/InternalIdentity/Infrastructure/SisTemplate.Platform.InternalIdentity.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Notifications/" />
+  <Folder Name="/src/Platform/Notifications/Application/">
+    <Project Path="src/Platform/Notifications/Application/SisTemplate.Platform.Notifications.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Notifications/Domain/">
+    <Project Path="src/Platform/Notifications/Domain/SisTemplate.Platform.Notifications.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Notifications/Infrastructure/">
+    <Project Path="src/Platform/Notifications/Infrastructure/SisTemplate.Platform.Notifications.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Persistence/">
+    <Project Path="src/Platform/Persistence/SisTemplate.Platform.Persistence.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Settings/" />
+  <Folder Name="/src/Platform/Settings/Application/">
+    <Project Path="src/Platform/Settings/Application/SisTemplate.Platform.Settings.Application.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Settings/Domain/">
+    <Project Path="src/Platform/Settings/Domain/SisTemplate.Platform.Settings.Domain.csproj" />
+  </Folder>
+  <Folder Name="/src/Platform/Settings/Infrastructure/">
+    <Project Path="src/Platform/Settings/Infrastructure/SisTemplate.Platform.Settings.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/" />
+  <Folder Name="/tests/AppHost/">
+    <Project Path="tests/AppHost/SisTemplate.AppHost.Api.IntegrationTests.csproj" />
+  </Folder>
+  <Folder Name="/tests/Architecture/">
+    <Project Path="tests/Architecture/SisTemplate.ArchitectureTests.csproj" />
+  </Folder>
+</Solution>

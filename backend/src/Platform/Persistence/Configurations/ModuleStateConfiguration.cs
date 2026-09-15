@@ -1,49 +1,21 @@
-using IntegratedProcurement.Modules.ContractInitiationPlatform.Domain;
-using IntegratedProcurement.Modules.ContractMonitoring.Domain;
-using IntegratedProcurement.Modules.ProposalTracker.Domain;
+using SisTemplate.Platform.Persistence.ModuleState;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace IntegratedProcurement.Platform.Persistence.Configurations;
+namespace SisTemplate.Platform.Persistence.Configurations;
 
-public sealed class TrackerStateConfiguration : IEntityTypeConfiguration<TrackerStateEntry>
+public sealed class ModuleStateConfiguration : IEntityTypeConfiguration<ModuleStateEntry>
 {
-    public void Configure(EntityTypeBuilder<TrackerStateEntry> builder)
+    public void Configure(EntityTypeBuilder<ModuleStateEntry> builder)
     {
-        builder.ToTable("STATE_T", DatabaseSchemas.ProposalTracker);
+        builder.ToTable("MODULE_STATE_T", DatabaseSchemas.Core);
+
         builder.HasKey(entry => entry.Id);
+        builder.Property(entry => entry.ModuleKey).HasMaxLength(100).IsRequired();
         builder.Property(entry => entry.StorageKey).HasMaxLength(256).IsRequired();
         builder.Property(entry => entry.PayloadJson).IsRequired();
         builder.Property(entry => entry.CreatedAt).IsRequired();
-        builder.Property(entry => entry.UpdatedAt);
-        builder.HasIndex(entry => entry.StorageKey).IsUnique();
-    }
-}
-
-public sealed class CipStateConfiguration : IEntityTypeConfiguration<CipStateEntry>
-{
-    public void Configure(EntityTypeBuilder<CipStateEntry> builder)
-    {
-        builder.ToTable("STATE_T", DatabaseSchemas.ContractInitiationPlatform);
-        builder.HasKey(entry => entry.Id);
-        builder.Property(entry => entry.StorageKey).HasMaxLength(256).IsRequired();
-        builder.Property(entry => entry.PayloadJson).IsRequired();
-        builder.Property(entry => entry.CreatedAt).IsRequired();
-        builder.Property(entry => entry.UpdatedAt);
-        builder.HasIndex(entry => entry.StorageKey).IsUnique();
-    }
-}
-
-public sealed class ContractMonitoringStateConfiguration : IEntityTypeConfiguration<ContractMonitoringStateEntry>
-{
-    public void Configure(EntityTypeBuilder<ContractMonitoringStateEntry> builder)
-    {
-        builder.ToTable("STATE_T", DatabaseSchemas.ContractMonitoring);
-        builder.HasKey(entry => entry.Id);
-        builder.Property(entry => entry.StorageKey).HasMaxLength(256).IsRequired();
-        builder.Property(entry => entry.PayloadJson).IsRequired();
-        builder.Property(entry => entry.CreatedAt).IsRequired();
-        builder.Property(entry => entry.UpdatedAt);
-        builder.HasIndex(entry => entry.StorageKey).IsUnique();
+        builder.Property(entry => entry.UpdatedAt).IsRequired();
+        builder.HasIndex(entry => new { entry.ModuleKey, entry.StorageKey }).IsUnique();
     }
 }

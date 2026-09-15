@@ -1,11 +1,11 @@
 using System.Text.Json;
-using IntegratedProcurement.Platform.Administration.Application;
+using SisTemplate.Platform.Administration.Application;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 /// <summary>
 /// Drives the Administrative Regions sync: fires on the configured day-of-month (default the 1st,

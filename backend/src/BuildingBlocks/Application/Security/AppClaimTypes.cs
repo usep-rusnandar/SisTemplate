@@ -1,4 +1,4 @@
-namespace IntegratedProcurement.BuildingBlocks.Application.Security;
+namespace SisTemplate.BuildingBlocks.Application.Security;
 
 public static class AppClaimTypes
 {

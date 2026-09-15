@@ -2,10 +2,10 @@ using System.IO.Compression;
 using System.Security;
 using System.Text;
 using System.Text.RegularExpressions;
-using IntegratedProcurement.Platform.Documents.Application;
+using SisTemplate.Platform.Documents.Application;
 using Microsoft.Extensions.Options;
 
-namespace IntegratedProcurement.Platform.Documents.Infrastructure;
+namespace SisTemplate.Platform.Documents.Infrastructure;
 
 /// <summary>
 /// Dependency-free .docx template merge. A .docx is a ZIP of OOXML parts; this copies the package and,

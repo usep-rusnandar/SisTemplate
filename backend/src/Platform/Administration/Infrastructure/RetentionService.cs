@@ -1,12 +1,12 @@
 using System.Text.Json;
-using IntegratedProcurement.Platform.Administration.Application;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.Administration.Application;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 /// <summary>
 /// Enforces the data-retention settings configured in Super Admin → Settings. Records older than the

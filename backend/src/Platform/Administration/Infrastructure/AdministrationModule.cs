@@ -1,8 +1,8 @@
-using IntegratedProcurement.BuildingBlocks.Application.Abstractions;
-using IntegratedProcurement.Platform.Administration.Application;
+using SisTemplate.BuildingBlocks.Application.Abstractions;
+using SisTemplate.Platform.Administration.Application;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IntegratedProcurement.Platform.Administration.Infrastructure;
+namespace SisTemplate.Platform.Administration.Infrastructure;
 
 /// <summary>
 /// Composition for the Administration platform services: configuration (menu tree + settings),
@@ -18,7 +18,6 @@ public static class AdministrationModule
         services.AddScoped<IAdminConsoleAccessScope, AdminConsoleAccessScopeService>();
         services.AddScoped<IAdminConsoleIdentityReadService, AdminConsoleIdentityReadService>();
         services.AddScoped<IAdminConsoleMasterDataService, AdminConsoleMasterDataService>();
-        services.AddScoped<IBrandMasterImportService, BrandMasterImportService>();
         services.AddScoped<IAdminConsoleUserManagementService, AdminConsoleUserManagementService>();
         // Holiday-aware working-day math, shared by every module that measures an SLA.
         services.AddScoped<IWorkingDayCalendarProvider, HolidayWorkingDayCalendarProvider>();

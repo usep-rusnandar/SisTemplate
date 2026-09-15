@@ -1,8 +1,8 @@
-using IntegratedProcurement.Platform.InternalIdentity.Application.Profiles;
-using IntegratedProcurement.Platform.Persistence;
+using SisTemplate.Platform.InternalIdentity.Application.Profiles;
+using SisTemplate.Platform.Persistence;
 using Microsoft.EntityFrameworkCore;
 
-namespace IntegratedProcurement.Platform.InternalIdentity.Infrastructure.Profiles;
+namespace SisTemplate.Platform.InternalIdentity.Infrastructure.Profiles;
 
 public sealed class InternalUserProfileReader : IInternalUserProfileReader
 {

@@ -587,7 +587,8 @@ function ReadingPane({ row, onResend, toast }) {
     );
   }
   const baseTpl = (typeof EMAIL_TEMPLATES !== "undefined" ? EMAIL_TEMPLATES : []).find((t) => t.id === row.templateId);
-  const fromAddr = (/vendor/i.test(row.category || "") ? s.fromVendor : s.fromProc) || s.fromProc || s.fromVendor || "";
+  const senderKey = emailSenderModuleKeyForCategory(row.category) || "platform";
+  const fromAddr = s["from_" + senderKey] || s.fromProc || s.fromVendor || "";
   const resolved = baseTpl ? resolveTemplate(baseTpl, row.vars) : { ...row, body: "", category: row.category, cta: null };
   const meta = SENT_STATUS[row.status] || SENT_STATUS_FALLBACK;
   const cm = CAT_META[row.category] || {};
