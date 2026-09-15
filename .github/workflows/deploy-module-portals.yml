@@ -1,0 +1,249 @@
+# Deploy one internal module portal (SPA + ModuleGateway) to its App Service via Publish Profile.
+# Setup: docs/multi-portal-deploy.md
+#
+# Triggers:
+#   - push to master (frontend / ModuleGateway / this workflow) → staging, all three portals
+#   - workflow_dispatch → one portal, staging or production
+name: Deploy Module Portals
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "frontend/**"
+      - "backend/src/ModuleGateway/**"
+      - ".github/workflows/deploy-module-portals.yml"
+  workflow_dispatch:
+    inputs:
+      portal:
+        description: "Module portal to deploy"
+        required: true
+        type: choice
+        options:
+          - vendor-onboarding
+          - proposal-tracker
+          - contract-monitoring
+      target:
+        description: "App Service destination"
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+        default: staging
+      ref:
+        description: "Git ref to deploy (branch, tag, or SHA). Leave empty = this workflow's branch tip."
+        required: false
+        type: string
+        default: ""
+      skip_health_check:
+        description: "Skip post-deploy health checks"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-module-${{ github.event_name == 'workflow_dispatch' && format('{0}-{1}', inputs.portal, inputs.target) || 'staging-all' }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  DOTNET_VERSION: "10.0.x"
+  NODE_VERSION: "20"
+  DEPLOY_TARGET: ${{ github.event_name == 'workflow_dispatch' && inputs.target || 'staging' }}
+
+jobs:
+  deploy-portal:
+    name: ${{ matrix.portal }} → ${{ github.event_name == 'workflow_dispatch' && inputs.target || 'staging' }}
+    runs-on: ubuntu-latest
+    environment: ${{ github.event_name == 'workflow_dispatch' && inputs.target || 'staging' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - portal: vendor-onboarding
+            app_var: AZURE_VO_WEBAPP_NAME
+            blocked_api: /api/v1/proposal-tracker/proposals
+          - portal: proposal-tracker
+            app_var: AZURE_TRACKER_WEBAPP_NAME
+            blocked_api: /api/v1/vendor-onboarding/vendors
+          - portal: contract-monitoring
+            app_var: AZURE_CM_WEBAPP_NAME
+            blocked_api: /api/v1/proposal-tracker/proposals
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.ref || github.ref }}
+
+      - name: Resolve app, slot, secrets
+        id: dest
+        env:
+          VO_APP: ${{ vars.AZURE_VO_WEBAPP_NAME }}
+          TRACKER_APP: ${{ vars.AZURE_TRACKER_WEBAPP_NAME }}
+          CM_APP: ${{ vars.AZURE_CM_WEBAPP_NAME }}
+        run: |
+          set -euo pipefail
+          case "${{ matrix.portal }}" in
+            vendor-onboarding) app="$VO_APP" ;;
+            proposal-tracker) app="$TRACKER_APP" ;;
+            contract-monitoring) app="$CM_APP" ;;
+          esac
+          target="${{ env.DEPLOY_TARGET }}"
+          if [ -z "$app" ]; then
+            echo "::error::Set repository Variable ${{ matrix.app_var }}. See docs/multi-portal-deploy.md"
+            exit 1
+          fi
+          if [ "$target" = "production" ]; then
+            slot=""
+            host="https://${app}.azurewebsites.net"
+            echo "slot=" >> "$GITHUB_OUTPUT"
+            echo "use_slot=false" >> "$GITHUB_OUTPUT"
+          else
+            slot="${{ vars.AZURE_SLOT_NAME || 'staging' }}"
+            host="https://${app}-${slot}.azurewebsites.net"
+            echo "slot=$slot" >> "$GITHUB_OUTPUT"
+            echo "use_slot=true" >> "$GITHUB_OUTPUT"
+          fi
+          echo "app=$app" >> "$GITHUB_OUTPUT"
+          echo "host=$host" >> "$GITHUB_OUTPUT"
+          echo "target=$target" >> "$GITHUB_OUTPUT"
+          echo "portal=${{ matrix.portal }} app=$app host=$host"
+
+      - name: Validate publish profile secret
+        env:
+          VO_STAGING: ${{ secrets.VOWEBAPP_PUBLISHPROFILE_STAGING }}
+          VO_PRODUCTION: ${{ secrets.VOWEBAPP_PUBLISHPROFILE_PRODUCTION }}
+          TRACKER_STAGING: ${{ secrets.TRACKERWEBAPP_PUBLISHPROFILE_STAGING }}
+          TRACKER_PRODUCTION: ${{ secrets.TRACKERWEBAPP_PUBLISHPROFILE_PRODUCTION }}
+          CM_STAGING: ${{ secrets.CMWEBAPP_PUBLISHPROFILE_STAGING }}
+          CM_PRODUCTION: ${{ secrets.CMWEBAPP_PUBLISHPROFILE_PRODUCTION }}
+        run: |
+          set -euo pipefail
+          portal="${{ matrix.portal }}"
+          target="${{ env.DEPLOY_TARGET }}"
+          case "$portal-$target" in
+            vendor-onboarding-staging) test -n "$VO_STAGING" || { echo "::error::Secret VOWEBAPP_PUBLISHPROFILE_STAGING is not set"; exit 1; } ;;
+            vendor-onboarding-production) test -n "$VO_PRODUCTION" || { echo "::error::Secret VOWEBAPP_PUBLISHPROFILE_PRODUCTION is not set"; exit 1; } ;;
+            proposal-tracker-staging) test -n "$TRACKER_STAGING" || { echo "::error::Secret TRACKERWEBAPP_PUBLISHPROFILE_STAGING is not set"; exit 1; } ;;
+            proposal-tracker-production) test -n "$TRACKER_PRODUCTION" || { echo "::error::Secret TRACKERWEBAPP_PUBLISHPROFILE_PRODUCTION is not set"; exit 1; } ;;
+            contract-monitoring-staging) test -n "$CM_STAGING" || { echo "::error::Secret CMWEBAPP_PUBLISHPROFILE_STAGING is not set"; exit 1; } ;;
+            contract-monitoring-production) test -n "$CM_PRODUCTION" || { echo "::error::Secret CMWEBAPP_PUBLISHPROFILE_PRODUCTION is not set"; exit 1; } ;;
+          esac
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Build frontend (module portal)
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run "build:${{ matrix.portal }}"
+          test -f "dist/${{ matrix.portal }}/index.html"
+
+      - name: Publish ModuleGateway
+        run: |
+          dotnet publish backend/src/ModuleGateway/IntegratedProcurement.ModuleGateway.csproj \
+            -c Release \
+            -o "publish/${{ matrix.portal }}" \
+            -p:FrontendPortal=${{ matrix.portal }} \
+            --nologo
+          test -f "publish/${{ matrix.portal }}/wwwroot/index.html"
+          test -f "publish/${{ matrix.portal }}/IntegratedProcurement.ModuleGateway.dll"
+
+      - name: Zip artifact
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq zip
+          (cd "publish/${{ matrix.portal }}" && zip -r -q "../${{ matrix.portal }}.zip" .)
+          ls -lh "publish/${{ matrix.portal }}.zip"
+
+      - name: Deploy vendor-onboarding staging
+        if: ${{ steps.dest.outputs.use_slot == 'true' && matrix.portal == 'vendor-onboarding' }}
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: vendor-onboarding
+          slot-name: staging
+          publish-profile: ${{ secrets.VOWEBAPP_PUBLISHPROFILE_STAGING }}
+          package: publish/vendor-onboarding.zip
+
+      - name: Deploy proposal-tracker staging
+        if: ${{ steps.dest.outputs.use_slot == 'true' && matrix.portal == 'proposal-tracker' }}
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: proposal-tracker
+          slot-name: staging
+          publish-profile: ${{ secrets.TRACKERWEBAPP_PUBLISHPROFILE_STAGING }}
+          package: publish/proposal-tracker.zip
+
+      - name: Deploy contract-monitoring staging
+        if: ${{ steps.dest.outputs.use_slot == 'true' && matrix.portal == 'contract-monitoring' }}
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: contract-monitoring
+          slot-name: staging
+          publish-profile: ${{ secrets.CMWEBAPP_PUBLISHPROFILE_STAGING }}
+          package: publish/contract-monitoring.zip
+
+      - name: Deploy vendor-onboarding production
+        if: ${{ steps.dest.outputs.use_slot == 'false' && matrix.portal == 'vendor-onboarding' }}
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: vendor-onboarding
+          publish-profile: ${{ secrets.VOWEBAPP_PUBLISHPROFILE_PRODUCTION }}
+          package: publish/vendor-onboarding.zip
+
+      - name: Deploy proposal-tracker production
+        if: ${{ steps.dest.outputs.use_slot == 'false' && matrix.portal == 'proposal-tracker' }}
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: proposal-tracker
+          publish-profile: ${{ secrets.TRACKERWEBAPP_PUBLISHPROFILE_PRODUCTION }}
+          package: publish/proposal-tracker.zip
+
+      - name: Deploy contract-monitoring production
+        if: ${{ steps.dest.outputs.use_slot == 'false' && matrix.portal == 'contract-monitoring' }}
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: contract-monitoring
+          publish-profile: ${{ secrets.CMWEBAPP_PUBLISHPROFILE_PRODUCTION }}
+          package: publish/contract-monitoring.zip
+
+      - name: Health checks
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.skip_health_check != true }}
+        env:
+          HOST: ${{ steps.dest.outputs.host }}
+          BLOCKED: ${{ matrix.blocked_api }}
+        run: |
+          set -euo pipefail
+          echo "Waiting for $HOST …"
+          sleep 25
+          for i in 1 2 3 4 5 6; do
+            code=$(curl -s -o /tmp/healthz.json -w "%{http_code}" "$HOST/healthz" || true)
+            echo "attempt $i → HTTP $code"
+            if [ "$code" = "200" ]; then
+              cat /tmp/healthz.json
+              echo
+              root=$(curl -s -o /dev/null -w "%{http_code}" "$HOST/" || true)
+              blocked=$(curl -s -o /dev/null -w "%{http_code}" "$HOST$BLOCKED" || true)
+              echo "GET / → $root (expect 200)"
+              echo "GET $BLOCKED → $blocked (expect 404)"
+              test "$root" = "200"
+              test "$blocked" = "404"
+              exit 0
+            fi
+            sleep 15
+          done
+          echo "::error::Health check failed for $HOST/healthz"
+          exit 1

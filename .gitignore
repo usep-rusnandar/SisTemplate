@@ -1,0 +1,47 @@
+# ---- .NET ----
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+*.user
+*.suo
+.vs/
+TestResults/
+*.trx
+*.coverage
+*.coveragexml
+
+# ---- Node / frontend ----
+node_modules/
+frontend/dist/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# ---- Secrets / local config (do NOT commit credentials) ----
+appsettings.Development.json
+appsettings.*.Local.json
+*.local.settings.json
+.env
+.env.*
+secrets.json
+*.pfx
+*.key
+*.pem
+*.credentials
+
+# ---- runtime logs / scratch ----
+.run/
+*.log
+App_Data/
+
+# ---- OS / editor ----
+Thumbs.db
+.DS_Store
+*.swp
+
+# backup files (never commit — may mirror gitignored secrets)
+*.bak
+
+# Python bytecode cache
+__pycache__/

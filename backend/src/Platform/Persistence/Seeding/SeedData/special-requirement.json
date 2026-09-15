@@ -1,0 +1,50 @@
+[
+  {
+    "SpecialReqId": "IUJP",
+    "SpecialReqDesc": "Izin Usaha Jasa Pertambangan",
+    "SpecialReqIsActive": true,
+    "SpecialReqOrder": 0
+  },
+  {
+    "SpecialReqId": "IUJK",
+    "SpecialReqDesc": "Izin Usaha Jasa Konstruksi",
+    "SpecialReqIsActive": true,
+    "SpecialReqOrder": 1
+  },
+  {
+    "SpecialReqId": "IUJPTL",
+    "SpecialReqDesc": "Izin Usaha Jasa Penunjang Tenaga Listrik",
+    "SpecialReqIsActive": true,
+    "SpecialReqOrder": 2
+  },
+  {
+    "SpecialReqId": "MSDS",
+    "SpecialReqDesc": "Material Safety Data Sheet",
+    "SpecialReqIsActive": true,
+    "SpecialReqOrder": 3
+  },
+  {
+    "SpecialReqId": "SMK3",
+    "SpecialReqDesc": "Sistem Manajemen Keselamatan dan Kesehatan Kerja",
+    "SpecialReqIsActive": true,
+    "SpecialReqOrder": 4
+  },
+  {
+    "SpecialReqId": "SNI",
+    "SpecialReqDesc": "Standar Nasional Indonesia",
+    "SpecialReqIsActive": true,
+    "SpecialReqOrder": 5
+  },
+  {
+    "SpecialReqId": "Agency",
+    "SpecialReqDesc": "Agency Letter",
+    "SpecialReqIsActive": true,
+    "SpecialReqOrder": 6
+  },
+  {
+    "SpecialReqId": "Authorized",
+    "SpecialReqDesc": "Authorized Dealer / Distributor / Resseller Certificate",
+    "SpecialReqIsActive": true,
+    "SpecialReqOrder": 7
+  }
+]

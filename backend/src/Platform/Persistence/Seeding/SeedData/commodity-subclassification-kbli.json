@@ -1,0 +1,2678 @@
+[
+  {
+    "SubClassificationId": "M.01.01",
+    "KbliId": "27201"
+  },
+  {
+    "SubClassificationId": "M.01.01",
+    "KbliId": "27202"
+  },
+  {
+    "SubClassificationId": "M.01.01",
+    "KbliId": "29300"
+  },
+  {
+    "SubClassificationId": "M.01.01",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.01",
+    "KbliId": "45302"
+  },
+  {
+    "SubClassificationId": "M.01.01",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.01",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.02",
+    "KbliId": "28140"
+  },
+  {
+    "SubClassificationId": "M.01.02",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.02",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.02",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.02",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.03",
+    "KbliId": "28113"
+  },
+  {
+    "SubClassificationId": "M.01.03",
+    "KbliId": "29300"
+  },
+  {
+    "SubClassificationId": "M.01.03",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.03",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.03",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.04",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.04",
+    "KbliId": "46521"
+  },
+  {
+    "SubClassificationId": "M.01.04",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.04",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.04",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.04",
+    "KbliId": "47592"
+  },
+  {
+    "SubClassificationId": "M.01.05",
+    "KbliId": "25952"
+  },
+  {
+    "SubClassificationId": "M.01.05",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.05",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.05",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.05",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.06",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.06",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.06",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.06",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.07",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.07",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.07",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.07",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.08",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.08",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.08",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.08",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.09",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.09",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.09",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.09",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.10",
+    "KbliId": "22192"
+  },
+  {
+    "SubClassificationId": "M.01.10",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.10",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.10",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.10",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.11",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.11",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.11",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.11",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.12",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.12",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.12",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.12",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.13",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.13",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.13",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.13",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.14",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.14",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.14",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.14",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.15",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.01.15",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.01.15",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.01.15",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.01.15",
+    "KbliId": "47793"
+  },
+  {
+    "SubClassificationId": "M.02.01",
+    "KbliId": "46610"
+  },
+  {
+    "SubClassificationId": "M.02.02",
+    "KbliId": "46610"
+  },
+  {
+    "SubClassificationId": "M.02.03",
+    "KbliId": "46610"
+  },
+  {
+    "SubClassificationId": "M.02.04",
+    "KbliId": "20118"
+  },
+  {
+    "SubClassificationId": "M.02.04",
+    "KbliId": "20119"
+  },
+  {
+    "SubClassificationId": "M.02.04",
+    "KbliId": "46610"
+  },
+  {
+    "SubClassificationId": "M.02.04",
+    "KbliId": "46651"
+  },
+  {
+    "SubClassificationId": "M.03.01",
+    "KbliId": "29300"
+  },
+  {
+    "SubClassificationId": "M.03.01",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.03.01",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.03.01",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.03.02",
+    "KbliId": "22111"
+  },
+  {
+    "SubClassificationId": "M.03.02",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.03.02",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.03.03",
+    "KbliId": "29300"
+  },
+  {
+    "SubClassificationId": "M.03.03",
+    "KbliId": "45301"
+  },
+  {
+    "SubClassificationId": "M.03.03",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.01",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.04.01",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.02",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.02",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.03",
+    "KbliId": "28240"
+  },
+  {
+    "SubClassificationId": "M.04.03",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.03",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.04",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.04",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.05",
+    "KbliId": "45101"
+  },
+  {
+    "SubClassificationId": "M.04.05",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.05",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.06",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.06",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.07",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.08",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.09",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.10",
+    "KbliId": "45101"
+  },
+  {
+    "SubClassificationId": "M.04.10",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.10",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.11",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.11",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.12",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.12",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.12",
+    "KbliId": "47791"
+  },
+  {
+    "SubClassificationId": "M.04.13",
+    "KbliId": "45101"
+  },
+  {
+    "SubClassificationId": "M.04.13",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.13",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.14",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.04.14",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.14",
+    "KbliId": "47793"
+  },
+  {
+    "SubClassificationId": "M.04.15",
+    "KbliId": "45101"
+  },
+  {
+    "SubClassificationId": "M.04.15",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.15",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.16",
+    "KbliId": "45101"
+  },
+  {
+    "SubClassificationId": "M.04.16",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.16",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.17",
+    "KbliId": "45101"
+  },
+  {
+    "SubClassificationId": "M.04.17",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.17",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.18",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.19",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.19",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.20",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.20",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.21",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.21",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.22",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.22",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.23",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.23",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.24",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.24",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.25",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.25",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.26",
+    "KbliId": "45101"
+  },
+  {
+    "SubClassificationId": "M.04.26",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.26",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.27",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.27",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.28",
+    "KbliId": "27401"
+  },
+  {
+    "SubClassificationId": "M.04.28",
+    "KbliId": "27409"
+  },
+  {
+    "SubClassificationId": "M.04.28",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.28",
+    "KbliId": "47592"
+  },
+  {
+    "SubClassificationId": "M.04.29",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.29",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.30",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.30",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.31",
+    "KbliId": "29200"
+  },
+  {
+    "SubClassificationId": "M.04.31",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.31",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.32",
+    "KbliId": "45101"
+  },
+  {
+    "SubClassificationId": "M.04.32",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.32",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.33",
+    "KbliId": "45101"
+  },
+  {
+    "SubClassificationId": "M.04.33",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.33",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.34",
+    "KbliId": "28240"
+  },
+  {
+    "SubClassificationId": "M.04.34",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.35",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.35",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.36",
+    "KbliId": "45101"
+  },
+  {
+    "SubClassificationId": "M.04.36",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.36",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.37",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.37",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.37",
+    "KbliId": "47793"
+  },
+  {
+    "SubClassificationId": "M.04.38",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.38",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.39",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.04.39",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.04.40",
+    "KbliId": "46523"
+  },
+  {
+    "SubClassificationId": "M.04.41",
+    "KbliId": "45101"
+  },
+  {
+    "SubClassificationId": "M.04.41",
+    "KbliId": "45103"
+  },
+  {
+    "SubClassificationId": "M.05.01",
+    "KbliId": "28130"
+  },
+  {
+    "SubClassificationId": "M.05.01",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.05.02",
+    "KbliId": "25920"
+  },
+  {
+    "SubClassificationId": "M.05.02",
+    "KbliId": "29200"
+  },
+  {
+    "SubClassificationId": "M.05.02",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.05.03",
+    "KbliId": "28130"
+  },
+  {
+    "SubClassificationId": "M.05.03",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.05.04",
+    "KbliId": "46521"
+  },
+  {
+    "SubClassificationId": "M.05.04",
+    "KbliId": "46523"
+  },
+  {
+    "SubClassificationId": "M.05.04",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.05.04",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.05.04",
+    "KbliId": "80200"
+  },
+  {
+    "SubClassificationId": "M.05.05",
+    "KbliId": "18111"
+  },
+  {
+    "SubClassificationId": "M.05.05",
+    "KbliId": "18112"
+  },
+  {
+    "SubClassificationId": "M.05.05",
+    "KbliId": "46422"
+  },
+  {
+    "SubClassificationId": "M.06.01",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.06.01",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.06.02",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.06.02",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.06.03",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.06.03",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.06.04",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.06.04",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.06.05",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.06.05",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.06.06",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.06.06",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.06.07",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.06.07",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.06.08",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.06.08",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.07.01",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.07.02",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.07.02",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.07.03",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.07.03",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.07.04",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.07.05",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.07.05",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.07.06",
+    "KbliId": "26399"
+  },
+  {
+    "SubClassificationId": "M.07.06",
+    "KbliId": "26512"
+  },
+  {
+    "SubClassificationId": "M.07.06",
+    "KbliId": "26513"
+  },
+  {
+    "SubClassificationId": "M.07.06",
+    "KbliId": "46523"
+  },
+  {
+    "SubClassificationId": "M.07.06",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.07.07",
+    "KbliId": "26513"
+  },
+  {
+    "SubClassificationId": "M.07.07",
+    "KbliId": "33200"
+  },
+  {
+    "SubClassificationId": "M.07.07",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.08.01",
+    "KbliId": "46511"
+  },
+  {
+    "SubClassificationId": "M.08.01",
+    "KbliId": "47411"
+  },
+  {
+    "SubClassificationId": "M.08.02",
+    "KbliId": "46511"
+  },
+  {
+    "SubClassificationId": "M.08.02",
+    "KbliId": "47411"
+  },
+  {
+    "SubClassificationId": "M.08.03",
+    "KbliId": "46511"
+  },
+  {
+    "SubClassificationId": "M.08.03",
+    "KbliId": "46512"
+  },
+  {
+    "SubClassificationId": "M.08.03",
+    "KbliId": "47411"
+  },
+  {
+    "SubClassificationId": "M.08.03",
+    "KbliId": "47413"
+  },
+  {
+    "SubClassificationId": "M.08.03",
+    "KbliId": "63122"
+  },
+  {
+    "SubClassificationId": "M.09.01",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.09.01",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.09.02",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.09.02",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.09.03",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.09.03",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.10.01",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.10.01",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.10.01",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.10.01",
+    "KbliId": "47797"
+  },
+  {
+    "SubClassificationId": "M.10.02",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.10.02",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.10.02",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.10.02",
+    "KbliId": "47797"
+  },
+  {
+    "SubClassificationId": "M.10.03",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.10.03",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.10.03",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.10.03",
+    "KbliId": "47797"
+  },
+  {
+    "SubClassificationId": "M.10.04",
+    "KbliId": "28160"
+  },
+  {
+    "SubClassificationId": "M.10.04",
+    "KbliId": "28299"
+  },
+  {
+    "SubClassificationId": "M.10.04",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.10.04",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.10.05",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.11.01",
+    "KbliId": "23953"
+  },
+  {
+    "SubClassificationId": "M.11.01",
+    "KbliId": "24103"
+  },
+  {
+    "SubClassificationId": "M.11.01",
+    "KbliId": "25119"
+  },
+  {
+    "SubClassificationId": "M.11.01",
+    "KbliId": "42201"
+  },
+  {
+    "SubClassificationId": "M.11.01",
+    "KbliId": "46631"
+  },
+  {
+    "SubClassificationId": "M.11.01",
+    "KbliId": "47521"
+  },
+  {
+    "SubClassificationId": "M.11.02",
+    "KbliId": "22230"
+  },
+  {
+    "SubClassificationId": "M.11.02",
+    "KbliId": "24103"
+  },
+  {
+    "SubClassificationId": "M.11.02",
+    "KbliId": "46639"
+  },
+  {
+    "SubClassificationId": "M.11.02",
+    "KbliId": "47529"
+  },
+  {
+    "SubClassificationId": "M.11.03",
+    "KbliId": "46634"
+  },
+  {
+    "SubClassificationId": "M.11.03",
+    "KbliId": "47524"
+  },
+  {
+    "SubClassificationId": "M.11.03",
+    "KbliId": "47528"
+  },
+  {
+    "SubClassificationId": "M.11.04",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.11.04",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.11.05",
+    "KbliId": "26399"
+  },
+  {
+    "SubClassificationId": "M.11.05",
+    "KbliId": "43292"
+  },
+  {
+    "SubClassificationId": "M.11.05",
+    "KbliId": "46523"
+  },
+  {
+    "SubClassificationId": "M.11.05",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.12.01",
+    "KbliId": "46634"
+  },
+  {
+    "SubClassificationId": "M.12.01",
+    "KbliId": "47524"
+  },
+  {
+    "SubClassificationId": "M.12.01",
+    "KbliId": "47528"
+  },
+  {
+    "SubClassificationId": "M.12.01",
+    "KbliId": "47529"
+  },
+  {
+    "SubClassificationId": "M.12.02",
+    "KbliId": "08101"
+  },
+  {
+    "SubClassificationId": "M.12.02",
+    "KbliId": "46634"
+  },
+  {
+    "SubClassificationId": "M.12.02",
+    "KbliId": "47524"
+  },
+  {
+    "SubClassificationId": "M.12.02",
+    "KbliId": "47528"
+  },
+  {
+    "SubClassificationId": "M.12.02",
+    "KbliId": "47529"
+  },
+  {
+    "SubClassificationId": "M.12.03",
+    "KbliId": "46632"
+  },
+  {
+    "SubClassificationId": "M.12.03",
+    "KbliId": "47522"
+  },
+  {
+    "SubClassificationId": "M.12.03",
+    "KbliId": "47524"
+  },
+  {
+    "SubClassificationId": "M.12.03",
+    "KbliId": "47529"
+  },
+  {
+    "SubClassificationId": "M.12.04",
+    "KbliId": "46630"
+  },
+  {
+    "SubClassificationId": "M.12.04",
+    "KbliId": "46634"
+  },
+  {
+    "SubClassificationId": "M.12.04",
+    "KbliId": "47529"
+  },
+  {
+    "SubClassificationId": "M.12.05",
+    "KbliId": "46631"
+  },
+  {
+    "SubClassificationId": "M.12.05",
+    "KbliId": "47521"
+  },
+  {
+    "SubClassificationId": "M.12.06",
+    "KbliId": "46630"
+  },
+  {
+    "SubClassificationId": "M.12.06",
+    "KbliId": "46631"
+  },
+  {
+    "SubClassificationId": "M.12.06",
+    "KbliId": "47529"
+  },
+  {
+    "SubClassificationId": "M.12.07",
+    "KbliId": "46630"
+  },
+  {
+    "SubClassificationId": "M.12.07",
+    "KbliId": "46633"
+  },
+  {
+    "SubClassificationId": "M.12.07",
+    "KbliId": "47523"
+  },
+  {
+    "SubClassificationId": "M.12.07",
+    "KbliId": "47529"
+  },
+  {
+    "SubClassificationId": "M.12.08",
+    "KbliId": "46630"
+  },
+  {
+    "SubClassificationId": "M.12.08",
+    "KbliId": "46638"
+  },
+  {
+    "SubClassificationId": "M.12.08",
+    "KbliId": "47529"
+  },
+  {
+    "SubClassificationId": "M.13.01",
+    "KbliId": "46491"
+  },
+  {
+    "SubClassificationId": "M.13.01",
+    "KbliId": "47191"
+  },
+  {
+    "SubClassificationId": "M.13.01",
+    "KbliId": "47192"
+  },
+  {
+    "SubClassificationId": "M.13.01",
+    "KbliId": "47591"
+  },
+  {
+    "SubClassificationId": "M.13.02",
+    "KbliId": "46421"
+  },
+  {
+    "SubClassificationId": "M.13.02",
+    "KbliId": "47191"
+  },
+  {
+    "SubClassificationId": "M.13.02",
+    "KbliId": "47192"
+  },
+  {
+    "SubClassificationId": "M.13.02",
+    "KbliId": "47611"
+  },
+  {
+    "SubClassificationId": "M.13.03",
+    "KbliId": "18111"
+  },
+  {
+    "SubClassificationId": "M.13.03",
+    "KbliId": "46421"
+  },
+  {
+    "SubClassificationId": "M.13.03",
+    "KbliId": "46422"
+  },
+  {
+    "SubClassificationId": "M.13.03",
+    "KbliId": "47191"
+  },
+  {
+    "SubClassificationId": "M.13.03",
+    "KbliId": "47192"
+  },
+  {
+    "SubClassificationId": "M.13.03",
+    "KbliId": "47611"
+  },
+  {
+    "SubClassificationId": "M.13.04",
+    "KbliId": "46421"
+  },
+  {
+    "SubClassificationId": "M.13.04",
+    "KbliId": "46499"
+  },
+  {
+    "SubClassificationId": "M.13.04",
+    "KbliId": "47191"
+  },
+  {
+    "SubClassificationId": "M.13.04",
+    "KbliId": "47192"
+  },
+  {
+    "SubClassificationId": "M.13.04",
+    "KbliId": "47611"
+  },
+  {
+    "SubClassificationId": "M.14.01",
+    "KbliId": "15203"
+  },
+  {
+    "SubClassificationId": "M.14.01",
+    "KbliId": "46413"
+  },
+  {
+    "SubClassificationId": "M.14.01",
+    "KbliId": "47712"
+  },
+  {
+    "SubClassificationId": "M.14.02",
+    "KbliId": "14111"
+  },
+  {
+    "SubClassificationId": "M.14.02",
+    "KbliId": "46412"
+  },
+  {
+    "SubClassificationId": "M.15.01",
+    "KbliId": "32904"
+  },
+  {
+    "SubClassificationId": "M.15.01",
+    "KbliId": "46610"
+  },
+  {
+    "SubClassificationId": "M.15.01",
+    "KbliId": "46699"
+  },
+  {
+    "SubClassificationId": "M.15.02",
+    "KbliId": "32904"
+  },
+  {
+    "SubClassificationId": "M.15.02",
+    "KbliId": "46499"
+  },
+  {
+    "SubClassificationId": "M.15.02",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.15.02",
+    "KbliId": "47712"
+  },
+  {
+    "SubClassificationId": "M.15.02",
+    "KbliId": "47733"
+  },
+  {
+    "SubClassificationId": "M.15.03",
+    "KbliId": "18111"
+  },
+  {
+    "SubClassificationId": "M.15.03",
+    "KbliId": "18112"
+  },
+  {
+    "SubClassificationId": "M.15.03",
+    "KbliId": "32904"
+  },
+  {
+    "SubClassificationId": "M.15.03",
+    "KbliId": "46900"
+  },
+  {
+    "SubClassificationId": "M.15.04",
+    "KbliId": "46441"
+  },
+  {
+    "SubClassificationId": "M.15.04",
+    "KbliId": "46691"
+  },
+  {
+    "SubClassificationId": "M.15.04",
+    "KbliId": "47721"
+  },
+  {
+    "SubClassificationId": "M.15.05",
+    "KbliId": "32904"
+  },
+  {
+    "SubClassificationId": "M.15.05",
+    "KbliId": "46499"
+  },
+  {
+    "SubClassificationId": "M.15.05",
+    "KbliId": "46900"
+  },
+  {
+    "SubClassificationId": "M.15.06",
+    "KbliId": "46499"
+  },
+  {
+    "SubClassificationId": "M.15.06",
+    "KbliId": "46900"
+  },
+  {
+    "SubClassificationId": "M.16.01",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.16.01",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.16.01",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.16.02",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.16.02",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.16.02",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.16.03",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.16.03",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.16.03",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.16.04",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.16.04",
+    "KbliId": "46593"
+  },
+  {
+    "SubClassificationId": "M.16.04",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.17.01",
+    "KbliId": "20292"
+  },
+  {
+    "SubClassificationId": "M.17.01",
+    "KbliId": "46651"
+  },
+  {
+    "SubClassificationId": "M.17.02",
+    "KbliId": "20292"
+  },
+  {
+    "SubClassificationId": "M.17.02",
+    "KbliId": "46651"
+  },
+  {
+    "SubClassificationId": "M.18.01",
+    "KbliId": "46492"
+  },
+  {
+    "SubClassificationId": "M.18.01",
+    "KbliId": "47191"
+  },
+  {
+    "SubClassificationId": "M.18.01",
+    "KbliId": "47192"
+  },
+  {
+    "SubClassificationId": "M.18.01",
+    "KbliId": "47630"
+  },
+  {
+    "SubClassificationId": "M.18.01",
+    "KbliId": "47874"
+  },
+  {
+    "SubClassificationId": "M.18.02",
+    "KbliId": "46412"
+  },
+  {
+    "SubClassificationId": "M.18.02",
+    "KbliId": "47191"
+  },
+  {
+    "SubClassificationId": "M.18.02",
+    "KbliId": "47192"
+  },
+  {
+    "SubClassificationId": "M.18.02",
+    "KbliId": "47630"
+  },
+  {
+    "SubClassificationId": "M.18.02",
+    "KbliId": "47874"
+  },
+  {
+    "SubClassificationId": "M.19.01",
+    "KbliId": "20111"
+  },
+  {
+    "SubClassificationId": "M.19.01",
+    "KbliId": "20114"
+  },
+  {
+    "SubClassificationId": "M.19.01",
+    "KbliId": "47773"
+  },
+  {
+    "SubClassificationId": "M.19.02",
+    "KbliId": "20111"
+  },
+  {
+    "SubClassificationId": "M.19.02",
+    "KbliId": "20114"
+  },
+  {
+    "SubClassificationId": "M.19.02",
+    "KbliId": "46691"
+  },
+  {
+    "SubClassificationId": "M.19.02",
+    "KbliId": "46900"
+  },
+  {
+    "SubClassificationId": "M.19.02",
+    "KbliId": "47773"
+  },
+  {
+    "SubClassificationId": "M.19.03",
+    "KbliId": "20111"
+  },
+  {
+    "SubClassificationId": "M.19.03",
+    "KbliId": "20114"
+  },
+  {
+    "SubClassificationId": "M.19.03",
+    "KbliId": "46651"
+  },
+  {
+    "SubClassificationId": "M.19.03",
+    "KbliId": "47773"
+  },
+  {
+    "SubClassificationId": "M.19.04",
+    "KbliId": "20111"
+  },
+  {
+    "SubClassificationId": "M.19.04",
+    "KbliId": "20114"
+  },
+  {
+    "SubClassificationId": "M.19.04",
+    "KbliId": "20118"
+  },
+  {
+    "SubClassificationId": "M.19.04",
+    "KbliId": "20119"
+  },
+  {
+    "SubClassificationId": "M.19.04",
+    "KbliId": "23942"
+  },
+  {
+    "SubClassificationId": "M.19.04",
+    "KbliId": "46651"
+  },
+  {
+    "SubClassificationId": "M.19.04",
+    "KbliId": "47773"
+  },
+  {
+    "SubClassificationId": "M.19.05",
+    "KbliId": "20112"
+  },
+  {
+    "SubClassificationId": "M.19.05",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.19.05",
+    "KbliId": "46651"
+  },
+  {
+    "SubClassificationId": "M.19.05",
+    "KbliId": "46751"
+  },
+  {
+    "SubClassificationId": "M.20.01",
+    "KbliId": "46491"
+  },
+  {
+    "SubClassificationId": "M.20.01",
+    "KbliId": "46499"
+  },
+  {
+    "SubClassificationId": "M.20.02",
+    "KbliId": "46491"
+  },
+  {
+    "SubClassificationId": "M.20.02",
+    "KbliId": "46499"
+  },
+  {
+    "SubClassificationId": "M.20.02",
+    "KbliId": "46900"
+  },
+  {
+    "SubClassificationId": "M.20.03",
+    "KbliId": "46491"
+  },
+  {
+    "SubClassificationId": "M.20.03",
+    "KbliId": "46499"
+  },
+  {
+    "SubClassificationId": "M.20.03",
+    "KbliId": "46900"
+  },
+  {
+    "SubClassificationId": "M.20.04",
+    "KbliId": "43303"
+  },
+  {
+    "SubClassificationId": "M.20.04",
+    "KbliId": "46637"
+  },
+  {
+    "SubClassificationId": "M.20.04",
+    "KbliId": "47527"
+  },
+  {
+    "SubClassificationId": "M.20.05",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.20.05",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.20.05",
+    "KbliId": "47793"
+  },
+  {
+    "SubClassificationId": "M.20.06",
+    "KbliId": "46499"
+  },
+  {
+    "SubClassificationId": "M.21.01",
+    "KbliId": "47414"
+  },
+  {
+    "SubClassificationId": "M.21.01",
+    "KbliId": "47734"
+  },
+  {
+    "SubClassificationId": "M.21.02",
+    "KbliId": "32112"
+  },
+  {
+    "SubClassificationId": "M.21.03",
+    "KbliId": "46900"
+  },
+  {
+    "SubClassificationId": "M.22.01",
+    "KbliId": "47111"
+  },
+  {
+    "SubClassificationId": "M.22.01",
+    "KbliId": "47112"
+  },
+  {
+    "SubClassificationId": "M.22.01",
+    "KbliId": "47192"
+  },
+  {
+    "SubClassificationId": "M.22.01",
+    "KbliId": "47243"
+  },
+  {
+    "SubClassificationId": "M.22.01",
+    "KbliId": "47249"
+  },
+  {
+    "SubClassificationId": "M.22.02",
+    "KbliId": "47191"
+  },
+  {
+    "SubClassificationId": "M.22.02",
+    "KbliId": "47192"
+  },
+  {
+    "SubClassificationId": "M.22.02",
+    "KbliId": "47599"
+  },
+  {
+    "SubClassificationId": "M.22.03",
+    "KbliId": "47191"
+  },
+  {
+    "SubClassificationId": "M.22.03",
+    "KbliId": "47192"
+  },
+  {
+    "SubClassificationId": "M.22.03",
+    "KbliId": "47599"
+  },
+  {
+    "SubClassificationId": "M.22.04",
+    "KbliId": "46900"
+  },
+  {
+    "SubClassificationId": "M.22.04",
+    "KbliId": "47111"
+  },
+  {
+    "SubClassificationId": "M.22.04",
+    "KbliId": "47112"
+  },
+  {
+    "SubClassificationId": "M.22.04",
+    "KbliId": "47191"
+  },
+  {
+    "SubClassificationId": "M.22.04",
+    "KbliId": "47192"
+  },
+  {
+    "SubClassificationId": "M.22.04",
+    "KbliId": "47599"
+  },
+  {
+    "SubClassificationId": "M.23.01",
+    "KbliId": "46591"
+  },
+  {
+    "SubClassificationId": "M.23.01",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "M.23.02",
+    "KbliId": "28240"
+  },
+  {
+    "SubClassificationId": "M.23.02",
+    "KbliId": "33119"
+  },
+  {
+    "SubClassificationId": "M.23.02",
+    "KbliId": "42916"
+  },
+  {
+    "SubClassificationId": "M.23.02",
+    "KbliId": "46599"
+  },
+  {
+    "SubClassificationId": "S.01.01",
+    "KbliId": "33131"
+  },
+  {
+    "SubClassificationId": "S.01.01",
+    "KbliId": "71205"
+  },
+  {
+    "SubClassificationId": "S.01.02",
+    "KbliId": "25920"
+  },
+  {
+    "SubClassificationId": "S.01.02",
+    "KbliId": "29200"
+  },
+  {
+    "SubClassificationId": "S.01.02",
+    "KbliId": "33119"
+  },
+  {
+    "SubClassificationId": "S.01.02",
+    "KbliId": "33121"
+  },
+  {
+    "SubClassificationId": "S.01.02",
+    "KbliId": "33122"
+  },
+  {
+    "SubClassificationId": "S.01.03",
+    "KbliId": "33122"
+  },
+  {
+    "SubClassificationId": "S.01.04",
+    "KbliId": "25920"
+  },
+  {
+    "SubClassificationId": "S.01.04",
+    "KbliId": "29200"
+  },
+  {
+    "SubClassificationId": "S.01.04",
+    "KbliId": "33122"
+  },
+  {
+    "SubClassificationId": "S.01.05",
+    "KbliId": "33121"
+  },
+  {
+    "SubClassificationId": "S.01.05",
+    "KbliId": "33122"
+  },
+  {
+    "SubClassificationId": "S.01.05",
+    "KbliId": "33149"
+  },
+  {
+    "SubClassificationId": "S.01.05",
+    "KbliId": "45201"
+  },
+  {
+    "SubClassificationId": "S.01.06",
+    "KbliId": "29200"
+  },
+  {
+    "SubClassificationId": "S.01.06",
+    "KbliId": "33121"
+  },
+  {
+    "SubClassificationId": "S.01.06",
+    "KbliId": "33122"
+  },
+  {
+    "SubClassificationId": "S.01.06",
+    "KbliId": "45201"
+  },
+  {
+    "SubClassificationId": "S.01.06",
+    "KbliId": "78300"
+  },
+  {
+    "SubClassificationId": "S.01.07",
+    "KbliId": "33122"
+  },
+  {
+    "SubClassificationId": "S.02.01",
+    "KbliId": "49300"
+  },
+  {
+    "SubClassificationId": "S.02.02",
+    "KbliId": "01614"
+  },
+  {
+    "SubClassificationId": "S.02.03",
+    "KbliId": "09900"
+  },
+  {
+    "SubClassificationId": "S.02.03",
+    "KbliId": "43905"
+  },
+  {
+    "SubClassificationId": "S.02.03",
+    "KbliId": "77395"
+  },
+  {
+    "SubClassificationId": "S.02.03",
+    "KbliId": "77399"
+  },
+  {
+    "SubClassificationId": "S.02.04",
+    "KbliId": "09900"
+  },
+  {
+    "SubClassificationId": "S.02.04",
+    "KbliId": "43120"
+  },
+  {
+    "SubClassificationId": "S.02.05",
+    "KbliId": "09900"
+  },
+  {
+    "SubClassificationId": "S.02.05",
+    "KbliId": "43905"
+  },
+  {
+    "SubClassificationId": "S.02.05",
+    "KbliId": "49432"
+  },
+  {
+    "SubClassificationId": "S.02.05",
+    "KbliId": "77395"
+  },
+  {
+    "SubClassificationId": "S.02.05",
+    "KbliId": "77399"
+  },
+  {
+    "SubClassificationId": "S.02.06",
+    "KbliId": "09900"
+  },
+  {
+    "SubClassificationId": "S.02.06",
+    "KbliId": "77399"
+  },
+  {
+    "SubClassificationId": "S.02.07",
+    "KbliId": "43905"
+  },
+  {
+    "SubClassificationId": "S.02.07",
+    "KbliId": "77395"
+  },
+  {
+    "SubClassificationId": "S.02.07",
+    "KbliId": "77399"
+  },
+  {
+    "SubClassificationId": "S.02.08",
+    "KbliId": "43905"
+  },
+  {
+    "SubClassificationId": "S.02.08",
+    "KbliId": "77393"
+  },
+  {
+    "SubClassificationId": "S.02.08",
+    "KbliId": "77399"
+  },
+  {
+    "SubClassificationId": "S.03.01",
+    "KbliId": "78200"
+  },
+  {
+    "SubClassificationId": "S.03.01",
+    "KbliId": "81100"
+  },
+  {
+    "SubClassificationId": "S.03.01",
+    "KbliId": "81210"
+  },
+  {
+    "SubClassificationId": "S.03.02",
+    "KbliId": "56210"
+  },
+  {
+    "SubClassificationId": "S.03.02",
+    "KbliId": "56290"
+  },
+  {
+    "SubClassificationId": "S.03.03",
+    "KbliId": "36001"
+  },
+  {
+    "SubClassificationId": "S.03.04",
+    "KbliId": "11052"
+  },
+  {
+    "SubClassificationId": "S.03.04",
+    "KbliId": "36001"
+  },
+  {
+    "SubClassificationId": "S.03.05",
+    "KbliId": "43211"
+  },
+  {
+    "SubClassificationId": "S.03.06",
+    "KbliId": "78200"
+  },
+  {
+    "SubClassificationId": "S.03.06",
+    "KbliId": "81100"
+  },
+  {
+    "SubClassificationId": "S.03.06",
+    "KbliId": "81300"
+  },
+  {
+    "SubClassificationId": "S.03.07",
+    "KbliId": "78200"
+  },
+  {
+    "SubClassificationId": "S.03.07",
+    "KbliId": "81100"
+  },
+  {
+    "SubClassificationId": "S.03.07",
+    "KbliId": "81210"
+  },
+  {
+    "SubClassificationId": "S.03.07",
+    "KbliId": "81290"
+  },
+  {
+    "SubClassificationId": "S.03.08",
+    "KbliId": "81100"
+  },
+  {
+    "SubClassificationId": "S.03.08",
+    "KbliId": "96200"
+  },
+  {
+    "SubClassificationId": "S.03.09",
+    "KbliId": "46203"
+  },
+  {
+    "SubClassificationId": "S.03.09",
+    "KbliId": "77294"
+  },
+  {
+    "SubClassificationId": "S.03.09",
+    "KbliId": "81100"
+  },
+  {
+    "SubClassificationId": "S.03.09",
+    "KbliId": "81300"
+  },
+  {
+    "SubClassificationId": "S.03.10",
+    "KbliId": "78200"
+  },
+  {
+    "SubClassificationId": "S.03.10",
+    "KbliId": "81100"
+  },
+  {
+    "SubClassificationId": "S.04.01",
+    "KbliId": "78200"
+  },
+  {
+    "SubClassificationId": "S.04.01",
+    "KbliId": "78300"
+  },
+  {
+    "SubClassificationId": "S.04.01",
+    "KbliId": "82110"
+  },
+  {
+    "SubClassificationId": "S.04.02",
+    "KbliId": "78200"
+  },
+  {
+    "SubClassificationId": "S.04.02",
+    "KbliId": "78300"
+  },
+  {
+    "SubClassificationId": "S.04.03",
+    "KbliId": "78200"
+  },
+  {
+    "SubClassificationId": "S.04.03",
+    "KbliId": "78300"
+  },
+  {
+    "SubClassificationId": "S.04.04",
+    "KbliId": "78200"
+  },
+  {
+    "SubClassificationId": "S.04.04",
+    "KbliId": "78300"
+  },
+  {
+    "SubClassificationId": "S.04.04",
+    "KbliId": "80100"
+  },
+  {
+    "SubClassificationId": "S.04.05",
+    "KbliId": "78200"
+  },
+  {
+    "SubClassificationId": "S.04.05",
+    "KbliId": "78300"
+  },
+  {
+    "SubClassificationId": "S.05.01",
+    "KbliId": "66221"
+  },
+  {
+    "SubClassificationId": "S.05.01",
+    "KbliId": "66222"
+  },
+  {
+    "SubClassificationId": "S.05.01",
+    "KbliId": "66224"
+  },
+  {
+    "SubClassificationId": "S.05.02",
+    "KbliId": "65111"
+  },
+  {
+    "SubClassificationId": "S.06.01",
+    "KbliId": "62029"
+  },
+  {
+    "SubClassificationId": "S.06.01",
+    "KbliId": "63111"
+  },
+  {
+    "SubClassificationId": "S.06.01",
+    "KbliId": "63112"
+  },
+  {
+    "SubClassificationId": "S.06.02",
+    "KbliId": "43212"
+  },
+  {
+    "SubClassificationId": "S.06.02",
+    "KbliId": "61200"
+  },
+  {
+    "SubClassificationId": "S.06.02",
+    "KbliId": "61922"
+  },
+  {
+    "SubClassificationId": "S.06.02",
+    "KbliId": "62019"
+  },
+  {
+    "SubClassificationId": "S.06.02",
+    "KbliId": "62029"
+  },
+  {
+    "SubClassificationId": "S.06.02",
+    "KbliId": "62090"
+  },
+  {
+    "SubClassificationId": "S.07.01",
+    "KbliId": "61100"
+  },
+  {
+    "SubClassificationId": "S.07.01",
+    "KbliId": "61200"
+  },
+  {
+    "SubClassificationId": "S.07.01",
+    "KbliId": "61921"
+  },
+  {
+    "SubClassificationId": "S.07.01",
+    "KbliId": "61922"
+  },
+  {
+    "SubClassificationId": "S.07.02",
+    "KbliId": "46523"
+  },
+  {
+    "SubClassificationId": "S.07.02",
+    "KbliId": "61100"
+  },
+  {
+    "SubClassificationId": "S.07.02",
+    "KbliId": "61300"
+  },
+  {
+    "SubClassificationId": "S.07.02",
+    "KbliId": "61922"
+  },
+  {
+    "SubClassificationId": "S.07.03",
+    "KbliId": "42206"
+  },
+  {
+    "SubClassificationId": "S.07.03",
+    "KbliId": "46523"
+  },
+  {
+    "SubClassificationId": "S.08.01",
+    "KbliId": "68111"
+  },
+  {
+    "SubClassificationId": "S.08.02",
+    "KbliId": "46511"
+  },
+  {
+    "SubClassificationId": "S.08.02",
+    "KbliId": "77394"
+  },
+  {
+    "SubClassificationId": "S.08.03",
+    "KbliId": "68111"
+  },
+  {
+    "SubClassificationId": "S.08.04",
+    "KbliId": "77394"
+  },
+  {
+    "SubClassificationId": "S.08.04",
+    "KbliId": "77399"
+  },
+  {
+    "SubClassificationId": "S.08.05",
+    "KbliId": "45201"
+  },
+  {
+    "SubClassificationId": "S.08.05",
+    "KbliId": "49216"
+  },
+  {
+    "SubClassificationId": "S.08.05",
+    "KbliId": "49422"
+  },
+  {
+    "SubClassificationId": "S.08.05",
+    "KbliId": "49429"
+  },
+  {
+    "SubClassificationId": "S.08.05",
+    "KbliId": "77100"
+  },
+  {
+    "SubClassificationId": "S.08.05",
+    "KbliId": "78300"
+  },
+  {
+    "SubClassificationId": "S.08.06",
+    "KbliId": "49415"
+  },
+  {
+    "SubClassificationId": "S.08.06",
+    "KbliId": "49422"
+  },
+  {
+    "SubClassificationId": "S.08.06",
+    "KbliId": "49431"
+  },
+  {
+    "SubClassificationId": "S.08.06",
+    "KbliId": "77100"
+  },
+  {
+    "SubClassificationId": "S.08.06",
+    "KbliId": "77312"
+  },
+  {
+    "SubClassificationId": "S.08.07",
+    "KbliId": "93111"
+  },
+  {
+    "SubClassificationId": "S.08.07",
+    "KbliId": "93114"
+  },
+  {
+    "SubClassificationId": "S.08.07",
+    "KbliId": "93119"
+  },
+  {
+    "SubClassificationId": "S.09.01",
+    "KbliId": "52101"
+  },
+  {
+    "SubClassificationId": "S.09.01",
+    "KbliId": "52109"
+  },
+  {
+    "SubClassificationId": "S.10.01",
+    "KbliId": "37022"
+  },
+  {
+    "SubClassificationId": "S.10.01",
+    "KbliId": "42203"
+  },
+  {
+    "SubClassificationId": "S.10.01",
+    "KbliId": "43211"
+  },
+  {
+    "SubClassificationId": "S.10.02",
+    "KbliId": "41013"
+  },
+  {
+    "SubClassificationId": "S.10.02",
+    "KbliId": "41019"
+  },
+  {
+    "SubClassificationId": "S.10.02",
+    "KbliId": "43211"
+  },
+  {
+    "SubClassificationId": "S.10.03",
+    "KbliId": "41012"
+  },
+  {
+    "SubClassificationId": "S.10.03",
+    "KbliId": "43211"
+  },
+  {
+    "SubClassificationId": "S.10.04",
+    "KbliId": "41011"
+  },
+  {
+    "SubClassificationId": "S.10.04",
+    "KbliId": "43211"
+  },
+  {
+    "SubClassificationId": "S.10.05",
+    "KbliId": "43211"
+  },
+  {
+    "SubClassificationId": "S.10.06",
+    "KbliId": "43291"
+  },
+  {
+    "SubClassificationId": "S.10.07",
+    "KbliId": "43304"
+  },
+  {
+    "SubClassificationId": "S.10.08",
+    "KbliId": "41013"
+  },
+  {
+    "SubClassificationId": "S.10.08",
+    "KbliId": "41019"
+  },
+  {
+    "SubClassificationId": "S.10.08",
+    "KbliId": "43211"
+  },
+  {
+    "SubClassificationId": "S.11.01",
+    "KbliId": "71201"
+  },
+  {
+    "SubClassificationId": "S.11.01",
+    "KbliId": "71203"
+  },
+  {
+    "SubClassificationId": "S.11.02",
+    "KbliId": "62015"
+  },
+  {
+    "SubClassificationId": "S.11.02",
+    "KbliId": "62019"
+  },
+  {
+    "SubClassificationId": "S.11.02",
+    "KbliId": "62029"
+  },
+  {
+    "SubClassificationId": "S.11.02",
+    "KbliId": "62090"
+  },
+  {
+    "SubClassificationId": "S.11.03",
+    "KbliId": "69104"
+  },
+  {
+    "SubClassificationId": "S.11.04",
+    "KbliId": "70209"
+  },
+  {
+    "SubClassificationId": "S.11.05",
+    "KbliId": "70209"
+  },
+  {
+    "SubClassificationId": "S.11.06",
+    "KbliId": "69102"
+  },
+  {
+    "SubClassificationId": "S.11.06",
+    "KbliId": "69109"
+  },
+  {
+    "SubClassificationId": "S.11.07",
+    "KbliId": "59112"
+  },
+  {
+    "SubClassificationId": "S.11.07",
+    "KbliId": "70209"
+  },
+  {
+    "SubClassificationId": "S.11.07",
+    "KbliId": "71102"
+  },
+  {
+    "SubClassificationId": "S.11.07",
+    "KbliId": "74149"
+  },
+  {
+    "SubClassificationId": "S.11.07",
+    "KbliId": "82110"
+  },
+  {
+    "SubClassificationId": "S.11.08",
+    "KbliId": "72109"
+  },
+  {
+    "SubClassificationId": "S.12.01",
+    "KbliId": "38301"
+  },
+  {
+    "SubClassificationId": "S.12.01",
+    "KbliId": "38302"
+  },
+  {
+    "SubClassificationId": "S.12.02",
+    "KbliId": "38110"
+  },
+  {
+    "SubClassificationId": "S.12.02",
+    "KbliId": "38120"
+  },
+  {
+    "SubClassificationId": "S.12.03",
+    "KbliId": "38110"
+  },
+  {
+    "SubClassificationId": "S.12.03",
+    "KbliId": "38120"
+  },
+  {
+    "SubClassificationId": "S.12.03",
+    "KbliId": "52105"
+  },
+  {
+    "SubClassificationId": "S.12.04",
+    "KbliId": "49432"
+  },
+  {
+    "SubClassificationId": "S.12.05",
+    "KbliId": "37022"
+  },
+  {
+    "SubClassificationId": "S.12.05",
+    "KbliId": "38220"
+  },
+  {
+    "SubClassificationId": "S.12.06",
+    "KbliId": "38211"
+  },
+  {
+    "SubClassificationId": "S.13.01",
+    "KbliId": "71202"
+  },
+  {
+    "SubClassificationId": "S.13.01",
+    "KbliId": "71209"
+  },
+  {
+    "SubClassificationId": "S.13.02",
+    "KbliId": "09900"
+  },
+  {
+    "SubClassificationId": "S.13.02",
+    "KbliId": "71202"
+  },
+  {
+    "SubClassificationId": "S.13.02",
+    "KbliId": "71209"
+  },
+  {
+    "SubClassificationId": "S.13.03",
+    "KbliId": "71202"
+  },
+  {
+    "SubClassificationId": "S.13.03",
+    "KbliId": "71209"
+  },
+  {
+    "SubClassificationId": "S.13.04",
+    "KbliId": "09900"
+  },
+  {
+    "SubClassificationId": "S.13.04",
+    "KbliId": "71202"
+  },
+  {
+    "SubClassificationId": "S.13.04",
+    "KbliId": "71209"
+  },
+  {
+    "SubClassificationId": "S.13.05",
+    "KbliId": "71029"
+  },
+  {
+    "SubClassificationId": "S.13.05",
+    "KbliId": "71202"
+  },
+  {
+    "SubClassificationId": "S.13.05",
+    "KbliId": "71204"
+  },
+  {
+    "SubClassificationId": "S.14.01",
+    "KbliId": "55110"
+  },
+  {
+    "SubClassificationId": "S.14.01",
+    "KbliId": "79121"
+  },
+  {
+    "SubClassificationId": "S.14.01",
+    "KbliId": "79129"
+  },
+  {
+    "SubClassificationId": "S.14.02",
+    "KbliId": "70209"
+  },
+  {
+    "SubClassificationId": "S.14.02",
+    "KbliId": "74321"
+  },
+  {
+    "SubClassificationId": "S.14.03",
+    "KbliId": "70209"
+  },
+  {
+    "SubClassificationId": "S.14.04",
+    "KbliId": "70209"
+  },
+  {
+    "SubClassificationId": "S.14.04",
+    "KbliId": "78419"
+  },
+  {
+    "SubClassificationId": "S.14.04",
+    "KbliId": "78429"
+  },
+  {
+    "SubClassificationId": "S.14.04",
+    "KbliId": "78439"
+  },
+  {
+    "SubClassificationId": "S.14.04",
+    "KbliId": "85495"
+  },
+  {
+    "SubClassificationId": "S.15.01",
+    "KbliId": "82302"
+  },
+  {
+    "SubClassificationId": "S.15.02",
+    "KbliId": "82302"
+  },
+  {
+    "SubClassificationId": "S.15.03",
+    "KbliId": "82302"
+  },
+  {
+    "SubClassificationId": "S.15.04",
+    "KbliId": "82302"
+  },
+  {
+    "SubClassificationId": "S.15.05",
+    "KbliId": "82302"
+  },
+  {
+    "SubClassificationId": "S.16.01",
+    "KbliId": "86101"
+  },
+  {
+    "SubClassificationId": "S.16.01",
+    "KbliId": "86103"
+  },
+  {
+    "SubClassificationId": "S.16.01",
+    "KbliId": "86105"
+  },
+  {
+    "SubClassificationId": "S.16.01",
+    "KbliId": "86903"
+  },
+  {
+    "SubClassificationId": "S.16.02",
+    "KbliId": "86901"
+  },
+  {
+    "SubClassificationId": "S.16.03",
+    "KbliId": "86101"
+  },
+  {
+    "SubClassificationId": "S.16.03",
+    "KbliId": "86103"
+  },
+  {
+    "SubClassificationId": "S.16.03",
+    "KbliId": "86104"
+  },
+  {
+    "SubClassificationId": "S.16.03",
+    "KbliId": "86109"
+  },
+  {
+    "SubClassificationId": "S.16.03",
+    "KbliId": "86903"
+  },
+  {
+    "SubClassificationId": "S.17.01",
+    "KbliId": "51201"
+  },
+  {
+    "SubClassificationId": "S.17.01",
+    "KbliId": "51202"
+  },
+  {
+    "SubClassificationId": "S.17.01",
+    "KbliId": "51203"
+  },
+  {
+    "SubClassificationId": "S.17.01",
+    "KbliId": "51204"
+  },
+  {
+    "SubClassificationId": "S.17.01",
+    "KbliId": "52291"
+  },
+  {
+    "SubClassificationId": "S.17.01",
+    "KbliId": "52295"
+  },
+  {
+    "SubClassificationId": "S.17.02",
+    "KbliId": "52291"
+  },
+  {
+    "SubClassificationId": "S.17.02",
+    "KbliId": "53201"
+  },
+  {
+    "SubClassificationId": "S.17.03",
+    "KbliId": "52291"
+  },
+  {
+    "SubClassificationId": "S.17.04",
+    "KbliId": "50131"
+  },
+  {
+    "SubClassificationId": "S.17.04",
+    "KbliId": "50133"
+  },
+  {
+    "SubClassificationId": "S.17.04",
+    "KbliId": "50141"
+  },
+  {
+    "SubClassificationId": "S.17.04",
+    "KbliId": "50142"
+  },
+  {
+    "SubClassificationId": "S.17.04",
+    "KbliId": "52291"
+  },
+  {
+    "SubClassificationId": "S.17.04",
+    "KbliId": "52293"
+  },
+  {
+    "SubClassificationId": "S.17.04",
+    "KbliId": "52295"
+  },
+  {
+    "SubClassificationId": "S.17.05",
+    "KbliId": "49422"
+  },
+  {
+    "SubClassificationId": "S.17.05",
+    "KbliId": "49431"
+  },
+  {
+    "SubClassificationId": "S.17.05",
+    "KbliId": "49432"
+  },
+  {
+    "SubClassificationId": "S.17.05",
+    "KbliId": "52291"
+  },
+  {
+    "SubClassificationId": "S.17.05",
+    "KbliId": "52295"
+  }
+]

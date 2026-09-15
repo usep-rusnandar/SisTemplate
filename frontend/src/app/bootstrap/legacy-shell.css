@@ -1,0 +1,209 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#root {
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb, rgba(1, 59, 82, 0.18));
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb, rgba(1, 59, 82, 0.3));
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ag-hide-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.ag-hide-scroll::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes trkOpenPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.ag-trk-open-pulse {
+  animation: trkOpenPulse 1.8s ease-in-out infinite;
+  will-change: opacity;
+}
+
+button {
+  font-family: inherit;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #8a969d;
+  opacity: 1;
+}
+
+@media (max-width: 1080px) {
+  .ag-dash-row,
+  .ag-rp-grid,
+  .ag-auth,
+  .ag-mailbox {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ag-auth-brand,
+  .ag-topsearch {
+    display: none !important;
+  }
+}
+
+/* Proposal profile SLA strip: 3-up by default; collapses with the card width (container queries). */
+.ag-trk-sla-host {
+  container-type: inline-size;
+  container-name: trk-sla;
+}
+
+.ag-trk-sla-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  align-items: start;
+}
+
+@container trk-sla (max-width: 560px) {
+  .ag-trk-sla-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container trk-sla (max-width: 360px) {
+  .ag-trk-sla-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@supports not (container-type: inline-size) {
+  @media (max-width: 1180px) {
+    .ag-trk-sla-metrics {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .ag-trk-sla-metrics {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .ag-menus-grid,
+  .ag-trk-row3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ag-holiday-stats,
+  .ag-trk-filter {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .ag-month-strip {
+    grid-template-columns: repeat(6, 1fr) !important;
+  }
+
+  .ag-trk-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 981px) {
+  .ag-trk-kpis {
+    grid-template-columns: 1fr 1.55fr 1fr 1fr 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .ag-lock-aside {
+    display: none !important;
+  }
+
+  .ag-lock-card {
+    width: 420px !important;
+    min-height: 0 !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .ag-trk-kpis {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .ag-trk-filter {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Proposal Tracker step matrix — the plan/actual (and requirement/estimated) date pair stacks
+   vertically by default. On super-wide screens there is plenty of horizontal room, so lay the two
+   dates side by side to use the space and keep rows shorter. */
+.ag-trk-datepair {
+  flex-direction: column;
+  gap: 4px;
+  min-height: 58px;
+}
+
+@media (min-width: 1800px) {
+  .ag-trk-datepair {
+    flex-direction: row;
+    gap: 6px;
+    min-height: 34px;
+  }
+}

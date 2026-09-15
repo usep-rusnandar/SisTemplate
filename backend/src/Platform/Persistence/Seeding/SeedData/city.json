@@ -1,0 +1,222 @@
+[
+  {
+    "CityId": "11.01",
+    "CityName": "KAB. ACEH SELATAN",
+    "ProvinceId": "11"
+  },
+  {
+    "CityId": "11.02",
+    "CityName": "KAB. ACEH TENGGARA",
+    "ProvinceId": "11"
+  },
+  {
+    "CityId": "11.03",
+    "CityName": "KAB. ACEH TIMUR",
+    "ProvinceId": "11"
+  },
+  {
+    "CityId": "11.04",
+    "CityName": "KAB. ACEH TENGAH",
+    "ProvinceId": "11"
+  },
+  {
+    "CityId": "11.05",
+    "CityName": "KAB. ACEH BARAT",
+    "ProvinceId": "11"
+  },
+  {
+    "CityId": "11.06",
+    "CityName": "KAB. ACEH BESAR",
+    "ProvinceId": "11"
+  },
+  {
+    "CityId": "31.01",
+    "CityName": "KAB. ADM. KEP. SERIBU",
+    "ProvinceId": "31"
+  },
+  {
+    "CityId": "31.71",
+    "CityName": "KOTA ADM. JAKARTA PUSAT",
+    "ProvinceId": "31"
+  },
+  {
+    "CityId": "31.72",
+    "CityName": "KOTA ADM. JAKARTA UTARA",
+    "ProvinceId": "31"
+  },
+  {
+    "CityId": "31.73",
+    "CityName": "KOTA ADM. JAKARTA BARAT",
+    "ProvinceId": "31"
+  },
+  {
+    "CityId": "31.74",
+    "CityName": "KOTA ADM. JAKARTA SELATAN",
+    "ProvinceId": "31"
+  },
+  {
+    "CityId": "31.75",
+    "CityName": "KOTA ADM. JAKARTA TIMUR",
+    "ProvinceId": "31"
+  },
+  {
+    "CityId": "32.01",
+    "CityName": "KAB. BOGOR",
+    "ProvinceId": "32"
+  },
+  {
+    "CityId": "32.02",
+    "CityName": "KAB. SUKABUMI",
+    "ProvinceId": "32"
+  },
+  {
+    "CityId": "32.03",
+    "CityName": "KAB. CIANJUR",
+    "ProvinceId": "32"
+  },
+  {
+    "CityId": "32.04",
+    "CityName": "KAB. BANDUNG",
+    "ProvinceId": "32"
+  },
+  {
+    "CityId": "32.05",
+    "CityName": "KAB. GARUT",
+    "ProvinceId": "32"
+  },
+  {
+    "CityId": "32.06",
+    "CityName": "KAB. TASIKMALAYA",
+    "ProvinceId": "32"
+  },
+  {
+    "CityId": "32.07",
+    "CityName": "KAB. CIAMIS",
+    "ProvinceId": "32"
+  },
+  {
+    "CityId": "32.08",
+    "CityName": "KAB. KUNINGAN",
+    "ProvinceId": "32"
+  },
+  {
+    "CityId": "33.01",
+    "CityName": "KAB. CILACAP",
+    "ProvinceId": "33"
+  },
+  {
+    "CityId": "33.02",
+    "CityName": "KAB. BANYUMAS",
+    "ProvinceId": "33"
+  },
+  {
+    "CityId": "33.03",
+    "CityName": "KAB. PURBALINGGA",
+    "ProvinceId": "33"
+  },
+  {
+    "CityId": "33.04",
+    "CityName": "KAB. BANJARNEGARA",
+    "ProvinceId": "33"
+  },
+  {
+    "CityId": "33.05",
+    "CityName": "KAB. KEBUMEN",
+    "ProvinceId": "33"
+  },
+  {
+    "CityId": "33.06",
+    "CityName": "KAB. PURWOREJO",
+    "ProvinceId": "33"
+  },
+  {
+    "CityId": "33.07",
+    "CityName": "KAB. WONOSOBO",
+    "ProvinceId": "33"
+  },
+  {
+    "CityId": "33.08",
+    "CityName": "KAB. MAGELANG",
+    "ProvinceId": "33"
+  },
+  {
+    "CityId": "35.01",
+    "CityName": "KAB. PACITAN",
+    "ProvinceId": "35"
+  },
+  {
+    "CityId": "35.02",
+    "CityName": "KAB. PONOROGO",
+    "ProvinceId": "35"
+  },
+  {
+    "CityId": "35.03",
+    "CityName": "KAB. TRENGGALEK",
+    "ProvinceId": "35"
+  },
+  {
+    "CityId": "35.04",
+    "CityName": "KAB. TULUNGAGUNG",
+    "ProvinceId": "35"
+  },
+  {
+    "CityId": "35.05",
+    "CityName": "KAB. BLITAR",
+    "ProvinceId": "35"
+  },
+  {
+    "CityId": "35.06",
+    "CityName": "KAB. KEDIRI",
+    "ProvinceId": "35"
+  },
+  {
+    "CityId": "35.07",
+    "CityName": "KAB. MALANG",
+    "ProvinceId": "35"
+  },
+  {
+    "CityId": "35.08",
+    "CityName": "KAB. LUMAJANG",
+    "ProvinceId": "35"
+  },
+  {
+    "CityId": "51.01",
+    "CityName": "KAB. JEMBRANA",
+    "ProvinceId": "51"
+  },
+  {
+    "CityId": "51.02",
+    "CityName": "KAB. TABANAN",
+    "ProvinceId": "51"
+  },
+  {
+    "CityId": "51.03",
+    "CityName": "KAB. BADUNG",
+    "ProvinceId": "51"
+  },
+  {
+    "CityId": "51.04",
+    "CityName": "KAB. GIANYAR",
+    "ProvinceId": "51"
+  },
+  {
+    "CityId": "51.05",
+    "CityName": "KAB. KLUNGKUNG",
+    "ProvinceId": "51"
+  },
+  {
+    "CityId": "51.06",
+    "CityName": "KAB. BANGLI",
+    "ProvinceId": "51"
+  },
+  {
+    "CityId": "51.07",
+    "CityName": "KAB. KARANGASEM",
+    "ProvinceId": "51"
+  },
+  {
+    "CityId": "51.08",
+    "CityName": "KAB. BULELENG",
+    "ProvinceId": "51"
+  }
+]

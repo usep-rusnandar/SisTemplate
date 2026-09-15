@@ -1,0 +1,198 @@
+# Deploy vendor portal (SPA + YARP gateway) to App Service vendor-workspace via Publish Profile.
+# No Microsoft Entra / OIDC App Registration required.
+# Setup: docs/deployment-github-vendor.md
+#
+# Triggers:
+#   - push to master (vendor paths) → always staging
+#   - workflow_dispatch → staging or production (manual)
+name: Deploy Vendor
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "frontend/**"
+      - "backend/src/VendorGateway/**"
+      - ".github/workflows/deploy-vendor.yml"
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "App Service destination"
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+        default: staging
+      ref:
+        description: "Git ref to deploy (branch, tag, or SHA). Leave empty = this workflow's branch tip."
+        required: false
+        type: string
+        default: ""
+      skip_health_check:
+        description: "Skip post-deploy health checks"
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: deploy-vendor-${{ github.event_name == 'workflow_dispatch' && inputs.target || 'staging' }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  DOTNET_VERSION: "10.0.x"
+  NODE_VERSION: "20"
+  AZURE_VENDOR_WEBAPP_NAME: ${{ vars.AZURE_VENDOR_WEBAPP_NAME }}
+  DEPLOY_TARGET: ${{ github.event_name == 'workflow_dispatch' && inputs.target || 'staging' }}
+
+jobs:
+  deploy-vendor:
+    name: Build & deploy vendor → ${{ github.event_name == 'workflow_dispatch' && inputs.target || 'staging' }}
+    runs-on: ubuntu-latest
+    environment: ${{ github.event_name == 'workflow_dispatch' && inputs.target || 'staging' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.ref || github.ref }}
+
+      - name: Resolve slot & health host
+        id: dest
+        run: |
+          set -euo pipefail
+          app="${{ env.AZURE_VENDOR_WEBAPP_NAME }}"
+          target="${{ env.DEPLOY_TARGET }}"
+          if [ -z "$app" ]; then
+            echo "::error::Set repository Variable AZURE_VENDOR_WEBAPP_NAME. See docs/deployment-github-vendor.md"
+            exit 1
+          fi
+          if [ "$target" = "production" ]; then
+            slot=""
+            host="https://${app}.azurewebsites.net"
+            echo "slot=" >> "$GITHUB_OUTPUT"
+            echo "use_slot=false" >> "$GITHUB_OUTPUT"
+          else
+            slot="${{ vars.AZURE_SLOT_NAME || 'staging' }}"
+            host="https://${app}-${slot}.azurewebsites.net"
+            echo "slot=$slot" >> "$GITHUB_OUTPUT"
+            echo "use_slot=true" >> "$GITHUB_OUTPUT"
+          fi
+          echo "host=$host" >> "$GITHUB_OUTPUT"
+          echo "target=$target" >> "$GITHUB_OUTPUT"
+          echo "Target=$target host=$host slot=${slot:-'(production site)'}"
+
+      - name: Validate publish profile secret
+        env:
+          PROFILE_STAGING: ${{ secrets.VENDORWEBAPP_PUBLISHPROFILE_STAGING }}
+          PROFILE_PRODUCTION: ${{ secrets.VENDORWEBAPP_PUBLISHPROFILE_PRODUCTION }}
+        run: |
+          set -euo pipefail
+          if [ "${{ env.DEPLOY_TARGET }}" = "production" ]; then
+            label="VENDORWEBAPP_PUBLISHPROFILE_PRODUCTION"
+            test -n "$PROFILE_PRODUCTION" || { echo "::error::Secret $label is not set. See docs/deployment-github-vendor.md"; exit 1; }
+          else
+            label="VENDORWEBAPP_PUBLISHPROFILE_STAGING"
+            test -n "$PROFILE_STAGING" || { echo "::error::Secret $label is not set. See docs/deployment-github-vendor.md"; exit 1; }
+          fi
+          echo "Secret $label is present for target=${{ env.DEPLOY_TARGET }}"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Build frontend (vendor SPA)
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run build:external
+          test -f dist/external/index.html
+
+      - name: Publish VendorGateway (+ bundle SPA into wwwroot)
+        run: |
+          dotnet publish backend/src/VendorGateway/IntegratedProcurement.VendorGateway.csproj \
+            -c Release \
+            -o publish/vendor \
+            --nologo
+          test -f publish/vendor/wwwroot/index.html
+          test -f publish/vendor/IntegratedProcurement.VendorGateway.dll
+
+      - name: Zip artifact
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq zip
+          (cd publish/vendor && zip -r -q ../vendor.zip .)
+          ls -lh publish/vendor.zip
+
+      - name: Deploy to App Service (staging slot)
+        if: ${{ steps.dest.outputs.use_slot == 'true' }}
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.AZURE_VENDOR_WEBAPP_NAME }}
+          slot-name: ${{ steps.dest.outputs.slot }}
+          publish-profile: ${{ secrets.VENDORWEBAPP_PUBLISHPROFILE_STAGING }}
+          package: publish/vendor.zip
+
+      - name: Deploy to App Service (production)
+        if: ${{ steps.dest.outputs.use_slot == 'false' }}
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ env.AZURE_VENDOR_WEBAPP_NAME }}
+          publish-profile: ${{ secrets.VENDORWEBAPP_PUBLISHPROFILE_PRODUCTION }}
+          package: publish/vendor.zip
+
+      - name: Health checks
+        if: ${{ github.event_name != 'workflow_dispatch' || inputs.skip_health_check != true }}
+        env:
+          HOST: ${{ steps.dest.outputs.host }}
+        run: |
+          set -euo pipefail
+          echo "Waiting for $HOST …"
+          sleep 25
+          for i in 1 2 3 4 5 6; do
+            code=$(curl -s -o /tmp/healthz.json -w "%{http_code}" "$HOST/healthz" || true)
+            echo "attempt $i → HTTP $code"
+            if [ "$code" = "200" ]; then
+              cat /tmp/healthz.json
+              echo
+              root=$(curl -s -o /dev/null -w "%{http_code}" "$HOST/" || true)
+              blocked=$(curl -s -o /dev/null -w "%{http_code}" "$HOST/api/v1/proposal-tracker/proposals" || true)
+              echo "GET / → $root (expect 200)"
+              echo "GET /api/v1/proposal-tracker/proposals → $blocked (expect 404)"
+              test "$root" = "200"
+              test "$blocked" = "404"
+              exit 0
+            fi
+            sleep 15
+          done
+          echo "::error::Health check failed for $HOST/healthz"
+          exit 1
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Deploy Vendor (Publish Profile)"
+            echo ""
+            echo "| Item | Value |"
+            echo "|---|---|"
+            echo "| Trigger | \`${{ github.event_name }}\` |"
+            echo "| Target | \`${{ env.DEPLOY_TARGET }}\` |"
+            echo "| Ref | \`${{ github.sha }}\` |"
+            echo "| App | \`$AZURE_VENDOR_WEBAPP_NAME\` |"
+            echo "| URL | ${{ steps.dest.outputs.host }} |"
+            echo ""
+            echo "Auth: App Service publish profile (no Entra OIDC)."
+            echo "Push to \`master\` (frontend / VendorGateway) → staging automatically. Production remains manual."
+            echo "Setup: docs/deployment-github-vendor.md"
+          } >> "$GITHUB_STEP_SUMMARY"

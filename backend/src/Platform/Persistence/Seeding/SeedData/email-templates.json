@@ -1,0 +1,493 @@
+[
+  {
+    "id": "ET-01",
+    "name": "Account created",
+    "category": "Vendor Onboarding",
+    "icon": "user-plus",
+    "status": "Active",
+    "subject": "Your Alamtri Geo account is ready",
+    "updatedAt": "2026-05-28 14:20",
+    "updatedBy": "Usep Rusnandar",
+    "variables": [
+      "{name}",
+      "{username}",
+      "{loginUrl}"
+    ],
+    "cta": "Sign in to your workspace",
+    "body": "Hello {name},\n\nYour Alamtri Geo workspace account has been created and is ready to use. You can now sign in with the username below.\n\nUsername: {username}\n\nFor your security, you'll be asked to verify a one-time code the first time you sign in. If you did not expect this email, please contact your administrator."
+  },
+  {
+    "id": "ET-02",
+    "name": "Vendor login OTP code",
+    "category": "Vendor Workspace",
+    "icon": "shield-check",
+    "status": "Active",
+    "rev": 1,
+    "subject": "Your Alamtri Geo Vendor Workspace OTP code",
+    "updatedAt": "2026-07-03 10:00",
+    "updatedBy": "Usep Rusnandar",
+    "variables": [
+      "{name}",
+      "{code}",
+      "{expiryMinutes}"
+    ],
+    "cta": null,
+    "body": "Dear {name},\n\nYour One-Time Password (OTP) for signing in to the Alamtri Geo Vendor Workspace is below. It expires in {expiryMinutes} minutes.\n\nOTP code: {code}\n\nPlease do not share this code with anyone for security reasons. If you did not request this OTP, please ignore this email or contact our Administrator immediately.\n\nThank you,\nAlamtri Geo Vendor Workspace — Notification System\n\n—\n\nYth. {name},\n\nBerikut adalah One-Time Password (OTP) untuk masuk ke Alamtri Geo Vendor Workspace. Kode ini berlaku selama {expiryMinutes} menit.\n\nKode OTP: {code}\n\nMohon tidak membagikan kode ini kepada siapa pun demi keamanan akun Anda. Apabila Anda tidak meminta OTP ini, mohon abaikan email ini atau hubungi Admin kami segera.\n\nTerima kasih,\nAlamtri Geo Vendor Workspace — Sistem Notifikasi"
+  },
+  {
+    "id": "ET-03",
+    "name": "Password reset",
+    "category": "Contract Initiation Platform",
+    "icon": "key-round",
+    "status": "Active",
+    "subject": "Reset your Alamtri Geo password",
+    "updatedAt": "2026-05-22 11:48",
+    "updatedBy": "Usep Rusnandar",
+    "variables": [
+      "{name}",
+      "{resetUrl}",
+      "{expiryHours}"
+    ],
+    "cta": "Reset password",
+    "body": "Hello {name},\n\nWe received a request to reset the password for your account. Use the button below to choose a new password. This link expires in {expiryHours} hours.\n\nIf you didn't request a password reset, you can safely ignore this email — your password will remain unchanged."
+  },
+  {
+    "id": "ET-20",
+    "name": "Vendor password reset",
+    "category": "Vendor Workspace",
+    "icon": "key-round",
+    "status": "Active",
+    "rev": 2,
+    "subject": "Reset Password – Alamtri Geo Vendor Workspace",
+    "updatedAt": "2026-08-13 13:30",
+    "updatedBy": "System",
+    "variables": [
+      "{name}",
+      "{resetUrl}",
+      "{expiryHours}",
+      "{contact}"
+    ],
+    "cta": "Reset password",
+    "body": "Dear Sir/Madam, {name},\n\nWe have received a request to reset the password for your Alamtri Geo Vendor Workspace account. Please use the secure link below. This link is valid for {expiryHours} hours:\n\n{resetUrl}\n\nIf you did not request this password reset, please ignore this email — your account remains secure. Please do not share this link. If you need assistance, contact {contact}.\n\nThank you,\nAlamtri Geo Vendor Workspace — Notification System\n\n—\n\nYth. Bapak/Ibu, {name},\n\nKami menerima permintaan untuk mereset password akun Anda di Alamtri Geo Vendor Workspace. Silakan gunakan tautan aman berikut. Tautan ini berlaku selama {expiryHours} jam:\n\n{resetUrl}\n\nJika Anda tidak merasa meminta reset password, mohon abaikan email ini — akun Anda tetap aman. Mohon tidak membagikan tautan ini. Apabila membutuhkan bantuan, hubungi {contact}.\n\nTerima kasih,\nAlamtri Geo Vendor Workspace — Sistem Notifikasi"
+  },
+  {
+    "id": "ET-25",
+    "name": "Internal password reset",
+    "category": "Users",
+    "icon": "key-round",
+    "status": "Active",
+    "rev": 1,
+    "subject": "Reset Password – Alamtri Geo Integrated Procurement",
+    "updatedAt": "2026-08-20 13:30",
+    "updatedBy": "System",
+    "variables": [
+      "{name}",
+      "{resetUrl}",
+      "{expiryHours}",
+      "{contact}"
+    ],
+    "cta": "Reset password",
+    "body": "Dear Sir/Madam, {name},\n\nWe have received a request to reset the password for your Alamtri Geo Integrated Procurement account. Please use the secure link below. This link is valid for {expiryHours} hours:\n\n{resetUrl}\n\nIf you did not request this password reset, please ignore this email — your account remains secure. Please do not share this link. If you need assistance, contact {contact}.\n\nThank you,\nAlamtri Geo Integrated Procurement — Notification System\n\n—\n\nYth. Bapak/Ibu, {name},\n\nKami menerima permintaan untuk mereset password akun Anda di Alamtri Geo Integrated Procurement. Silakan gunakan tautan aman berikut. Tautan ini berlaku selama {expiryHours} jam:\n\n{resetUrl}\n\nJika Anda tidak merasa meminta reset password, mohon abaikan email ini — akun Anda tetap aman. Mohon tidak membagikan tautan ini. Apabila membutuhkan bantuan, hubungi {contact}.\n\nTerima kasih,\nAlamtri Geo Integrated Procurement — Sistem Notifikasi"
+  },
+  {
+    "id": "ET-04",
+    "name": "Password expiring soon",
+    "category": "Vendor Workspace",
+    "icon": "clock-alert",
+    "status": "Active",
+    "subject": "Your password expires in {days} days",
+    "updatedAt": "2026-05-15 16:30",
+    "updatedBy": "Rizki Ramadhan",
+    "variables": [
+      "{name}",
+      "{days}",
+      "{changeUrl}"
+    ],
+    "cta": "Update password",
+    "body": "Hello {name},\n\nAs part of our security policy, your password will expire in {days} days. Please update it before then to avoid losing access to your workspace.\n\nChoose a strong password you haven't used before. Contact your administrator if you need help."
+  },
+  {
+    "id": "ET-05",
+    "name": "Invoice reminder",
+    "category": "Vendor Onboarding",
+    "icon": "receipt",
+    "status": "Active",
+    "subject": "Reminder: invoice {invoiceId} is due {dueDate}",
+    "updatedAt": "2026-05-31 08:12",
+    "updatedBy": "Lestari Putri",
+    "variables": [
+      "{name}",
+      "{invoiceId}",
+      "{amount}",
+      "{dueDate}"
+    ],
+    "cta": "View invoice",
+    "body": "Hello {name},\n\nThis is a friendly reminder that invoice {invoiceId} for {amount} is due on {dueDate}. Please review the details and arrange payment before the due date to avoid late penalties.\n\nIf you have already processed this payment, please disregard this reminder."
+  },
+  {
+    "id": "ET-06",
+    "name": "Purchase request approved",
+    "category": "Proposal Tracker",
+    "icon": "check-circle-2",
+    "status": "Active",
+    "subject": "Purchase request {prId} has been approved",
+    "updatedAt": "2026-05-26 13:40",
+    "updatedBy": "Siti Rahmawati",
+    "variables": [
+      "{name}",
+      "{prId}",
+      "{approver}",
+      "{amount}"
+    ],
+    "cta": "Open request",
+    "body": "Hello {name},\n\nGood news — purchase request {prId} ({amount}) has been approved by {approver}. The procurement team will proceed with the next steps and notify the assigned vendor.\n\nYou can track the status of this request in your workspace at any time."
+  },
+  {
+    "id": "ET-07",
+    "name": "Purchase request rejected",
+    "category": "Proposal Tracker",
+    "icon": "x-circle",
+    "status": "Active",
+    "subject": "Purchase request {prId} was not approved",
+    "updatedAt": "2026-05-19 10:22",
+    "updatedBy": "Siti Rahmawati",
+    "variables": [
+      "{name}",
+      "{prId}",
+      "{approver}",
+      "{reason}"
+    ],
+    "cta": "Review request",
+    "body": "Hello {name},\n\nPurchase request {prId} was reviewed by {approver} and has not been approved at this time.\n\nReason: {reason}\n\nYou may revise and resubmit the request with the required changes. Reach out to your operations manager if you have any questions."
+  },
+  {
+    "id": "ET-08",
+    "name": "Vendor onboarding",
+    "category": "Vendor Onboarding",
+    "icon": "building-2",
+    "status": "Active",
+    "subject": "Welcome to the Alamtri Geo Vendor Workspace",
+    "updatedAt": "2026-05-11 15:05",
+    "updatedBy": "Hendra Gunawan",
+    "variables": [
+      "{vendorName}",
+      "{portalUrl}",
+      "{contact}"
+    ],
+    "cta": "Activate vendor account",
+    "body": "Hello {vendorName},\n\nYou have been onboarded as an approved vendor for Alamtri Geo. Activate your Vendor Workspace account to submit quotes, track purchase orders, and manage invoices.\n\nYour primary contact is {contact}. Please complete your company profile within 14 days of activation."
+  },
+  {
+    "id": "ET-09",
+    "name": "Account suspended",
+    "category": "Vendor Onboarding",
+    "icon": "user-x",
+    "status": "Draft",
+    "subject": "Your account access has been suspended",
+    "updatedAt": "2026-04-30 09:55",
+    "updatedBy": "Usep Rusnandar",
+    "variables": [
+      "{name}",
+      "{reason}",
+      "{contact}"
+    ],
+    "cta": null,
+    "body": "Hello {name},\n\nYour Alamtri Geo account has been temporarily suspended.\n\nReason: {reason}\n\nIf you believe this is a mistake, please contact {contact} to resolve the issue. Access will be restored once the matter is reviewed."
+  },
+  {
+    "id": "ET-10",
+    "name": "Monthly report ready",
+    "category": "Contract Initiation Platform",
+    "icon": "file-bar-chart",
+    "status": "Draft",
+    "subject": "Your {month} operations report is ready",
+    "updatedAt": "2026-04-26 17:10",
+    "updatedBy": "Agus Pratama",
+    "variables": [
+      "{name}",
+      "{month}",
+      "{reportUrl}"
+    ],
+    "cta": "Download report",
+    "body": "Hello {name},\n\nYour operations report for {month} has been generated and is ready to download. It includes activity summaries, approval metrics, and audit highlights for your modules.\n\nReports are retained for 12 months. Download or archive them as needed."
+  },
+  {
+    "id": "ET-11",
+    "name": "Contract Expiry Reminder — 6 Bulan",
+    "category": "Contract Monitoring",
+    "icon": "bell",
+    "status": "Active",
+    "tier": "m6",
+    "tierLabel": "≤ 6 Bulan",
+    "tone": "info",
+    "subject": "Pengingat Kontrak: {contractNo} berakhir dalam ≤ 6 bulan ({daysToExpiry} hari)",
+    "updatedAt": "2026-06-07 10:20",
+    "updatedBy": "Bayu Setiawan",
+    "variables": [
+      "{picName}",
+      "{contractNo}",
+      "{contractTitle}",
+      "{supplier}",
+      "{jobsite}",
+      "{expiryDate}",
+      "{daysToExpiry}"
+    ],
+    "cta": "Ajukan Proposal ke Vendor Onboarding",
+    "intro": "Dear Tim User,\n\nBersamaan dengan ini kami sampaikan bahwa Perjanjian/Amendment berikut akan berakhir dalam kurun waktu ≤ 6 bulan.",
+    "note": "Apabila masih terdapat kebutuhan atas pengadaan Barang dan/atau Jasa sebagaimana dimaksud dalam Perjanjian tersebut, Pihak User diwajibkan untuk menyampaikan proposal kepada Tim Vendor Onboarding paling lambat H-60 (enam puluh) hari kalender sebelum tanggal berakhirnya Perjanjian, sesuai dengan Service Level Agreement (\"SLA\") Pengadaan yang berlaku sebagai berikut:\n\nApabila proposal tidak diterima oleh Tim Procurement dalam jangka waktu tersebut, maka terdapat risiko keterlambatan proses pengadaan yang dapat berdampak pada ketidaksesuaian dengan tanggal efektif yang diharapkan oleh Pihak User.\n\nDalam hal proposal pengadaan Barang dan/atau Jasa dimaksud telah diajukan sebelumnya atau sudah tidak diperlukan, maka email Contract Expiry Reminder ini dapat diabaikan.\n\nDemikian disampaikan, atas perhatian dan kerja samanya kami ucapkan terima kasih.",
+    "slaImages": [
+      {
+        "src": "assets/sla/sla-tender.png",
+        "label": "Tabel SLA Metode Pengadaan Dengan Tender"
+      }
+    ],
+    "body": "Dear Tim User,\n\nBersamaan dengan ini kami sampaikan bahwa Perjanjian/Amendment {contractNo} - {contractTitle} akan berakhir pada {expiryDate} (≤ 6 bulan, {daysToExpiry} hari lagi).\n\nApabila masih terdapat kebutuhan atas pengadaan Barang dan/atau Jasa sebagaimana dimaksud dalam Perjanjian tersebut, Pihak User diwajibkan untuk menyampaikan proposal kepada Tim Vendor Onboarding paling lambat H-60 (enam puluh) hari kalender sebelum tanggal berakhirnya Perjanjian, sesuai dengan Service Level Agreement (\"SLA\") Pengadaan yang berlaku sebagai berikut:\n\nApabila proposal tidak diterima oleh Tim Procurement dalam jangka waktu tersebut, maka terdapat risiko keterlambatan proses pengadaan yang dapat berdampak pada ketidaksesuaian dengan tanggal efektif yang diharapkan oleh Pihak User.\n\nDalam hal proposal pengadaan Barang dan/atau Jasa dimaksud telah diajukan sebelumnya atau sudah tidak diperlukan, maka email Contract Expiry Reminder ini dapat diabaikan.\n\nDemikian disampaikan, atas perhatian dan kerja samanya kami ucapkan terima kasih."
+  },
+  {
+    "id": "ET-14",
+    "name": "Contract Expiry Reminder — 4 Bulan",
+    "category": "Contract Monitoring",
+    "icon": "bell-ring",
+    "status": "Active",
+    "tier": "m4",
+    "tierLabel": "≤ 4 Bulan",
+    "tone": "warning",
+    "subject": "Pengingat Kontrak: {contractNo} berakhir dalam ≤ 4 bulan — batas pengajuan proposal",
+    "updatedAt": "2026-06-07 10:20",
+    "updatedBy": "Bayu Setiawan",
+    "variables": [
+      "{picName}",
+      "{contractNo}",
+      "{contractTitle}",
+      "{supplier}",
+      "{jobsite}",
+      "{expiryDate}",
+      "{daysToExpiry}"
+    ],
+    "cta": "Ajukan Proposal Sekarang",
+    "intro": "Dear Tim User,\n\nBersamaan dengan ini kami sampaikan bahwa Perjanjian/Amendment berikut akan berakhir dalam kurun waktu ≤ 4 bulan.",
+    "note": "Periode ini merupakan batas waktu pengajuan proposal (H-4 bulan) kepada Tim Vendor Onboarding.\n\nJika Barang/Jasa masih digunakan dan proposal belum diajukan, mohon agar segera dilakukan pengajuan guna menghindari keterlambatan proses perpanjangan kontrak.\n\nApabila proposal sudah pernah diajukan sebelumnya atau Barang/Jasa sudah tidak digunakan, maka email Contract Expiry Reminder ini dapat diabaikan.",
+    "body": "Dear Tim User,\n\nBersamaan dengan ini kami sampaikan bahwa Perjanjian/Amendment {contractNo} - {contractTitle} akan berakhir pada {expiryDate} (≤ 4 bulan, {daysToExpiry} hari lagi).\n\nNote:\nPeriode ini merupakan batas waktu pengajuan proposal (H-4 bulan) kepada Tim Vendor Onboarding.\n\nJika Barang/Jasa masih digunakan dan proposal belum diajukan, mohon agar segera dilakukan pengajuan guna menghindari keterlambatan proses perpanjangan kontrak.\n\nApabila proposal sudah pernah diajukan sebelumnya atau Barang/Jasa sudah tidak digunakan, maka email Contract Expiry Reminder ini dapat diabaikan."
+  },
+  {
+    "id": "ET-15",
+    "name": "Contract Expiry Reminder — 2 Bulan",
+    "category": "Contract Monitoring",
+    "icon": "alarm-clock",
+    "status": "Active",
+    "tier": "m2",
+    "tierLabel": "≤ 2 Bulan",
+    "tone": "orange",
+    "subject": "Penting: Kontrak {contractNo} berakhir dalam ≤ 2 bulan ({daysToExpiry} hari)",
+    "updatedAt": "2026-06-07 10:20",
+    "updatedBy": "Bayu Setiawan",
+    "variables": [
+      "{picName}",
+      "{contractNo}",
+      "{contractTitle}",
+      "{supplier}",
+      "{jobsite}",
+      "{expiryDate}",
+      "{daysToExpiry}"
+    ],
+    "cta": "Percepat Pengajuan Proposal",
+    "intro": "Dear Tim User,\n\nBersamaan dengan ini kami sampaikan bahwa Perjanjian/Amendment berikut akan berakhir dalam kurun waktu ≤ 2 bulan.",
+    "note": "Apabila Barang/Jasa masih digunakan dan proposal belum diajukan atau masih dalam proses, mohon agar segera dipercepat dan diprioritaskan.\n\nKeterlambatan pengajuan proposal pada tahap ini berpotensi menghambat proses perpanjangan kontrak dan dapat berdampak pada operasional.\n\nApabila proposal sudah pernah diajukan sebelumnya atau Barang/Jasa sudah tidak digunakan, maka email Contract Expiry Reminder ini dapat diabaikan.",
+    "body": "Dear Tim User,\n\nBersamaan dengan ini kami sampaikan bahwa Perjanjian/Amendment {contractNo} - {contractTitle} akan berakhir pada {expiryDate} (≤ 2 bulan, {daysToExpiry} hari lagi).\n\nNote:\nApabila Barang/Jasa masih digunakan dan proposal belum diajukan atau masih dalam proses, mohon agar segera dipercepat dan diprioritaskan.\n\nKeterlambatan pengajuan proposal pada tahap ini berpotensi menghambat proses perpanjangan kontrak dan dapat berdampak pada operasional.\n\nApabila proposal sudah pernah diajukan sebelumnya atau Barang/Jasa sudah tidak digunakan, maka email Contract Expiry Reminder ini dapat diabaikan."
+  },
+  {
+    "id": "ET-16",
+    "name": "Contract Expiry Reminder — 1 Bulan",
+    "category": "Contract Monitoring",
+    "icon": "siren",
+    "status": "Active",
+    "tier": "d30",
+    "tierLabel": "≤ 1 Bulan",
+    "tone": "danger",
+    "subject": "URGENT: Kontrak {contractNo} berakhir dalam ≤ 1 bulan ({daysToExpiry} hari)",
+    "updatedAt": "2026-06-07 10:20",
+    "updatedBy": "Bayu Setiawan",
+    "variables": [
+      "{picName}",
+      "{contractNo}",
+      "{contractTitle}",
+      "{supplier}",
+      "{jobsite}",
+      "{expiryDate}",
+      "{daysToExpiry}"
+    ],
+    "cta": "Tindak Lanjuti Segera (Urgent)",
+    "intro": "Dear Tim User,\n\nBersamaan dengan ini kami sampaikan bahwa Perjanjian/Amendment berikut akan berakhir dalam kurun waktu ≤ 1 bulan.",
+    "note": "Apabila Barang/Jasa masih digunakan dan proses perpanjangan belum diselesaikan, mohon agar segera ditindaklanjuti secara prioritas (urgent).\n\nKeterlambatan pada tahap ini dapat menyebabkan kontrak berakhir tanpa perpanjangan dan berpotensi mengganggu kelangsungan penggunaan Barang/Jasa.\n\nApabila proposal sudah pernah diajukan sebelumnya atau Barang/Jasa sudah tidak digunakan, maka email Contract Expiry Reminder ini dapat diabaikan.",
+    "body": "Dear Tim User,\n\nBersamaan dengan ini kami sampaikan bahwa Perjanjian/Amendment {contractNo} - {contractTitle} akan berakhir pada {expiryDate} (≤ 1 bulan, {daysToExpiry} hari lagi).\n\nNote:\nApabila Barang/Jasa masih digunakan dan proses perpanjangan belum diselesaikan, mohon agar segera ditindaklanjuti secara prioritas (urgent).\n\nKeterlambatan pada tahap ini dapat menyebabkan kontrak berakhir tanpa perpanjangan dan berpotensi mengganggu kelangsungan penggunaan Barang/Jasa.\n\nApabila proposal sudah pernah diajukan sebelumnya atau Barang/Jasa sudah tidak digunakan, maka email Contract Expiry Reminder ini dapat diabaikan."
+  },
+  {
+    "id": "ET-12",
+    "name": "Vendor registration invitation",
+    "category": "Vendor Onboarding",
+    "icon": "user-plus",
+    "status": "Active",
+    "subject": "Invitation to Create Account & Complete Vendor Registration – Alamtri Geo",
+    "updatedAt": "2026-08-03 16:00",
+    "updatedBy": "System",
+    "variables": [
+      "{vendorName}",
+      "{registerUrl}",
+      "{code}",
+      "{expiryDate}",
+      "{contact}"
+    ],
+    "cta": "Complete vendor registration",
+    "body": "Dear Sir/Madam, {vendorName},\n\nYou have received an invitation to create an account and complete the vendor registration forms for Alamtri Geo. Please use the secure link below before {expiryDate}:\n\n{registerUrl}\n\nInvitation code: {code}\n\nKindly complete all required data and supporting documents so the verification process can proceed smoothly. Registration is by invitation only; please do not share this link. If you need assistance, contact {contact}.\n\nThank you,\nAlamtri Geo Vendor Onboarding — Notification System\n\n—\n\nYth. Bapak/Ibu, {vendorName},\n\nAnda menerima undangan untuk membuat akun dan melengkapi formulir registrasi vendor Alamtri Geo. Silakan gunakan tautan aman berikut sebelum {expiryDate}:\n\n{registerUrl}\n\nKode undangan: {code}\n\nHarap melengkapi seluruh data dan dokumen pendukung agar proses verifikasi dapat berjalan lancar. Registrasi hanya melalui undangan; mohon tidak membagikan tautan ini. Jika membutuhkan bantuan, hubungi {contact}.\n\nTerima kasih,\nAlamtri Geo Vendor Onboarding — Sistem Notifikasi"
+  },
+  {
+    "id": "ET-13",
+    "name": "Vendor registration received",
+    "category": "Vendor Onboarding",
+    "icon": "clipboard-check",
+    "status": "Active",
+    "subject": "We received your vendor registration",
+    "updatedAt": "2026-08-03 16:00",
+    "updatedBy": "System",
+    "variables": [
+      "{vendorName}",
+      "{vendorId}",
+      "{submissionDate}",
+      "{contact}"
+    ],
+    "cta": null,
+    "body": "Dear {vendorName},\n\nThank you. Your vendor registration has been submitted to Alamtri Procurement for review on {submissionDate}.\n\nVendor ID: {vendorId}\n\nNo further action is required at this time. We will notify you when a revision is required or when the registration decision is available. If you need assistance, contact {contact}.\n\nThank you,\nAlamtri Geo Vendor Onboarding — Notification System\n\n—\n\nYth. {vendorName},\n\nTerima kasih. Registrasi vendor Anda telah dikirim kepada Alamtri Procurement untuk direview pada {submissionDate}.\n\nID Vendor: {vendorId}\n\nSaat ini tidak ada tindakan lanjutan yang diperlukan. Kami akan mengirim notifikasi apabila diperlukan revisi atau keputusan registrasi telah tersedia. Jika membutuhkan bantuan, hubungi {contact}.\n\nTerima kasih,\nAlamtri Geo Vendor Onboarding — Sistem Notifikasi"
+  },
+  {
+    "id": "ET-17",
+    "name": "Vendor registration approved",
+    "category": "Vendor Onboarding",
+    "icon": "circle-check",
+    "status": "Active",
+    "subject": "Your vendor registration is approved",
+    "updatedAt": "2026-08-03 16:00",
+    "updatedBy": "System",
+    "variables": [
+      "{vendorName}",
+      "{vendorId}",
+      "{portalUrl}",
+      "{date}"
+    ],
+    "cta": "Sign in to your workspace",
+    "body": "Dear {vendorName},\n\nGood news. Your vendor registration has been approved by Alamtri Procurement on {date}.\n\nVendor ID: {vendorId}\nStatus: APPROVED\n\nYou can sign in to the Vendor Workspace to keep your company profile and documents up to date:\n{portalUrl}\n\nThank you,\nAlamtri Geo Vendor Onboarding — Notification System\n\n—\n\nYth. {vendorName},\n\nKabar baik. Registrasi vendor Anda telah disetujui oleh Alamtri Procurement pada {date}.\n\nID Vendor: {vendorId}\nStatus: APPROVED\n\nAnda dapat masuk ke Vendor Workspace untuk menjaga profil perusahaan dan dokumen tetap mutakhir:\n{portalUrl}\n\nTerima kasih,\nAlamtri Geo Vendor Onboarding — Sistem Notifikasi"
+  },
+  {
+    "id": "ET-18",
+    "name": "Vendor registration rejected",
+    "category": "Vendor Onboarding",
+    "icon": "circle-x",
+    "status": "Active",
+    "subject": "Your vendor registration was not approved",
+    "updatedAt": "2026-08-03 16:00",
+    "updatedBy": "System",
+    "variables": [
+      "{vendorName}",
+      "{reason}",
+      "{contact}"
+    ],
+    "cta": null,
+    "body": "Dear {vendorName},\n\nThank you for your interest in registering as an Alamtri vendor. After completing the evaluation process, we regret to inform you that your registration cannot be approved at this time.\n\nReason: {reason}\n\nWe hope to have an opportunity to collaborate in the future. For further information, contact {contact}.\n\nThank you,\nAlamtri Geo Vendor Onboarding — Notification System\n\n—\n\nYth. {vendorName},\n\nTerima kasih atas minat Anda untuk bergabung sebagai vendor Alamtri. Setelah proses evaluasi, dengan menyesal kami informasikan bahwa registrasi Anda belum dapat disetujui saat ini.\n\nAlasan: {reason}\n\nKami berharap dapat menjalin peluang kerja sama di masa mendatang. Untuk informasi lebih lanjut, hubungi {contact}.\n\nTerima kasih,\nAlamtri Geo Vendor Onboarding — Sistem Notifikasi"
+  },
+  {
+    "id": "ET-19",
+    "name": "Vendor revision requested",
+    "category": "Vendor Onboarding",
+    "icon": "file-pen",
+    "status": "Active",
+    "subject": "Action needed: please revise your vendor registration",
+    "updatedAt": "2026-08-03 16:00",
+    "updatedBy": "System",
+    "variables": [
+      "{vendorName}",
+      "{reason}",
+      "{portalUrl}"
+    ],
+    "cta": "Revise your profile",
+    "body": "Dear {vendorName},\n\nThe data or documents submitted in your vendor registration require revision before verification can continue.\n\nRevision required: {reason}\n\nPlease sign in to the Vendor Workspace, correct the requested information, upload the supporting documents, and submit the registration again:\n{portalUrl}\n\nIf you need assistance, contact our Administrator.\n\nThank you,\nAlamtri Geo Vendor Onboarding — Notification System\n\n—\n\nYth. {vendorName},\n\nData atau dokumen yang Anda kirimkan dalam registrasi vendor memerlukan revisi sebelum proses verifikasi dapat dilanjutkan.\n\nRevisi yang diperlukan: {reason}\n\nSilakan masuk ke Vendor Workspace, perbaiki informasi yang diminta, unggah dokumen pendukung, kemudian kirim ulang registrasi:\n{portalUrl}\n\nJika membutuhkan bantuan, silakan menghubungi Administrator.\n\nTerima kasih,\nAlamtri Geo Vendor Onboarding — Sistem Notifikasi"
+  },
+  {
+    "id": "ET-21",
+    "name": "Vendor approval request",
+    "category": "Vendor Onboarding",
+    "icon": "badge-check",
+    "status": "Active",
+    "subject": "Vendor registration awaiting your approval",
+    "updatedAt": "2026-08-03 16:00",
+    "updatedBy": "System",
+    "variables": [
+      "{approverName}",
+      "{vendorId}",
+      "{vendorName}",
+      "{submittedBy}",
+      "{submissionDate}",
+      "{status}",
+      "{approvalUrl}"
+    ],
+    "cta": "Open Vendor Approval",
+    "body": "Dear {approverName},\n\nA vendor registration requires your approval in Alamtri Geo Vendor Onboarding.\n\nVendor ID: {vendorId}\nVendor name: {vendorName}\nSubmitted by: {submittedBy}\nSubmission date: {submissionDate}\nCurrent status: {status}\n\nPlease review the complete vendor dossier and provide your decision through Vendor Approval:\n{approvalUrl}\n\nThank you,\nAlamtri Geo Vendor Onboarding — Notification System\n\n—\n\nYth. {approverName},\n\nTerdapat registrasi vendor yang memerlukan persetujuan Anda di Alamtri Geo Vendor Onboarding.\n\nID Vendor: {vendorId}\nNama vendor: {vendorName}\nDiajukan oleh: {submittedBy}\nTanggal pengajuan: {submissionDate}\nStatus saat ini: {status}\n\nSilakan review dossier vendor secara lengkap dan berikan keputusan melalui Vendor Approval:\n{approvalUrl}\n\nTerima kasih,\nAlamtri Geo Vendor Onboarding — Sistem Notifikasi"
+  },
+  {
+    "id": "ET-22",
+    "name": "Vendor final approval request",
+    "category": "Vendor Onboarding",
+    "icon": "badge-check",
+    "status": "Active",
+    "subject": "Final approval required for vendor {vendorName}",
+    "updatedAt": "2026-08-03 16:00",
+    "updatedBy": "System",
+    "variables": [
+      "{approverName}",
+      "{vendorId}",
+      "{vendorName}",
+      "{submittedBy}",
+      "{submissionDate}",
+      "{status}",
+      "{approvalUrl}"
+    ],
+    "cta": "Open Vendor Approval",
+    "body": "Dear {approverName},\n\nThe following vendor registration has passed the previous review stages and now requires your final approval.\n\nVendor ID: {vendorId}\nVendor name: {vendorName}\nSubmitted by: {submittedBy}\nSubmission date: {submissionDate}\nCurrent status: {status}\n\nPlease complete the final review through Vendor Approval:\n{approvalUrl}\n\nThank you,\nAlamtri Geo Vendor Onboarding — Notification System\n\n—\n\nYth. {approverName},\n\nRegistrasi vendor berikut telah melewati tahapan review sebelumnya dan kini memerlukan persetujuan final dari Anda.\n\nID Vendor: {vendorId}\nNama vendor: {vendorName}\nDiajukan oleh: {submittedBy}\nTanggal pengajuan: {submissionDate}\nStatus saat ini: {status}\n\nSilakan selesaikan review final melalui Vendor Approval:\n{approvalUrl}\n\nTerima kasih,\nAlamtri Geo Vendor Onboarding — Sistem Notifikasi"
+  },
+  {
+    "id": "ET-23",
+    "name": "Vendor revision resubmitted — administrator",
+    "category": "Vendor Onboarding",
+    "icon": "file-check",
+    "status": "Active",
+    "subject": "Vendor revised data is ready for review: {vendorName}",
+    "updatedAt": "2026-08-03 16:00",
+    "updatedBy": "System",
+    "variables": [
+      "{adminName}",
+      "{vendorId}",
+      "{vendorName}",
+      "{submittedBy}",
+      "{submissionDate}",
+      "{approvalUrl}"
+    ],
+    "cta": "Review revised vendor data",
+    "body": "Dear {adminName},\n\n{vendorName} ({vendorId}) has resubmitted the requested data and documents on {submissionDate}. Submitted by: {submittedBy}.\n\nPlease continue the verification process in Vendor Approval:\n{approvalUrl}\n\nThank you,\nAlamtri Geo Vendor Onboarding — Notification System\n\n—\n\nYth. {adminName},\n\n{vendorName} ({vendorId}) telah mengirim ulang data dan dokumen yang diminta pada {submissionDate}. Diajukan oleh: {submittedBy}.\n\nMohon melanjutkan proses verifikasi melalui Vendor Approval:\n{approvalUrl}\n\nTerima kasih,\nAlamtri Geo Vendor Onboarding — Sistem Notifikasi"
+  },
+  {
+    "id": "ET-24",
+    "name": "Vendor approved — administrator",
+    "category": "Vendor Onboarding",
+    "icon": "shield-check",
+    "status": "Active",
+    "subject": "Vendor status updated to Approved: {vendorName}",
+    "updatedAt": "2026-08-03 16:00",
+    "updatedBy": "System",
+    "variables": [
+      "{adminName}",
+      "{vendorId}",
+      "{vendorName}",
+      "{approvalDate}"
+    ],
+    "cta": null,
+    "body": "Dear {adminName},\n\nA vendor registration has been successfully approved.\n\nVendor ID: {vendorId}\nVendor name: {vendorName}\nStatus: APPROVED\nApproval date: {approvalDate}\n\nThis notification is provided for monitoring, documentation, and any required follow-up actions such as activation or system synchronization.\n\nThank you,\nAlamtri Geo Vendor Onboarding — Notification System\n\n—\n\nYth. {adminName},\n\nRegistrasi vendor telah berhasil disetujui.\n\nID Vendor: {vendorId}\nNama vendor: {vendorName}\nStatus: APPROVED\nTanggal persetujuan: {approvalDate}\n\nNotifikasi ini disampaikan untuk pemantauan, dokumentasi, dan tindak lanjut yang diperlukan seperti aktivasi atau sinkronisasi sistem.\n\nTerima kasih,\nAlamtri Geo Vendor Onboarding — Sistem Notifikasi"
+  }
+]

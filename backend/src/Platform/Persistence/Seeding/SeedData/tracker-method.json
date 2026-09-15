@@ -1,0 +1,47 @@
+[
+  {
+    "id": "TM-1",
+    "name": "Tender",
+    "code": "TND",
+    "tone": "brand",
+    "desc": "Open competitive tender with public invitation. Term Sheet sourced from Bid Evaluation winners.",
+    "sla": {
+      "TS-2": 2,
+      "TS-3": 7,
+      "TS-4": 7,
+      "TS-5": 3,
+      "TS-7": 1,
+      "TS-6": 2,
+      "TS-8": 1
+    }
+  },
+  {
+    "id": "TM-2",
+    "name": "Pemilihan Langsung",
+    "code": "PML",
+    "tone": "blue",
+    "desc": "Limited selection from shortlisted vendors. Term Sheet sourced from Bid Evaluation winners.",
+    "sla": {
+      "TS-3": 6,
+      "TS-4": 7,
+      "TS-5": 3,
+      "TS-7": 1,
+      "TS-6": 2,
+      "TS-8": 1
+    }
+  },
+  {
+    "id": "TM-3",
+    "name": "Penunjukan Langsung",
+    "code": "PNL",
+    "tone": "orange",
+    "desc": "Direct appointment of a single vendor; no bid evaluation. Term Sheet sourced from Negotiation.",
+    "sla": {
+      "TS-3": 3,
+      "TS-4": 3,
+      "TS-7": 1,
+      "TS-6": 2,
+      "TS-8": 1
+    }
+  }
+]

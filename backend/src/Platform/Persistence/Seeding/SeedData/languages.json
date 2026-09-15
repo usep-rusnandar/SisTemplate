@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "English",
+    "code": "en",
+    "flag": "🇬🇧",
+    "isDefault": true,
+    "enabled": true,
+    "progress": 100,
+    "createdAt": "2024-01-10 09:00"
+  },
+  {
+    "id": 2,
+    "name": "Indonesian",
+    "code": "id",
+    "flag": "🇮🇩",
+    "isDefault": false,
+    "enabled": true,
+    "progress": 94,
+    "createdAt": "2024-01-12 10:24"
+  }
+]

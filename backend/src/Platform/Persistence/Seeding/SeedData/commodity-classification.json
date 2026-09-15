@@ -1,0 +1,202 @@
+[
+  {
+    "ClassificationId": "M.01",
+    "ClassificationDesc": "Spareparts",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.02",
+    "ClassificationDesc": "Fuel, Oil, Grease & Coolant",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.03",
+    "ClassificationDesc": "Tyre & Accessories",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.04",
+    "ClassificationDesc": "Equipment",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.05",
+    "ClassificationDesc": "Attachment Unit",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.06",
+    "ClassificationDesc": "Undercarriage",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.07",
+    "ClassificationDesc": "Measuring Instruments",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.08",
+    "ClassificationDesc": "Software, Computer & Peripheral",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.09",
+    "ClassificationDesc": "Ground Engaging Tool (GET)",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.10",
+    "ClassificationDesc": "Tools",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.11",
+    "ClassificationDesc": "Mining Engineering",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.12",
+    "ClassificationDesc": "Construction Material",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.13",
+    "ClassificationDesc": "Office Supply & Printing",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.14",
+    "ClassificationDesc": "Shoes & Garment",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.15",
+    "ClassificationDesc": "Safety & Health Equipment",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.16",
+    "ClassificationDesc": "Drilling Accesoris",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.17",
+    "ClassificationDesc": "Explosives and Accessories",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.18",
+    "ClassificationDesc": "Sports",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.19",
+    "ClassificationDesc": "Chemicals",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.20",
+    "ClassificationDesc": "Consumables Item",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.21",
+    "ClassificationDesc": "Merchandise",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.22",
+    "ClassificationDesc": "Household Supplies",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "M.23",
+    "ClassificationDesc": "Modular Infrastructure",
+    "CategoryId": "M"
+  },
+  {
+    "ClassificationId": "S.01",
+    "ClassificationDesc": "Equipment Maintenance",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.02",
+    "ClassificationDesc": "Subcontractor",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.03",
+    "ClassificationDesc": "Facility",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.04",
+    "ClassificationDesc": "Labour Supply",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.05",
+    "ClassificationDesc": "Insurance",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.06",
+    "ClassificationDesc": "IT Infrastructure",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.07",
+    "ClassificationDesc": "Telecommunication Infrastructure",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.08",
+    "ClassificationDesc": "Rental",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.09",
+    "ClassificationDesc": "Data Record Management",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.10",
+    "ClassificationDesc": "Construction Infrastructure",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.11",
+    "ClassificationDesc": "Consultant",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.12",
+    "ClassificationDesc": "Waste Services",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.13",
+    "ClassificationDesc": "Laboratory Analysis",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.14",
+    "ClassificationDesc": "Human Resources",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.15",
+    "ClassificationDesc": "Event Organizer",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.16",
+    "ClassificationDesc": "Healthcare",
+    "CategoryId": "S"
+  },
+  {
+    "ClassificationId": "S.17",
+    "ClassificationDesc": "Expediting, Clearance & Mobilization",
+    "CategoryId": "S"
+  }
+]

@@ -1,0 +1,200 @@
+[
+  {
+    "id": 1,
+    "key": "login.title",
+    "base": "Welcome back",
+    "target": "Selamat datang kembali"
+  },
+  {
+    "id": 2,
+    "key": "login.subtitle",
+    "base": "Sign in to your workspace to continue",
+    "target": "Masuk ke ruang kerja Anda untuk melanjutkan"
+  },
+  {
+    "id": 3,
+    "key": "login.username",
+    "base": "Username or email",
+    "target": "Nama pengguna atau email"
+  },
+  {
+    "id": 4,
+    "key": "login.password",
+    "base": "Password",
+    "target": "Kata sandi"
+  },
+  {
+    "id": 5,
+    "key": "login.remember",
+    "base": "Remember me",
+    "target": "Ingat saya"
+  },
+  {
+    "id": 6,
+    "key": "login.forgot",
+    "base": "Forgot password?",
+    "target": "Lupa kata sandi?"
+  },
+  {
+    "id": 7,
+    "key": "login.signIn",
+    "base": "Sign in",
+    "target": "Masuk"
+  },
+  {
+    "id": 8,
+    "key": "otp.title",
+    "base": "Verify your identity",
+    "target": "Verifikasi identitas Anda"
+  },
+  {
+    "id": 9,
+    "key": "otp.resend",
+    "base": "Resend code",
+    "target": "Kirim ulang kode"
+  },
+  {
+    "id": 10,
+    "key": "common.save",
+    "base": "Save changes",
+    "target": "Simpan perubahan"
+  },
+  {
+    "id": 11,
+    "key": "common.cancel",
+    "base": "Cancel",
+    "target": "Batal"
+  },
+  {
+    "id": 12,
+    "key": "common.delete",
+    "base": "Delete",
+    "target": "Hapus"
+  },
+  {
+    "id": 13,
+    "key": "common.edit",
+    "base": "Edit",
+    "target": "Ubah"
+  },
+  {
+    "id": 14,
+    "key": "common.search",
+    "base": "Search",
+    "target": "Cari"
+  },
+  {
+    "id": 15,
+    "key": "common.refresh",
+    "base": "Refresh",
+    "target": "Muat ulang"
+  },
+  {
+    "id": 16,
+    "key": "common.export",
+    "base": "Export",
+    "target": "Ekspor"
+  },
+  {
+    "id": 17,
+    "key": "common.active",
+    "base": "Active",
+    "target": "Aktif"
+  },
+  {
+    "id": 18,
+    "key": "common.inactive",
+    "base": "Inactive",
+    "target": "Nonaktif"
+  },
+  {
+    "id": 19,
+    "key": "common.suspended",
+    "base": "Suspended",
+    "target": "Ditangguhkan"
+  },
+  {
+    "id": 20,
+    "key": "nav.dashboard",
+    "base": "Dashboard",
+    "target": "Dasbor"
+  },
+  {
+    "id": 21,
+    "key": "nav.users",
+    "base": "Users",
+    "target": "Pengguna"
+  },
+  {
+    "id": 22,
+    "key": "nav.roles",
+    "base": "Roles",
+    "target": "Peran"
+  },
+  {
+    "id": 23,
+    "key": "nav.modules",
+    "base": "Modules",
+    "target": "Module"
+  },
+  {
+    "id": 24,
+    "key": "nav.permissions",
+    "base": "Permissions",
+    "target": "Hak Akses"
+  },
+  {
+    "id": 25,
+    "key": "nav.settings",
+    "base": "Settings",
+    "target": "Pengaturan"
+  },
+  {
+    "id": 26,
+    "key": "users.create",
+    "base": "Create new user",
+    "target": "Buat pengguna baru"
+  },
+  {
+    "id": 27,
+    "key": "users.deleteConfirm",
+    "base": "Are you sure you want to delete this user?",
+    "target": "Apakah Anda yakin ingin menghapus pengguna ini?"
+  },
+  {
+    "id": 28,
+    "key": "toast.saved",
+    "base": "Your changes have been saved",
+    "target": "Perubahan Anda telah disimpan"
+  },
+  {
+    "id": 29,
+    "key": "email.subject",
+    "base": "Your account has been created",
+    "target": "Akun Anda telah dibuat"
+  },
+  {
+    "id": 30,
+    "key": "email.greeting",
+    "base": "Hello, {name}",
+    "target": "Halo, {name}"
+  },
+  {
+    "id": 31,
+    "key": "error.required",
+    "base": "This field is required",
+    "target": "Bidang ini wajib diisi"
+  },
+  {
+    "id": 32,
+    "key": "error.invalidEmail",
+    "base": "Enter a valid email address",
+    "target": "Masukkan alamat email yang valid"
+  },
+  {
+    "id": 33,
+    "key": "pagination.showing",
+    "base": "Showing {start}–{end} of {total}",
+    "target": "Menampilkan {start}–{end} dari {total}"
+  }
+]

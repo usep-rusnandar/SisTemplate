@@ -1,0 +1,154 @@
+[
+  {
+    "id": "H-2601",
+    "date": "2026-01-01",
+    "name": "Tahun Baru Masehi",
+    "type": "National",
+    "recurring": true,
+    "note": "New Year's Day"
+  },
+  {
+    "id": "H-2602",
+    "date": "2026-02-17",
+    "name": "Tahun Baru Imlek 2577 Kongzili",
+    "type": "National",
+    "recurring": false,
+    "note": "Lunar New Year"
+  },
+  {
+    "id": "H-2603",
+    "date": "2026-03-19",
+    "name": "Hari Suci Nyepi (Tahun Baru Saka 1948)",
+    "type": "National",
+    "recurring": false,
+    "note": ""
+  },
+  {
+    "id": "H-2604",
+    "date": "2026-03-20",
+    "name": "Hari Raya Idul Fitri 1447 H",
+    "type": "National",
+    "recurring": false,
+    "note": ""
+  },
+  {
+    "id": "H-2605",
+    "date": "2026-03-21",
+    "name": "Hari Raya Idul Fitri 1447 H",
+    "type": "National",
+    "recurring": false,
+    "note": ""
+  },
+  {
+    "id": "H-2606",
+    "date": "2026-03-23",
+    "name": "Cuti Bersama Idul Fitri",
+    "type": "Joint Leave",
+    "recurring": false,
+    "note": ""
+  },
+  {
+    "id": "H-2607",
+    "date": "2026-03-24",
+    "name": "Cuti Bersama Idul Fitri",
+    "type": "Joint Leave",
+    "recurring": false,
+    "note": ""
+  },
+  {
+    "id": "H-2608",
+    "date": "2026-04-03",
+    "name": "Wafat Isa Almasih",
+    "type": "National",
+    "recurring": false,
+    "note": "Good Friday"
+  },
+  {
+    "id": "H-2609",
+    "date": "2026-05-01",
+    "name": "Hari Buruh Internasional",
+    "type": "National",
+    "recurring": true,
+    "note": "Labour Day"
+  },
+  {
+    "id": "H-2610",
+    "date": "2026-05-14",
+    "name": "Kenaikan Isa Almasih",
+    "type": "National",
+    "recurring": false,
+    "note": "Ascension Day"
+  },
+  {
+    "id": "H-2611",
+    "date": "2026-05-27",
+    "name": "Hari Raya Idul Adha 1447 H",
+    "type": "National",
+    "recurring": false,
+    "note": ""
+  },
+  {
+    "id": "H-2612",
+    "date": "2026-05-31",
+    "name": "Hari Raya Waisak 2570",
+    "type": "National",
+    "recurring": false,
+    "note": ""
+  },
+  {
+    "id": "H-2613",
+    "date": "2026-06-01",
+    "name": "Hari Lahir Pancasila",
+    "type": "National",
+    "recurring": true,
+    "note": ""
+  },
+  {
+    "id": "H-2614",
+    "date": "2026-06-17",
+    "name": "Tahun Baru Islam 1448 H",
+    "type": "National",
+    "recurring": false,
+    "note": ""
+  },
+  {
+    "id": "H-2615",
+    "date": "2026-08-17",
+    "name": "Hari Kemerdekaan Republik Indonesia",
+    "type": "National",
+    "recurring": true,
+    "note": "Independence Day"
+  },
+  {
+    "id": "H-2616",
+    "date": "2026-08-26",
+    "name": "Maulid Nabi Muhammad SAW",
+    "type": "National",
+    "recurring": false,
+    "note": ""
+  },
+  {
+    "id": "H-2617",
+    "date": "2026-12-24",
+    "name": "Cuti Bersama Hari Raya Natal",
+    "type": "Joint Leave",
+    "recurring": false,
+    "note": ""
+  },
+  {
+    "id": "H-2618",
+    "date": "2026-12-25",
+    "name": "Hari Raya Natal",
+    "type": "National",
+    "recurring": true,
+    "note": "Christmas Day"
+  },
+  {
+    "id": "H-2619",
+    "date": "2026-12-31",
+    "name": "Cuti Bersama Tahun Baru",
+    "type": "Joint Leave",
+    "recurring": false,
+    "note": ""
+  }
+]

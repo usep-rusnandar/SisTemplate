@@ -1,0 +1,154 @@
+# One-shot: copy Production IAM users + roles + report-to tree onto Staging SQL.
+# Does not write Production. Does not wipe transactional tables.
+# Guard: copy-iam-prod-to-staging-once
+name: Copy IAM users Production → Staging (one-shot)
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - ".github/workflows/copy-iam-prod-to-staging-once.yml"
+
+concurrency:
+  group: copy-iam-prod-to-staging-once
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  copy-iam:
+    name: Copy Production users onto Staging
+    if: contains(github.event.head_commit.message, 'copy-iam-prod-to-staging-once')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve SQL from App Service (Kudu)
+        env:
+          PROFILE_PRODUCTION: ${{ secrets.AZUREWEBAPP_PUBLISHPROFILE_PRODUCTION }}
+          PROFILE_STAGING: ${{ secrets.AZUREWEBAPP_PUBLISHPROFILE_STAGING }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, re, ssl, urllib.request, xml.etree.ElementTree as ET, base64
+
+          def parse_msdeploy(xml_text, prefer_staging: bool):
+              root = ET.fromstring(xml_text)
+              candidates = []
+              for p in root.findall(".//publishProfile"):
+                  method = (p.get("publishMethod") or "")
+                  if method not in ("MSDeploy", "ZipDeploy"):
+                      continue
+                  url = (p.get("publishUrl") or p.get("publishProfileUrl") or "")
+                  dest = (p.get("destinationAppUrl") or "")
+                  user = p.get("userName") or ""
+                  pwd = p.get("userPWD") or ""
+                  if not user or not pwd:
+                      continue
+                  is_stg = "-staging" in dest.lower() or "-staging" in url.lower()
+                  candidates.append((is_stg, url, dest, user, pwd))
+              if not candidates:
+                  raise SystemExit("No MSDeploy/ZipDeploy profile with credentials")
+              wanted = [c for c in candidates if c[0] == prefer_staging]
+              pick = (wanted or candidates)[0]
+              scm = pick[1]
+              if "scm." not in scm.lower():
+                  dest = pick[2].rstrip("/")
+                  host = dest.replace("https://", "").replace("http://", "").split("/")[0]
+                  if host.endswith(".azurewebsites.net"):
+                      scm = host.replace(".azurewebsites.net", ".scm.azurewebsites.net")
+                  else:
+                      scm = host
+              scm = re.sub(r"^https?://", "", scm).split(":")[0]
+              return scm, pick[3], pick[4], pick[2]
+
+          def kudu_settings(scm, user, pwd):
+              url = f"https://{scm}/api/settings"
+              req = urllib.request.Request(url, headers={"User-Agent": "copy-iam-once", "Accept": "application/json"})
+              req.add_header("Authorization", "Basic " + base64.b64encode(f"{user}:{pwd}".encode()).decode())
+              ctx = ssl.create_default_context()
+              with urllib.request.urlopen(req, timeout=60, context=ctx) as r:
+                  return json.load(r)
+
+          def conn_from_settings(settings: dict):
+              keys = [
+                  "ConnectionStrings__DefaultConnection",
+                  "SQLAZURECONNSTR_DefaultConnection",
+                  "SQLCONNSTR_DefaultConnection",
+                  "DefaultConnection",
+              ]
+              for k in keys:
+                  v = settings.get(k)
+                  if v:
+                      return k, v
+              for k, v in settings.items():
+                  if not isinstance(v, str):
+                      continue
+                  kl = k.lower()
+                  if "defaultconnection" in kl.replace(":", "__") or kl.endswith("defaultconnection"):
+                      return k, v
+              raise SystemExit("DefaultConnection not found in Kudu /api/settings")
+
+          def server_db(cs: str):
+              def grab(name):
+                  m = re.search(rf"(?:^|;){name}=([^;]+)", cs, re.I)
+                  return m.group(1).strip() if m else ""
+              return grab("Server") or grab("Data Source"), grab("Database") or grab("Initial Catalog")
+
+          def mask(cs: str, *extra):
+              for secret in extra:
+                  if secret:
+                      print(f"::add-mask::{secret}")
+              print(f"::add-mask::{cs}")
+              m = re.search(r"Password=([^;]+)", cs, re.I)
+              if m:
+                  print(f"::add-mask::{m.group(1)}")
+
+          def resolve(xml, prefer_staging, label):
+              if not (xml or "").strip():
+                  raise SystemExit(f"Publish profile secret for {label} is empty")
+              scm, user, pwd, dest = parse_msdeploy(xml, prefer_staging=prefer_staging)
+              print(f"{label} SCM host={scm} dest={dest}")
+              settings = kudu_settings(scm, user, pwd)
+              src_key, cs = conn_from_settings(settings)
+              mask(cs, pwd, user)
+              server, database = server_db(cs)
+              print(f"{label} SQL source_key={src_key} server={server} database={database}")
+              return cs, server, database
+
+          prod_cs, prod_server, prod_db = resolve(os.environ.get("PROFILE_PRODUCTION") or "", False, "Production")
+          stg_cs, stg_server, stg_db = resolve(os.environ.get("PROFILE_STAGING") or "", True, "Staging")
+          if (prod_server.lower(), prod_db.lower()) == (stg_server.lower(), stg_db.lower()):
+              raise SystemExit("ABORT: production and staging App Services point at the same SQL database")
+          if "sqlmisis-prod" not in prod_server.lower():
+              raise SystemExit("ABORT: production App Service connection is not sqlmisis-prod")
+          if "sqlmisis-prod" in stg_server.lower():
+              raise SystemExit("ABORT: staging App Service connection looks like production SQL")
+
+          with open(os.environ["GITHUB_ENV"], "a", encoding="utf-8") as f:
+              f.write(f"SOURCE_SQL_CONNECTION<<EOF\n{prod_cs}\nEOF\n")
+              f.write(f"TARGET_SQL_CONNECTION<<EOF\n{stg_cs}\nEOF\n")
+          PY
+
+      - name: Install pymssql
+        run: pip install pymssql
+
+      - name: Copy Production IAM users onto Staging
+        env:
+          SOURCE_SQL_CONNECTION: ${{ env.SOURCE_SQL_CONNECTION }}
+          TARGET_SQL_CONNECTION: ${{ env.TARGET_SQL_CONNECTION }}
+        run: |
+          set -euo pipefail
+          python3 tools/database/copy-iam-users-prod-to-staging.py
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "## Copy IAM users Production → Staging"
+            echo ""
+            echo "Staging \`iam.USER_T\` / roles / \`ManagerUserId\` aligned to Production."
+            echo "Production was not written. Transactional tables were not wiped."
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,54 @@
+[
+  {
+    "SubClassificationId": "M.01.14",
+    "SpecialReqId": "IUJK"
+  },
+  {
+    "SubClassificationId": "M.01.14",
+    "SpecialReqId": "IUJP"
+  },
+  {
+    "SubClassificationId": "M.02.01",
+    "SpecialReqId": "Authorized"
+  },
+  {
+    "SubClassificationId": "M.02.01",
+    "SpecialReqId": "MSDS"
+  },
+  {
+    "SubClassificationId": "M.02.02",
+    "SpecialReqId": "MSDS"
+  },
+  {
+    "SubClassificationId": "M.02.03",
+    "SpecialReqId": "MSDS"
+  },
+  {
+    "SubClassificationId": "S.02.04",
+    "SpecialReqId": "IUJP"
+  },
+  {
+    "SubClassificationId": "S.10.01",
+    "SpecialReqId": "IUJK"
+  },
+  {
+    "SubClassificationId": "S.10.02",
+    "SpecialReqId": "IUJK"
+  },
+  {
+    "SubClassificationId": "S.10.03",
+    "SpecialReqId": "IUJK"
+  },
+  {
+    "SubClassificationId": "S.10.04",
+    "SpecialReqId": "IUJK"
+  },
+  {
+    "SubClassificationId": "S.10.05",
+    "SpecialReqId": "IUJPTL"
+  },
+  {
+    "SubClassificationId": "S.10.08",
+    "SpecialReqId": "IUJK"
+  }
+]

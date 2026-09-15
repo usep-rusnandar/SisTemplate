@@ -1,0 +1,185 @@
+/* ============================================================
+   Alamtri Geo — Design System Foundations
+   Colors + Type tokens (base + semantic)
+   Source of truth: AlamtriKitNonRun/src/app/components/system/tokens.ts
+   ============================================================ */
+
+/* Font self-hosted for offline use. Original CDN source (kept for reference):
+   https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap */
+@import url('/vendor/fonts/plus-jakarta-sans.css');
+
+:root {
+  /* ---------- Brand palette ---------- */
+  --color-main:   #013B52; /* deep teal — primary, headings, text */
+  --color-yellow: #E3E37A; /* soft chartreuse — badges, highlights */
+  --color-orange: #EB662E; /* warm orange — notifications, accent */
+  --color-ocean:  #0F828A; /* teal — links, focus, active accent */
+  --color-blue:   #005C96; /* info blue */
+  --color-sage:   #ABD096; /* soft green */
+  --color-forest: #11713B; /* deep green — success */
+
+  /* ---------- Neutrals & surfaces ---------- */
+  --bg:          #F7F8F9; /* app background */
+  --surface:     #FFFFFF; /* cards, panels, nav */
+  --border:      rgba(1, 59, 82, 0.12);  /* tinted hairline */
+  --border-soft: rgba(1, 59, 82, 0.06);  /* subtle inner dividers */
+  --hover:       rgba(1, 59, 82, 0.04);  /* hover wash */
+  --active:      rgba(1, 59, 82, 0.08);  /* selected/active wash */
+
+  /* ---------- Text ---------- */
+  --fg1: #013B52; /* primary text (same as brand main) */
+  --fg2: #5C6B73; /* muted / secondary text */
+  --fg3: #8A969D; /* subtle / tertiary, labels, captions */
+  --fg-on-dark: #FFFFFF;
+
+  /* ---------- Semantic / status ---------- */
+  --danger:      #C5341A;
+  --danger-bg:   rgba(197, 52, 26, 0.08);
+  --success:     #11713B; /* = forest */
+  --success-bg:  rgba(17, 113, 59, 0.10);
+  --warning-bg:  rgba(227, 227, 122, 0.45);
+  --warning-text:#6B6B1F;
+  --info:        #005C96; /* = blue */
+  --info-bg:     rgba(0, 92, 150, 0.08);
+  --brand-bg:    rgba(15, 130, 138, 0.12); /* ocean tint */
+
+  /* ---------- Gradients (used sparingly) ---------- */
+  --grad-primary: linear-gradient(135deg, #013B52 0%, #0F828A 100%);
+  --grad-sunset:  linear-gradient(135deg, #EB662E 0%, #E3E37A 100%);
+  --grad-meadow:  linear-gradient(135deg, #11713B 0%, #ABD096 100%);
+  --grad-horizon: linear-gradient(135deg, #005C96 0%, #0F828A 50%, #ABD096 100%);
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 999px;
+
+  /* ---------- Elevation (teal-tinted, subtle) ---------- */
+  --shadow-sm: 0 1px 2px rgba(1, 59, 82, 0.06);
+  --shadow-md: 0 4px 12px rgba(1, 59, 82, 0.08);
+  --shadow-lg: 0 12px 32px rgba(1, 59, 82, 0.12);
+  --focus-ring: 0 0 0 3px rgba(15, 130, 138, 0.25);
+
+  /* ---------- Spacing (4px base unit) ---------- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 48px;
+
+  /* ---------- Typography ---------- */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  --weight-extralight: 200;
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* Type scale (px) */
+  --text-display: 48px;
+  --text-h1: 32px;
+  --text-h2: 24px;
+  --text-h3: 18px;
+  --text-base: 14px;   /* body */
+  --text-sm: 13px;
+  --text-caption: 12px;
+  --text-micro: 11px;
+}
+
+/* ============================================================
+   Base element defaults — enterprise, calm, readable
+   ============================================================ */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg);
+  color: var(--fg1);
+  font-size: var(--text-base);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Semantic type roles ---------- */
+.display {
+  font-size: var(--text-display);
+  font-weight: var(--weight-extrabold);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--fg1);
+}
+h1, .h1 {
+  font-size: var(--text-h1);
+  font-weight: var(--weight-extrabold);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--fg1);
+}
+h2, .h2 {
+  font-size: var(--text-h2);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  color: var(--fg1);
+}
+h3, .h3 {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-semibold);
+  line-height: 1.4;
+  color: var(--fg1);
+}
+p, .body {
+  font-size: var(--text-base);
+  font-weight: var(--weight-regular);
+  line-height: 1.5;
+  color: var(--fg1);
+}
+.muted {
+  color: var(--fg2);
+}
+.caption {
+  font-size: var(--text-caption);
+  color: var(--fg2);
+  font-weight: var(--weight-medium);
+}
+.label {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--fg1);
+}
+.eyebrow {
+  font-size: var(--text-micro);
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg3);
+}
+.table-head {
+  font-size: 11.5px;
+  font-weight: var(--weight-bold);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--fg2);
+}
+a, .link {
+  color: var(--color-ocean);
+  font-weight: var(--weight-semibold);
+  text-decoration: none;
+}
+a:hover, .link:hover {
+  text-decoration: underline;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+@media (max-width: 1180px) {
+  .ag-trk-detail-lower {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -1,0 +1,178 @@
+# Remove the App Registration overlay from contractone App Service
+# (SharePoint__ClientSecret / TenantId / ClientId / DownloadTimeoutSeconds).
+# After this, Staging and Production use Managed Identity + committed appsettings.
+# Does not write secret values to git or to workflow logs.
+#
+# Use this after the PIC has granted Graph Sites.Selected (plus site permission)
+# on the slot Managed Identity and that path is verified.
+name: Clear SharePoint App Settings
+
+on:
+  workflow_dispatch:
+    inputs:
+      target:
+        description: "App Service slot(s)"
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+          - both
+        default: both
+      confirm:
+        description: "CLEAR-STAGING / CLEAR-PRODUCTION / CLEAR-BOTH"
+        required: true
+        type: string
+
+concurrency:
+  group: clear-sharepoint-settings-${{ inputs.target }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  clear:
+    name: Clear SharePoint overlay → ${{ inputs.target }}
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.target == 'production' && 'production' || inputs.target == 'staging' && 'staging' || '' }}
+    steps:
+      - name: Guard confirm phrase
+        run: |
+          set -euo pipefail
+          target="${{ inputs.target }}"
+          confirm="${{ inputs.confirm }}"
+          case "$target" in
+            staging) expected="CLEAR-STAGING" ;;
+            production) expected="CLEAR-PRODUCTION" ;;
+            both) expected="CLEAR-BOTH" ;;
+            *) echo "::error::Unknown target"; exit 1 ;;
+          esac
+          if [ "$confirm" != "$expected" ]; then
+            echo "::error::Refusing. For target=$target type $expected in the confirm input."
+            exit 1
+          fi
+          echo "Confirmed $expected"
+
+      - name: Delete SharePoint overlay via Kudu
+        env:
+          APPLY_TARGET: ${{ inputs.target }}
+          PROFILE_PRODUCTION: ${{ secrets.AZUREWEBAPP_PUBLISHPROFILE_PRODUCTION }}
+          PROFILE_STAGING: ${{ secrets.AZUREWEBAPP_PUBLISHPROFILE_STAGING }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import base64, json, os, re, ssl, urllib.error, urllib.request, xml.etree.ElementTree as ET
+
+          KEYS = (
+              "SharePoint__ClientSecret",
+              "SharePoint__TenantId",
+              "SharePoint__ClientId",
+              "SharePoint__DownloadTimeoutSeconds",
+          )
+
+          def parse_msdeploy(xml_text, prefer_staging: bool):
+              root = ET.fromstring(xml_text)
+              candidates = []
+              for p in root.findall(".//publishProfile"):
+                  method = (p.get("publishMethod") or "")
+                  if method not in ("MSDeploy", "ZipDeploy"):
+                      continue
+                  url = (p.get("publishUrl") or p.get("publishProfileUrl") or "")
+                  dest = (p.get("destinationAppUrl") or "")
+                  user = p.get("userName") or ""
+                  pwd = p.get("userPWD") or ""
+                  if not user or not pwd:
+                      continue
+                  is_stg = "-staging" in dest.lower() or "-staging" in url.lower()
+                  candidates.append((is_stg, url, dest, user, pwd))
+              if not candidates:
+                  raise SystemExit("No MSDeploy/ZipDeploy profile with credentials")
+              wanted = [c for c in candidates if c[0] == prefer_staging]
+              pick = (wanted or candidates)[0]
+              scm = pick[1]
+              if "scm." not in scm.lower():
+                  dest = pick[2].rstrip("/")
+                  host = dest.replace("https://", "").replace("http://", "").split("/")[0]
+                  if host.endswith(".azurewebsites.net"):
+                      scm = host.replace(".azurewebsites.net", ".scm.azurewebsites.net")
+                  else:
+                      scm = host
+              scm = re.sub(r"^https?://", "", scm).split(":")[0]
+              return scm, pick[3], pick[4], pick[2]
+
+          def auth_header(user, pwd):
+              return "Basic " + base64.b64encode(f"{user}:{pwd}".encode()).decode()
+
+          def kudu(scm, user, pwd, path, method="GET", body=None, empty=False, required=True):
+              url = f"https://{scm}{path}"
+              if empty:
+                  data = b""
+              elif body is None:
+                  data = None
+              else:
+                  data = json.dumps(body).encode()
+              headers = {"User-Agent": "clear-sharepoint-settings", "Accept": "application/json"}
+              if body is not None:
+                  headers["Content-Type"] = "application/json"
+              req = urllib.request.Request(url, data=data, method=method, headers=headers)
+              req.add_header("Authorization", auth_header(user, pwd))
+              ctx = ssl.create_default_context()
+              try:
+                  with urllib.request.urlopen(req, timeout=90, context=ctx) as r:
+                      raw = r.read()
+                      if not raw:
+                          return r.status, None
+                      try:
+                          return r.status, json.loads(raw)
+                      except json.JSONDecodeError:
+                          return r.status, None
+              except urllib.error.HTTPError as e:
+                  err = e.read().decode("utf-8", "replace")[:300]
+                  if required:
+                      raise SystemExit(f"Kudu {method} {path} HTTP {e.code}: {err}") from e
+                  return e.code, err
+
+          def restart_site(scm, user, pwd, label):
+              for path in ("/api/app/restart", "/api/restart"):
+                  code, _ = kudu(scm, user, pwd, path, method="POST", empty=True, required=False)
+                  if isinstance(code, int) and 200 <= code < 300:
+                      print(f"{label} restarted via {path} HTTP {code}")
+                      return
+                  print(f"{label} restart {path} HTTP {code} (continuing)")
+              print(f"{label} overlay removed; process recycle deferred to Deploy Internal")
+
+          def present(settings, key):
+              if not isinstance(settings, dict) or key not in settings:
+                  return False
+              value = settings.get(key)
+              return value is not None and str(value).strip() != ""
+
+          def clear(xml, prefer_staging, label):
+              if not (xml or "").strip():
+                  raise SystemExit(f"Publish profile secret for {label} is empty")
+              scm, user, pwd, dest = parse_msdeploy(xml, prefer_staging=prefer_staging)
+              print(f"::add-mask::{pwd}")
+              print(f"{label} SCM={scm} dest={dest}")
+              for key in KEYS:
+                  code, _ = kudu(scm, user, pwd, f"/api/settings/{key}", method="DELETE", empty=True, required=False)
+                  print(f"{label} DELETE {key} HTTP {code}")
+              _, settings = kudu(scm, user, pwd, "/api/settings")
+              if not isinstance(settings, dict):
+                  raise SystemExit(f"{label}: Kudu GET /api/settings did not return an object")
+              leftover = [key for key in KEYS if present(settings, key)]
+              for key in KEYS:
+                  print(f"{label} {key} present={present(settings, key)}")
+              if leftover:
+                  raise SystemExit(f"{label}: overlay still present after DELETE: {', '.join(leftover)}")
+              print(f"{label} SharePoint App Setting overlay cleared (Managed Identity path)")
+              restart_site(scm, user, pwd, label)
+
+          target = os.environ["APPLY_TARGET"]
+          stg = os.environ.get("PROFILE_STAGING") or ""
+          prod = os.environ.get("PROFILE_PRODUCTION") or ""
+          if target in ("staging", "both"):
+              clear(stg, True, "Staging")
+          if target in ("production", "both"):
+              clear(prod, False, "Production")
+          PY

@@ -1,0 +1,138 @@
+[
+  {
+    "ProvinceId": "11",
+    "ProvinceName": "ACEH"
+  },
+  {
+    "ProvinceId": "12",
+    "ProvinceName": "SUMATERA UTARA"
+  },
+  {
+    "ProvinceId": "13",
+    "ProvinceName": "SUMATERA BARAT"
+  },
+  {
+    "ProvinceId": "14",
+    "ProvinceName": "RIAU"
+  },
+  {
+    "ProvinceId": "15",
+    "ProvinceName": "JAMBI"
+  },
+  {
+    "ProvinceId": "16",
+    "ProvinceName": "SUMATERA SELATAN"
+  },
+  {
+    "ProvinceId": "17",
+    "ProvinceName": "BENGKULU"
+  },
+  {
+    "ProvinceId": "18",
+    "ProvinceName": "LAMPUNG"
+  },
+  {
+    "ProvinceId": "19",
+    "ProvinceName": "KEPULAUAN BANGKA BELITUNG"
+  },
+  {
+    "ProvinceId": "21",
+    "ProvinceName": "KEPULAUAN RIAU"
+  },
+  {
+    "ProvinceId": "31",
+    "ProvinceName": "DKI JAKARTA"
+  },
+  {
+    "ProvinceId": "32",
+    "ProvinceName": "JAWA BARAT"
+  },
+  {
+    "ProvinceId": "33",
+    "ProvinceName": "JAWA TENGAH"
+  },
+  {
+    "ProvinceId": "34",
+    "ProvinceName": "DAERAH ISTIMEWA YOGYAKARTA"
+  },
+  {
+    "ProvinceId": "35",
+    "ProvinceName": "JAWA TIMUR"
+  },
+  {
+    "ProvinceId": "36",
+    "ProvinceName": "BANTEN"
+  },
+  {
+    "ProvinceId": "51",
+    "ProvinceName": "BALI"
+  },
+  {
+    "ProvinceId": "52",
+    "ProvinceName": "NUSA TENGGARA BARAT"
+  },
+  {
+    "ProvinceId": "53",
+    "ProvinceName": "NUSA TENGGARA TIMUR"
+  },
+  {
+    "ProvinceId": "61",
+    "ProvinceName": "KALIMANTAN BARAT"
+  },
+  {
+    "ProvinceId": "62",
+    "ProvinceName": "KALIMANTAN TENGAH"
+  },
+  {
+    "ProvinceId": "63",
+    "ProvinceName": "KALIMANTAN SELATAN"
+  },
+  {
+    "ProvinceId": "64",
+    "ProvinceName": "KALIMANTAN TIMUR"
+  },
+  {
+    "ProvinceId": "65",
+    "ProvinceName": "KALIMANTAN UTARA"
+  },
+  {
+    "ProvinceId": "71",
+    "ProvinceName": "SULAWESI UTARA"
+  },
+  {
+    "ProvinceId": "72",
+    "ProvinceName": "SULAWESI TENGAH"
+  },
+  {
+    "ProvinceId": "73",
+    "ProvinceName": "SULAWESI SELATAN"
+  },
+  {
+    "ProvinceId": "74",
+    "ProvinceName": "SULAWESI TENGGARA"
+  },
+  {
+    "ProvinceId": "75",
+    "ProvinceName": "GORONTALO"
+  },
+  {
+    "ProvinceId": "76",
+    "ProvinceName": "SULAWESI BARAT"
+  },
+  {
+    "ProvinceId": "81",
+    "ProvinceName": "MALUKU"
+  },
+  {
+    "ProvinceId": "82",
+    "ProvinceName": "MALUKU UTARA"
+  },
+  {
+    "ProvinceId": "91",
+    "ProvinceName": "PAPUA"
+  },
+  {
+    "ProvinceId": "92",
+    "ProvinceName": "PAPUA BARAT"
+  }
+]

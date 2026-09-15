@@ -1,0 +1,10 @@
+[
+  {
+    "CategoryId": "M",
+    "CategoryDesc": "Material - Barang"
+  },
+  {
+    "CategoryId": "S",
+    "CategoryDesc": "Service - Jasa"
+  }
+]

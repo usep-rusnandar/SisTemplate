@@ -1,0 +1,1182 @@
+[
+  {
+    "SubClassificationId": "M.01.01",
+    "SubClassificationDesc": "Battery / Accumulator",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.02",
+    "SubClassificationDesc": "Bearing",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.03",
+    "SubClassificationDesc": "Component and Sub Component",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.04",
+    "SubClassificationDesc": "Electrical",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.05",
+    "SubClassificationDesc": "Fastener",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.06",
+    "SubClassificationDesc": "Filter",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.07",
+    "SubClassificationDesc": "Friction Part (Disc, Plate Etc)",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.08",
+    "SubClassificationDesc": "Hose",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.09",
+    "SubClassificationDesc": "Pin, Bushing",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.10",
+    "SubClassificationDesc": "Rubber Part",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.11",
+    "SubClassificationDesc": "Seal, O-Ring, Gasket",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.12",
+    "SubClassificationDesc": "Spring",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.13",
+    "SubClassificationDesc": "V-Belt",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.14",
+    "SubClassificationDesc": "Other Spareparts",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.01.15",
+    "SubClassificationDesc": "Air Conditioner for Equipment",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.02.01",
+    "SubClassificationDesc": "Fuel",
+    "ClassificationId": "M.02"
+  },
+  {
+    "SubClassificationId": "M.02.02",
+    "SubClassificationDesc": "Oil",
+    "ClassificationId": "M.02"
+  },
+  {
+    "SubClassificationId": "M.02.03",
+    "SubClassificationDesc": "Grease",
+    "ClassificationId": "M.02"
+  },
+  {
+    "SubClassificationId": "M.02.04",
+    "SubClassificationDesc": "Coolant",
+    "ClassificationId": "M.02"
+  },
+  {
+    "SubClassificationId": "M.03.01",
+    "SubClassificationDesc": "Rim",
+    "ClassificationId": "M.03"
+  },
+  {
+    "SubClassificationId": "M.03.02",
+    "SubClassificationDesc": "Tyre",
+    "ClassificationId": "M.03"
+  },
+  {
+    "SubClassificationId": "M.03.03",
+    "SubClassificationDesc": "Tyre Accessories",
+    "ClassificationId": "M.03"
+  },
+  {
+    "SubClassificationId": "M.04.01",
+    "SubClassificationDesc": "Air Compressor",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.02",
+    "SubClassificationDesc": "Backhoe Loader",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.03",
+    "SubClassificationDesc": "Bulldozer",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.04",
+    "SubClassificationDesc": "Compactor",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.05",
+    "SubClassificationDesc": "Crane Truck",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.06",
+    "SubClassificationDesc": "Crushing & Handling Facility",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.07",
+    "SubClassificationDesc": "Cylinder Handler",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.08",
+    "SubClassificationDesc": "Dolly",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.09",
+    "SubClassificationDesc": "Drilling Machine",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.10",
+    "SubClassificationDesc": "Dump Truck",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.11",
+    "SubClassificationDesc": "Excavator",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.12",
+    "SubClassificationDesc": "Forklift",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.13",
+    "SubClassificationDesc": "Fuel Truck",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.14",
+    "SubClassificationDesc": "Genset",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.15",
+    "SubClassificationDesc": "Grease Truck",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.16",
+    "SubClassificationDesc": "Lowboy Truck",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.17",
+    "SubClassificationDesc": "Lube Truck",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.18",
+    "SubClassificationDesc": "Magnetic Sweeper",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.19",
+    "SubClassificationDesc": "Man Haul Bus",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.20",
+    "SubClassificationDesc": "Man Lift",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.21",
+    "SubClassificationDesc": "Man Platform",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.22",
+    "SubClassificationDesc": "Motor Grader",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.23",
+    "SubClassificationDesc": "Prime Mover",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.24",
+    "SubClassificationDesc": "Prime Mover For Jocky",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.25",
+    "SubClassificationDesc": "Prime Mover For Small DT",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.26",
+    "SubClassificationDesc": "Service Truck",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.27",
+    "SubClassificationDesc": "Sleipner",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.28",
+    "SubClassificationDesc": "Tower Lamp",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.29",
+    "SubClassificationDesc": "Trailer",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.30",
+    "SubClassificationDesc": "Tyre Handler",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.31",
+    "SubClassificationDesc": "Vessel Trailer",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.32",
+    "SubClassificationDesc": "Washing Truck",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.33",
+    "SubClassificationDesc": "Waste Oil Truck",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.34",
+    "SubClassificationDesc": "Water Mist",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.35",
+    "SubClassificationDesc": "Water Pump",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.36",
+    "SubClassificationDesc": "Water Truck",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.37",
+    "SubClassificationDesc": "Welding Machine",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.38",
+    "SubClassificationDesc": "Wheel Dozer",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.39",
+    "SubClassificationDesc": "Wheel Loader",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.40",
+    "SubClassificationDesc": "Portable Tower BTS",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.04.41",
+    "SubClassificationDesc": "Sarana/LV (sales/dealer)",
+    "ClassificationId": "M.04"
+  },
+  {
+    "SubClassificationId": "M.05.01",
+    "SubClassificationDesc": "Autolube",
+    "ClassificationId": "M.05"
+  },
+  {
+    "SubClassificationId": "M.05.02",
+    "SubClassificationDesc": "Body Builder",
+    "ClassificationId": "M.05"
+  },
+  {
+    "SubClassificationId": "M.05.03",
+    "SubClassificationDesc": "Fire Suppression",
+    "ClassificationId": "M.05"
+  },
+  {
+    "SubClassificationId": "M.05.04",
+    "SubClassificationDesc": "Safety Device",
+    "ClassificationId": "M.05"
+  },
+  {
+    "SubClassificationId": "M.05.05",
+    "SubClassificationDesc": "Sticker Unit",
+    "ClassificationId": "M.05"
+  },
+  {
+    "SubClassificationId": "M.06.01",
+    "SubClassificationDesc": "Undercarriage Set",
+    "ClassificationId": "M.06"
+  },
+  {
+    "SubClassificationId": "M.06.02",
+    "SubClassificationDesc": "Tracklink",
+    "ClassificationId": "M.06"
+  },
+  {
+    "SubClassificationId": "M.06.03",
+    "SubClassificationDesc": "Sprocket",
+    "ClassificationId": "M.06"
+  },
+  {
+    "SubClassificationId": "M.06.04",
+    "SubClassificationDesc": "Idler",
+    "ClassificationId": "M.06"
+  },
+  {
+    "SubClassificationId": "M.06.05",
+    "SubClassificationDesc": "Carrier Roller",
+    "ClassificationId": "M.06"
+  },
+  {
+    "SubClassificationId": "M.06.06",
+    "SubClassificationDesc": "Track Roller",
+    "ClassificationId": "M.06"
+  },
+  {
+    "SubClassificationId": "M.06.07",
+    "SubClassificationDesc": "Track Shoe",
+    "ClassificationId": "M.06"
+  },
+  {
+    "SubClassificationId": "M.06.08",
+    "SubClassificationDesc": "Link Chain",
+    "ClassificationId": "M.06"
+  },
+  {
+    "SubClassificationId": "M.07.01",
+    "SubClassificationDesc": "Flow Meter",
+    "ClassificationId": "M.07"
+  },
+  {
+    "SubClassificationId": "M.07.02",
+    "SubClassificationDesc": "Pressure Gauges",
+    "ClassificationId": "M.07"
+  },
+  {
+    "SubClassificationId": "M.07.03",
+    "SubClassificationDesc": "Wireless Sensors",
+    "ClassificationId": "M.07"
+  },
+  {
+    "SubClassificationId": "M.07.04",
+    "SubClassificationDesc": "LiDAR",
+    "ClassificationId": "M.07"
+  },
+  {
+    "SubClassificationId": "M.07.05",
+    "SubClassificationDesc": "Temperature Sensors",
+    "ClassificationId": "M.07"
+  },
+  {
+    "SubClassificationId": "M.07.06",
+    "SubClassificationDesc": "Weather Instruments",
+    "ClassificationId": "M.07"
+  },
+  {
+    "SubClassificationId": "M.07.07",
+    "SubClassificationDesc": "Water Instruments",
+    "ClassificationId": "M.01"
+  },
+  {
+    "SubClassificationId": "M.08.01",
+    "SubClassificationDesc": "PC & Laptop",
+    "ClassificationId": "M.08"
+  },
+  {
+    "SubClassificationId": "M.08.02",
+    "SubClassificationDesc": "Peripheral (I/O device)",
+    "ClassificationId": "M.08"
+  },
+  {
+    "SubClassificationId": "M.08.03",
+    "SubClassificationDesc": "Software & License (Applications, System & Utility)",
+    "ClassificationId": "M.08"
+  },
+  {
+    "SubClassificationId": "M.09.01",
+    "SubClassificationDesc": "Bucket Teeth & Adapters",
+    "ClassificationId": "M.09"
+  },
+  {
+    "SubClassificationId": "M.09.02",
+    "SubClassificationDesc": "Cutting Edge & End Bits",
+    "ClassificationId": "M.09"
+  },
+  {
+    "SubClassificationId": "M.09.03",
+    "SubClassificationDesc": "Rippers",
+    "ClassificationId": "M.09"
+  },
+  {
+    "SubClassificationId": "M.10.01",
+    "SubClassificationDesc": "Hand Tools (Hammer, Screwdriver, Wrench Etc)",
+    "ClassificationId": "M.10"
+  },
+  {
+    "SubClassificationId": "M.10.02",
+    "SubClassificationDesc": "Power Tools (Electril Drill, Grinder Etc)",
+    "ClassificationId": "M.10"
+  },
+  {
+    "SubClassificationId": "M.10.03",
+    "SubClassificationDesc": "Heavy Tools (Hydraulic Jack, Chain Block Etc)",
+    "ClassificationId": "M.10"
+  },
+  {
+    "SubClassificationId": "M.10.04",
+    "SubClassificationDesc": "Autonomous Robotic",
+    "ClassificationId": "M.10"
+  },
+  {
+    "SubClassificationId": "M.10.05",
+    "SubClassificationDesc": "Simulator",
+    "ClassificationId": "M.10"
+  },
+  {
+    "SubClassificationId": "M.11.01",
+    "SubClassificationDesc": "Gorong-Gorong",
+    "ClassificationId": "M.11"
+  },
+  {
+    "SubClassificationId": "M.11.02",
+    "SubClassificationDesc": "HDPE Pipe",
+    "ClassificationId": "M.11"
+  },
+  {
+    "SubClassificationId": "M.11.03",
+    "SubClassificationDesc": "Limestone",
+    "ClassificationId": "M.11"
+  },
+  {
+    "SubClassificationId": "M.11.04",
+    "SubClassificationDesc": "Surveying Instruments",
+    "ClassificationId": "M.11"
+  },
+  {
+    "SubClassificationId": "M.11.05",
+    "SubClassificationDesc": "Weather Radar",
+    "ClassificationId": "M.11"
+  },
+  {
+    "SubClassificationId": "M.12.01",
+    "SubClassificationDesc": "Cement",
+    "ClassificationId": "M.12"
+  },
+  {
+    "SubClassificationId": "M.12.02",
+    "SubClassificationDesc": "Stone",
+    "ClassificationId": "M.12"
+  },
+  {
+    "SubClassificationId": "M.12.03",
+    "SubClassificationDesc": "Glass",
+    "ClassificationId": "M.12"
+  },
+  {
+    "SubClassificationId": "M.12.04",
+    "SubClassificationDesc": "Concrete",
+    "ClassificationId": "M.12"
+  },
+  {
+    "SubClassificationId": "M.12.05",
+    "SubClassificationDesc": "Steel",
+    "ClassificationId": "M.12"
+  },
+  {
+    "SubClassificationId": "M.12.06",
+    "SubClassificationDesc": "Aluminium",
+    "ClassificationId": "M.12"
+  },
+  {
+    "SubClassificationId": "M.12.07",
+    "SubClassificationDesc": "Bricks",
+    "ClassificationId": "M.12"
+  },
+  {
+    "SubClassificationId": "M.12.08",
+    "SubClassificationDesc": "Other Construction Material",
+    "ClassificationId": "M.12"
+  },
+  {
+    "SubClassificationId": "M.13.01",
+    "SubClassificationDesc": "Furniture",
+    "ClassificationId": "M.13"
+  },
+  {
+    "SubClassificationId": "M.13.02",
+    "SubClassificationDesc": "Stationery Supplies",
+    "ClassificationId": "M.13"
+  },
+  {
+    "SubClassificationId": "M.13.03",
+    "SubClassificationDesc": "Printing and Writing Paper",
+    "ClassificationId": "M.13"
+  },
+  {
+    "SubClassificationId": "M.13.04",
+    "SubClassificationDesc": "Other Office Supplies",
+    "ClassificationId": "M.13"
+  },
+  {
+    "SubClassificationId": "M.14.01",
+    "SubClassificationDesc": "Shoes",
+    "ClassificationId": "M.14"
+  },
+  {
+    "SubClassificationId": "M.14.02",
+    "SubClassificationDesc": "Garment (Shirt, Pants, Jackets Etc)",
+    "ClassificationId": "M.14"
+  },
+  {
+    "SubClassificationId": "M.15.01",
+    "SubClassificationDesc": "Portable Fire Extinguisher",
+    "ClassificationId": "M.15"
+  },
+  {
+    "SubClassificationId": "M.15.02",
+    "SubClassificationDesc": "Personal Protective Equipment (Helmet, Glasses, Gloves Etc)",
+    "ClassificationId": "M.15"
+  },
+  {
+    "SubClassificationId": "M.15.03",
+    "SubClassificationDesc": "Safety Signs",
+    "ClassificationId": "M.15"
+  },
+  {
+    "SubClassificationId": "M.15.04",
+    "SubClassificationDesc": "Medical Equipment & Drugs",
+    "ClassificationId": "M.15"
+  },
+  {
+    "SubClassificationId": "M.15.05",
+    "SubClassificationDesc": "Fall Protection Gears (Harnesses Etc)",
+    "ClassificationId": "M.15"
+  },
+  {
+    "SubClassificationId": "M.15.06",
+    "SubClassificationDesc": "Gas Detection",
+    "ClassificationId": "M.15"
+  },
+  {
+    "SubClassificationId": "M.16.01",
+    "SubClassificationDesc": "Drill Bits",
+    "ClassificationId": "M.16"
+  },
+  {
+    "SubClassificationId": "M.16.02",
+    "SubClassificationDesc": "Drill Pipe",
+    "ClassificationId": "M.16"
+  },
+  {
+    "SubClassificationId": "M.16.03",
+    "SubClassificationDesc": "Swivel",
+    "ClassificationId": "M.16"
+  },
+  {
+    "SubClassificationId": "M.16.04",
+    "SubClassificationDesc": "Other Drill Acessories",
+    "ClassificationId": "M.16"
+  },
+  {
+    "SubClassificationId": "M.17.01",
+    "SubClassificationDesc": "Common Explosives (ANFO, Emulsions Etc)",
+    "ClassificationId": "M.17"
+  },
+  {
+    "SubClassificationId": "M.17.02",
+    "SubClassificationDesc": "Common Accessories (Detonators, Ignites Etc)",
+    "ClassificationId": "M.17"
+  },
+  {
+    "SubClassificationId": "M.18.01",
+    "SubClassificationDesc": "Sports Equipment",
+    "ClassificationId": "M.18"
+  },
+  {
+    "SubClassificationId": "M.18.02",
+    "SubClassificationDesc": "Sports Apparel",
+    "ClassificationId": "M.18"
+  },
+  {
+    "SubClassificationId": "M.19.01",
+    "SubClassificationDesc": "Additives",
+    "ClassificationId": "M.19"
+  },
+  {
+    "SubClassificationId": "M.19.02",
+    "SubClassificationDesc": "Solvents",
+    "ClassificationId": "M.19"
+  },
+  {
+    "SubClassificationId": "M.19.03",
+    "SubClassificationDesc": "Disinfectan",
+    "ClassificationId": "M.19"
+  },
+  {
+    "SubClassificationId": "M.19.04",
+    "SubClassificationDesc": "Other Chemicals",
+    "ClassificationId": "M.19"
+  },
+  {
+    "SubClassificationId": "M.19.05",
+    "SubClassificationDesc": "Industrial Gases",
+    "ClassificationId": "M.19"
+  },
+  {
+    "SubClassificationId": "M.20.01",
+    "SubClassificationDesc": "Rag / Wiper",
+    "ClassificationId": "M.20"
+  },
+  {
+    "SubClassificationId": "M.20.02",
+    "SubClassificationDesc": "Disposable Gloves",
+    "ClassificationId": "M.20"
+  },
+  {
+    "SubClassificationId": "M.20.03",
+    "SubClassificationDesc": "Garbage Bags",
+    "ClassificationId": "M.20"
+  },
+  {
+    "SubClassificationId": "M.20.04",
+    "SubClassificationDesc": "Paint & Accessories",
+    "ClassificationId": "M.20"
+  },
+  {
+    "SubClassificationId": "M.20.05",
+    "SubClassificationDesc": "Welding Accessories",
+    "ClassificationId": "M.20"
+  },
+  {
+    "SubClassificationId": "M.20.06",
+    "SubClassificationDesc": "Other Consumable Items",
+    "ClassificationId": "M.20"
+  },
+  {
+    "SubClassificationId": "M.21.01",
+    "SubClassificationDesc": "Watch / SmartWatch",
+    "ClassificationId": "M.21"
+  },
+  {
+    "SubClassificationId": "M.21.02",
+    "SubClassificationDesc": "Gold Bar",
+    "ClassificationId": "M.21"
+  },
+  {
+    "SubClassificationId": "M.21.03",
+    "SubClassificationDesc": "Other Merchandise",
+    "ClassificationId": "M.21"
+  },
+  {
+    "SubClassificationId": "M.22.01",
+    "SubClassificationDesc": "Kitchen & Pantry Supplies",
+    "ClassificationId": "M.22"
+  },
+  {
+    "SubClassificationId": "M.22.02",
+    "SubClassificationDesc": "General Utility",
+    "ClassificationId": "M.22"
+  },
+  {
+    "SubClassificationId": "M.22.03",
+    "SubClassificationDesc": "Hygiene Supplies",
+    "ClassificationId": "M.22"
+  },
+  {
+    "SubClassificationId": "M.22.04",
+    "SubClassificationDesc": "Other Household Supplies",
+    "ClassificationId": "M.22"
+  },
+  {
+    "SubClassificationId": "M.23.01",
+    "SubClassificationDesc": "Container (Office, Workshop, Camp, etc)",
+    "ClassificationId": "M.23"
+  },
+  {
+    "SubClassificationId": "M.23.02",
+    "SubClassificationDesc": "Mobile Infrastructure",
+    "ClassificationId": "M.23"
+  },
+  {
+    "SubClassificationId": "S.01.01",
+    "SubClassificationDesc": "Calibration",
+    "ClassificationId": "S.01"
+  },
+  {
+    "SubClassificationId": "S.01.02",
+    "SubClassificationDesc": "Fabrication",
+    "ClassificationId": "S.01"
+  },
+  {
+    "SubClassificationId": "S.01.03",
+    "SubClassificationDesc": "FMC (Full Maintenance Contract)",
+    "ClassificationId": "S.01"
+  },
+  {
+    "SubClassificationId": "S.01.04",
+    "SubClassificationDesc": "Modification",
+    "ClassificationId": "S.01"
+  },
+  {
+    "SubClassificationId": "S.01.05",
+    "SubClassificationDesc": "Refurbishment",
+    "ClassificationId": "S.01"
+  },
+  {
+    "SubClassificationId": "S.01.06",
+    "SubClassificationDesc": "Repair Maintenance",
+    "ClassificationId": "S.01"
+  },
+  {
+    "SubClassificationId": "S.01.07",
+    "SubClassificationDesc": "Spesific Preventive Maintenance",
+    "ClassificationId": "S.01"
+  },
+  {
+    "SubClassificationId": "S.02.01",
+    "SubClassificationDesc": "Dewatering Equipment",
+    "ClassificationId": "S.02"
+  },
+  {
+    "SubClassificationId": "S.02.02",
+    "SubClassificationDesc": "Engineering Needs",
+    "ClassificationId": "S.02"
+  },
+  {
+    "SubClassificationId": "S.02.03",
+    "SubClassificationDesc": "Heavy Equipment",
+    "ClassificationId": "S.02"
+  },
+  {
+    "SubClassificationId": "S.02.04",
+    "SubClassificationDesc": "Land Clearing",
+    "ClassificationId": "S.02"
+  },
+  {
+    "SubClassificationId": "S.02.05",
+    "SubClassificationDesc": "Lifting Equipment",
+    "ClassificationId": "S.02"
+  },
+  {
+    "SubClassificationId": "S.02.06",
+    "SubClassificationDesc": "Survey Equipment",
+    "ClassificationId": "S.02"
+  },
+  {
+    "SubClassificationId": "S.02.07",
+    "SubClassificationDesc": "Transportation Equipment",
+    "ClassificationId": "S.02"
+  },
+  {
+    "SubClassificationId": "S.02.08",
+    "SubClassificationDesc": "Other Equipment",
+    "ClassificationId": "S.02"
+  },
+  {
+    "SubClassificationId": "S.03.01",
+    "SubClassificationDesc": "Carpenter",
+    "ClassificationId": "S.03"
+  },
+  {
+    "SubClassificationId": "S.03.02",
+    "SubClassificationDesc": "Catering",
+    "ClassificationId": "S.03"
+  },
+  {
+    "SubClassificationId": "S.03.03",
+    "SubClassificationDesc": "Clean Water",
+    "ClassificationId": "S.03"
+  },
+  {
+    "SubClassificationId": "S.03.04",
+    "SubClassificationDesc": "Drinking Water",
+    "ClassificationId": "S.03"
+  },
+  {
+    "SubClassificationId": "S.03.05",
+    "SubClassificationDesc": "Electricity",
+    "ClassificationId": "S.03"
+  },
+  {
+    "SubClassificationId": "S.03.06",
+    "SubClassificationDesc": "Garden Maintenance",
+    "ClassificationId": "S.03"
+  },
+  {
+    "SubClassificationId": "S.03.07",
+    "SubClassificationDesc": "General Cleaning",
+    "ClassificationId": "S.03"
+  },
+  {
+    "SubClassificationId": "S.03.08",
+    "SubClassificationDesc": "Laundry",
+    "ClassificationId": "S.03"
+  },
+  {
+    "SubClassificationId": "S.03.09",
+    "SubClassificationDesc": "Ornamen Plants",
+    "ClassificationId": "S.03"
+  },
+  {
+    "SubClassificationId": "S.03.10",
+    "SubClassificationDesc": "Other Facility Services",
+    "ClassificationId": "S.03"
+  },
+  {
+    "SubClassificationId": "S.04.01",
+    "SubClassificationDesc": "Admin",
+    "ClassificationId": "S.04"
+  },
+  {
+    "SubClassificationId": "S.04.02",
+    "SubClassificationDesc": "Equipment Operator",
+    "ClassificationId": "S.04"
+  },
+  {
+    "SubClassificationId": "S.04.03",
+    "SubClassificationDesc": "Driver",
+    "ClassificationId": "S.04"
+  },
+  {
+    "SubClassificationId": "S.04.04",
+    "SubClassificationDesc": "Security",
+    "ClassificationId": "S.04"
+  },
+  {
+    "SubClassificationId": "S.04.05",
+    "SubClassificationDesc": "Mechanic",
+    "ClassificationId": "S.04"
+  },
+  {
+    "SubClassificationId": "S.05.01",
+    "SubClassificationDesc": "Equipment Insurance",
+    "ClassificationId": "S.05"
+  },
+  {
+    "SubClassificationId": "S.05.02",
+    "SubClassificationDesc": "Life Insurance",
+    "ClassificationId": "S.05"
+  },
+  {
+    "SubClassificationId": "S.06.01",
+    "SubClassificationDesc": "Hosting & cloud services",
+    "ClassificationId": "S.06"
+  },
+  {
+    "SubClassificationId": "S.06.02",
+    "SubClassificationDesc": "IT system maintenance and upgrades",
+    "ClassificationId": "S.06"
+  },
+  {
+    "SubClassificationId": "S.07.01",
+    "SubClassificationDesc": "Internet Service Providers",
+    "ClassificationId": "S.07"
+  },
+  {
+    "SubClassificationId": "S.07.02",
+    "SubClassificationDesc": "Radio & satellite communication systems",
+    "ClassificationId": "S.07"
+  },
+  {
+    "SubClassificationId": "S.07.03",
+    "SubClassificationDesc": "Telecommunication towers (BTS towers)",
+    "ClassificationId": "S.07"
+  },
+  {
+    "SubClassificationId": "S.08.01",
+    "SubClassificationDesc": "Building (Mess/Office etc)",
+    "ClassificationId": "S.08"
+  },
+  {
+    "SubClassificationId": "S.08.02",
+    "SubClassificationDesc": "Computer/Laptop",
+    "ClassificationId": "S.08"
+  },
+  {
+    "SubClassificationId": "S.08.03",
+    "SubClassificationDesc": "Land",
+    "ClassificationId": "S.08"
+  },
+  {
+    "SubClassificationId": "S.08.04",
+    "SubClassificationDesc": "Office equipment (AC, Photocopy etc)",
+    "ClassificationId": "S.08"
+  },
+  {
+    "SubClassificationId": "S.08.05",
+    "SubClassificationDesc": "Sarana/LV",
+    "ClassificationId": "S.08"
+  },
+  {
+    "SubClassificationId": "S.08.06",
+    "SubClassificationDesc": "Water Transportation",
+    "ClassificationId": "S.08"
+  },
+  {
+    "SubClassificationId": "S.08.07",
+    "SubClassificationDesc": "Sports Facility",
+    "ClassificationId": "S.08"
+  },
+  {
+    "SubClassificationId": "S.09.01",
+    "SubClassificationDesc": "Archive Storage",
+    "ClassificationId": "S.09"
+  },
+  {
+    "SubClassificationId": "S.10.01",
+    "SubClassificationDesc": "Solid, Liquid, and Gas Waste Treatment Systems (TPS, LB3, IPAL Domestik)",
+    "ClassificationId": "S.10"
+  },
+  {
+    "SubClassificationId": "S.10.02",
+    "SubClassificationDesc": "Industrial Building Construction (Workshop & Warehouse)",
+    "ClassificationId": "S.10"
+  },
+  {
+    "SubClassificationId": "S.10.03",
+    "SubClassificationDesc": "Office Building Construction (Gedung)",
+    "ClassificationId": "S.10"
+  },
+  {
+    "SubClassificationId": "S.10.04",
+    "SubClassificationDesc": "Residential Building Construction (Mess)",
+    "ClassificationId": "S.10"
+  },
+  {
+    "SubClassificationId": "S.10.05",
+    "SubClassificationDesc": "Electrical Installation",
+    "ClassificationId": "S.10"
+  },
+  {
+    "SubClassificationId": "S.10.06",
+    "SubClassificationDesc": "Mechanical Installation",
+    "ClassificationId": "S.10"
+  },
+  {
+    "SubClassificationId": "S.10.07",
+    "SubClassificationDesc": "Interior Design",
+    "ClassificationId": "S.10"
+  },
+  {
+    "SubClassificationId": "S.10.08",
+    "SubClassificationDesc": "Other Residential and Non-Residential Building Construction (Tangki Timbun,dll)",
+    "ClassificationId": "S.10"
+  },
+  {
+    "SubClassificationId": "S.11.01",
+    "SubClassificationDesc": "ISO, Health & Safety",
+    "ClassificationId": "S.11"
+  },
+  {
+    "SubClassificationId": "S.11.02",
+    "SubClassificationDesc": "IT (Information & Technology)",
+    "ClassificationId": "S.11"
+  },
+  {
+    "SubClassificationId": "S.11.03",
+    "SubClassificationDesc": "Notary & Land Deed Official (PPAT)",
+    "ClassificationId": "S.11"
+  },
+  {
+    "SubClassificationId": "S.11.04",
+    "SubClassificationDesc": "Licensing & Permit",
+    "ClassificationId": "S.11"
+  },
+  {
+    "SubClassificationId": "S.11.05",
+    "SubClassificationDesc": "Infrastructure",
+    "ClassificationId": "S.11"
+  },
+  {
+    "SubClassificationId": "S.11.06",
+    "SubClassificationDesc": "Legal / Law Firm",
+    "ClassificationId": "S.11"
+  },
+  {
+    "SubClassificationId": "S.11.07",
+    "SubClassificationDesc": "Other Consultant",
+    "ClassificationId": "S.11"
+  },
+  {
+    "SubClassificationId": "S.11.08",
+    "SubClassificationDesc": "Climatology Studies",
+    "ClassificationId": "S.11"
+  },
+  {
+    "SubClassificationId": "S.12.01",
+    "SubClassificationDesc": "Recycling & Reuse",
+    "ClassificationId": "S.12"
+  },
+  {
+    "SubClassificationId": "S.12.02",
+    "SubClassificationDesc": "Waste Disposal (TPA)",
+    "ClassificationId": "S.12"
+  },
+  {
+    "SubClassificationId": "S.12.03",
+    "SubClassificationDesc": "Waste Storage & Collection (TPS)",
+    "ClassificationId": "S.12"
+  },
+  {
+    "SubClassificationId": "S.12.04",
+    "SubClassificationDesc": "Waste Transporter",
+    "ClassificationId": "S.12"
+  },
+  {
+    "SubClassificationId": "S.12.05",
+    "SubClassificationDesc": "Waste Treatment/Processing (B3)",
+    "ClassificationId": "S.12"
+  },
+  {
+    "SubClassificationId": "S.12.06",
+    "SubClassificationDesc": "Waste Treatment/Processing (Non B3)",
+    "ClassificationId": "S.12"
+  },
+  {
+    "SubClassificationId": "S.13.01",
+    "SubClassificationDesc": "Chemical Testing",
+    "ClassificationId": "S.13"
+  },
+  {
+    "SubClassificationId": "S.13.02",
+    "SubClassificationDesc": "Environmental Testing",
+    "ClassificationId": "S.13"
+  },
+  {
+    "SubClassificationId": "S.13.03",
+    "SubClassificationDesc": "Food & Beverage Testing",
+    "ClassificationId": "S.13"
+  },
+  {
+    "SubClassificationId": "S.13.04",
+    "SubClassificationDesc": "Mining & Mineral Testing",
+    "ClassificationId": "S.13"
+  },
+  {
+    "SubClassificationId": "S.13.05",
+    "SubClassificationDesc": "Mechanical & Technical Laboratory Testing",
+    "ClassificationId": "S.13"
+  },
+  {
+    "SubClassificationId": "S.14.01",
+    "SubClassificationDesc": "Accommodation, Ticketing & Travel Package",
+    "ClassificationId": "S.14"
+  },
+  {
+    "SubClassificationId": "S.14.02",
+    "SubClassificationDesc": "Professional & Competency Certification",
+    "ClassificationId": "S.14"
+  },
+  {
+    "SubClassificationId": "S.14.03",
+    "SubClassificationDesc": "Psikotest/Assesment",
+    "ClassificationId": "S.14"
+  },
+  {
+    "SubClassificationId": "S.14.04",
+    "SubClassificationDesc": "Training",
+    "ClassificationId": "S.14"
+  },
+  {
+    "SubClassificationId": "S.15.01",
+    "SubClassificationDesc": "Corporate",
+    "ClassificationId": "S.15"
+  },
+  {
+    "SubClassificationId": "S.15.02",
+    "SubClassificationDesc": "Social",
+    "ClassificationId": "S.15"
+  },
+  {
+    "SubClassificationId": "S.15.03",
+    "SubClassificationDesc": "Education",
+    "ClassificationId": "S.15"
+  },
+  {
+    "SubClassificationId": "S.15.04",
+    "SubClassificationDesc": "Non Profit & Fund Raising",
+    "ClassificationId": "S.15"
+  },
+  {
+    "SubClassificationId": "S.15.05",
+    "SubClassificationDesc": "Cultural& Community",
+    "ClassificationId": "S.15"
+  },
+  {
+    "SubClassificationId": "S.16.01",
+    "SubClassificationDesc": "Medical Check Up",
+    "ClassificationId": "S.16"
+  },
+  {
+    "SubClassificationId": "S.16.02",
+    "SubClassificationDesc": "Medical Assistant",
+    "ClassificationId": "S.16"
+  },
+  {
+    "SubClassificationId": "S.16.03",
+    "SubClassificationDesc": "Hospitalization",
+    "ClassificationId": "S.16"
+  },
+  {
+    "SubClassificationId": "S.17.01",
+    "SubClassificationDesc": "Air Freight",
+    "ClassificationId": "S.17"
+  },
+  {
+    "SubClassificationId": "S.17.02",
+    "SubClassificationDesc": "Courier",
+    "ClassificationId": "S.17"
+  },
+  {
+    "SubClassificationId": "S.17.03",
+    "SubClassificationDesc": "Freight Forwarder",
+    "ClassificationId": "S.17"
+  },
+  {
+    "SubClassificationId": "S.17.04",
+    "SubClassificationDesc": "Sea Freight",
+    "ClassificationId": "S.17"
+  },
+  {
+    "SubClassificationId": "S.17.05",
+    "SubClassificationDesc": "Trucking",
+    "ClassificationId": "S.17"
+  }
+]

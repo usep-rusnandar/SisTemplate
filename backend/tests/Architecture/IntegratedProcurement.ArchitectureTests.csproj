@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <!-- CA1707: xUnit test method names intentionally use underscores (Subject_Behavior). -->
+    <NoWarn>$(NoWarn);CA1707</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="NetArchTest.Rules" />
+    <PackageReference Include="xunit" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\BuildingBlocks\Domain\IntegratedProcurement.BuildingBlocks.Domain.csproj" />
+    <ProjectReference Include="..\..\src\BuildingBlocks\Application\IntegratedProcurement.BuildingBlocks.Application.csproj" />
+    <ProjectReference Include="..\..\src\BuildingBlocks\Infrastructure\IntegratedProcurement.BuildingBlocks.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Modules\ProposalTracker\Domain\IntegratedProcurement.Modules.ProposalTracker.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Modules\ContractMonitoring\Domain\IntegratedProcurement.Modules.ContractMonitoring.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Modules\ContractInitiationPlatform\Domain\IntegratedProcurement.Modules.ContractInitiationPlatform.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Modules\VendorOnboarding\Domain\IntegratedProcurement.Modules.VendorOnboarding.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Modules\ProposalTracker\Application\IntegratedProcurement.Modules.ProposalTracker.Application.csproj" />
+    <ProjectReference Include="..\..\src\Modules\ContractMonitoring\Application\IntegratedProcurement.Modules.ContractMonitoring.Application.csproj" />
+    <ProjectReference Include="..\..\src\Modules\ContractInitiationPlatform\Application\IntegratedProcurement.Modules.ContractInitiationPlatform.Application.csproj" />
+    <ProjectReference Include="..\..\src\Modules\VendorOnboarding\Application\IntegratedProcurement.Modules.VendorOnboarding.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Notifications\Application\IntegratedProcurement.Platform.Notifications.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Audit\Application\IntegratedProcurement.Platform.Audit.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Documents\Application\IntegratedProcurement.Platform.Documents.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Settings\Domain\IntegratedProcurement.Platform.Settings.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Administration\Domain\IntegratedProcurement.Platform.Administration.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Administration\Application\IntegratedProcurement.Platform.Administration.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\InternalIdentity\Domain\IntegratedProcurement.Platform.InternalIdentity.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Platform\InternalIdentity\Application\IntegratedProcurement.Platform.InternalIdentity.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\VendorIdentity\Application\IntegratedProcurement.Platform.VendorIdentity.Application.csproj" />
+    <ProjectReference Include="..\..\src\Platform\Persistence\IntegratedProcurement.Platform.Persistence.csproj" />
+    <ProjectReference Include="..\..\src\Modules\ProposalTracker\Infrastructure\IntegratedProcurement.Modules.ProposalTracker.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Modules\ContractMonitoring\Infrastructure\IntegratedProcurement.Modules.ContractMonitoring.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Modules\ContractInitiationPlatform\Infrastructure\IntegratedProcurement.Modules.ContractInitiationPlatform.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Modules\VendorOnboarding\Infrastructure\IntegratedProcurement.Modules.VendorOnboarding.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

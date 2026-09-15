@@ -1,0 +1,602 @@
+[
+  {
+    "DistrictId": "31.01.01",
+    "DistrictName": "Kepulauan Seribu Utara",
+    "CityId": "31.01"
+  },
+  {
+    "DistrictId": "31.01.02",
+    "DistrictName": "Kepulauan Seribu Selatan",
+    "CityId": "31.01"
+  },
+  {
+    "DistrictId": "31.71.01",
+    "DistrictName": "Gambir",
+    "CityId": "31.71"
+  },
+  {
+    "DistrictId": "31.71.02",
+    "DistrictName": "Sawah Besar",
+    "CityId": "31.71"
+  },
+  {
+    "DistrictId": "31.71.03",
+    "DistrictName": "Kemayoran",
+    "CityId": "31.71"
+  },
+  {
+    "DistrictId": "31.71.04",
+    "DistrictName": "Senen",
+    "CityId": "31.71"
+  },
+  {
+    "DistrictId": "31.71.05",
+    "DistrictName": "Cempaka Putih",
+    "CityId": "31.71"
+  },
+  {
+    "DistrictId": "31.71.06",
+    "DistrictName": "Menteng",
+    "CityId": "31.71"
+  },
+  {
+    "DistrictId": "31.71.07",
+    "DistrictName": "Tanah Abang",
+    "CityId": "31.71"
+  },
+  {
+    "DistrictId": "31.71.08",
+    "DistrictName": "Johar Baru",
+    "CityId": "31.71"
+  },
+  {
+    "DistrictId": "31.72.01",
+    "DistrictName": "Penjaringan",
+    "CityId": "31.72"
+  },
+  {
+    "DistrictId": "31.72.02",
+    "DistrictName": "Tanjung Priok",
+    "CityId": "31.72"
+  },
+  {
+    "DistrictId": "31.72.03",
+    "DistrictName": "Koja",
+    "CityId": "31.72"
+  },
+  {
+    "DistrictId": "31.72.04",
+    "DistrictName": "Cilincing",
+    "CityId": "31.72"
+  },
+  {
+    "DistrictId": "31.72.05",
+    "DistrictName": "Pademangan",
+    "CityId": "31.72"
+  },
+  {
+    "DistrictId": "31.72.06",
+    "DistrictName": "Kelapa Gading",
+    "CityId": "31.72"
+  },
+  {
+    "DistrictId": "31.73.01",
+    "DistrictName": "Cengkareng",
+    "CityId": "31.73"
+  },
+  {
+    "DistrictId": "31.73.02",
+    "DistrictName": "Grogol Petamburan",
+    "CityId": "31.73"
+  },
+  {
+    "DistrictId": "31.73.03",
+    "DistrictName": "Taman Sari",
+    "CityId": "31.73"
+  },
+  {
+    "DistrictId": "31.73.04",
+    "DistrictName": "Tambora",
+    "CityId": "31.73"
+  },
+  {
+    "DistrictId": "31.73.05",
+    "DistrictName": "Kebon Jeruk",
+    "CityId": "31.73"
+  },
+  {
+    "DistrictId": "31.73.06",
+    "DistrictName": "Kalideres",
+    "CityId": "31.73"
+  },
+  {
+    "DistrictId": "31.73.07",
+    "DistrictName": "Pal Merah",
+    "CityId": "31.73"
+  },
+  {
+    "DistrictId": "31.73.08",
+    "DistrictName": "Kembangan",
+    "CityId": "31.73"
+  },
+  {
+    "DistrictId": "31.74.01",
+    "DistrictName": "Tebet",
+    "CityId": "31.74"
+  },
+  {
+    "DistrictId": "31.74.02",
+    "DistrictName": "Setiabudi",
+    "CityId": "31.74"
+  },
+  {
+    "DistrictId": "31.74.03",
+    "DistrictName": "Mampang Prapatan",
+    "CityId": "31.74"
+  },
+  {
+    "DistrictId": "31.74.04",
+    "DistrictName": "Pasar Minggu",
+    "CityId": "31.74"
+  },
+  {
+    "DistrictId": "31.74.05",
+    "DistrictName": "Kebayoran Lama",
+    "CityId": "31.74"
+  },
+  {
+    "DistrictId": "31.74.06",
+    "DistrictName": "Cilandak",
+    "CityId": "31.74"
+  },
+  {
+    "DistrictId": "31.74.07",
+    "DistrictName": "Kebayoran Baru",
+    "CityId": "31.74"
+  },
+  {
+    "DistrictId": "31.74.08",
+    "DistrictName": "Pancoran",
+    "CityId": "31.74"
+  },
+  {
+    "DistrictId": "31.74.09",
+    "DistrictName": "Jagakarsa",
+    "CityId": "31.74"
+  },
+  {
+    "DistrictId": "31.74.10",
+    "DistrictName": "Pesanggrahan",
+    "CityId": "31.74"
+  },
+  {
+    "DistrictId": "31.75.01",
+    "DistrictName": "Matraman",
+    "CityId": "31.75"
+  },
+  {
+    "DistrictId": "31.75.02",
+    "DistrictName": "Pulogadung",
+    "CityId": "31.75"
+  },
+  {
+    "DistrictId": "31.75.03",
+    "DistrictName": "Jatinegara",
+    "CityId": "31.75"
+  },
+  {
+    "DistrictId": "31.75.04",
+    "DistrictName": "Kramatjati",
+    "CityId": "31.75"
+  },
+  {
+    "DistrictId": "31.75.05",
+    "DistrictName": "Pasar Rebo",
+    "CityId": "31.75"
+  },
+  {
+    "DistrictId": "31.75.06",
+    "DistrictName": "Cakung",
+    "CityId": "31.75"
+  },
+  {
+    "DistrictId": "31.75.07",
+    "DistrictName": "Duren Sawit",
+    "CityId": "31.75"
+  },
+  {
+    "DistrictId": "31.75.08",
+    "DistrictName": "Makasar",
+    "CityId": "31.75"
+  },
+  {
+    "DistrictId": "31.75.09",
+    "DistrictName": "Ciracas",
+    "CityId": "31.75"
+  },
+  {
+    "DistrictId": "31.75.10",
+    "DistrictName": "Cipayung",
+    "CityId": "31.75"
+  },
+  {
+    "DistrictId": "11.01.01",
+    "DistrictName": "Bakongan",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.02",
+    "DistrictName": "Kluet Utara",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.03",
+    "DistrictName": "Kluet Selatan",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.04",
+    "DistrictName": "Labuhan Haji",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.05",
+    "DistrictName": "Meukek",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.06",
+    "DistrictName": "Samadua",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.07",
+    "DistrictName": "Sawang",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.08",
+    "DistrictName": "Tapaktuan",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.09",
+    "DistrictName": "Trumon",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.10",
+    "DistrictName": "Pasi Raja",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.11",
+    "DistrictName": "Labuhan Haji Timur",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.12",
+    "DistrictName": "Labuhan Haji Barat",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.13",
+    "DistrictName": "Kluet Tengah",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.14",
+    "DistrictName": "Kluet Timur",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.15",
+    "DistrictName": "Bakongan Timur",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.16",
+    "DistrictName": "Trumon Timur",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.17",
+    "DistrictName": "Kota Bahagia",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.01.18",
+    "DistrictName": "Trumon Tengah",
+    "CityId": "11.01"
+  },
+  {
+    "DistrictId": "11.02.01",
+    "DistrictName": "Lawe Alas",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.02",
+    "DistrictName": "Lawe Sigala-Gala",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.03",
+    "DistrictName": "Bambel",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.04",
+    "DistrictName": "Babussalam",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.05",
+    "DistrictName": "Badar",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.06",
+    "DistrictName": "Babul Makmur",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.07",
+    "DistrictName": "Darul Hasanah",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.08",
+    "DistrictName": "Lawe Bulan",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.09",
+    "DistrictName": "Bukit Tusam",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.10",
+    "DistrictName": "Semadam",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.11",
+    "DistrictName": "Babul Rahmah",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.12",
+    "DistrictName": "Ketambe",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.13",
+    "DistrictName": "Deleng Pokhkisen",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.14",
+    "DistrictName": "Lawe Sumur",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.15",
+    "DistrictName": "Tanoh Alas",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.02.16",
+    "DistrictName": "Leuser",
+    "CityId": "11.02"
+  },
+  {
+    "DistrictId": "11.03.01",
+    "DistrictName": "Darul Aman",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.02",
+    "DistrictName": "Julok",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.03",
+    "DistrictName": "Idi Rayeuk",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.04",
+    "DistrictName": "Birem Bayeun",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.05",
+    "DistrictName": "Serbajadi",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.06",
+    "DistrictName": "Nurussalam",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.07",
+    "DistrictName": "Peureulak",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.08",
+    "DistrictName": "Rantau Selamat",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.09",
+    "DistrictName": "Simpang Ulim",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.10",
+    "DistrictName": "Rantau Peureulak",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.11",
+    "DistrictName": "Pante Bidari",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.12",
+    "DistrictName": "Madat",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.13",
+    "DistrictName": "Indra Makmu",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.14",
+    "DistrictName": "Idi Tunong",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.15",
+    "DistrictName": "Banda Alam",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.16",
+    "DistrictName": "Peudawa",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.17",
+    "DistrictName": "Peureulak Timur",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.18",
+    "DistrictName": "Peureulak Barat",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.19",
+    "DistrictName": "Sungai Raya",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.20",
+    "DistrictName": "Simpang Jernih",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.21",
+    "DistrictName": "Darul Ihsan",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.22",
+    "DistrictName": "Darul Falah",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.23",
+    "DistrictName": "Idi Timur",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.03.24",
+    "DistrictName": "Peunaron",
+    "CityId": "11.03"
+  },
+  {
+    "DistrictId": "11.04.01",
+    "DistrictName": "Linge",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.02",
+    "DistrictName": "Silih Nara",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.03",
+    "DistrictName": "Bebesen",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.07",
+    "DistrictName": "Pegasing",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.08",
+    "DistrictName": "Bintang",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.10",
+    "DistrictName": "Ketol",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.11",
+    "DistrictName": "Kebayakan",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.12",
+    "DistrictName": "Kute Panang",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.13",
+    "DistrictName": "Celala",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.17",
+    "DistrictName": "Laut Tawar",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.18",
+    "DistrictName": "Atu Lintang",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.19",
+    "DistrictName": "Jagong Jeget",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.20",
+    "DistrictName": "Bies",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.04.21",
+    "DistrictName": "Rusip Antara",
+    "CityId": "11.04"
+  },
+  {
+    "DistrictId": "11.05.01",
+    "DistrictName": "Johan Pahwalan",
+    "CityId": "11.05"
+  },
+  {
+    "DistrictId": "11.05.02",
+    "DistrictName": "Kaway XVI",
+    "CityId": "11.05"
+  },
+  {
+    "DistrictId": "11.05.03",
+    "DistrictName": "Sungai Mas",
+    "CityId": "11.05"
+  },
+  {
+    "DistrictId": "11.05.04",
+    "DistrictName": "Woyla",
+    "CityId": "11.05"
+  }
+]
