@@ -1,165 +1,77 @@
 {
   "version": "1.0.0",
-  "release": "01-SEP-2026",
+  "release": "TEMPLATE",
   "name": {
-    "en": "Integrated Procurement",
-    "id": "Integrated Procurement"
+    "en": "SisTemplate",
+    "id": "SisTemplate"
   },
   "description": {
-    "en": "Integrated Procurement is the corporate procurement platform for PT Saptaindra Sejati / Alamtri. It unifies vendor qualification, proposal tracking, Term Sheet and contract drafting, and contract monitoring in one permission-driven workspace for internal staff — available as a full Suite or as dedicated module portals (Vendor Onboarding, Proposal Tracker, Contract Monitoring) — with an invite-only Vendor Workspace for vendor PICs. Term Sheet, Letter of Award, and Contract run inside Proposal Tracker.",
-    "id": "Integrated Procurement adalah platform pengadaan korporat untuk PT Saptaindra Sejati / Alamtri. Platform ini menyatukan kualifikasi vendor, pelacakan proposal, penyusunan Term Sheet dan kontrak, serta monitoring kontrak dalam satu ruang kerja berbasis permission untuk staf internal — tersedia sebagai Suite lengkap atau portal modul terpisah (Vendor Onboarding, Proposal Tracker, Contract Monitoring) — serta Vendor Workspace khusus undangan untuk PIC vendor. Term Sheet, Letter of Award, dan Contract berjalan di dalam Proposal Tracker."
+    "en": "SisTemplate is a generic foundation for internal company applications: a .NET 10 modular monolith backend with a legacy-React frontend, built around cross-cutting platform concerns (RBAC, admin console, notifications, audit, document storage, internal SSO). It ships without any product-specific domain module — add your own under backend/src/Modules.",
+    "id": "SisTemplate adalah fondasi generik untuk aplikasi internal perusahaan: backend modular monolith .NET 10 dengan frontend legacy-React, dibangun di atas fitur lintas-fungsi (RBAC, konsol admin, notifikasi, audit, penyimpanan dokumen, SSO internal). Template ini tidak menyertakan modul domain produk apa pun — tambahkan modul Anda sendiri di backend/src/Modules."
   },
   "modules": [
     {
-      "name": { "en": "Vendor Workspace", "id": "Vendor Workspace" },
+      "name": { "en": "Internal Identity / SSO", "id": "Identitas Internal / SSO" },
       "items": [
-        { "en": "Invite-only portal for vendor PICs", "id": "Portal khusus undangan untuk PIC vendor" },
-        { "en": "Five-step registration wizard (Agreement, Bio Data, General/Specific Requirements, Portfolio)", "id": "Wizard registrasi 5 langkah (Agreement, Bio Data, Persyaratan Umum/Khusus, Portfolio)" },
-        { "en": "Direct-to-Blob document upload with progress (short-lived write SAS); Development stores files on local disk", "id": "Unggah dokumen langsung ke Blob dengan progres (write SAS berumur pendek); Development menyimpan file di disk lokal" },
-        { "en": "Vendor logo on the profile hero; e-certificate visible after the vendor is registered", "id": "Logo vendor di hero profil; e-sertifikat tampil setelah vendor terdaftar" }
+        { "en": "Session/JWT-based internal-user authentication", "id": "Autentikasi pengguna internal berbasis sesi/JWT" },
+        { "en": "Dev-login for local work when SSO is disabled", "id": "Dev-login untuk kerja lokal saat SSO dimatikan" }
       ]
     },
     {
-      "name": { "en": "Vendor Onboarding", "id": "Vendor Onboarding" },
+      "name": { "en": "Administration", "id": "Administrasi" },
       "items": [
-        { "en": "Internal vendor registry, dossier, invitations, contacts, and approval queue", "id": "Registri vendor internal, dossier, undangan, kontak, dan antrian persetujuan" },
-        { "en": "Approval follows Master Data ▸ Vendor Status (Submitted → Department Head → Division Head → Approved → Registered) with working-day SLA", "id": "Persetujuan mengikuti Master Data ▸ Status Vendor (Submitted → Department Head → Division Head → Approved → Registered) dengan SLA hari kerja" },
-        { "en": "E-certificate issuance (QR PDF) and public verification", "id": "Penerbitan e-sertifikat (PDF QR) dan verifikasi publik" },
-        { "en": "Create-only import from Ariba workbooks and from Vendor Connect, including document copy into Blob", "id": "Impor create-only dari workbook Ariba dan dari Vendor Connect, termasuk salin dokumen ke Blob" }
+        { "en": "Settings, email configuration, languages, background processes", "id": "Pengaturan, konfigurasi email, bahasa, proses latar" },
+        { "en": "Generic master-data sets (e.g. holidays, administrative regions)", "id": "Kumpulan master data generik (contoh: hari libur, wilayah administratif)" }
       ]
     },
     {
-      "name": { "en": "Proposal Tracker", "id": "Proposal Tracker" },
+      "name": { "en": "Documents", "id": "Dokumen" },
       "items": [
-        { "en": "Lifecycle PROP → TIA → RFQ → NEGO → EVAL → TERM, then LOA in parallel with Contract", "id": "Siklus PROP → TIA → RFQ → NEGO → EVAL → TERM, lalu LOA paralel dengan Contract" },
-        { "en": "Term Sheet, Letter of Award, and Contract run per winner from the Proposals matrix (step popups and Proposal Profile)", "id": "Term Sheet, Letter of Award, dan Contract berjalan per pemenang dari matriks Proposals (popup step dan Proposal Profile)" },
-        { "en": "Working-day SLA plan per method, overdue monitoring, and distribution to officers", "id": "Rencana SLA hari kerja per metode, pemantauan overdue, dan distribusi ke officer" },
-        { "en": "Award result from Bid Evaluation (Tender/Pemilihan) or Negotiation (Penunjukan); completing Term Sheet opens LOA and Contract together — they stay locked until then", "id": "Hasil award dari Bid Evaluation (Tender/Pemilihan) atau Negotiation (Penunjukan); menyelesaikan Term Sheet membuka LOA dan Contract bersamaan — keduanya tetap terkunci sampai saat itu" },
-        { "en": "Assigned officers generate Term Sheet from the award result", "id": "Officer yang ditunjuk generate Term Sheet dari hasil award" },
-        { "en": "Manual E-Proposal sync for Super Admin / Administrator and Section Head Tracker", "id": "Sinkronisasi E-Proposal manual untuk Super Admin / Administrator dan Section Head Tracker" }
+        { "en": "Blob-backed document storage with short-lived read links", "id": "Penyimpanan dokumen berbasis Blob dengan tautan baca berumur pendek" },
+        { "en": "Managed Identity in Azure; local disk in Development", "id": "Managed Identity di Azure; disk lokal di Development" }
       ]
     },
     {
-      "name": { "en": "Term Sheet & Contract", "id": "Term Sheet & Contract" },
+      "name": { "en": "Notifications", "id": "Notifikasi" },
       "items": [
-        { "en": "Available in Proposal Tracker (Suite path /proposal-tracker/… and the Tracker module portal)", "id": "Tersedia di Proposal Tracker (path Suite /proposal-tracker/… dan portal modul Tracker)" },
-        { "en": "Term Sheet from Tracker award results (one case per winner); Generate is officer-only", "id": "Term Sheet dari hasil award Tracker (satu kasus per pemenang); Generate hanya untuk officer" },
-        { "en": "Contract drafting from Word templates; Document Repository for LOA, Term Sheet, draft, and final", "id": "Penyusunan kontrak dari template Word; Repositori Dokumen untuk LOA, Term Sheet, draf, dan final" },
-        { "en": "Letter of Award generated after that winner’s Term Sheet is complete", "id": "Letter of Award dibuat setelah Term Sheet pemenang tersebut selesai" }
-      ]
-    },
-    {
-      "name": { "en": "Contract Monitoring", "id": "Contract Monitoring" },
-      "items": [
-        { "en": "Signed-contract registry and version history", "id": "Registri kontrak tertandatangani dan riwayat versi" },
-        { "en": "Tiered expiry reminders (template-driven) with a sent-mail log", "id": "Pengingat jatuh tempo bertingkat (berbasis template) dengan log email terkirim" },
-        { "en": "Excel / SharePoint contract import and List of Material sync (background import queue)", "id": "Impor kontrak Excel / SharePoint dan sinkronisasi Daftar Material (antrean impor di latar)" }
-      ]
-    },
-    {
-      "name": { "en": "Platform Administration", "id": "Administrasi Platform" },
-      "items": [
-        { "en": "Permission-driven RBAC (roles as bundles; per-screen master-data keys)", "id": "RBAC berbasis permission (peran sebagai kumpulan izin; kunci master data per layar)" },
-        { "en": "Master data, menu tree, bilingual languages, holiday calendar, and Super Admin ▸ Background processes", "id": "Master data, pohon menu, bahasa bilingual, kalender hari libur, dan Super Admin ▸ Proses latar" },
-        { "en": "Admin-editable email templates (branded HTML wrapper), settings, notifications, and audit trail", "id": "Template email yang dapat diedit admin (bungkus HTML bermerek), pengaturan, notifikasi, dan jejak audit" }
+        { "en": "Backend-owned email sending and delivery logging", "id": "Pengiriman email dan pencatatan pengiriman yang dikelola backend" },
+        { "en": "Bodies rendered from admin-editable templates", "id": "Isi email dirender dari template yang dapat diedit admin" }
       ]
     }
   ],
   "features": [
-    {
-      "en": "Permission is the single authorization primitive — menus, APIs, and UI all gate on moduleKey.action keys; a role is a bundle of permissions.",
-      "id": "Permission adalah primitif otorisasi tunggal — menu, API, dan UI semuanya dibatasi oleh kunci moduleKey.action; peran adalah kumpulan permission."
-    },
-    {
-      "en": "Internal staff sign in with SISWarrior SSO (NRP). There is no local internal password; complexity and lockout policy apply to vendor accounts only. Development keeps a passwordless NRP dev-login.",
-      "id": "Staf internal masuk dengan SSO SISWarrior (NRP). Tidak ada kata sandi lokal internal; kebijakan kompleksitas dan lockout hanya berlaku untuk akun vendor. Development tetap punya dev-login NRP tanpa kata sandi."
-    },
-    {
-      "en": "Vendor PICs use invite-only local accounts. Password complexity and lockout follow Super Admin ▸ Settings ▸ Security.",
-      "id": "PIC vendor memakai akun lokal khusus undangan. Kompleksitas kata sandi dan lockout mengikuti Super Admin ▸ Settings ▸ Security."
-    },
-    {
-      "en": "Staff can work from the full Suite or from a dedicated module portal (Vendor Onboarding, Proposal Tracker, Contract Monitoring). Each portal reverse-proxies only its own APIs; Tracker also proxies Term Sheet APIs.",
-      "id": "Staf dapat bekerja dari Suite lengkap atau dari portal modul terpisah (Vendor Onboarding, Proposal Tracker, Contract Monitoring). Setiap portal hanya mem-proxy API miliknya; Tracker juga mem-proxy API Term Sheet."
-    },
-    {
-      "en": "Backend is the source of truth for email send/log, master/seed data, and document storage (Azure Blob with short-lived SAS URLs; Development uploads stay on local disk).",
-      "id": "Backend adalah sumber kebenaran untuk pengiriman/log email, data master/seed, dan penyimpanan dokumen (Azure Blob dengan SAS URL berumur pendek; unggahan Development tetap di disk lokal)."
-    },
-    {
-      "en": "Modular monolith Clean Architecture: modules do not reference each other's Infrastructure; cross-module reads go through Application ports.",
-      "id": "Modular monolith Clean Architecture: modul tidak mereferensikan Infrastructure modul lain; pembacaan lintas modul melalui port Application."
-    },
-    {
-      "en": "Dates are stored in UTC and displayed in Asia/Jakarta (WIB). Working-day SLA uses Saturday/Sunday plus the holiday master calendar.",
-      "id": "Tanggal disimpan dalam UTC dan ditampilkan dalam zona Asia/Jakarta (WIB). SLA hari kerja memakai Sabtu/Minggu plus kalender master hari libur."
-    },
-    {
-      "en": "The interface is bilingual (English / Bahasa Indonesia), including this About dialog.",
-      "id": "Antarmuka bilingual (English / Bahasa Indonesia), termasuk dialog About ini."
-    }
+    { "en": "Permission is the single authorization primitive — menus, APIs, and UI all gate on moduleKey.action keys; a role is a bundle of permissions.", "id": "Permission adalah primitif otorisasi tunggal — menu, API, dan UI semuanya dibatasi oleh kunci moduleKey.action; peran adalah kumpulan permission." },
+    { "en": "Internal users sign in via the app's SSO/session mechanism. There is no local internal password by default; Development keeps a passwordless dev-login.", "id": "Pengguna internal masuk melalui mekanisme SSO/sesi aplikasi. Tidak ada kata sandi internal lokal secara default; Development tetap punya dev-login tanpa kata sandi." },
+    { "en": "AppHost is the single deployable — the API host with the internal SPA bundled into wwwroot.", "id": "AppHost adalah satu-satunya deployable — host API dengan SPA internal yang dibundel ke wwwroot." },
+    { "en": "Backend is the source of truth for email send/log, master/seed data, and document storage.", "id": "Backend adalah sumber kebenaran untuk pengiriman/log email, data master/seed, dan penyimpanan dokumen." },
+    { "en": "Modular monolith Clean Architecture: modules do not reference each other's Infrastructure; cross-module reads go through Application ports.", "id": "Modular monolith Clean Architecture: modul tidak mereferensikan Infrastructure modul lain; pembacaan lintas modul melalui port Application." },
+    { "en": "The interface is bilingual (English / Bahasa Indonesia), including this About dialog.", "id": "Antarmuka bilingual (English / Bahasa Indonesia), termasuk dialog About ini." }
   ],
   "releaseNotes": [
     {
       "version": "1.0.0",
-      "date": "01-Sep-2026",
+      "date": "Template baseline",
       "items": [
-        {
-          "en": "First production release of Integrated Procurement — a .NET 10 modular monolith with a Vite-built React frontend (Suite, three module portals, and Vendor Workspace).",
-          "id": "Rilis produksi pertama Integrated Procurement — modular monolith .NET 10 dengan frontend React yang dibangun Vite (Suite, tiga portal modul, dan Vendor Workspace)."
-        },
-        {
-          "en": "Vendor Workspace: invite-only PIC portal, five-step registration wizard, direct-to-Blob document upload, vendor logo on the profile, and e-certificate after registration.",
-          "id": "Vendor Workspace: portal PIC khusus undangan, wizard registrasi 5 langkah, unggah dokumen langsung ke Blob, logo vendor di profil, dan e-sertifikat setelah terdaftar."
-        },
-        {
-          "en": "Vendor Onboarding: registry, invitations, contacts, Vendor Status approval chain with working-day SLA, e-certificate (QR PDF) plus public verification, and create-only import from Ariba and Vendor Connect (including document copy).",
-          "id": "Vendor Onboarding: registri, undangan, kontak, rantai persetujuan Status Vendor dengan SLA hari kerja, e-sertifikat (PDF QR) plus verifikasi publik, dan impor create-only dari Ariba serta Vendor Connect (termasuk salin dokumen)."
-        },
-        {
-          "en": "Proposal Tracker: PROP → TIA → RFQ → NEGO → EVAL → TERM, then Letter of Award in parallel with Contract; per-winner Term Sheet / LOA / Contract from the Proposals matrix; working-day SLA and overdue monitoring.",
-          "id": "Proposal Tracker: PROP → TIA → RFQ → NEGO → EVAL → TERM, lalu Letter of Award paralel dengan Contract; Term Sheet / LOA / Contract per pemenang dari matriks Proposals; SLA hari kerja dan pemantauan overdue."
-        },
-        {
-          "en": "Term Sheet from Tracker award (one case per winner, officer-only generate), Word-template contracts, Document Repository; completing Term Sheet opens LOA and Contract together.",
-          "id": "Term Sheet dari award Tracker (satu kasus per pemenang, generate hanya officer), kontrak dari template Word, Repositori Dokumen; menyelesaikan Term Sheet membuka LOA dan Contract bersamaan."
-        },
-        {
-          "en": "Contract Monitoring: signed-contract registry, tiered expiry reminders, Excel/SharePoint import, and List of Material sync.",
-          "id": "Contract Monitoring: registri kontrak tertandatangani, pengingat jatuh tempo bertingkat, impor Excel/SharePoint, dan sinkronisasi Daftar Material."
-        },
-        {
-          "en": "Platform: permission-driven RBAC, master data, bilingual UI, SISWarrior SSO for internal staff, vendor-only password policy, branded HTML email templates, Super Admin background processes, notifications, and audit.",
-          "id": "Platform: RBAC berbasis permission, master data, UI bilingual, SSO SISWarrior untuk staf internal, kebijakan kata sandi khusus vendor, template email HTML bermerek, proses latar Super Admin, notifikasi, dan audit."
-        },
-        {
-          "en": "Hosting: Suite on Azure App Service contractone, Vendor Workspace on vendor-workspace, and module portals vendor-onboarding, proposal-tracker, and contract-monitoring; GitHub Actions deploy to staging and production slots.",
-          "id": "Hosting: Suite di Azure App Service contractone, Vendor Workspace di vendor-workspace, dan portal modul vendor-onboarding, proposal-tracker, serta contract-monitoring; GitHub Actions men-deploy ke slot staging dan production."
-        }
+        { "en": "Foundation release: .NET 10 modular monolith with a Vite-built React frontend, stripped of all product-specific domain modules.", "id": "Rilis fondasi: modular monolith .NET 10 dengan frontend React yang dibangun Vite, tanpa modul domain produk apa pun." },
+        { "en": "Platform: permission-driven RBAC, master data, bilingual UI, internal SSO, branded HTML email templates, background processes, notifications, and audit.", "id": "Platform: RBAC berbasis permission, master data, UI bilingual, SSO internal, template email HTML bermerek, proses latar, notifikasi, dan audit." }
       ]
     }
   ],
   "specifications": [
     { "name": { "en": "Framework", "id": "Framework" }, "value": ".NET 10 / ASP.NET Core 10.0.9" },
-    { "name": { "en": "ORM", "id": "ORM" }, "value": "Entity Framework Core 10.0.9 (Azure SQL)" },
+    { "name": { "en": "ORM", "id": "ORM" }, "value": "Entity Framework Core 10.0.9" },
     { "name": { "en": "Architecture", "id": "Arsitektur" }, "value": "Clean Architecture modular monolith" },
     { "name": { "en": "Frontend runtime", "id": "Runtime frontend" }, "value": "React 19.2.7 + Vite 8.0.16 (ES modules, React Router 7)" },
-    { "name": { "en": "Identity (internal)", "id": "Identitas (internal)" }, "value": "SISWarrior SSO (NRP); no local password. Development: passwordless /auth/dev-login" },
-    { "name": { "en": "Identity (vendor)", "id": "Identitas (vendor)" }, "value": "ASP.NET Core Identity (cookie, invite-only); password + lockout policy" },
-    { "name": { "en": "Document storage", "id": "Penyimpanan dokumen" }, "value": "Azure Blob Storage (short-lived SAS); Development uses local disk" },
-    { "name": { "en": "Suite hosting", "id": "Hosting Suite" }, "value": "Azure App Service contractone (API + SPA wwwroot; production + staging slot)" },
-    { "name": { "en": "Module portal hosting", "id": "Hosting portal modul" }, "value": "Azure App Services vendor-onboarding, proposal-tracker, contract-monitoring (ModuleGateway + SPA; production + staging slot)" },
-    { "name": { "en": "Vendor hosting", "id": "Hosting vendor" }, "value": "Azure App Service vendor-workspace (https://vendor-workspace.azurewebsites.net; production + staging slot)" },
-    { "name": { "en": "Vendor API allowlist", "id": "Allowlist API vendor" }, "value": "VendorGateway → /api/v1/vendor/auth/*, /api/v1/public/vendor-registration/*, /api/v1/vendor-portal/* (other /api/* → 404)" },
-    { "name": { "en": "Module portal API allowlist", "id": "Allowlist API portal modul" }, "value": "ModuleGateway → platform paths + one business prefix (Tracker also proxies Term Sheet APIs). Other modules and vendor portal → 404" },
-    { "name": { "en": "CI / deploy", "id": "CI / deploy" }, "value": "GitHub Actions — Deploy Internal; Deploy Vendor; Deploy Module Portals" },
+    { "name": { "en": "Identity (internal)", "id": "Identitas (internal)" }, "value": "App-defined SSO/session; Development: passwordless /auth/dev-login" },
+    { "name": { "en": "Document storage", "id": "Penyimpanan dokumen" }, "value": "Azure Blob Storage (short-lived read links); Development uses local disk" },
+    { "name": { "en": "Deployable", "id": "Deployable" }, "value": "Single Azure App Service (AppHost: API + SPA wwwroot)" },
+    { "name": { "en": "CI / deploy", "id": "CI / deploy" }, "value": "GitHub Actions — Deploy Internal" },
     { "name": { "en": "Server Component (NuGet)", "id": "Komponen Server (NuGet)" }, "value": "", "isSection": true },
     { "name": { "en": "Azure.Identity", "id": "Azure.Identity" }, "value": "1.21.0" },
     { "name": { "en": "Azure.Storage.Blobs", "id": "Azure.Storage.Blobs" }, "value": "12.29.1" },
     { "name": { "en": "QuestPDF", "id": "QuestPDF" }, "value": "2024.12.3" },
     { "name": { "en": "QRCoder", "id": "QRCoder" }, "value": "1.6.0" },
     { "name": { "en": "ClosedXML", "id": "ClosedXML" }, "value": "0.105.1" },
-    { "name": { "en": "Yarp.ReverseProxy", "id": "Yarp.ReverseProxy" }, "value": "2.3.0 (VendorGateway and ModuleGateway)" },
     { "name": { "en": "Client Component", "id": "Komponen Client" }, "value": "", "isSection": true },
     { "name": { "en": "react / react-dom", "id": "react / react-dom" }, "value": "19.2.7" },
     { "name": { "en": "react-router-dom", "id": "react-router-dom" }, "value": "7.18.2" },

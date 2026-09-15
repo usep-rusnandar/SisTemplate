@@ -5,13 +5,13 @@
 # the SPA must be built with npm run build:internal before dotnet publish.
 #
 # Triggers:
-#   - push to master → always staging (automatic)
+#   - push to main → always staging (automatic)
 #   - workflow_dispatch → staging or production (manual)
 name: Deploy Internal
 
 on:
   push:
-    branches: [master]
+    branches: [main]
     paths:
       - "backend/**"
       - "frontend/**"
@@ -119,17 +119,17 @@ jobs:
         working-directory: frontend
         run: |
           npm ci
-          npm run build:internal
-          test -f dist/internal/index.html
+          npm run build
+          test -f dist/index.html
 
       - name: Publish backend (+ bundle SPA into wwwroot)
         run: |
-          dotnet publish backend/src/AppHost/IntegratedProcurement.AppHost.Api.csproj \
+          dotnet publish backend/src/AppHost/SisTemplate.AppHost.Api.csproj \
             -c Release \
             -o publish/internal \
             --nologo
           test -f publish/internal/wwwroot/index.html
-          test -f publish/internal/IntegratedProcurement.AppHost.Api.dll
+          test -f publish/internal/SisTemplate.AppHost.Api.dll
 
       - name: Zip artifact
         run: |
@@ -195,7 +195,6 @@ jobs:
             echo ""
             echo "Auth: App Service publish profile (no Entra OIDC)."
             echo "App settings / connection strings stay on the App Service."
-            echo "Push to \`master\` → staging automatically. Production remains manual."
-            echo "Vendor portal: docs/deployment-github-vendor.md"
+            echo "Push to \`main\` → staging automatically. Production remains manual."
             echo "Setup: docs/deployment-github.md"
           } >> "$GITHUB_STEP_SUMMARY"

@@ -1,7 +1,7 @@
 # Architecture
 
-High-level structure of Integrated Procurement. For coordination/workflow see [WORK.md](WORK.md);
-for conventions see [CLAUDE.md](CLAUDE.md).
+High-level structure of SisTemplate. For coordination/workflow see [WORK.md](WORK.md); for
+conventions see [CLAUDE.md](CLAUDE.md) / [AGENTS.md](AGENTS.md).
 
 ## Shape: modular monolith, Clean Architecture
 
@@ -14,80 +14,107 @@ Modules/<Module>/
   Infrastructure/  # EF repositories, adapters, module DI registration
 ```
 
+The template ships with `Modules/` empty — the platform pieces below (`Platform/*`) already follow
+this same layering and are the reference to copy from when adding a new domain module.
+
 Shared foundations:
 - **BuildingBlocks** — `ModuleKeys`, `PermissionKeys` (SoT for keys), base entities, abstractions.
-- **Platform** — Persistence (EF `ProcurementDbContext`, migrations, seeding), Administration
-  (settings/email/languages/audit), InternalIdentity (SSO), VendorIdentity, Documents (Blob),
-  Notifications.
-- **AppHost** — minimal-API endpoints, DI wiring (`Program.cs`), auth, OpenAPI, health.
+- **Platform** — Persistence (EF `ProcurementDbContext` — historical name, holds the app's core
+  schema), Administration (settings/email/languages/audit/master data), InternalIdentity (SSO),
+  Documents (Blob storage), Notifications, Audit.
+- **AppHost** — minimal-API endpoints, DI wiring (`Program.cs`), auth, OpenAPI, health. **The only
+  deployable** — there is no separate external/vendor edge in this template.
 
-**Module independence rule:** modules do not reference each other's Infrastructure. Cross-module reads
-go through **ports** defined in the consumer's Application layer and implemented as adapters — e.g.
-`ITrackerBidEvaluationReadPort` lets CIP read the Tracker award result without touching Tracker's schema.
+**Module independence rule:** modules do not reference each other's Infrastructure. Cross-module
+reads go through **ports** defined in the consumer's Application layer and implemented as adapters
+(interface in the consumer module, implementation wired via DI) — this keeps modules loosely
+coupled even when one needs to read data another module owns.
+
+## Adding a new module
+
+1. Create `backend/src/Modules/<YourModule>/{Domain,Application,Infrastructure}` with their own
+   `.csproj` files (mirror an existing `Platform/*` project for the layering + project references:
+   `Domain` has no dependencies, `Application` depends on `Domain`, `Infrastructure` depends on both
+   plus EF/`Platform.Persistence`).
+2. Add a module key to `BuildingBlocks/Application/ModuleKeys.cs` (camelCase) and its permission
+   keys to `PermissionKeys.cs` (`moduleKey.action` pattern).
+3. Add an `EntityTypeConfiguration` for your entities and register them from
+   `Platform/Persistence` (or keep persistence inside your module's `Infrastructure` project and
+   reference it from `ProcurementDbContext` — either is consistent with the existing pattern).
+4. Register your module's services in its own `Infrastructure` DI extension method (e.g.
+   `AddYourModule(this IServiceCollection services)`), then call it from `AppHost/Program.cs`.
+5. Add your module's endpoints under `AppHost/Endpoints/` (minimal-API, `RequirePermission` on
+   each route using your new permission keys).
+6. Add a corresponding frontend area under `frontend/src/modules/<your-module>` and wire it into
+   the shell's navigation (`frontend/src/app`, `frontend/src/platform`), gated on the same
+   permission keys returned by `/auth/me`.
+7. Add/expand tests under `backend/tests/AppHost` (integration) and `backend/tests/Architecture`
+   (dependency-direction rules — these enforce the module-independence rule above).
+8. Once your module's EF configuration is in place, run
+   `dotnet ef migrations add <YourMigration>` from `backend/` and commit the generated migration.
 
 ## Data
 
-- **Azure SQL**, one database, schema-per-area: `core` (platform/admin/settings/email/master data),
-  `vdr` (vendor), `trk` (proposal tracker), `cip` (contract platform), plus contract-monitoring tables.
-- EF Core 10. **Migrations auto-apply at startup** (the seeder calls `MigrateAsync`); design-time
-  factory reads env `INTEGRATED_PROCUREMENT_CONNECTION` (else LocalDB).
-- **Azure Blob Storage** for documents (containers per area, e.g. `app-vendormanagement`,
-  `app-platform-users`), served via short-lived SAS URLs. Rule: deleting a record that owns a Blob
-  document must delete the blob too.
+- **SQL Server / Azure SQL**, one database. The template's own schema (`core`/`iam`) holds
+  platform concerns only: settings, email, master data, audit, internal identity. Your new module
+  is free to introduce its own schema/table prefix.
+- EF Core 10. **Migrations auto-apply at startup** (the seeder calls `MigrateAsync`); the
+  design-time factory reads env `SISTEMPLATE_CONNECTION` (falls back to the legacy
+  `INTEGRATED_PROCUREMENT_CONNECTION` name, else LocalDB).
+- **Blob Storage** for documents, served via short-lived read links (Managed Identity in Azure,
+  local disk in dev — see the BLOB AUTH section of [AGENTS.md](AGENTS.md)). Rule: deleting a record
+  that owns a Blob document must delete the blob too.
 - **Seed/master data** is backend-owned: embedded JSON in `Platform/Persistence/Seeding/SeedData/`,
-  seeded idempotently. The frontend reads it via API (it is not the source of truth).
+  seeded idempotently at startup. The frontend reads it via API (it is not the source of truth).
 
 ## AuthN / AuthZ
 
-- **Internal users:** SISWarrior **SSO** only (NRP-keyed identity). No local password. `/auth/me`
-  returns the user's permissions.
-- **Vendor users:** local accounts (ASP.NET Identity, cookie auth) in the external portal. Password
-  complexity + lockout policy come from Super Admin ▸ Settings ▸ Security (vendor-only).
-- **RBAC is permission-driven:** permission is the single authz primitive; menu nodes, API endpoints
-  (`RequirePermission`), and UI all gate on permission keys (`moduleKey.action`); a role is a bundle
-  of permissions.
+- **Internal users:** authenticated via the app's internal SSO/session mechanism (NRP-style
+  identity, or any identifier scheme you plug in). No local password. `/auth/me` returns the user's
+  permissions.
+- A no-op `InternalAuthenticationHandler` is registered as the default authentication scheme so
+  that anonymous requests to permission-gated endpoints correctly get a 401/403 challenge — the
+  real principal is attached to `HttpContext.User` by SSO middleware earlier in the pipeline
+  (`UseAuthentication → UseSession → UseInternalSso → UseAuthorization`).
+- **RBAC is permission-driven:** permission is the single authz primitive; menu nodes, API
+  endpoints (`RequirePermission`), and UI all gate on permission keys (`moduleKey.action`); a role
+  is a bundle of permissions.
 
 ## Frontend
 
 - **Legacy React via runtime Babel:** components are imported `?raw` and transpiled in the browser,
   sharing a single global scope (no per-file modules/type-check). Validate these with eslint/Babel.
-- **Two Vite bundles:** `internal` (staff console) and `external` (vendor portal, `vendor.html`).
-- `window.__procurementStorage` is a backend-backed KV store (shared scope) used by some legacy
-  screens. **Backend is the source of truth**; there is no browser-storage email outbox.
+- **One Vite bundle:** `internal` (the app shell + all modules) — there is no separate
+  external/vendor bundle in this template.
 - The `Mockup/` sync (`frontend/scripts/sync-mockup.mjs`) is currently **inert** (no source dir) —
   edit `frontend/src/**` directly.
 
 ## Email
 
 Backend-owned send + logging: `SmtpEmailSender` delivers (mode `api` gateway or `smtp`) and records
-every attempt to `core.EMAIL_SENT_T`. Bodies are rendered from **admin-editable templates** (Email
-Template page) via `EmailTemplateNotifier` — never hardcoded. Per-module From/mailbox in Settings.
+every attempt to the audit/email log table. Bodies are rendered from **admin-editable templates**
+(Email Template page) via `EmailTemplateNotifier` — never hardcoded. Per-module From/mailbox is
+configured in Settings.
 
 ## Deployment topology
 
-1. **Internal deployment** — the API host with the internal SPA published into `wwwroot`
-   (`InternalFrontendHosting` serves it). Single Azure App Service. GitHub: `docs/deployment-github.md`.
-2. **External vendor portal** — vendor SPA on App Service `vendor-workspace` (production + staging slot).
-   VendorGateway (YARP) serves the SPA and reverse-proxies only allowlisted `/api/v1/vendor*|public/vendor-registration*|vendor-portal*` to AppHost. See `docs/deployment-github-vendor.md`.
-3. Azure App Service runs `dotnet <app>.dll`; secrets come from app settings / env vars.
+Single deployable: the API host (`AppHost`) with the internal SPA published into `wwwroot`
+(`InternalFrontendHosting` serves it) on one Azure App Service (or any host that runs `dotnet
+<app>.dll`). GitHub Actions setup: [docs/deployment-github.md](docs/deployment-github.md).
 
-## Known reality & tech debt (read before large changes)
+## What was removed to make this a template
 
-- **KV ↔ domain disconnect:** the Proposal Tracker and Contract Monitoring UIs still run largely on
-  browser KV (`ag_tracker_*`, `ag_cm_contracts_v1`), disconnected from the `trk.*` / contract-monitoring
-  domain tables. Several backend flows are verified only with manually-seeded domain rows. (WORK.md task #6.)
-  - **Phase 1 done:** completing the Bid Evaluation activity now PUTs the award result to
-    `trk.AWARD_RESULT_*` (`trkSaveAwardResult`/`trkBuildAwardResultRequest` in `TrackerData.jsx`), so
-    CIP F4 can read winners via `ITrackerBidEvaluationReadPort`. This unblocks WORK.md task #3.
-  - **Phase 2 pending:** repointing the remaining Tracker/CM reads off KV onto the domain query
-    endpoints, and building the CM contract create/version endpoints (currently stubs).
-- **CIP documents** are stored as base64 dataURIs in module-state JSON — pending migration to Blob.
-- **SSO (SISWarrior)** is live behind the `SSO:Enabled` switch: `SsoMiddleware` auto-redirects anonymous
-  navigations, handles the `?token=` callback (shape + expiry only — no signature check, per security-team
-  spec), and maps NRP→PersonnelNo directly (NRP == PersonnelNo). `/sso/login` issues the portal redirect
-  with `redirectUrl` for the incoming host when it is on `SSO:AllowedApplicationUrls` (else
-  `ApplicationUrl`). Suite catches `?token=` on any path; module portals rewrite it to
-  `/api/v1/internal/sso/callback`. Flow covered by `SsoRedirectTests` / `SsoMiddlewareFlowTests`.
-  Go-live prerequisite: `iam.USER_T` seeded with real 8-digit NRPs (done).
-- The relay (SMTP/gateway) is unreachable from dev machines and Azure blocks outbound :25, so emails
-  log as `Failed` locally/on-Azure — expected, not a bug.
+This repo started as a copy of a corporate procurement application. Everything specific to that
+domain has been removed to make it reusable as a generic foundation:
+
+- All domain modules (proposal tracking, contract initiation/monitoring, vendor onboarding) and
+  their schemas/migrations/seed data.
+- The external vendor-facing edge entirely: `VendorGateway` (YARP reverse proxy + vendor SPA),
+  `ModuleGateway`, and the `VendorIdentity` module (local-account auth for external users). This
+  template is **internal-only**: `AppHost` is the single deployable.
+- Vendor/procurement-specific admin features (e.g. brand master-data import) and test coverage
+  tied to the removed modules.
+
+What remains is the cross-cutting platform: RBAC, admin console, audit, documents, notifications,
+internal SSO, and the AppHost composition/auth/health plumbing — the pieces every internal app
+needs regardless of its domain.

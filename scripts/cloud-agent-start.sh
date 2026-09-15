@@ -8,7 +8,7 @@ set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SA_PASSWORD="${MSSQL_SA_PASSWORD:-Dev_Password123!}"
-DB_NAME="PROCUREMENT_DB"
+DB_NAME="SISTEMPLATE_DB"
 SQLCMD="/opt/mssql-tools18/bin/sqlcmd"
 DEV_SETTINGS="${REPO_ROOT}/backend/src/AppHost/appsettings.Development.json"
 export PATH="/opt/dotnet:${PATH}"

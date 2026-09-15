@@ -251,7 +251,7 @@ public sealed class InternalLocalAuthService : IInternalLocalAuthService
                 ["name"] = user.CompleteName,
                 ["resetUrl"] = resetUrl,
                 ["expiryHours"] = "24",
-                ["contact"] = FrontendPortalUrls.SupportContact(_configuration["VendorRegistration:SupportEmail"]),
+                ["contact"] = FrontendPortalUrls.SupportContact(_configuration["Support:Email"]),
             },
             _communicationService,
             _emailSender,

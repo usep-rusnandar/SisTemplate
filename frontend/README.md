@@ -1,8 +1,8 @@
-# Integrated Procurement MockupVite
+# SisTemplate Frontend
 
 React + Vite + TypeScript host for the internal frontend foundation.
 
-This workspace now keeps only the reusable internal shell and platform/admin surfaces:
+This workspace keeps only the reusable internal shell and platform/admin surfaces:
 
 ```text
 src/
@@ -11,7 +11,7 @@ src/
   shared/
 ```
 
-Procurement-specific module portals and their legacy HTML entry points were removed so `index.html` is the single Vite entry. Branding strings remain unchanged for the separate rebrand pass.
+All domain-specific module portals and their legacy HTML entry points were removed so `index.html` is the single Vite entry.
 
 ## Commands
 

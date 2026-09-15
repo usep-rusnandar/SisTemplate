@@ -65,6 +65,6 @@ npm ci
 
 log "Restoring and building the backend (0 errors expected)"
 cd "${REPO_ROOT}/backend"
-dotnet build IntegratedProcurement.slnx -c Debug
+dotnet build SisTemplate.slnx -c Debug
 
 log "Install complete"
