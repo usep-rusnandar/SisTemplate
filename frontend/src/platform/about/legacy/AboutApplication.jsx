@@ -14,8 +14,8 @@ const ABOUT_FALLBACK = {
   release: "01-SEP-2026",
   name: { en: "Integrated Procurement", id: "Integrated Procurement" },
   description: {
-    en: "Integrated Procurement is the corporate procurement platform for PT Saptaindra Sejati / Alamtri. It unifies vendor qualification, proposal tracking, Term Sheet and contract drafting, and contract monitoring in one permission-driven workspace for internal staff — available as a full Suite or as dedicated module portals (Vendor Onboarding, Proposal Tracker, Contract Monitoring) — with an invite-only Vendor Workspace for vendor PICs. Term Sheet, Letter of Award, and Contract run inside Proposal Tracker.",
-    id: "Integrated Procurement adalah platform pengadaan korporat untuk PT Saptaindra Sejati / Alamtri. Platform ini menyatukan kualifikasi vendor, pelacakan proposal, penyusunan Term Sheet dan kontrak, serta monitoring kontrak dalam satu ruang kerja berbasis permission untuk staf internal — tersedia sebagai Suite lengkap atau portal modul terpisah (Vendor Onboarding, Proposal Tracker, Contract Monitoring) — serta Vendor Workspace khusus undangan untuk PIC vendor. Term Sheet, Letter of Award, dan Contract berjalan di dalam Proposal Tracker.",
+    en: "Integrated Procurement is the internal operations platform for PT Saptaindra Sejati / Alamtri. This foundation keeps the reusable shell, permission-driven navigation, administration, notifications, and audit workspace for internal staff in a single Suite experience.",
+    id: "Integrated Procurement adalah platform operasi internal untuk PT Saptaindra Sejati / Alamtri. Fondasi ini mempertahankan shell yang dapat dipakai ulang, navigasi berbasis permission, administrasi, notifikasi, dan ruang kerja audit untuk staf internal dalam satu pengalaman Suite.",
   },
   modules: [],
   features: [],

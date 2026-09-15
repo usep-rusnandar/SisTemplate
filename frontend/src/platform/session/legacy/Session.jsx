@@ -110,31 +110,6 @@ function SessionProvider({ children }) {
       setRoles([]);
       setRoleCatalog([]);
     }
-    // Eager Tracker/holiday hydration is for principals who can actually read those APIs.
-    // A Vendor Onboarding admin must not prefetch tracker-step, assignable-users, or holiday (HTTP 403).
-    const can = (key) => effectivePermissions.includes(key);
-    if (can("masterData.holiday.view") || can("masterData.proposalTracker.view")) {
-      try { window.loadHolidays && window.loadHolidays(); } catch (e) {}
-    }
-    if (can("proposalTracker.view") || can("contractInitiationPlatform.view")
-      || can("masterData.trackerStep.view") || can("masterData.trackerMethod.view")
-      || can("masterData.proposalTracker.view")) {
-      try { window.loadTrackerProcessModel && window.loadTrackerProcessModel(); } catch (e) {}
-    }
-    // Impersonation starts with empty effectivePermissions until /effective-permissions returns.
-    // Use the real user's tracker access so Super Admin impersonating a Section Head still
-    // reloads the officer roster for the acted-as personnel number (not the unscoped admin list).
-    const realPerms = Array.isArray(realUser.permissions) ? realUser.permissions : [];
-    if (can("proposalTracker.view") || realPerms.includes("proposalTracker.view")) {
-      try {
-        const personnelNo = (actingUser && (actingUser.personnelNo || actingUser.username)) || "";
-        if (isImpersonating && !String(personnelNo).trim()) {
-          window.loadTrackerAssignableUsers && window.loadTrackerAssignableUsers(true, "", { failClosed: true });
-        } else {
-          window.loadTrackerAssignableUsers && window.loadTrackerAssignableUsers(true, personnelNo);
-        }
-      } catch (e) {}
-    }
     return () => { cancelled = true; };
   }, [loginUser, actingUser && actingUser.personnelNo, effectivePermissions]);
 

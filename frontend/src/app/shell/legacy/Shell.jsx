@@ -1,6 +1,5 @@
 /* fm3-converted */
 import React from "react";
-import { VM_APPROVAL_CHANGED_EVENT, VmApiApprovalQueueCount } from "../../../modules/vendor-onboarding/legacy/VendorData.jsx";
 import { AboutVersionBadge } from "../../../platform/about/legacy/AboutApplication.jsx";
 import { ChangeImageModal, ChangePasswordModal, ProfileModal } from "../../../platform/account/legacy/AccountModals.jsx";
 import { adminUserFromApi, adminUsersJson } from "../../../platform/administration/legacy/ScreensUsers.jsx";
@@ -57,36 +56,7 @@ function NavRow({ item, active, collapsed, onClick, depth = 0 }) {
   );
 }
 
-/* Vendors waiting on THIS user's approval roles, for the Vendor Approval badge. Recounted when the
-   route changes and whenever a review decision fires VM_APPROVAL_CHANGED_EVENT, so the number drops
-   as soon as the reviewer acts rather than at the next reload. */
-function usePendingApprovalCount(session, route) {
-  const [count, setCount] = React.useState(0);
-  const canApprove = !!(session && session.can && session.can("vendorOnboarding.approve"));
-  React.useEffect(() => {
-    if (!canApprove || typeof VmApiApprovalQueueCount !== "function") { setCount(0); return undefined; }
-    let cancelled = false;
-    const refresh = () => VmApiApprovalQueueCount()
-      .then((value) => { if (!cancelled) setCount(value); })
-      .catch(() => { if (!cancelled) setCount(0); });
-    refresh();
-    const eventName = typeof VM_APPROVAL_CHANGED_EVENT === "string" ? VM_APPROVAL_CHANGED_EVENT : "ag:vendor-approval-changed";
-    window.addEventListener(eventName, refresh);
-    return () => { cancelled = true; window.removeEventListener(eventName, refresh); };
-  }, [canApprove, route]);
-  return count;
-}
 
-/* Attach counts to menu nodes by key. NavRow renders item.badge; zero stays hidden so the rail is
-   quiet when there is nothing to do. */
-function withPendingBadges(nodes, countsByKey) {
-  return (nodes || []).map((node) => {
-    const next = node.children ? { ...node, children: withPendingBadges(node.children, countsByKey) } : { ...node };
-    const count = countsByKey[node.key];
-    if (count > 0) next.badge = count;
-    return next;
-  });
-}
 
 function SideNav({ route, onNavigate, collapsed, onToggleCollapse }) {
   const C = useC();
@@ -99,12 +69,8 @@ function SideNav({ route, onNavigate, collapsed, onToggleCollapse }) {
   const [open, setOpen] = React.useState(() => ({
     superAdmin: true,
     administration: false,
-    masterData: false,
   }));
-  // Menu content is permission-driven (single source of truth). Super Admin console layout
-  // (admin groups only; business modules via impersonation) lives in sidebarMenuForPermissions.
   let visibleMenu = sidebarMenuForPermissions(menu, session.permissions, roles);
-  visibleMenu = withPendingBadges(visibleMenu, { vendorApproval: usePendingApprovalCount(session, route) });
   const [hovered, setHovered] = React.useState(false);
   const showCollapsed = collapsed && !hovered; // visually collapsed (narrow rail)
   return (
@@ -130,10 +96,10 @@ function SideNav({ route, onNavigate, collapsed, onToggleCollapse }) {
       <nav style={{ flex: 1, padding: showCollapsed ? "12px 10px" : "12px", overflowY: "auto", overflowX: "hidden", display: "flex", flexDirection: "column", gap: 2 }}>
         {visibleMenu.map((node) => {
           if (node.type === "item") {
-            return <NavRow key={node.key} item={node} active={route === node.key || (node.key === "trackerProposals" && route === "cipWorkflow")} collapsed={showCollapsed} onClick={() => onNavigate(node.key)} />;
+            return <NavRow key={node.key} item={node} active={route === node.key} collapsed={showCollapsed} onClick={() => onNavigate(node.key)} />;
           }
           const isOpen = showCollapsed ? true : (open[node.key] !== false);
-          const groupActive = node.children.some((c) => c.key === route || (c.key === "trackerProposals" && route === "cipWorkflow"));
+          const groupActive = node.children.some((c) => c.key === route);
           return (
             <div key={node.key} style={{ marginTop: 8 }}>
               {!showCollapsed ? (
@@ -147,7 +113,7 @@ function SideNav({ route, onNavigate, collapsed, onToggleCollapse }) {
               ) : <div style={{ height: 1, backgroundColor: C.navBorderSoft, margin: "8px 6px" }} />}
               {isOpen && (
                 <div style={{ display: "flex", flexDirection: "column", gap: 2, marginTop: 2 }}>
-                  {node.children.map((c) => <NavRow key={c.key} item={c} active={route === c.key || (c.key === "trackerProposals" && route === "cipWorkflow")} collapsed={showCollapsed} onClick={() => onNavigate(c.key)} depth={1} />)}
+                  {node.children.map((c) => <NavRow key={c.key} item={c} active={route === c.key} collapsed={showCollapsed} onClick={() => onNavigate(c.key)} depth={1} />)}
                 </div>
               )}
             </div>
