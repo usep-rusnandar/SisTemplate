@@ -86,6 +86,53 @@ npm run serve        # = npm run build && dotnet run --project ../backend/src/Ap
 Run just the backend (from `backend/`): `dotnet run --project src/AppHost`.
 Run just the frontend dev server (from `frontend/`): `npm run dev` (port 8008, proxies `/api` to 5055).
 
+## Run in GitHub Codespaces
+
+This repository includes a repeatable `.devcontainer` configuration. Create a Codespace from
+`main` (or from your feature branch) and wait for the post-create setup to finish. It provides
+the .NET 10 SDK and Node.js 20 through the official Dev Container Features, plus a SQL Server
+2022 Developer service container named `db`. The database volume is private to the Codespace and
+is not committed or published.
+
+The app container receives a development connection string automatically:
+`Server=db,1433;Database=SISTEMPLATE_DB;User Id=sa`. It also enables local-disk document storage
+and passwordless development login. The default SQL password is a throwaway development value
+(`Dev_Password123!`), not a production credential. For a different value, create a Codespaces
+secret named `MSSQL_SA_PASSWORD` before creating/rebuilding the Codespace; never put a real
+credential in `.devcontainer/docker-compose.yml`.
+
+Open two terminals in the Codespace:
+
+```bash
+# terminal 1
+cd backend
+ASPNETCORE_URLS=http://0.0.0.0:5055 dotnet run --project src/AppHost --no-launch-profile
+
+# terminal 2
+cd frontend
+npm run dev -- --host 0.0.0.0
+```
+
+Ports **5055** (`SisTemplate API`) and **8008** (`SisTemplate frontend`) are forwarded
+automatically. The frontend URL is the main testing entry point; check
+`/api/health/live` on the API port before testing authenticated flows. Dev sign-in is available
+with `POST /api/v1/internal/auth/dev-login` and an identifier such as `codespaces-user`.
+
+Run the same checks used locally when you want a full validation pass:
+
+```bash
+cd backend && dotnet build && dotnet test
+cd ../frontend && npm run build && npm run lint
+```
+
+The SQL Server image is x64 and resource-intensive. If a Codespace cannot start the service
+container, use an externally reachable SQL Server/Azure SQL instance instead by supplying
+`ConnectionStrings__DefaultConnection` as a Codespaces secret/environment value and removing
+the local `db` dependency in a local customization. The .NET 10 feature is pinned to the
+`10.0` channel; if GitHub's feature registry temporarily does not offer that channel, rebuild
+with a current Dev Container image that includes .NET 10 or install the SDK with Microsoft's
+`dotnet-install.sh` before running the setup command.
+
 ## Build & test
 
 ```bash
